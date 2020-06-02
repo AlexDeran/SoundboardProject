@@ -1,0 +1,43 @@
+/* header */
+header h1 {
+	text-align: center;
+}
+/*nav*/
+nav {
+	background-color: rgb(243, 216, 180);
+	padding-bottom: 1em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	border-radius: 1.5em;
+}
+.btn-lg {
+	margin-bottom: 0.5em;
+}
+
+/* #search {
+	display: flex;
+	justify-content: flex-end;
+	padding-top: 1em;
+	padding-bottom: 1em;
+} */
+
+.container,
+.col {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+article {
+	background-color: lightskyblue;
+	border-radius: 1.5em;
+	margin: 1em;
+}
+
+#sndtitle {
+	text-align: center;
+}
+
+footer {
+	text-align: center;
+}
