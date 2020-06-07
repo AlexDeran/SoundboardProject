@@ -1,17 +1,57 @@
-/* header */
-header h1 {
-	text-align: center;
+body {
+	background-image: url(../img/Wood-Wallpaper-Background-9.jpg);
 }
+
+/* header */
+header h1,
+#sndtitle,
+footer {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	line-height: 72px;
+	margin: 0 0 24px;
+	text-transform: uppercase;
+}
+header h1 {
+	font-size: 62px;
+	color: white;
+}
+header {
+	background-color: crimson;
+}
+
+/* #sndt {
+	background-color: white;
+} */
+
+#sndtitle {
+	font-size: 40px;
+	background-color: burlywood;
+	border-radius: 20px 20px 0px 0px;
+	border-bottom: solid black;
+	color: white;
+}
+
 /*nav*/
 nav {
-	background-color: rgb(243, 216, 180);
-	padding-bottom: 1em;
+	background-color: burlywood;
 	padding-top: 1em;
-	padding-bottom: 1em;
 	border-radius: 1.5em;
+	border: solid black;
+	margin: 0 0 24px;
 }
 .btn-lg {
 	margin-bottom: 0.5em;
+}
+
+.btnsnd {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 48px;
+	text-transform: uppercase;
 }
 
 /* #search {
@@ -29,15 +69,59 @@ nav {
 }
 
 article {
-	background-color: lightskyblue;
+	background-color: teal;
 	border-radius: 1.5em;
 	margin: 1em;
+	border: solid black;
 }
 
-#sndtitle {
-	text-align: center;
+#sndname {
+	justify-content: center;
+	background-color: seashell;
+	border-radius: 4px 4px 0px 0px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 14px;
+	font-weight: 800;
+	text-transform: uppercase;
+}
+
+#sndbox {
+	margin: 0.5%;
+	border-radius: 5px;
+	border: solid black;
+	background-color: seashell;
+}
+
+#contsndbox {
+	padding: 0.5%;
+	border-radius: 5px;
+	border: solid black;
+	background-color: burlywood;
+	margin-bottom: 2%;
 }
 
 footer {
 	text-align: center;
+	font-size: 40px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+}
+
+#myBtn {
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	background-color: crimson; /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 20px; /* Increase font size */
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+	padding: 0.5%;
+}
+
+#myBtn:hover {
+	background-color: teal; /* Add a dark-grey background on hover */
 }

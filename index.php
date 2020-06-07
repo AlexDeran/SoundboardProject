@@ -42,13 +42,13 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
-		<title>Soundbox</title>
+		<title>Soundboard</title>
 	</head>
 	<body>
-		<header>
-			<h1>Soundbox</h1>
+		<header class="container-fluid">
+			<h1 id="top">Soundboard</h1>
 		</header>
-		<nav>
+		<nav class="container">
 			<div class="container-fluid">
 			<!-- <form id="search" action="search.php" class="form-inline my-2 my-lg-0" method="POST">
       	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -56,7 +56,7 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
     	</form> -->
 				<button
 					type="button"
-					class="btn btn-success btn-lg btn-block"
+					class="btn btn-success btn-lg btn-block btnsnd"
 					data-toggle="modal"
 					data-target="#exampleModalCenter"
 				>
@@ -126,7 +126,7 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 			<div class="container-fluid">
 				<button
 					type="button"
-					class="btn btn-danger btn-lg btn-block"
+					class="btn btn-danger btn-lg btn-block btnsnd"
 					data-toggle="modal"
 					data-target="#exampleModalCenter3"
 				>
@@ -184,18 +184,20 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 		</nav>
 		<section>
 			<article>
-				<h2 id="sndtitle">D'la pefra sa mére</h2>
+				<h2 id="sndtitle">C'est de la pefra frère</h2>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
 							 <?php foreach ($lenom as $leson):?>
-								<div>
-									<div class="col"><?php echo($leson['Nom']) ?>
+								<div id="contsndbox">
+									<div id="sndbox">
+										<div class="col" id="sndname"><?php echo($leson['Nom']) ?>
+									</div>
+									<audio controls>
+										<source src="SBP/<?= $leson["Son"]?>" type="audio/mpeg">
+									</audio>
 								</div>
-								<audio controls>
-									<source src="SBP/<?= $leson["Son"]?>" type="audio/mpeg">
-								</audio>
-							 </div>
+							</div>
 							<?php endforeach;?>
 						</div>
 					</div>
@@ -203,7 +205,9 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 			</article>
 		</section>
 		<hr>
-		<footer>LA FIN</footer>
+		<footer>Bravo à toi, tu es en bas.
+			 <a href="#top" id="myBtn" title="Go to top">Ti remontes le sang dis ?</a> 
+		</footer>
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
