@@ -4,7 +4,7 @@ body {
 
 /* header */
 header h1,
-#sndtitle,
+.sndtitle,
 footer {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
@@ -21,11 +21,16 @@ header {
 	background-color: crimson;
 }
 
+#navbox {
+	display: flex;
+	flex-direction: row;
+}
+
 /* #sndt {
 	background-color: white;
 } */
 
-#sndtitle {
+.sndtitle {
 	font-size: 40px;
 	background-color: burlywood;
 	border-radius: 20px 20px 0px 0px;
@@ -33,13 +38,25 @@ header {
 	color: white;
 }
 
+#sndfr {
+	background-image: url(../img/france.jpg);
+	background-position: center;
+	color: black;
+}
 /*nav*/
-nav {
+.gestsnd {
 	background-color: burlywood;
 	padding-top: 1em;
 	border-radius: 1.5em;
 	border: solid black;
 	margin: 0 0 24px;
+}
+#get2sw {
+	background-color: burlywood;
+	border-radius: 1.5em;
+	border: solid black;
+	text-align: center;
+	margin-left: 2%;
 }
 .btn-lg {
 	margin-bottom: 0.5em;
@@ -61,7 +78,6 @@ nav {
 	padding-bottom: 1em;
 } */
 
-.container,
 .col {
 	display: flex;
 	flex-wrap: wrap;
@@ -109,7 +125,7 @@ footer {
 }
 
 #myBtn {
-	border: none; /* Remove borders */
+	border: solid black;
 	outline: none; /* Remove outline */
 	background-color: crimson; /* Set a background color */
 	color: white; /* Text color */
@@ -123,5 +139,25 @@ footer {
 }
 
 #myBtn:hover {
+	background-color: teal; /* Add a dark-grey background on hover */
+}
+
+#myBtn2 {
+	outline: black; /* Remove outline */
+	background-color: crimson; /* Set a background color */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 33px; /* Increase font size */
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	line-height: 5.3;
+	text-transform: uppercase;
+	margin-left: 8%;
+	border: solid black;
+	margin-bottom: 24px;
+}
+
+#myBtn2:hover {
 	background-color: teal; /* Add a dark-grey background on hover */
 }

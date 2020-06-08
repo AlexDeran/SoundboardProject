@@ -10,13 +10,12 @@ if(!$pdo){
 }
 
 $error="Le nom  et/ou le son existe(nt) déja.";
-	 if(isset($_POST['supprsnd']) && !empty($_POST['supprsnd'])):
 
-		$nomduson = $_POST['supprsnd'];
-		
- 		$supprsnd = $pdo->prepare("DELETE FROM `sound` WHERE Nom = :nom ");
- 		$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
-		$supprsnd->execute();
+if(isset($_POST['supprsnd']) && !empty($_POST['supprsnd'])):
+	$nomduson = $_POST['supprsnd'];
+ 	$supprsnd = $pdo->prepare("DELETE FROM `soundfr` OR `soundwld` WHERE Nom = :nom ");
+ 	$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
+	$supprsnd->execute();
 endif;
 
 	header("Location:index.php");

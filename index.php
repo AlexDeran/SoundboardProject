@@ -10,7 +10,7 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$nom = $pdo->query('SELECT Nom, Son FROM sound');
+$nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 
     if($nom):
 				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
@@ -19,13 +19,31 @@ $nom = $pdo->query('SELECT Nom, Son FROM sound');
         $lenom = false;
 		endif;
 
-$onlynom = $pdo->query('SELECT Nom FROM sound');
+$onlynom = $pdo->query('SELECT Nom FROM soundfr');
 
     if($onlynom):
 				$lesnom = $onlynom->fetchAll(PDO::FETCH_ASSOC);
 
     else:
         $lesnom = false;
+		endif;
+
+$nomw = $pdo->query('SELECT Nom, Son FROM soundw');
+
+    if($nomw):
+				$lenomw = $nomw->fetchAll(PDO::FETCH_ASSOC);
+
+    else:
+        $lenomw = false;
+		endif;
+
+$onlynomw = $pdo->query('SELECT Nom FROM soundw');
+
+    if($onlynomw):
+				$lesnomw = $onlynomw->fetchAll(PDO::FETCH_ASSOC);
+
+    else:
+        $lesnomw = false;
 		endif;
 
 ?>
@@ -49,142 +67,161 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 			<h1 id="top">Soundboard</h1>
 		</header>
 		<nav class="container">
-			<div class="container-fluid">
-			<!-- <form id="search" action="search.php" class="form-inline my-2 my-lg-0" method="POST">
-      	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      	<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
-    	</form> -->
-				<button
-					type="button"
-					class="btn btn-success btn-lg btn-block btnsnd"
-					data-toggle="modal"
-					data-target="#exampleModalCenter"
-				>
-					Ajouter un son
-				</button>
-			</div>
-
-			<!-- Modal -->
-			<div
-				class="modal fade"
-				id="exampleModalCenter"
-				tabindex="-1"
-				role="dialog"
-				aria-labelledby="exampleModalCenterTitle"
-				aria-hidden="true"
-			>
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalCenterTitle">
+			<div id="navbox" class="row">
+					<div class= "gestsnd col-8">
+						<div class="container-fluid">
+						<!-- <form id="search" action="search.php" class="form-inline my-2 my-lg-0" method="POST">
+							<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+							<button class="btn btn-success my-2 my-sm-0" type="submit">Search</button>
+						</form> -->
+							<button
+								type="button"
+								class="btn btn-success btn-lg btn-block btnsnd"
+								data-toggle="modal"
+								data-target="#exampleModalCenter"
+							>
 								Ajouter un son
-							</h5>
-							<button
-								type="button"
-								class="close"
-								data-dismiss="modal"
-								aria-label="Close"
-							>
-								<span aria-hidden="true">&times;</span>
 							</button>
 						</div>
-						<div class="modal-body">
-							<form id="addsnd" action="addsound.php" class="form" role="form" enctype="multipart/form-data" method="POST">
-								<div class="form-group">
-									<label for="soundname">Nom du son</label>
-									<input
-										name="nom"  
-										type="text"
-										class="form-control"
-										id="soundname"
-										placeholder="Nom du son"
-										required
-									/>
-								</div>
-								<div class="form-group">
-									<label for="importsound">Importez le son</label>
-									<input
-										type="file"
-										class="form-control-file"
-										id="importsound"
-										name="snd"
-									/>
-								</div>
-							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-success">
-									Valider
-								</button>
-								<button type="button" class="btn btn-danger" data-dismiss="modal">
-									Annuler
-								</button>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-			<div class="container-fluid">
-				<button
-					type="button"
-					class="btn btn-danger btn-lg btn-block btnsnd"
-					data-toggle="modal"
-					data-target="#exampleModalCenter3"
-				>
-					Supprimer un son
-				</button>
-			</div>
 
-			<!-- Modal -->
-			<div
-				class="modal fade"
-				id="exampleModalCenter3"
-				tabindex="-1"
-				role="dialog"
-				aria-labelledby="exampleModalCenterTitle"
-				aria-hidden="true"
-			>
-				<div class="modal-dialog modal-dialog-centered" role="document">
-					<div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalCenterTitle">
-								Supprimer un son
-							</h5>
-							<button
-								type="button"
-								class="close"
-								data-dismiss="modal"
-								aria-label="Close"
-							>
-								<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<form action="supprsound.php" class="form" role="form" method="POST">
-							<div class="modal-body">
-								<div class="form-group">
-									<label for="inputson">Choisir le son à supprimer</label>
-									<select id="inputson" name="supprsnd" class="form-control">
-										<?php foreach ($lesnom as $allnoms):?>
-										<option><?php echo $allnoms['Nom'] ?></option>
-										<?php endforeach ?>
-									</select>
+						<!-- Modal -->
+						<div
+							class="modal fade"
+							id="exampleModalCenter"
+							tabindex="-1"
+							role="dialog"
+							aria-labelledby="exampleModalCenterTitle"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">
+											<b>Ajouter un son</b>
+										</h5>
+										<button
+											type="button"
+											class="close"
+											data-dismiss="modal"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<div class="modal-body">
+										<form id="addsnd" action="addsound.php" class="form" role="form" enctype="multipart/form-data" method="POST">
+											<div class="form-group">
+												<label for="soundname"><b>Nom du son</b></label>
+												<input
+													name="nom"  
+													type="text"
+													class="form-control"
+													id="soundname"
+													placeholder="Nom du son"
+													required
+												/>
+											</div>
+											<div class="form-group">
+												<label for="importsound"><b>Importez le son</b></label>
+												<input
+													type="file"
+													class="form-control-file"
+													id="importsound"
+													name="snd"
+												/>
+											</div>
+											<div class="form-group">
+												<label for="catson"><strong> Quel type de son ?</strong></label>
+												<select id="catson" name="catsnd" class="form-control">
+													<option disabled> Choisir un type ci-dessous </option>
+													<option>Son FR</option>
+													<option>Son World</option>
+												</select>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-success">
+												Valider
+											</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">
+												Annuler
+											</button>
+										</div>
+									</form>
 								</div>
 							</div>
-							<div class="modal-footer">
-								<button type="submit" class="btn btn-success">
-									Valider
-								</button>
-								<button type="button" class="btn btn-danger" data-dismiss="modal">
-									Annuler
-								</button>
+						</div>
+						<div class="container-fluid">
+							<button
+								type="button"
+								class="btn btn-danger btn-lg btn-block btnsnd"
+								data-toggle="modal"
+								data-target="#exampleModalCenter3"
+							>
+								Supprimer un son
+							</button>
+						</div>
+
+						<!-- Modal -->
+						<div
+							class="modal fade"
+							id="exampleModalCenter3"
+							tabindex="-1"
+							role="dialog"
+							aria-labelledby="exampleModalCenterTitle"
+							aria-hidden="true"
+						>
+							<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h5 class="modal-title" id="exampleModalCenterTitle">
+											<b>Supprimer un son</b>
+										</h5>
+										<button
+											type="button"
+											class="close"
+											data-dismiss="modal"
+											aria-label="Close"
+										>
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>
+									<form action="supprsound.php" class="form" role="form" method="POST">
+										<div class="modal-body">
+											<div class="form-group">
+												<label for="inputson"><b>Choisir le son à supprimer</b></label>
+												<select id="inputson" name="supprsnd" class="form-control">
+													<option disabled><b>SONS FR</b></option>
+													<?php foreach ($lesnom as $allnoms):?>
+													<option><?php echo $allnoms['Nom'] ?></option>
+													<?php endforeach ?>
+													<option disabled><b>SONS WORLD</b></option>
+													<?php foreach ($lesnomw as $allnomsw):?>
+													<option><?php echo $allnomsw['Nom'] ?></option>
+													<?php endforeach ?>
+												</select>
+											</div>
+										</div>
+										<div class="modal-footer">
+											<button type="submit" class="btn btn-success">
+												Valider
+											</button>
+											<button type="button" class="btn btn-danger" data-dismiss="modal">
+												Annuler
+											</button>
+										</div>
+									</form>
+								</div>
 							</div>
-						</form>
-					</div>
+						</div>
+					</div>	
+					<a class="col-3" href="#sndw" id="myBtn2" title="Go to SW">Sons World</a>
 				</div>
 			</div>
 		</nav>
 		<section>
 			<article>
-				<h2 id="sndtitle">C'est de la pefra frère</h2>
+				<h2 class="sndtitle" id="sndfr">Sons FR</h2>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
@@ -194,7 +231,27 @@ $onlynom = $pdo->query('SELECT Nom FROM sound');
 										<div class="col" id="sndname"><?php echo($leson['Nom']) ?>
 									</div>
 									<audio controls>
-										<source src="SBP/<?= $leson["Son"]?>" type="audio/mpeg">
+										<source src="SBP/SFR/<?= $leson["Son"]?>" type="audio/mpeg">
+									</audio>
+								</div>
+							</div>
+							<?php endforeach;?>
+						</div>
+					</div>
+				</div>
+			</article>
+			<article>
+				<h2 class="sndtitle" id="sndw">Sons World</h2>
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col">
+							  <?php foreach ($lenomw as $lesonw): ?>
+								<div id="contsndbox">
+									<div id="sndbox">
+										<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
+									</div>
+									<audio controls>
+										<source src="SBP/SWLD/<?= $lesonw["Son"]?>" type="audio/mpeg">
 									</audio>
 								</div>
 							</div>
