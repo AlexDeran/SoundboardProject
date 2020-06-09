@@ -39,17 +39,24 @@ header {
 }
 
 #sndfr {
-	background-image: url(../img/france.jpg);
+	background-image: url(../img/francehp.jpg);
 	background-position: center;
 	color: black;
 }
+
+#sndw {
+	background-image: url(../img/worldh.jpg);
+	background-position: top;
+}
+
 /*nav*/
 .gestsnd {
 	background-color: burlywood;
-	padding-top: 1em;
+	padding-top: 1.8em;
 	border-radius: 1.5em;
 	border: solid black;
-	margin: 0 0 24px;
+	margin-bottom: 24px;
+	margin-left: 4%;
 }
 #get2sw {
 	background-color: burlywood;
@@ -124,40 +131,48 @@ footer {
 	justify-content: space-around;
 }
 
-#myBtn {
+#myBtn,
+#myBtn2,
+#myBtnfr2top {
 	border: solid black;
-	outline: none; /* Remove outline */
-	background-color: crimson; /* Set a background color */
+	outline: none;
 	color: white; /* Text color */
 	cursor: pointer; /* Add a mouse pointer on hover */
 	border-radius: 10px; /* Rounded corners */
-	font-size: 20px; /* Increase font size */
 	font-family: 'Raleway', sans-serif;
 	font-weight: 900;
 	text-transform: uppercase;
-	padding: 0.5%;
 }
 
-#myBtn:hover {
+#myBtn {
+	background-color: crimson; /* Set a background color */
+	font-size: 20px; /* Increase font size */
+}
+
+#myBtn:hover,
+#myBtnfr2top:hover {
 	background-color: teal; /* Add a dark-grey background on hover */
 }
 
 #myBtn2 {
-	outline: black; /* Remove outline */
-	background-color: crimson; /* Set a background color */
-	color: white; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	border-radius: 10px; /* Rounded corners */
-	font-size: 33px; /* Increase font size */
-	font-family: 'Raleway', sans-serif;
-	font-weight: 900;
-	line-height: 5.3;
-	text-transform: uppercase;
+	background-image: url(../img/world.jpg);
+	background-position: center;
+	font-size: 29px; /* Increase font size */
+	line-height: 7;
 	margin-left: 8%;
-	border: solid black;
 	margin-bottom: 24px;
 }
 
-#myBtn2:hover {
-	background-color: teal; /* Add a dark-grey background on hover */
+#myBtnfr2top {
+	background-color: crimson; /* Set a background color */
+	font-size: 29px; /* Increase font size */
+	padding: 0.5%;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#btnfr {
+	text-align: right;
+	margin-top: 2%;
+	margin-bottom: 2%;
 }

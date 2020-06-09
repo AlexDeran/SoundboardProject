@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 08 juin 2020 à 22:46
+-- Généré le : mer. 10 juin 2020 à 00:52
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -112,28 +112,56 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`) VALUES
 (178, 'Mon sexe est en feu', 'Mon sexe est en feu.mp3'),
 (179, 'Tkt ça va bien se passer', 'Ne tinquiète pas ça va bien se passer.mp3'),
 (181, 'Michel c\'est le Brésil', 'Michel c\'est le Brésil !! 1.mp3'),
-(182, 'Michel c\'est le Velux', 'Michel c\'est le Brésil !! 2.mp3');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `soundw`
---
-
-CREATE TABLE `soundw` (
-  `ID` int(10) UNSIGNED NOT NULL,
-  `Nom` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `Son` varchar(255) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Déchargement des données de la table `soundw`
---
-
-INSERT INTO `soundw` (`ID`, `Nom`, `Son`) VALUES
-(1, 'Crab Rave', 'crab-rave.mp3'),
-(2, 'Curb your enthusiasm', 'curb-your-enthusiasm.mp3'),
-(3, 'Gamecube Intro', 'gamecube_intro.mp3');
+(182, 'Michel c\'est le Velux', 'Michel c\'est le Brésil !! 2.mp3'),
+(183, 'C\'est dégueulasse', 'cest-degueulasse.mp3'),
+(184, 'Vraiment très 1Tressant', 'C\'était vraiment très intéressant..mp3'),
+(185, 'David Goodenough', 'Compilation David Goodenough + Mickael Goodenough.mp3'),
+(186, 'Hallucination Collective', 'hallucination collective -Sylvain Durif.mp3'),
+(187, 'HEY SALUT A TOUS LES AMIS', 'HEY, SALUT A TOUS LES AMIS, C\'EST DAVID LAFARGE POKEMON.mp3'),
+(188, 'Philippe !', 'hitman-le-cobra-philippe-je-sais-ou-tu-te-caches.mp3'),
+(189, 'Pas venue pour souffrir ', 'Je suis pas venu ici pour souffrir OK !.mp3'),
+(190, 'Mais c\'est d\'la merde !', 'Jean-Pierre Coffe - Mais c\'est d\'la MERDE - Version courte.mp3'),
+(191, 'Les inconscients', 'Les inconscients ne savent pas qu\'ils sont inconscients car il ne connaissent pas la.mp3'),
+(192, 'Ta femme je l\'ai prise', 'ta femme je l\'ai prise.mp3'),
+(193, 'Ferme ta gueule Lopez', 'ferme ta gueule lopez.mp3'),
+(194, 'Lopez NRV Full', 'Lopez gitan énervé.mp3'),
+(195, 'Mais il va la fermer OSS', 'Mais il va la fermer sa gueule.mp3'),
+(196, 'Mais oui c\'est clair', 'Mais oui c\'est clair ! By Eddy-Malou !.mp3'),
+(197, ' Mais j\'veux faire l\'amour', 'mais-moi-je-veu-faire-lamour.mp3'),
+(198, 'Ma personne est sacrée', 'Me touché pas vous avez pas le droit , ma personne est sacré.mp3'),
+(199, 'Coucou', 'MissJirachi Coucou.mp3'),
+(200, 'Mwhahaha Antoine Daniel', 'mwhahhahaha.mp3'),
+(201, 'Oh l\'assassin !', 'Oh l\'assassin !.mp3'),
+(202, 'Oh mais qu\'es ce que SD', 'OH MAIS QU\'EST QUE C\'EST QUE SE TRUC LA.mp3'),
+(203, 'Oh patron court', 'oh patron court.mp3'),
+(204, 'Oh patron long', 'oh patron long.mp3'),
+(205, 'Ah c\'est marrant Orelsan', 'Orelsan - Ah c\'est marrant.mp3'),
+(206, 'OSKUR MV', 'oskur.mp3'),
+(207, 'Oh si c\'est rigolo OSS', 'OSS 117 - Oh si, c\'est rigolo !.mp3'),
+(208, 'Une dictature OSS', 'OSS 117-Rio ne répond plus-Une dictature.mp3'),
+(209, 'OUI', 'oui_2.mp3'),
+(210, 'C\'est notre projeeeet', 'PARCE QUE C\'EST NOTRE PROJET.mp3'),
+(211, 'Pas ça Zinedine', 'Pas ca Zinedine....mp3'),
+(212, 'J\'ai le permis camion', 'Permis Camion.mp3'),
+(213, 'Petit FDP de merde', 'petit-fdp-de-merd.mp3'),
+(214, 'Popopoooo', 'Popopoooo.mp3'),
+(215, 'Putain ma queue est huge', 'putain-ma-queue-est-enorme.mp3'),
+(216, 'RHINOSHIEEEELD', 'RHINOSHIELD.mp3'),
+(217, 'Sard a mal a la queue', 'sard-mal-a-la-queue.mp3'),
+(218, 'Sard et la team Pavard', 'sardoche-jeduque-un-enfant_zholfoqh.mp3'),
+(219, 'Sard et la team Mbappé', 'sardoche-kylian-mbappe-music.mp3'),
+(220, 'C\'est des saucisses MV', 'saucisses.mp3'),
+(221, 'Second poteau Pavard !', 'second-poteau-pavard-tf1-france-argentine-world-cup-2018.mp3'),
+(222, 'Il en suffira d\'une', 'Il en suffira d\'une.mp3'),
+(223, 'J\'en ai rien a foutre ', 'siphano-jen-ai-rien-a-foutre-1.mp3'),
+(224, 'C\'est toi le master ?', 'SUPERZOULOUX CEST TOI LE MASTER.mp3'),
+(225, 'Tequila Heineken', 'TEQUILA HEINEKEN PAS L\'TEMPS D\'NIAISER.mp3'),
+(226, 'T\'es vraiment un con Nils', 'T\'es vraiment un sale petit con.mp3'),
+(227, 'Tiens tiens tiens', 'Tiens tiens tiens.mp3'),
+(228, 'Tu es grosse Mélissandre', 'TU ES GROSSE MELISSANDRE !!!.mp3'),
+(229, 'Tu crois ke c du respect', 'Tu crois qu\'c\'est du respect ça.mp3'),
+(230, 'OUI WTC', 'what-the-cut-oui.mp3'),
+(231, 'Ya pas de panneaux', 'YA PAS DE PANNEAUX VIDEO ENTIERE.mp3');
 
 --
 -- Index pour les tables déchargées
@@ -148,14 +176,6 @@ ALTER TABLE `soundfr`
   ADD KEY `Nom` (`Nom`) USING BTREE;
 
 --
--- Index pour la table `soundw`
---
-ALTER TABLE `soundw`
-  ADD PRIMARY KEY (`ID`),
-  ADD KEY `Nom` (`Nom`),
-  ADD KEY `Son` (`Son`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -163,13 +183,7 @@ ALTER TABLE `soundw`
 -- AUTO_INCREMENT pour la table `soundfr`
 --
 ALTER TABLE `soundfr`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=183;
-
---
--- AUTO_INCREMENT pour la table `soundw`
---
-ALTER TABLE `soundw`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=232;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

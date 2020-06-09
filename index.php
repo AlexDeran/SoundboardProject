@@ -60,13 +60,14 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 		<title>Soundboard</title>
 	</head>
 	<body>
 		<header class="container-fluid">
 			<h1 id="top">Soundboard</h1>
 		</header>
-		<nav class="container">
+		<nav class="container-fluid">
 			<div id="navbox" class="row">
 					<div class= "gestsnd col-8">
 						<div class="container-fluid">
@@ -118,6 +119,7 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 													class="form-control"
 													id="soundname"
 													placeholder="Nom du son"
+													maxlength="25"
 													required
 												/>
 											</div>
@@ -215,7 +217,7 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 							</div>
 						</div>
 					</div>	
-					<a class="col-3" href="#sndw" id="myBtn2" title="Go to SW">Sons World</a>
+					<a class="col-2" href="#sndw" id="myBtn2" title="Go to SW">Sons World</a>
 				</div>
 			</div>
 		</nav>
@@ -240,6 +242,9 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 					</div>
 				</div>
 			</article>
+			<div id="btnfr" class="container-fluid">
+			 <a href="#top" id="myBtnfr2top" title="Go to top"> GO UP <i class="fas fa-chevron-up"></i></a> 
+			</div>
 			<article>
 				<h2 class="sndtitle" id="sndw">Sons World</h2>
 				<div class="container-fluid">
