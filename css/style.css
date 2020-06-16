@@ -3,22 +3,38 @@ body {
 }
 
 /* header */
-header h1,
-.sndtitle,
-footer {
+/* .sndtitle {
 	text-align: center;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	line-height: 72px;
 	margin: 0 0 24px;
 	text-transform: uppercase;
-}
+} */
 header h1 {
-	font-size: 62px;
+	font-size: 80px;
 	color: white;
+	padding-bottom: 1%;
+	font-weight: 600;
 }
 header {
-	background-color: crimson;
+	background-image: url(../img/speakers.jpg);
+	background-position: center;
+	margin-bottom: 2%;
+}
+
+#top,
+.sndtitle {
+	color: lightgrey;
+	letter-spacing: 0.1em;
+	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+		0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+		0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+		0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+		0 22px 30px rgba(0, 0, 0, 0.9);
+	color: lightgrey;
+	text-transform: uppercase;
+	text-align: center;
 }
 
 #navbox {
@@ -31,22 +47,19 @@ header {
 } */
 
 .sndtitle {
-	font-size: 40px;
-	background-color: burlywood;
+	font-size: 60px;
 	border-radius: 20px 20px 0px 0px;
 	border-bottom: solid black;
-	color: white;
 }
 
 #sndfr {
-	background-image: url(../img/francehp.jpg);
+	background-image: url(../img/french-flag-2695008_1920.jpg);
 	background-position: center;
-	color: black;
 }
 
 #sndw {
-	background-image: url(../img/worldh.jpg);
-	background-position: top;
+	background-image: url(../img/earth-1149733_1920.jpg);
+	background-position: center;
 }
 
 /*nav*/
@@ -92,7 +105,7 @@ header {
 }
 
 article {
-	background-color: teal;
+	background-image: url(../img/noelvisspk.jpg);
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
@@ -119,7 +132,7 @@ article {
 	padding: 0.5%;
 	border-radius: 5px;
 	border: solid black;
-	background-color: burlywood;
+	background-color: #ba6432;
 	margin-bottom: 2%;
 }
 
@@ -129,6 +142,13 @@ footer {
 	color: white;
 	display: flex;
 	justify-content: space-around;
+	background-image: url(../img/spk-bg.jpg);
+	background-position: center;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	line-height: 72px;
+	text-transform: uppercase;
+	padding: 1%;
 }
 
 #myBtn,
@@ -151,12 +171,12 @@ footer {
 
 #myBtn:hover,
 #myBtnfr2top:hover {
-	background-color: teal; /* Add a dark-grey background on hover */
+	background-color: darkred; /* Add a dark-grey background on hover */
 }
 
 #myBtn2 {
-	background-image: url(../img/world.jpg);
-	background-position: center;
+	background-image: url(../img/earth-1365995_19204545.jpg);
+	background-position: right;
 	font-size: 29px; /* Increase font size */
 	line-height: 7;
 	margin-left: 8%;

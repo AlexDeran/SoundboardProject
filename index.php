@@ -217,13 +217,13 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 							</div>
 						</div>
 					</div>	
-					<a class="col-2" href="#sndw" id="myBtn2" title="Go to SW">Sons World</a>
+					<a class="col-2" href="#sndw" id="myBtn2" title="Go to Sons World">Sons World</a>
 				</div>
 			</div>
 		</nav>
 		<section>
 			<article>
-				<h2 class="sndtitle" id="sndfr">Sons FR</h2>
+				<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="100" width="100"> Sons FR <img src="img/ecufr.png" height="100" width="100"></h2>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
@@ -246,7 +246,7 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 			 <a href="#top" id="myBtnfr2top" title="Go to top"> GO UP <i class="fas fa-chevron-up"></i></a> 
 			</div>
 			<article>
-				<h2 class="sndtitle" id="sndw">Sons World</h2>
+				<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
 				<div class="container-fluid">
 					<div class="row">
 						<div class="col">
@@ -268,7 +268,7 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 		</section>
 		<hr>
 		<footer>Bravo à toi, tu es en bas.
-			 <a href="#top" id="myBtn" title="Go to top">Ti remontes le sang dis ?</a> 
+			 <a href="#top" id="myBtn" title="Go to top">Tu remontes ou j'te remonte ?</a> 
 		</footer>
 		<script
 			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
