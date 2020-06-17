@@ -19,12 +19,15 @@ $error="Le nom  et/ou le son existe(nt) déja.";
 		$verifsnd->bindParam(':nom',$nom,PDO::PARAM_STR);
 		$verifsnd->bindParam(':snd',$snd,PDO::PARAM_STR);
 		$verifsnd->execute();
+		
 		$result = $verifsnd->fetchColumn();
 			if($result > 0){
 				$resultat=$error;
 						}
 						
 				else{
+				$uploaddir = 'SBP/SFR/';
+				$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 				$addsnd = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`) VALUES (:nom, :snd)");
 				$addsnd->bindParam(':nom',$nom,PDO::PARAM_STR);
 				$addsnd->bindParam(':snd',$snd,PDO::PARAM_STR);
@@ -43,7 +46,9 @@ $error="Le nom  et/ou le son existe(nt) déja.";
 						}
 						
 				else{
+				$uploaddir = 'SBP/SWLD/';
 				$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`) VALUES (:nom, :snd)");
+				$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 				$addsndw->bindParam(':nom',$nom,PDO::PARAM_STR);
 				$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 				$addsndw->execute();

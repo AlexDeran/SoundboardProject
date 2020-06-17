@@ -64,12 +64,13 @@ header {
 
 /*nav*/
 .gestsnd {
-	background-color: burlywood;
 	padding-top: 1.8em;
+	border: black solid;
 	border-radius: 1.5em;
-	border: solid black;
 	margin-bottom: 24px;
 	margin-left: 4%;
+	background-image: url(../img/spk-bg.jpg);
+	background-position: center;
 }
 #get2sw {
 	background-color: burlywood;
@@ -113,7 +114,7 @@ article {
 
 #sndname {
 	justify-content: center;
-	background-color: seashell;
+	background-color: rgb(236, 214, 184);
 	border-radius: 4px 4px 0px 0px;
 	font-family: 'Raleway', sans-serif;
 	font-size: 14px;
@@ -125,14 +126,15 @@ article {
 	margin: 0.5%;
 	border-radius: 5px;
 	border: solid black;
-	background-color: seashell;
+	background-color: rgb(236, 214, 184);
 }
 
 #contsndbox {
 	padding: 0.5%;
 	border-radius: 5px;
 	border: solid black;
-	background-color: #ba6432;
+	background-image: url(../img/wood-2679551_1920.jpg);
+	background-position: center;
 	margin-bottom: 2%;
 }
 
@@ -142,8 +144,6 @@ footer {
 	color: white;
 	display: flex;
 	justify-content: space-around;
-	background-image: url(../img/spk-bg.jpg);
-	background-position: center;
 	font-family: 'Raleway', sans-serif;
 	font-weight: 800;
 	line-height: 72px;

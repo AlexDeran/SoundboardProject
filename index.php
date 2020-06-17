@@ -132,13 +132,16 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 													name="snd"
 												/>
 											</div>
-											<div class="form-group">
-												<label for="catson"><strong> Quel type de son ?</strong></label>
-												<select id="catson" name="catsnd" class="form-control">
-													<option disabled> Choisir un type ci-dessous </option>
-													<option>Son FR</option>
-													<option>Son World</option>
-												</select>
+											<label for="catsnd"><strong> Quel type de son ?</strong></label>
+											<div id="catsnd" class="form-group">
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
+													<label class="form-check-label" for="catson">Son FR</label>
+												</div>
+												<div class="form-check form-check-inline">
+													<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
+													<label class="form-check-label" for="catson2"> Son World</label>
+												</div>
 											</div>
 										</div>
 										<div class="modal-footer">
