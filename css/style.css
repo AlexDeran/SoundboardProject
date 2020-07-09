@@ -1,16 +1,12 @@
 body {
-	background-image: url(../img/Wood-Wallpaper-Background-9.jpg);
+	background-image: url(../img/noelvisspk.jpg);
+	background-position: center;
 }
 
-/* header */
-/* .sndtitle {
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
-	line-height: 72px;
-	margin: 0 0 24px;
-	text-transform: uppercase;
-} */
+a#top:hover {
+	text-decoration: none;
+}
+
 header h1 {
 	font-size: 80px;
 	color: white;
@@ -18,8 +14,8 @@ header h1 {
 	font-weight: 600;
 }
 header {
-	background-image: url(../img/speakers.jpg);
-	background-position: center;
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
 	margin-bottom: 2%;
 }
 
@@ -42,10 +38,6 @@ header {
 	flex-direction: row;
 }
 
-/* #sndt {
-	background-color: white;
-} */
-
 .sndtitle {
 	font-size: 60px;
 	border-radius: 20px 20px 0px 0px;
@@ -64,12 +56,12 @@ header {
 
 /*nav*/
 .gestsnd {
-	padding-top: 1.8em;
+	padding-top: 0.9em;
 	border: black solid;
 	border-radius: 1.5em;
 	margin-bottom: 24px;
 	margin-left: 4%;
-	background-image: url(../img/spk-bg.jpg);
+	background-image: url(../img/audience-1850119_1920.jpg);
 	background-position: center;
 }
 #get2sw {
@@ -92,13 +84,6 @@ header {
 	text-transform: uppercase;
 }
 
-/* #search {
-	display: flex;
-	justify-content: flex-end;
-	padding-top: 1em;
-	padding-bottom: 1em;
-} */
-
 .col {
 	display: flex;
 	flex-wrap: wrap;
@@ -106,7 +91,7 @@ header {
 }
 
 article {
-	background-image: url(../img/noelvisspk.jpg);
+	background-image: url(../img/audience-1853662_1920.jpg);
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
@@ -177,10 +162,64 @@ footer {
 #myBtn2 {
 	background-image: url(../img/earth-1365995_19204545.jpg);
 	background-position: right;
-	font-size: 29px; /* Increase font size */
-	line-height: 7;
-	margin-left: 8%;
-	margin-bottom: 24px;
+	font-size: 2em; /* Increase font size */
+	line-height: 3;
+	margin-bottom: 2%;
+	margin-top: 4%;
+	margin-right: 4%;
+	text-align: center;
+}
+
+#myBtn2 a {
+	color: white;
+}
+
+#searchbox {
+	padding-right: 20%;
+}
+
+#searchbox2 {
+	padding-bottom: 1%;
+}
+
+#searchnworld {
+	padding-top: 1%;
+	margin-left: 3%;
+}
+
+.results {
+	text-align: center;
+	margin-bottom: 2%;
+}
+
+.returnh {
+	color: white;
+	font-size: 1.5em;
+	background-color: red;
+	border: solid black;
+	border-radius: 1vw;
+	padding: 1%;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+
+.returnh:hover {
+	color: lightgoldenrodyellow;
+	background-color: darkred;
+}
+
+#noresults {
+	background-image: url(../img/the-road-815297_1920.jpg);
+	background-position: center;
+	font-size: 5em;
+	line-height: 4;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	margin-left: 1%;
+	margin-right: 10%;
+	margin-top: 2%;
 }
 
 #myBtnfr2top {
@@ -195,4 +234,8 @@ footer {
 	text-align: right;
 	margin-top: 2%;
 	margin-bottom: 2%;
+}
+
+a:hover {
+	text-decoration: none;
 }
