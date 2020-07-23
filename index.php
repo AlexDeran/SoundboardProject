@@ -50,6 +50,22 @@ if(isset($_POST['search'])){
 	require "search.php";
 }
 
+$keywordsfr = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "FR"');
+    if($keywordsfr):
+				$keywrdfr = $keywordsfr->fetchAll(PDO::FETCH_ASSOC);
+    else:
+        $keywrdfr = false;
+		endif;
+
+$keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"');
+
+    if($keywordsw):
+				$keywrdw = $keywordsw->fetchAll(PDO::FETCH_ASSOC);
+
+    else:
+        $keywrdw = false;
+		endif;
+
 ?>
 
 <!DOCTYPE html>
@@ -273,6 +289,29 @@ if(isset($_POST['search'])){
 															<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
 															<label class="form-check-label" for="catson2"> Son World</label>
 														</div>
+													</div>
+													<div class="form-group">
+														<label for="keywordnew"><b>Associer un ou plusieurs mot(s) clé(s)</b></label>
+														<input
+															name="keywordnew"  
+															type="text"
+															class="form-control"
+															id="keywords"
+															placeholder="Entrer un ou plusieurs mot(s) clé(s)"
+														/>
+													</div>
+													<div class="form-group">
+														<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
+														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
+															<option disabled><b>Mots Clés FR</b></option>
+															<?php foreach ($keywrdfr as $keywfr):?>
+															<option><?php echo $keywfr['Nom'] ?></option>
+															<?php endforeach ?>
+															<option disabled><b>Mots Clés WORLD</b></option>
+															<?php foreach ($keywrdw as $keyww):?>
+															<option><?php echo $keyww['Nom']?></option>
+															<?php endforeach ?>
+														</select>
 													</div>
 												</div>
 												<div class="modal-footer">

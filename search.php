@@ -8,15 +8,17 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? ");
+$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
 $stmt->execute([
+	"%" . $_POST['search'] . "%",
 	"%" . $_POST['search'] . "%"
 ]);
 
 $resultsfr = $stmt->fetchAll();
 
-$stmtw = $pdo->prepare("SELECT * FROM `soundw` WHERE `Nom` LIKE ? ");
+$stmtw = $pdo->prepare("SELECT * FROM `soundw` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
 $stmtw->execute([
+	"%" . $_POST['search'] . "%",
 	"%" . $_POST['search'] . "%"
 ]);
 
