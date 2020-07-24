@@ -50,14 +50,14 @@ if(isset($_POST['search'])){
 	require "search.php";
 }
 
-$keywordsfr = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "FR"');
+$keywordsfr = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "FR" ORDER BY Nom ASC');
     if($keywordsfr):
 				$keywrdfr = $keywordsfr->fetchAll(PDO::FETCH_ASSOC);
     else:
         $keywrdfr = false;
 		endif;
 
-$keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"');
+$keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD" ORDER BY Nom ASC');
 
     if($keywordsw):
 				$keywrdw = $keywordsw->fetchAll(PDO::FETCH_ASSOC);
@@ -65,6 +65,8 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
     else:
         $keywrdw = false;
 		endif;
+
+require "addsound.php";
 
 ?>
 
@@ -84,16 +86,20 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 		<title>Soundboard</title>
 	</head>
 	<body>
+
+					<!--######################### HEADER #########################-->
+
 		<header class="container-fluid">
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
 
-		<?php
+				
 
-				######################### recherche fr #########################
-
+			<?php
+			######################### recherche fr #########################
 			if(isset($_POST['search'])){
 				if(count($resultsfr)> 0){?>
+				
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
 						<div class= "col-8">
@@ -114,8 +120,8 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 					</div>
 				</nav>
 				<section>
-					<article>
-						<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="100" width="100"> Sons FR <img src="img/ecufr.png" height="100" width="100"></h2>
+					<article class="fr">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -159,8 +165,8 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 							</div>
 						</nav>
 						<section>
-							<article>
-								<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
+							<article class="wrld">
+								<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col">
@@ -205,11 +211,14 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 							</form>
 						</div>
 					</nav>
-					<section  class="container-fluid">
+					<section class="container-fluid">
+						<article id="nosearch">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 						<div id="noresults">
 						<?php echo('Aucun son trouvé !');
 							?>
 						</div>
+					</article>
 					</section>
 					<?php
 					}
@@ -303,6 +312,7 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 													<div class="form-group">
 														<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
 														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
+															<option></option>
 															<option disabled><b>Mots Clés FR</b></option>
 															<?php foreach ($keywrdfr as $keywfr):?>
 															<option><?php echo $keywfr['Nom'] ?></option>
@@ -404,7 +414,7 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 				</div>
 			</nav>
 			<section>
-				<article>
+				<article class="fr">
 					<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="100" width="100"> Sons FR <img src="img/ecufr.png" height="100" width="100"></h2>
 					<div class="container-fluid">
 						<div class="row">
@@ -429,7 +439,7 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD"')
 				<div id="btnfr" class="container-fluid">
 					<a href="#top" id="myBtnfr2top" title="Go to top"> GO UP <i class="fas fa-chevron-up"></i></a> 
 				</div>
-				<article>
+				<article class="wrld">
 					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
 					<div class="container-fluid">
 						<div class="row">

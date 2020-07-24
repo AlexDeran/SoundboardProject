@@ -45,7 +45,7 @@ header {
 }
 
 #sndfr {
-	background-image: url(../img/french-flag-2695008_1920.jpg);
+	background-image: url(../img/france-flag-1058699_1280.jpg);
 	background-position: center;
 }
 
@@ -57,12 +57,8 @@ header {
 /*nav*/
 .gestsnd {
 	padding-top: 0.9em;
-	border: black solid;
-	border-radius: 1.5em;
 	margin-bottom: 24px;
 	margin-left: 4%;
-	background-image: url(../img/audience-1850119_1920.jpg);
-	background-position: center;
 }
 #get2sw {
 	background-color: burlywood;
@@ -91,10 +87,23 @@ header {
 }
 
 article {
-	background-image: url(../img/audience-1853662_1920.jpg);
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
+}
+
+.fr {
+	background: rgb(0, 87, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 87, 255, 1) 0%,
+		rgb(255, 255, 255) 50%,
+		rgba(255, 0, 0, 1) 100%
+	);
+}
+
+.wrld {
+	background-image: url(../img/Collection-national-flags.png);
 }
 
 #sndname {
@@ -187,6 +196,12 @@ footer {
 	margin-left: 3%;
 }
 
+#sndsearch {
+	padding: 0.2em;
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+}
+
 .results {
 	text-align: center;
 	margin-bottom: 2%;
@@ -208,18 +223,17 @@ footer {
 	background-color: darkred;
 }
 
-#noresults {
+#nosearch {
 	background-image: url(../img/the-road-815297_1920.jpg);
 	background-position: center;
-	font-size: 5em;
-	line-height: 4;
+}
+#noresults {
+	font-size: 4.9em;
+	line-height: 3;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: white;
 	text-align: center;
-	margin-left: 1%;
-	margin-right: 10%;
-	margin-top: 2%;
 }
 
 #myBtnfr2top {
@@ -239,3 +253,17 @@ footer {
 a:hover {
 	text-decoration: none;
 }
+
+/* .alert-dismissible.fade.show {
+	text-align: center;
+	line-height: 2;
+	font-size: 1.5em;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	background-color: darkred;
+	color: white;
+}
+
+span {
+	color: white;
+} */
