@@ -87,16 +87,16 @@ require "addsound.php";
 	</head>
 	<body>
 
-					<!--######################### HEADER #########################-->
+		<!--############################################### HEADER ###############################################-->
 
 		<header class="container-fluid">
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
 
-				
-
 			<?php
-			######################### recherche globale #########################
+
+	############################################### RECHERCHE GLOBALE e###############################################
+
 			if(isset($_POST['search'])){
 				if(count($resultsfr)> 0 && count($resultsw) > 0) {?>
 				
@@ -138,33 +138,36 @@ require "addsound.php";
 									<?php endforeach;?>
 								</div>
 							</div>
-						</article>
-						<article class="wrldsearch">
-								<div class="container-fluid">
-									<div class="row">
-										<div class="col">
-												<?php foreach ($resultsw as $rw): ?>
-												<div class="contsndbox">
-													<div id="sndbox">
-														<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
-													</div>
-													<audio controls>
-														<source src="SBP/SWLD/<?= $rw["Son"]?>" type="audio/mpeg">
-													</audio>
-												</div>
-											</div>
-											<?php endforeach;?>
+						</div>
+					</article>
+					<article class="wrldsearch">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsw as $rw): ?>
+									<div class="contsndbox world">
+										<div id="sndbox">
+											<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
 										</div>
+										<audio controls>
+											<source src="SBP/SWLD/<?= $rw["Son"]?>" type="audio/mpeg">
+										</audio>
 									</div>
 								</div>
-							</article>
-					</section>
-					<?php }
+								<?php endforeach;?>
+							</div>
+						</div>
+					</article>
+				</section>
+				<div id="btnfr" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+				<?php }
 
-								######################### recherche fr #########################
+		################################################ RECHERCHE FR ###############################################
 
-					elseif(count($resultsfr)> 0 && count($resultsw) == 0){ ?>
-						<nav class="container-fluid">
+				elseif(count($resultsfr)> 0 && count($resultsw) == 0){ ?>
+				<nav class="container-fluid">
 					<div id="navbox" class="row">
 						<div class= "col-8">
 							<div class="container-fluid">
@@ -184,29 +187,33 @@ require "addsound.php";
 					</div>
 				</nav>
 				<section>
-					<article class="frsearch">
+					<article class="fr fronly">
 						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
 									<?php foreach ($resultsfr as $r):?>
-										<div class="contsndbox fra">
-											<div id="sndbox">
-												<div class="col" id="sndname"><?php echo($r['Nom']) ?>
-												</div>
-												<audio controls>
-													<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
-												</audio>
+									<div class="contsndbox fra">
+										<div id="sndbox">
+											<div class="col" id="sndname"><?php echo($r['Nom']) ?>
 											</div>
+											<audio controls>
+											<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+											</audio>
 										</div>
-									<?php endforeach;?>
+									</div>
+								<?php endforeach;?>
 								</div>
 							</div>
-						</article>
-					</section>
-					<?php }
+						</div>
+					</article>
+				</section>
+				<div id="btnfr" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+				<?php }
 
-									######################### recherche world #########################
+	############################################### RECHERCHE WORLD ###############################################
 
 					elseif(count($resultsw)> 0 && count($resultsfr) == 0){ ?>
 						<nav class="container-fluid">
@@ -229,13 +236,13 @@ require "addsound.php";
 							</div>
 						</nav>
 						<section>
-							<article class="wrld">
+							<article class="wrld wrldonly">
 								<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 								<div class="container-fluid">
 									<div class="row">
 										<div class="col">
 												<?php foreach ($resultsw as $rw): ?>
-												<div class="contsndbox">
+												<div class="contsndbox world">
 													<div id="sndbox">
 														<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
 													</div>
@@ -250,10 +257,13 @@ require "addsound.php";
 								</div>
 							</article>
 						</section>
+						<div id="btnfr" class="container-fluid">
+							<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+						</div>
 						<?php 
-						} 
+							} 
 
-												######################### no sound #########################
+					############################################### NO SOUND ###############################################
 
 						else{?>
 						<nav class="container-fluid">
@@ -278,17 +288,16 @@ require "addsound.php";
 					<section class="container-fluid">
 						<article id="nosearch">
 						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
-						<div id="noresults">
-						<?php echo('Aucun son trouvé !');
-							?>
-						</div>
-					</article>
+							<div id="noresults">
+								<?php echo('Aucun son trouvé !');
+									?>
+							</div>
+						</article>
 					</section>
 					<?php
 					}
 				}
-
-				######################### normal page (no search) #########################
+ ############################################# NORMAL PAGE (NO SEARCH) #############################################
 
 				else{?>
 				<nav class="container-fluid">
@@ -305,7 +314,8 @@ require "addsound.php";
 								</button>
 							</div>
 
-								<!-- Modal -->
+ <!-- ############################################### MODAL ADD ############################################### -->
+
 								<div
 									class="modal fade"
 									id="exampleModalCenter"
@@ -373,19 +383,26 @@ require "addsound.php";
 															placeholder="Entrer un ou plusieurs mot(s) clé(s)"
 														/>
 													</div>
-													<div class="form-group">
-														<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
-														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
-															<option></option>
-															<option disabled><b>Mots Clés FR</b></option>
-															<?php foreach ($keywrdfr as $keywfr):?>
-															<option><?php echo $keywfr['Nom'] ?></option>
-															<?php endforeach ?>
-															<option disabled><b>Mots Clés WORLD</b></option>
-															<?php foreach ($keywrdw as $keyww):?>
-															<option><?php echo $keyww['Nom']?></option>
-															<?php endforeach ?>
-														</select>
+													<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
+													<div class="form-row">
+														<div class="form-group col-md-6">
+															<label for="exampleFormControlSelect1"><b>FR</b></label>
+															<select name="keywords" class="form-control" id="exampleFormControlSelect1">
+																<option></option>
+																<?php foreach ($keywrdfr as $keywfr):?>
+																<option><?php echo $keywfr['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-6">
+															<label for="exampleFormControlSelect1"><b>WORLD</b></label>
+															<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
+																<option></option>
+																<?php foreach ($keywrdw as $keyww):?>
+																<option><?php echo $keyww['Nom']?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
 													</div>
 												</div>
 												<div class="modal-footer">
@@ -411,7 +428,8 @@ require "addsound.php";
 									</button>
 								</div>
 
-								<!-- Modal -->
+<!-- ############################################### MODAL SUPPR ############################################### -->
+
 								<div
 									class="modal fade"
 									id="exampleModalCenter3"
@@ -437,18 +455,26 @@ require "addsound.php";
 											</div>
 											<form action="supprsound.php" class="form" role="form" method="POST">
 												<div class="modal-body">
-													<div class="form-group">
-														<label for="inputson"><b>Choisir le son à supprimer</b></label>
-														<select id="inputson" name="supprsnd" class="form-control">
-															<option disabled><b>SONS FR</b></option>
-															<?php foreach ($lesnom as $allnoms):?>
-															<option><?php echo $allnoms['Nom'] ?></option>
-															<?php endforeach ?>
-															<option disabled><b>SONS WORLD</b></option>
-															<?php foreach ($lesnomw as $allnomsw):?>
-															<option><?php echo $allnomsw['Nom'] ?></option>
-															<?php endforeach ?>
-														</select>
+													<label for="form-row"><b>Choisir le son à supprimer</b></label>
+													<div class="form-row">
+														<div class="form-group col-md-6">
+															<label for="inputson"><b>FR</b></label>
+															<select id="inputson" name="supprsnd" class="form-control">
+																<option></option>
+																<?php foreach ($lesnom as $allnoms):?>
+																<option><?php echo $allnoms['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-6">
+															<label for="inputsonw"><b>WORLD</b></label>
+															<select id="inputsonw" name="supprsndw" class="form-control">
+																<option></option>
+																<?php foreach ($lesnomw as $allnomsw):?>
+																<option><?php echo $allnomsw['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
 													</div>
 												</div>
 												<div class="modal-footer">
@@ -464,6 +490,9 @@ require "addsound.php";
 									</div>
 								</div>
 							</div>
+
+	<!-- ############################################### SEARCHBAR ############################################### -->
+
 							<div id="searchnworld" class="col-3">
 								<form id="search" action="index.php" class="form-inline my-2 my-lg-0" method="POST">
 									<input id="searchbox" class="form-control mr-sm-2" type="search"
@@ -477,6 +506,9 @@ require "addsound.php";
 					</div>
 				</div>
 			</nav>
+
+	<!-- ############################################### SOUND FR ############################################### -->
+
 			<section>
 				<article class="fr">
 					<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="100" width="100"> Sons FR <img src="img/ecufr.png" height="100" width="100"></h2>
@@ -501,15 +533,18 @@ require "addsound.php";
 					</div>
 				</article>
 				<div id="btnfr" class="container-fluid">
-					<a href="#top" id="myBtnfr2top" title="Go to top"> GO UP <i class="fas fa-chevron-up"></i></a> 
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
 				</div>
+
+ <!-- ############################################## SOUND WORLD ############################################### -->
+
 				<article class="wrld">
 					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
 									<?php foreach ($lenomw as $lesonw): ?>
-									<div class="contsndbox">
+									<div class="contsndbox world">
 										<div id="sndbox">
 											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
 										</div>
@@ -526,9 +561,11 @@ require "addsound.php";
 			</section>
 			<?php }?>
 			<hr>
-	<footer>Bravo à toi, tu es en bas.
-			<a href="#top" id="myBtn" title="Go to top">Tu remontes ou j'te remonte ?</a> 
-	</footer>
+
+	<!-- ############################################### FOOTER ############################################### -->
+
+	<footer>Bravo à toi, tu es en bas.</footer>
+	<script src="js/app.js"></script>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

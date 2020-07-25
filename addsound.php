@@ -17,12 +17,16 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 	$snd = ($_FILES['snd']['name']);
 	$catsnd = ($_POST['catsnd']);
 
+				################# SON FR ############################
+
+					################# COUNT SON ############################
+
 	if($catsnd == 'Son FR'){
 		$verifsnd = $pdo->prepare("SELECT COUNT(*) FROM soundfr WHERE Nom = :nom OR Son = :snd");
 		$verifsnd->bindParam(':nom',$nom,PDO::PARAM_STR);
 		$verifsnd->bindParam(':snd',$snd,PDO::PARAM_STR);
 		$verifsnd->execute();
-		$result = $verifsnd->fetchColumn();
+		$resultsndfr = $verifsnd->fetchColumn();
 
 		if($resultsndfr > 0){
 			$end = false;
@@ -31,6 +35,8 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				
 		else{
 			
+						################# COUNT NEW KEYW ############################
+
 			if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
 				$newkeyw = htmlspecialchars($_POST['keywordnew']);
 				$verifkeyw = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
@@ -42,12 +48,18 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$resultat=$error;
 					header("Location:index.php");
 				}
+
+								################# INSERT NEW KEYW ############################
+
 				else{
 					$catkeyw = "FR";
 					$addkeywfr = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
 					$addkeywfr->bindParam(':keynom',$newkeyw,PDO::PARAM_STR);
 					$addkeywfr->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
 					$addkeywfr->execute();
+
+						################# INSERT SON + KEYW ############################
+
 					$uploaddir = 'SBP/SFR/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd,:keyw)");
@@ -55,13 +67,13 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
 					$addsndfr->execute();
-					$end = true;
 					header("Location:index.php");
 					}
 				
+							################# INSERT SON SI KEYW EXISTE DEJA ############################
 
 			}
-			elseif(isset($_POST['keywords']) && !empty($_POST['keywords'])){
+			elseif(isset($_POST['keywords'])){
 				$keywrd = $_POST['keywords'];
 				$uploaddir = 'SBP/SFR/';
 				$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
@@ -70,11 +82,14 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
 				$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
 				$addsndfr->execute();
-				$end = true;
 				header("Location:index.php");
 			}	
 		}
 	}
+
+		################# SON WORLD ############################
+
+			################# COUNT SON ############################
 
 	else{
 		$verifsndw = $pdo->prepare("SELECT COUNT(*) FROM soundw WHERE Nom = :nom OR Son = :snd");
@@ -90,6 +105,8 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						
 		else{
 
+			################# COUNT NEW KEYW ############################
+
 			if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
 				$newkeyw = htmlspecialchars($_POST['keywordnew']);
 				$verifkeyw = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
@@ -103,11 +120,17 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				}
 
 				else{
+
+							################# INSERT NEW KEYW ############################
+
 					$catkeyw = "WORLD";
 					$addkeywr = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
 					$addkeywr->bindParam(':keynom',$newkeyw,PDO::PARAM_STR);
 					$addkeywr->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
 					$addkeywr->execute();
+
+							################# INSERT SON + KEYW ############################
+
 					$uploaddir = 'SBP/SWLD/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
@@ -115,13 +138,14 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndw->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
 					$addsndw->execute();
-					$end = true;
 					header("Location:index.php");
 				}
-		
 			}
-			elseif(isset($_POST['keywords']) && !empty($_POST['keywords'])){
-				$keywrd = $_POST['keywords'];
+
+				################# INSERT SON SI KEYW EXISTE DEJA ############################
+
+			elseif(isset($_POST['keywordsw'])){
+				$keywrd = $_POST['keywordsw'];
 				$uploaddir = 'SBP/SWLD/';
 				$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 				$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
@@ -131,8 +155,6 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$addsndw->execute();
 				header("Location:index.php");
 			}
-
-		
 		};
 	}
 };

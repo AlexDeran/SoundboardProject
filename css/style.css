@@ -1,11 +1,32 @@
+/* ############################################### BODY ############################################### */
+
 body {
 	background-image: url(../img/noelvisspk.jpg);
 	background-position: center;
 }
 
-a#top:hover {
+a:hover {
 	text-decoration: none;
 }
+
+#myBtnfr2top {
+	background-color: crimson; /* Set a background color */
+	font-size: 29px; /* Increase font size */
+	display: none; /* Hidden by default */
+	position: fixed; /* Fixed/sticky position */
+	bottom: 20px; /* Place the button at the bottom of the page */
+	right: 30px; /* Place the button 30px from the right */
+	z-index: 99; /* Make sure it does not overlap */
+	border: none; /* Remove borders */
+	outline: none; /* Remove outline */
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	padding: 8px; /* Some padding */
+	border-radius: 10px; /* Rounded corners */
+	font-size: 20px; /* Increase font size */
+}
+
+/* ############################################### HEADER ############################################### */
 
 header h1 {
 	font-size: 80px;
@@ -17,6 +38,10 @@ header {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
 	margin-bottom: 2%;
+}
+
+a#top:hover {
+	text-decoration: none;
 }
 
 #top,
@@ -33,28 +58,13 @@ header {
 	text-align: center;
 }
 
+/* ############################################### NAV ############################################### */
+
 #navbox {
 	display: flex;
 	flex-direction: row;
 }
 
-.sndtitle {
-	font-size: 60px;
-	border-radius: 20px 20px 0px 0px;
-	border-bottom: solid black;
-}
-
-#sndfr {
-	background-image: url(../img/france-flag-1058699_1280.jpg);
-	background-position: center;
-}
-
-#sndw {
-	background-image: url(../img/earth-1149733_1920.jpg);
-	background-position: center;
-}
-
-/*nav*/
 .gestsnd {
 	padding-top: 0.9em;
 	margin-bottom: 24px;
@@ -80,38 +90,73 @@ header {
 	text-transform: uppercase;
 }
 
+#searchnworld {
+	padding-top: 1%;
+	margin-left: 3%;
+}
+
+#btnfr {
+	text-align: right;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+#myBtn2,
+#myBtnfr2top {
+	border: solid black;
+	outline: none;
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	border-radius: 10px; /* Rounded corners */
+	font-family: 'Raleway', sans-serif;
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+#myBtnfr2top:hover {
+	background-color: darkred; /* Add a dark-grey background on hover */
+}
+
+#myBtn2 {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: top left;
+	font-size: 2em; /* Increase font size */
+	line-height: 3;
+	margin-bottom: 2%;
+	margin-top: 4%;
+	margin-right: 4%;
+	text-align: center;
+}
+
+#myBtn2 a {
+	color: white;
+}
+
+/* ############################################### H2 ############################################### */
+
+.sndtitle {
+	font-size: 60px;
+	border-radius: 20px 20px 0px 0px;
+	border-bottom: solid black;
+	margin-bottom: 1em;
+}
+
+#sndfr {
+	background-image: url(../img/france-flag-1058699_1280.jpg);
+	background-position: center;
+}
+
+#sndw {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: bottom left;
+}
+
+/* ############################################### ARTICLE ############################################### */
+
 .col {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-}
-
-.wrldsearch {
-	padding-top: 1em;
-	margin-left: 1em;
-	margin-right: 1em;
-	border-left: solid black;
-	border-bottom: solid black;
-	border-right: solid black;
-	background-image: url(../img/Collection-national-flags.png);
-	border-radius: 0em 0em 1.5em 1.5em;
-}
-
-.frsearch {
-	border-radius: 1.5em 1.5em 0em 0em;
-	margin-left: 1em;
-	margin-right: 1em;
-	border-top: solid black;
-	border-right: solid black;
-	border-left: solid black;
-	background: rgb(0, 87, 255);
-	background: rgb(0, 48, 145);
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		rgb(255, 255, 255) 50%,
-		rgb(173, 2, 2) 100%
-	);
 }
 
 .fr {
@@ -138,11 +183,17 @@ header {
 }
 
 .wrld {
-	background-image: url(../img/Collection-national-flags.png);
+	background-image: url(../img/earth-1149733_1920.jpg);
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
 }
+
+.world {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: right;
+}
+/* ############################################### SON RELATED ############################################### */
 
 #sndname {
 	justify-content: center;
@@ -168,56 +219,7 @@ header {
 	margin-bottom: 2%;
 }
 
-footer {
-	text-align: center;
-	font-size: 40px;
-	color: white;
-	display: flex;
-	justify-content: space-around;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
-	line-height: 72px;
-	text-transform: uppercase;
-	padding: 1%;
-}
-
-#myBtn,
-#myBtn2,
-#myBtnfr2top {
-	border: solid black;
-	outline: none;
-	color: white; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	border-radius: 10px; /* Rounded corners */
-	font-family: 'Raleway', sans-serif;
-	font-weight: 900;
-	text-transform: uppercase;
-}
-
-#myBtn {
-	background-color: crimson; /* Set a background color */
-	font-size: 20px; /* Increase font size */
-}
-
-#myBtn:hover,
-#myBtnfr2top:hover {
-	background-color: darkred; /* Add a dark-grey background on hover */
-}
-
-#myBtn2 {
-	background-image: url(../img/earth-1365995_19204545.jpg);
-	background-position: right;
-	font-size: 2em; /* Increase font size */
-	line-height: 3;
-	margin-bottom: 2%;
-	margin-top: 4%;
-	margin-right: 4%;
-	text-align: center;
-}
-
-#myBtn2 a {
-	color: white;
-}
+/* ############################################### SEARCH ############################################### */
 
 #searchbox {
 	padding-right: 20%;
@@ -227,15 +229,57 @@ footer {
 	padding-bottom: 1%;
 }
 
-#searchnworld {
-	padding-top: 1%;
-	margin-left: 3%;
+.wrldsearch {
+	padding-top: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-left: solid black;
+	border-bottom: solid black;
+	border-right: solid black;
+	background-image: url(../img/earth-1149733_1920.jpg);
+	border-radius: 0em 0em 1.5em 1.5em;
+}
+
+.frsearch {
+	border-radius: 1.5em 1.5em 0em 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-top: solid black;
+	border-right: solid black;
+	border-left: solid black;
+	background: rgb(0, 87, 255);
+	background: linear-gradient(
+		90deg,
+		rgba(0, 87, 255, 1) 0%,
+		rgb(255, 255, 255) 50%,
+		rgba(255, 0, 0, 1) 100%
+	);
+}
+.fronly {
+	border-radius: 0em 0em 1.5em 1.5em;
+}
+
+.wrldonly {
+	border-radius: 1.5em 1.5em 0em 0em;
 }
 
 #sndsearch {
 	padding: 0.2em;
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
+}
+
+#nosearch {
+	background-image: url(../img/the-road-815297_1920.jpg);
+	background-position: center;
+}
+#noresults {
+	font-size: 4.9em;
+	line-height: 3;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
 }
 
 .returnh {
@@ -254,35 +298,19 @@ footer {
 	background-color: darkred;
 }
 
-#nosearch {
-	background-image: url(../img/the-road-815297_1920.jpg);
-	background-position: center;
-}
-#noresults {
-	font-size: 4.9em;
-	line-height: 3;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: white;
+/* ############################################### FOOTER ############################################### */
+
+footer {
 	text-align: center;
-}
-
-#myBtnfr2top {
-	background-color: crimson; /* Set a background color */
-	font-size: 29px; /* Increase font size */
-	padding: 0.5%;
-	margin-top: 2%;
-	margin-bottom: 2%;
-}
-
-#btnfr {
-	text-align: right;
-	margin-top: 2%;
-	margin-bottom: 2%;
-}
-
-a:hover {
-	text-decoration: none;
+	font-size: 40px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	line-height: 72px;
+	text-transform: uppercase;
+	padding: 1%;
 }
 
 /* .alert-dismissible.fade.show {
