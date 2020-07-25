@@ -86,10 +86,32 @@ header {
 	justify-content: space-between;
 }
 
-article {
-	border-radius: 1.5em;
-	margin: 1em;
-	border: solid black;
+.wrldsearch {
+	padding-top: 1em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-left: solid black;
+	border-bottom: solid black;
+	border-right: solid black;
+	background-image: url(../img/Collection-national-flags.png);
+	border-radius: 0em 0em 1.5em 1.5em;
+}
+
+.frsearch {
+	border-radius: 1.5em 1.5em 0em 0em;
+	margin-left: 1em;
+	margin-right: 1em;
+	border-top: solid black;
+	border-right: solid black;
+	border-left: solid black;
+	background: rgb(0, 87, 255);
+	background: rgb(0, 48, 145);
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		rgb(255, 255, 255) 50%,
+		rgb(173, 2, 2) 100%
+	);
 }
 
 .fr {
@@ -100,10 +122,26 @@ article {
 		rgb(255, 255, 255) 50%,
 		rgba(255, 0, 0, 1) 100%
 	);
+	border-radius: 1.5em;
+	margin: 1em;
+	border: solid black;
+}
+
+.fra {
+	background: rgb(0, 48, 145);
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		rgb(255, 255, 255) 50%,
+		rgb(173, 2, 2) 100%
+	);
 }
 
 .wrld {
 	background-image: url(../img/Collection-national-flags.png);
+	border-radius: 1.5em;
+	margin: 1em;
+	border: solid black;
 }
 
 #sndname {
@@ -123,12 +161,10 @@ article {
 	background-color: rgb(236, 214, 184);
 }
 
-#contsndbox {
+.contsndbox {
 	padding: 0.5%;
 	border-radius: 5px;
 	border: solid black;
-	background-image: url(../img/wood-2679551_1920.jpg);
-	background-position: center;
 	margin-bottom: 2%;
 }
 
@@ -200,11 +236,6 @@ footer {
 	padding: 0.2em;
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
-}
-
-.results {
-	text-align: center;
-	margin-bottom: 2%;
 }
 
 .returnh {

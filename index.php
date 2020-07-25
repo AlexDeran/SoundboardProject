@@ -12,38 +12,38 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 
-    if($nom):
+		if($nom):
 				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
 
-    else:
-        $lenom = false;
+		else:
+				$lenom = false;
 		endif;
 
 $onlynom = $pdo->query('SELECT Nom FROM soundfr');
 
-    if($onlynom):
+		if($onlynom):
 				$lesnom = $onlynom->fetchAll(PDO::FETCH_ASSOC);
 
-    else:
-        $lesnom = false;
+		else:
+				$lesnom = false;
 		endif;
 
 $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
 
-    if($nomw):
+		if($nomw):
 				$lenomw = $nomw->fetchAll(PDO::FETCH_ASSOC);
 
-    else:
-        $lenomw = false;
+		else:
+				$lenomw = false;
 		endif;
 
 $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 
-    if($onlynomw):
+		if($onlynomw):
 				$lesnomw = $onlynomw->fetchAll(PDO::FETCH_ASSOC);
 
-    else:
-        $lesnomw = false;
+		else:
+				$lesnomw = false;
 		endif;
 
 if(isset($_POST['search'])){
@@ -51,19 +51,19 @@ if(isset($_POST['search'])){
 }
 
 $keywordsfr = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "FR" ORDER BY Nom ASC');
-    if($keywordsfr):
+		if($keywordsfr):
 				$keywrdfr = $keywordsfr->fetchAll(PDO::FETCH_ASSOC);
-    else:
-        $keywrdfr = false;
+		else:
+				$keywrdfr = false;
 		endif;
 
 $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD" ORDER BY Nom ASC');
 
-    if($keywordsw):
+		if($keywordsw):
 				$keywrdw = $keywordsw->fetchAll(PDO::FETCH_ASSOC);
 
-    else:
-        $keywrdw = false;
+		else:
+				$keywrdw = false;
 		endif;
 
 require "addsound.php";
@@ -96,9 +96,9 @@ require "addsound.php";
 				
 
 			<?php
-			######################### recherche fr #########################
+			######################### recherche globale #########################
 			if(isset($_POST['search'])){
-				if(count($resultsfr)> 0){?>
+				if(count($resultsfr)> 0 && count($resultsw) > 0) {?>
 				
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
@@ -120,13 +120,77 @@ require "addsound.php";
 					</div>
 				</nav>
 				<section>
-					<article class="fr">
+					<article class="frsearch">
 						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
 									<?php foreach ($resultsfr as $r):?>
-										<div id="contsndbox">
+										<div class="contsndbox fra">
+											<div id="sndbox">
+												<div class="col" id="sndname"><?php echo($r['Nom']) ?>
+												</div>
+												<audio controls>
+													<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+												</audio>
+											</div>
+										</div>
+									<?php endforeach;?>
+								</div>
+							</div>
+						</article>
+						<article class="wrldsearch">
+								<div class="container-fluid">
+									<div class="row">
+										<div class="col">
+												<?php foreach ($resultsw as $rw): ?>
+												<div class="contsndbox">
+													<div id="sndbox">
+														<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
+													</div>
+													<audio controls>
+														<source src="SBP/SWLD/<?= $rw["Son"]?>" type="audio/mpeg">
+													</audio>
+												</div>
+											</div>
+											<?php endforeach;?>
+										</div>
+									</div>
+								</div>
+							</article>
+					</section>
+					<?php }
+
+								######################### recherche fr #########################
+
+					elseif(count($resultsfr)> 0 && count($resultsw) == 0){ ?>
+						<nav class="container-fluid">
+					<div id="navbox" class="row">
+						<div class= "col-8">
+							<div class="container-fluid">
+								<a class="btn btn-success btn-lg btn-block btnsnd"
+									href="index.php"
+									role="button"
+								>
+								Retour à l'accueil
+								</a>
+							</div>
+						</div>
+						<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+							<input id="searchbox" class="form-control mr-sm-2" type="search"
+								name="search" placeholder="Rechercher un son" aria-label="Search" required>
+							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+						</form>
+					</div>
+				</nav>
+				<section>
+					<article class="frsearch">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsfr as $r):?>
+										<div class="contsndbox fra">
 											<div id="sndbox">
 												<div class="col" id="sndname"><?php echo($r['Nom']) ?>
 												</div>
@@ -144,7 +208,7 @@ require "addsound.php";
 
 									######################### recherche world #########################
 
-					elseif(count($resultsw)> 0){ ?>
+					elseif(count($resultsw)> 0 && count($resultsfr) == 0){ ?>
 						<nav class="container-fluid">
 							<div id="navbox" class="row">
 								<div class= "col-8">
@@ -171,7 +235,7 @@ require "addsound.php";
 									<div class="row">
 										<div class="col">
 												<?php foreach ($resultsw as $rw): ?>
-												<div id="contsndbox">
+												<div class="contsndbox">
 													<div id="sndbox">
 														<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
 													</div>
@@ -421,7 +485,7 @@ require "addsound.php";
 							<div class="col">
 								<?php
 								foreach ($lenom as $leson):?>
-								<div id="contsndbox">
+								<div class="contsndbox fra">
 									<div id="sndbox">
 										<div class="col" id="sndname">
 											<?php echo($leson['Nom']) ?>
@@ -445,7 +509,7 @@ require "addsound.php";
 						<div class="row">
 							<div class="col">
 									<?php foreach ($lenomw as $lesonw): ?>
-									<div id="contsndbox">
+									<div class="contsndbox">
 										<div id="sndbox">
 											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
 										</div>
