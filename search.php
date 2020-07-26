@@ -6,6 +6,7 @@ if(!$pdo){
 		echo "Erreur de connexion à la base de données.";
 }
 
+
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
@@ -23,5 +24,7 @@ $stmtw->execute([
 ]);
 
 $resultsw = $stmtw->fetchAll();
+
+
 
 ?>

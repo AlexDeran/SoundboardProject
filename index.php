@@ -100,24 +100,22 @@ require "addsound.php";
 			if(isset($_POST['search'])){
 				if(count($resultsfr)> 0 && count($resultsw) > 0) {?>
 				
-				<nav class="container-fluid">
-					<div id="navbox" class="row">
-						<div class= "col-8">
-							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd"
-									href="index.php"
-									role="button"
-								>
-								Retour à l'accueil
-								</a>
-							</div>
+				<nav id="navbox" class="row">
+					<div class= "col-8">
+						<div class="container-fluid">
+							<a class="btn btn-success btn-lg btn-block btnsnd returnh"
+								href="index.php"
+								role="button"
+							>
+							Retour à l'accueil
+							</a>
 						</div>
-						<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
-							<input id="searchbox" class="form-control mr-sm-2" type="search"
-								name="search" placeholder="Rechercher un son" aria-label="Search" required>
-							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-						</form>
 					</div>
+					<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+						<input id="searchbox" class="form-control mr-sm-2" type="search"
+							name="search" placeholder="Rechercher un son" aria-label="Search" required>
+						<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+					</form>
 				</nav>
 				<section>
 					<article class="frsearch">
@@ -171,7 +169,7 @@ require "addsound.php";
 					<div id="navbox" class="row">
 						<div class= "col-8">
 							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd"
+								<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 									href="index.php"
 									role="button"
 								>
@@ -220,7 +218,7 @@ require "addsound.php";
 							<div id="navbox" class="row">
 								<div class= "col-8">
 									<div class="container-fluid">
-										<a class="btn btn-success btn-lg btn-block btnsnd"
+										<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 											href="index.php"
 											role="button"
 										>
@@ -270,7 +268,7 @@ require "addsound.php";
 							<div id="navbox" class="row">
 								<div class= "col-8">
 									<div class="container-fluid">
-										<a class="btn btn-success btn-lg btn-block btnsnd"
+							<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 											href="index.php"
 											role="button"
 										>
@@ -287,7 +285,7 @@ require "addsound.php";
 					</nav>
 					<section class="container-fluid">
 						<article id="nosearch">
-						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 							<div id="noresults">
 								<?php echo('Aucun son trouvé !');
 									?>
@@ -302,131 +300,137 @@ require "addsound.php";
 				else{?>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
-						<div class= "gestsnd col-8">
-							<div class="container-fluid">
-								<button
-									type="button"
-									class="btn btn-success btn-lg btn-block btnsnd"
-									data-toggle="modal"
-									data-target="#exampleModalCenter"
-								>
-									Ajouter un son
-								</button>
-							</div>
+						<div class= "gestsnd row container-fluid">
+							<button
+								type="button"
+								class="btn btn-success btn-lg btnsnd col-md-4"
+								data-toggle="modal"
+								data-target="#exampleModalCenter"
+							>
+								Ajouter un son
+							</button>
+						
 
- <!-- ############################################### MODAL ADD ############################################### -->
+<!-- ############################################### MODAL ADD ############################################### -->
 
-								<div
-									class="modal fade"
-									id="exampleModalCenter"
-									tabindex="-1"
-									role="dialog"
-									aria-labelledby="exampleModalCenterTitle"
-									aria-hidden="true"
-								>
-									<div class="modal-dialog modal-dialog-centered" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalCenterTitle">
-													<b>Ajouter un son</b>
-												</h5>
-												<button
-													type="button"
-													class="close"
-													data-dismiss="modal"
-													aria-label="Close"
-												>
-													<span aria-hidden="true">&times;</span>
+							<div
+								class="modal fade"
+								id="exampleModalCenter"
+								tabindex="-1"
+								role="dialog"
+								aria-labelledby="exampleModalCenterTitle"
+								aria-hidden="true"
+							>
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalCenterTitle">
+												<b>Ajouter un son</b>
+											</h5>
+											<button
+												type="button"
+												class="close"
+												data-dismiss="modal"
+												aria-label="Close"
+											>
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<div class="modal-body">
+											<form id="addsnd" action="addsound.php" class="form" role="form" enctype="multipart/form-data" method="POST">
+												<div class="form-group">
+													<label for="soundname"><b>Nom du son</b></label>
+													<input
+														name="nom"  
+														type="text"
+														class="form-control"
+														id="soundname"
+														placeholder="Nom du son"
+														maxlength="25"
+														required
+													/>
+												</div>
+												<div class="form-group">
+													<label for="importsound"><b>Importez le son</b></label>
+													<input
+														type="file"
+														class="form-control-file"
+														id="importsound"
+														name="snd"
+													/>
+												</div>
+												<label for="catsnd"><strong> Quel type de son ?</strong></label>
+												<div id="catsnd" class="form-group">
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
+														<label class="form-check-label" for="catson">Son FR</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
+														<label class="form-check-label" for="catson2"> Son World</label>
+													</div>
+												</div>
+												<div class="form-group">
+													<label for="keywordnew"><b>Associer un ou plusieurs mot(s) clé(s)</b></label>
+													<input
+														name="keywordnew"  
+														type="text"
+														class="form-control"
+														id="keywords"
+														placeholder="Entrer un ou plusieurs mot(s) clé(s)"
+													/>
+												</div>
+												<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
+												<div class="form-row">
+													<div class="form-group col-md-6">
+														<label for="exampleFormControlSelect1"><b>FR</b></label>
+														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
+															<option></option>
+															<?php foreach ($keywrdfr as $keywfr):?>
+															<option><?php echo $keywfr['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-6">
+														<label for="exampleFormControlSelect1"><b>WORLD</b></label>
+														<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
+															<option></option>
+															<?php foreach ($keywrdw as $keyww):?>
+															<option><?php echo $keyww['Nom']?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="submit" class="btn btn-success">
+													Valider
+												</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">
+													Annuler
 												</button>
 											</div>
-											<div class="modal-body">
-												<form id="addsnd" action="addsound.php" class="form" role="form" enctype="multipart/form-data" method="POST">
-													<div class="form-group">
-														<label for="soundname"><b>Nom du son</b></label>
-														<input
-															name="nom"  
-															type="text"
-															class="form-control"
-															id="soundname"
-															placeholder="Nom du son"
-															maxlength="25"
-															required
-														/>
-													</div>
-													<div class="form-group">
-														<label for="importsound"><b>Importez le son</b></label>
-														<input
-															type="file"
-															class="form-control-file"
-															id="importsound"
-															name="snd"
-														/>
-													</div>
-													<label for="catsnd"><strong> Quel type de son ?</strong></label>
-													<div id="catsnd" class="form-group">
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
-															<label class="form-check-label" for="catson">Son FR</label>
-														</div>
-														<div class="form-check form-check-inline">
-															<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
-															<label class="form-check-label" for="catson2"> Son World</label>
-														</div>
-													</div>
-													<div class="form-group">
-														<label for="keywordnew"><b>Associer un ou plusieurs mot(s) clé(s)</b></label>
-														<input
-															name="keywordnew"  
-															type="text"
-															class="form-control"
-															id="keywords"
-															placeholder="Entrer un ou plusieurs mot(s) clé(s)"
-														/>
-													</div>
-													<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
-													<div class="form-row">
-														<div class="form-group col-md-6">
-															<label for="exampleFormControlSelect1"><b>FR</b></label>
-															<select name="keywords" class="form-control" id="exampleFormControlSelect1">
-																<option></option>
-																<?php foreach ($keywrdfr as $keywfr):?>
-																<option><?php echo $keywfr['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-														<div class="form-group col-md-6">
-															<label for="exampleFormControlSelect1"><b>WORLD</b></label>
-															<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
-																<option></option>
-																<?php foreach ($keywrdw as $keyww):?>
-																<option><?php echo $keyww['Nom']?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<button type="submit" class="btn btn-success">
-														Valider
-													</button>
-													<button type="button" class="btn btn-danger" data-dismiss="modal">
-														Annuler
-													</button>
-												</div>
-											</form>
-										</div>
+										</form>
 									</div>
 								</div>
-								<div class="container-fluid">
-									<button
-										type="button"
-										class="btn btn-danger btn-lg btn-block btnsnd"
-										data-toggle="modal"
-										data-target="#exampleModalCenter3"
-									>
-										Supprimer un son
-									</button>
-								</div>
+							</div>
+
+<!-- ############################################# FIN MODAL ADD ############################################### -->
+
+							<button
+									type="button"
+									class="btn btn-danger btn-lg btnsnd col-md-4"
+									data-toggle="modal"
+									data-target="#exampleModalCenter3"
+								>
+									Supprimer un son
+							</button>
+							<form id="search" action="index.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
+								<input id="searchbox" class="form-control mr-sm-2" type="search"
+									name="search" placeholder="Rechercher un son" aria-label="Search" required>
+								<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+							</form>	
+						</div>
 
 <!-- ############################################### MODAL SUPPR ############################################### -->
 
@@ -491,74 +495,30 @@ require "addsound.php";
 								</div>
 							</div>
 
-	<!-- ############################################### SEARCHBAR ############################################### -->
-
-							<div id="searchnworld" class="col-3">
-								<form id="search" action="index.php" class="form-inline my-2 my-lg-0" method="POST">
-									<input id="searchbox" class="form-control mr-sm-2" type="search"
-										name="search" placeholder="Rechercher un son" aria-label="Search" required>
-									<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-								</form>	
-							<div id="myBtn2">
-								<a href="#sndw" title="Go to Sons World">Sons World</a>
+	<!-- ############################################### BOUTONS ############################################### -->
+													
+							<div id="searchnworld" class="row butindex">
+								<form id="showfr" action="soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
+									<input id="frbuttton" class="butcons" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
+								</form>
+								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0 " method="POST">
+									<input id="myBtn2" class="butcons"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
+								</form>
+								<form id="showall" action="allsounds.php" class="form-inline my-2 my-lg-0 " method="POST">
+									<input id="myBtnAll" class="butcons"  type="submit" name="allsnds" value="Tous les sons" title="Voir tous les sons"></input>
+								</form>
 							</div>
-						</div>
+							<div id="searchnworld" class="row">
+								<form id="showwtc" action="" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value="Mhvt th9 cnt ?!" title="ZA WARUDO"></input>
+								</form>
+								<form id="showJDG" action="" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnJDG" class="butcons" type="submit" name="soundjdg" value="J0n9nr dn 9r9ui9r" title="ZA WARUDO"></input>
+								</form>
+							</div>
 					</div>
 				</div>
 			</nav>
-
-	<!-- ############################################### SOUND FR ############################################### -->
-
-			<section>
-				<article class="fr">
-					<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="100" width="100"> Sons FR <img src="img/ecufr.png" height="100" width="100"></h2>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col">
-								<?php
-								foreach ($lenom as $leson):?>
-								<div class="contsndbox fra">
-									<div id="sndbox">
-										<div class="col" id="sndname">
-											<?php echo($leson['Nom']) ?>
-										</div>
-										<audio controls>
-											<source src="SBP/SFR/<?= $leson["Son"]?>" type="audio/mpeg">
-										</audio>
-									</div>
-								</div>
-								<?php endforeach;?>
-							</div>
-						</div>
-					</div>
-				</article>
-				<div id="btnfr" class="container-fluid">
-					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-				</div>
-
- <!-- ############################################## SOUND WORLD ############################################### -->
-
-				<article class="wrld">
-					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
-					<div class="container-fluid">
-						<div class="row">
-							<div class="col">
-									<?php foreach ($lenomw as $lesonw): ?>
-									<div class="contsndbox world">
-										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
-										</div>
-										<audio controls>
-											<source src="SBP/SWLD/<?= $lesonw["Son"]?>" type="audio/mpeg">
-										</audio>
-									</div>
-								</div>
-								<?php endforeach;?>
-							</div>
-						</div>
-					</div>
-				</article>
-			</section>
 			<?php }?>
 			<hr>
 
