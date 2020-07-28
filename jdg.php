@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 session_start();
 //DB login
 
@@ -10,18 +11,17 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if($_POST["soundw"] == "Sons World"){
-
-$nom = $pdo->query('SELECT Nom, Son FROM soundw');
+if($_POST["soundjdg"] == " "){
+  $nom = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "JDG, Joueur du Grenier"');
 
 		if($nom):
-				$lenomw = $nom->fetchAll(PDO::FETCH_ASSOC);
+				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
 
 		else:
-				$lenomw = false;
-		endif;
-
-?>
+				$lenom = false;
+    endif;
+    
+  ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -75,18 +75,20 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundw');
 	<!-- ############################################### SOUND FR ############################################### -->
 
 			<section>
-				<article class="wrld">
-					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
+				<article class="jdg">
+					<h2 class="sndtitle" id="sndjdg">Joueur du Grenier</h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
-									<?php foreach ($lenomw as $lesonw): ?>
-									<div class="contsndbox world">
-										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
+								<?php
+								foreach ($lenom as $leson):?>
+								<div class="contsndbox jou">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($leson['Nom']) ?>
 										</div>
 										<audio controls>
-											<source src="SBP/SWLD/<?= $lesonw["Son"]?>" type="audio/mpeg">
+											<source src="SBP/SFR/<?= $leson["Son"]?>" type="audio/mpeg">
 										</audio>
 									</div>
 								</div>
@@ -94,7 +96,7 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundw');
 							</div>
 						</div>
 					</div>
-				</article>
+        </article>
 			</section>
       <div id="btntop" class="container-fluid">
         <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 

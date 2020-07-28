@@ -66,7 +66,13 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD" O
 				$keywrdw = false;
 		endif;
 
-require "addsound.php";
+ if(isset($_POST['nom'])){
+	require "addsound.php";
+	}
+
+if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
+	require "supprsound.php";
+}
 
 ?>
 
@@ -91,6 +97,7 @@ require "addsound.php";
 		<!--############################################### HEADER ###############################################-->
 
 		<header class="container-fluid">
+					
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
 
@@ -288,8 +295,7 @@ require "addsound.php";
 						<article id="nosearch">
 						<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 							<div id="noresults">
-								<?php echo('Aucun son trouvé !');
-									?>
+								<p>Aucun son trouvé !</p>
 							</div>
 						</article>
 					</section>
@@ -338,7 +344,7 @@ require "addsound.php";
 											</button>
 										</div>
 										<div class="modal-body">
-											<form id="addsnd" action="addsound.php" class="form" role="form" enctype="multipart/form-data" method="POST">
+											<form id="addsnd" action="index.php" class="form" role="form" enctype="multipart/form-data" method="POST">
 												<div class="form-group">
 													<label for="soundname"><b>Nom du son</b></label>
 													<input
@@ -458,7 +464,7 @@ require "addsound.php";
 													<span aria-hidden="true">&times;</span>
 												</button>
 											</div>
-											<form action="supprsound.php" class="form" role="form" method="POST">
+											<form action="index.php" class="form" role="form" method="POST">
 												<div class="modal-body">
 													<label for="form-row"><b>Choisir le son à supprimer</b></label>
 													<div class="form-row">
@@ -500,28 +506,33 @@ require "addsound.php";
 													
 							<div id="searchnworld" class="row butindex">
 								<form id="showfr" action="soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="frbuttton" class="butcons" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
+									<input id="frbuttton" class="butcons container-fluid" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
 								</form>
-								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="myBtn2" class="butcons"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
+								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
+									<input id="myBtn2" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
 								</form>
 								<form id="showall" action="allsounds.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="myBtnAll" class="butcons"  type="submit" name="allsnds" value="Tous les sons" title="Voir tous les sons"></input>
+									<input id="myBtnAll" class="butcons container-fluid"  type="submit" name="allsnds" value="Tous les sons" title="Voir tous les sons"></input>
 								</form>
 							</div>
-							<div id="searchnworld" class="row">
-								<form id="showwtc" action="" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value="Mhvt th9 cnt ?!" title="ZA WARUDO"></input>
+							<div id="smallbuttons" class="row">
+								<form id="showwtc" action="wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value=" " title="What the Cut ?!"></input>
 								</form>
-								<form id="showJDG" action="" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnJDG" class="butcons" type="submit" name="soundjdg" value="J0n9nr dn 9r9ui9r" title="ZA WARUDO"></input>
+								<form id="showJDG" action="jdg.php" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnJDG" class="butcons" type="submit" name="soundjdg" value=" " title="Joueur du Grenier"></input>
+								</form>
+								<form id="show" action="" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnZa" class="butcons" type="submit" name="sound" value="ZA WARUDO" title="Joueur du Grenier"></input>
+								</form>
+								<form id="show" action="" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnUn" class="butcons" type="submit" name="sound" value="Undefined" title="Joueur du Grenier"></input>
 								</form>
 							</div>
 					</div>
 				</div>
 			</nav>
 			<?php }?>
-			<hr>
 
 	<!-- ############################################### FOOTER ############################################### -->
 

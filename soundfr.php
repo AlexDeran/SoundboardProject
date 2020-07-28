@@ -98,7 +98,7 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 					</div>
         </article>
 			</section>
-      <div id="btnfr" class="container-fluid">
+      <div id="btntop" class="container-fluid">
         <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
       </div>
 			<hr>

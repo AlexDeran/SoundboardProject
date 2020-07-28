@@ -1,11 +1,12 @@
 /* ############################################### BODY ############################################### */
 
 body {
-	background-image: url(../img/noelvisspk.jpg);
+	background-image: url(../img/audience-1853662_1920.jpg);
 	background-position: center fixed;
 }
 
-a:hover {
+a:hover,
+a#top:hover {
 	text-decoration: none;
 }
 
@@ -39,10 +40,6 @@ header {
 	padding-bottom: 1%;
 }
 
-a#top:hover {
-	text-decoration: none;
-}
-
 #top,
 .sndtitle,
 .sndquery {
@@ -66,10 +63,6 @@ a#top:hover {
 
 .gestsnd {
 	justify-content: space-around;
-	background-color: #fad961;
-	background-image: linear-gradient(0deg, #fad961 0%, #fc6107 100%);
-
-	background-position: top;
 	padding-top: 1%;
 	padding-bottom: 1%;
 	margin-left: 0%;
@@ -90,27 +83,33 @@ a#top:hover {
 	line-height: 48px;
 	text-transform: uppercase;
 }
-.butindex {
-	margin-top: 3%;
-}
+
 #searchnworld {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	margin-bottom: 2%;
+}
+
+#smallbuttons {
 	flex-direction: row;
 	justify-content: space-around;
 	margin-bottom: 2%;
 }
 
-#btnfr {
+#btntop {
 	text-align: right;
 	margin-top: 2%;
 	margin-bottom: 2%;
+	align-self: stretch;
 }
 
 .butcons {
-	border: solid black;
+	border: none;
 	outline: none;
 	color: white; /* Text color */
 	cursor: pointer; /* Add a mouse pointer on hover */
-	border-radius: 10px; /* Rounded corners */
+	border-radius: 5px; /* Rounded corners */
 	font-family: 'Raleway', sans-serif;
 	font-weight: 900;
 	text-transform: uppercase;
@@ -120,30 +119,17 @@ a#top:hover {
 	background-color: darkred; /* Add a dark-grey background on hover */
 }
 #frbuttton {
-	background-image: url(../img/france-flag-1058699_petit.jpg);
+	background-image: url(../img/banfrance.jpg);
 	background-position: center;
-	font-size: 2.2em; /* Increase font size */
-	line-height: 3;
-	margin-bottom: 2%;
-	margin-top: 4%;
-	margin-right: 4%;
-	text-align: center;
-	padding-left: 2.1em;
-	padding-right: 2.1em;
 	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #myBtn2 {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: top left;
-	font-size: 2.2em; /* Increase font size */
-	line-height: 3;
-	margin-bottom: 2%;
-	margin-top: 4%;
-	margin-right: 4%;
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	text-align: center;
+	background-image: url(../img/earth-1149733_1920.jpg);
+	background-position: center;
+	color: white;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #myBtnW {
@@ -152,21 +138,32 @@ a#top:hover {
 }
 
 #myBtnWTC {
-	background-color: black;
+	background-image: url(../img/WTC.jpg.);
+	background-repeat: no-repeat;
+	background-size: contain;
+	max-width: 100%;
+	max-height: 100%;
+	padding-right: 3.6em;
+	font-size: 4em;
+	padding-bottom: 25%;
 }
 
 #myBtnJDG {
-	background-color: gold;
-	color: dodgerblue;
+	background-image: url(../img/JDG.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-right: 2em;
+	font-size: 6em;
+	padding-bottom: 8%;
 }
 
-#myBtnJDG,
+#myBtn2,
+#frbuttton,
 #myBtnAll,
-#myBtnWTC,
 #myBtnW {
-	font-size: 2.2em; /* Increase font size */
-	line-height: 3;
-	margin-bottom: 2%;
+	font-size: 4em; /* Increase font size */
+	line-height: 1.5;
+	margin-bottom: 0.2em;
 	margin-top: 2%;
 	margin-right: 4%;
 	margin-left: 2%;
@@ -175,18 +172,30 @@ a#top:hover {
 	text-align: center;
 }
 
-#myBtnWTC a,
-#myBtnW a,
-#myBtn2 a {
+a {
 	color: white;
+}
+
+a:hover {
+	color: seashell;
 }
 
 #myBtnAll {
 	background-image: url(../img/speakers2.jpg);
 	background-position: center;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-/* ############################################### H2 ############################################### */
+#myBtnZa,
+#myBtnUn {
+	background-color: black;
+	padding-top: 2em;
+	font-size: 2em;
+	padding-bottom: 8%;
+	line-height: 2.5;
+}
+
+/* ############################################### TITRES ############################################### */
 
 .sndtitle {
 	font-size: 60px;
@@ -211,7 +220,7 @@ a#top:hover {
 	background-position: bottom left;
 }
 
-/* ############################################### ARTICLE ############################################### */
+/* ############################################### ARTICLE ############################################## */
 
 .col {
 	display: flex;
@@ -345,7 +354,7 @@ a#top:hover {
 }
 
 .returnh {
-	margin: 2%;
+	margin-top: 2%;
 	margin-bottom: 3%;
 }
 
@@ -368,16 +377,112 @@ footer {
 	padding: 1%;
 }
 
-/* .alert-dismissible.fade.show {
+.alert {
 	text-align: center;
-	line-height: 2;
+	line-height: 1.5;
 	font-size: 1.5em;
+	font-weight: 700;
 	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-	background-color: darkred;
 	color: white;
+}
+
+.alert-danger {
+	background-color: darkred;
+}
+
+.alert-success {
+	background-color: darkgreen;
 }
 
 span {
 	color: white;
-} */
+}
+
+/* ############################################### WTC ############################################### */
+
+.wtc {
+	background-image: url(../img/WTC.jpg);
+	margin: 1em;
+	border-radius: 1.5em;
+	border: solid black;
+}
+.wat {
+	background-color: white;
+}
+
+#sndwtc {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+}
+
+/* ############################################### ALL ############################################### */
+
+#ButtonsAll {
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 3%;
+}
+
+#myBtnWAll {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: top left;
+	font-size: 2em; /* Increase font size */
+	line-height: 3;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+	text-align: center;
+}
+
+#myBtnWTCAll {
+	background-image: url(../img/WTC.jpg.);
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 8em;
+}
+
+#myBtnJDGAll {
+	background-image: url(../img/JDG.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding-right: 2em;
+	font-size: 8em;
+}
+
+#myBtnZaw,
+#myBtnUnd {
+	background-color: black;
+	padding-top: 2em;
+	font-size: 2em;
+	padding-bottom: 2%;
+	line-height: 1;
+}
+
+/* ############################################### JDG ############################################### */
+
+.jdg {
+	background-image: url(../img/JDG.jpg);
+	margin: 1em;
+	border-radius: 1.5em;
+	border: solid black;
+}
+
+#sndjdg {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+}
+
+.jou {
+	background-color: gold;
+}
+
+#errorkey {
+	cursor: pointer;
+}
+
+#errorkey:hover {
+	color: lightgray;
+}

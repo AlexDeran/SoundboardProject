@@ -30,6 +30,24 @@ $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
 				$lenomw = false;
 		endif;    
 
+$nomwtc = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "Antoine Daniel, WTC, What The Cut"');
+
+		if($nomwtc):
+				$lenomwtc = $nomwtc->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lenomwtc = false;
+    endif;		
+
+ $nomjdg = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "JDG, Joueur du Grenier"');
+
+		if($nomjdg):
+				$lenomjdg = $nomjdg->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lenomjdg = false;
+    endif;
+		
 ?>
 
 <!DOCTYPE html>
@@ -77,19 +95,15 @@ $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
             <input id="searchbox" class="form-control mr-sm-2" type="search"
               name="search" placeholder="Rechercher un son" aria-label="Search" required>
             <button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-        </form>
-        <div class="container-fluid row">
-          <div id="myBtnW" class="butcons">
-            <a href="#sndw" title="Go to Sons World">Sons World</a>
-          </div>
-          <div id="myBtnWTC"class="butcons">
-            <a href="#sndw" title="Go to Sons World">Mhvt th9 cnt ?!</a>
-          </div>
-          <div id="myBtnJDG" class="butcons">
-            <a href="#sndw" title="Go to Sons World">J0n9nr dn 9r9ui9r</a>
-          </div>
-        </div>	
-      </div>
+				</form>
+			</div>
+			<div id="ButtonsAll" class="row">
+				<a href="#sndw" id="myBtnWAll" class="butcons">Sons World</a>
+				<a href="#sndwtc" id="myBtnWTCAll"class="butcons"></a>
+				<a href="#sndjdg" id="myBtnJDGAll" class="butcons"></a>
+				<a href="#sndw" id="myBtnZaw" class="butcons">ZA WARUDO</a>
+				<a href="#sndw" id="myBtnUnd" class="butcons">UNDEFINED</a>
+			</div>	
 		</nav>
 
 	<!-- ############################################### SOUND FR ############################################### -->
@@ -137,8 +151,52 @@ $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
 						</div>
 					</div>
 				</article>
+				<article class="wtc">
+					<h2 class="sndtitle" id="sndwtc">What the Cut ?!</h2>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomwtc as $lesonwtc):?>
+								<div class="contsndbox wat">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonwtc['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/SFR/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="jdg">
+					<h2 class="sndtitle" id="sndjdg">Joueur du Grenier</h2>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomjdg as $lesonjdg):?>
+								<div class="contsndbox jou">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonjdg['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/SFR/<?= $lesonjdg["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+        </article>
 			</section>
-      <div id="btnfr" class="container-fluid">
+      <div id="btntop" class="container-fluid">
         <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
       </div>
 			<hr>

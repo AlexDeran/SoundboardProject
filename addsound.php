@@ -10,7 +10,11 @@ if(!$pdo){
 
 //$_POST['keywordnew'],$_POST['keywords'],
 
-$error="Le nom et/ou le son existe(nt) déja.";
+$error="Le nom ".$_POST['nom']." et/ou le son ".$_FILES['snd']['name']." existe(nt) déja !";
+$success='Le son '.$_POST['nom'].' a été ajouté avec succès !';
+$errork='Le mot-clé '.$_POST['keywordnew'].' existe déja ! Merci de réessayer en utilisant <a id="errorkey" data-toggle="modal" data-target="#exampleModalCenter"><u>la liste des mots-clés existants</u></a>.';
+
+
 
 if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !empty($_POST['catsnd']) && isset($_FILES['snd']) && !empty($_FILES['snd'])){
 	$nom = htmlspecialchars($_POST['nom']);
@@ -29,8 +33,12 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 		$resultsndfr = $verifsnd->fetchColumn();
 
 		if($resultsndfr > 0){
-			$end = false;
-				header("Location:index.php");
+			echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+ 							' .$error. ' 
+ 							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>');
 				}
 				
 		else{
@@ -42,11 +50,16 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$verifkeyw = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
 				$verifkeyw->bindParam(':Nom',$newkeyw, PDO::PARAM_STR);
 				$verifkeyw->execute();
-				$result = $verifkeyw->fetchColumn();
+				$resultk = $verifkeyw->fetchColumn();
 
-				if($result > 0){
-					$resultat=$error;
-					header("Location:index.php");
+				if($resultk > 0){
+					echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+ 								' .$errork. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+
 				}
 
 								################# INSERT NEW KEYW ############################
@@ -67,7 +80,12 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
 					$addsndfr->execute();
-					header("Location:index.php");
+					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$success. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
 					}
 				
 							################# INSERT SON SI KEYW EXISTE DEJA ############################
@@ -82,7 +100,12 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
 				$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
 				$addsndfr->execute();
-				header("Location:index.php");
+				echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+								' .$success. ' 
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>');
 			}	
 		}
 	}
@@ -99,8 +122,12 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 		$result = $verifsndw->fetchColumn();
 
 		if($result > 0){
-			$resultat=$error;
-			header("Location:index.php");
+				echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+								' .$error. ' 
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>');
 					}
 						
 		else{
@@ -112,11 +139,15 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$verifkeyw = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
 				$verifkeyw->bindParam(':Nom',$newkeyw, PDO::PARAM_STR);
 				$verifkeyw->execute();
-				$result = $verifkeyw->fetchColumn();
+				$resultk = $verifkeyw->fetchColumn();
 
-				if($result > 0){
-					$resultat=$error;
-					header("Location:index.php");
+				if($resultk > 0){
+						echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+										' .$errork. ' 
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>');
 				}
 
 				else{
@@ -138,7 +169,12 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndw->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
 					$addsndw->execute();
-					header("Location:index.php");
+					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$success. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
 				}
 			}
 
@@ -153,12 +189,17 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 				$addsndw->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
 				$addsndw->execute();
-				header("Location:index.php");
+				echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+								' .$success. ' 
+								<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>');
 			}
 		};
 	}
 };
 
-$success="Le son à été ajouté avec succès !";
+
 
 ?>
