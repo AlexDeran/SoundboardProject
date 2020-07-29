@@ -10,9 +10,9 @@ if(!$pdo){
 
 //$_POST['keywordnew'],$_POST['keywords'],
 
-$error="Le nom ".$_POST['nom']." et/ou le son ".$_FILES['snd']['name']." existe(nt) déja !";
-$success='Le son '.$_POST['nom'].' a été ajouté avec succès !';
-$errork='Le mot-clé '.$_POST['keywordnew'].' existe déja ! Merci de réessayer en utilisant <a id="errorkey" data-toggle="modal" data-target="#exampleModalCenter"><u>la liste des mots-clés existants</u></a>.';
+$error='<i class="fas fa-exclamation-circle"></i> Le nom '.$_POST['nom'].' et/ou le son '.$_FILES['snd']['name'].' existe(nt) déja !';
+$success='<i class="fas fa-check"></i> Le son '.$_POST['nom'].' a été ajouté avec succès !';
+$errork='<i class="fas fa-exclamation-circle"></i> Le mot-clé '.$_POST['keywordnew'].' existe déja ! Merci de réessayer en utilisant <a id="errorkey" data-toggle="modal" data-target="#exampleModalCenter"><u>la liste des mots-clés existants</u></a>.';
 
 
 

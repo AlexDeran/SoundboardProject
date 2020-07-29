@@ -2,7 +2,6 @@
 
 body {
 	background-image: url(../img/audience-1853662_1920.jpg);
-	background-position: center fixed;
 }
 
 a:hover,
@@ -264,6 +263,12 @@ a:hover {
 }
 /* ############################################### SON RELATED ############################################### */
 
+audio {
+	border-top: solid black;
+	border-bottom: solid black;
+	background-color: whitesmoke;
+}
+
 #sndname {
 	justify-content: center;
 	background-color: rgb(236, 214, 184);
@@ -275,7 +280,6 @@ a:hover {
 }
 
 #sndbox {
-	margin: 0.5%;
 	border-radius: 5px;
 	border: solid black;
 	background-color: rgb(236, 214, 184);

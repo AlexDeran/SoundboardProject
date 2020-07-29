@@ -8,8 +8,8 @@ if(!$pdo){
     echo "Erreur de connexion à la base de données.";
 }
 
-$success='Le son '.$_POST['supprsnd'].' a été supprimé avec succès !';
-$successw='Le son '.$_POST['supprsndw'].' a été supprimé avec succès !';
+$success='<i class="fas fa-check"></i> Le son '.$_POST['supprsnd'].' a été supprimé avec succès !';
+$successw='<i class="fas fa-check"></i> Le son '.$_POST['supprsndw'].' a été supprimé avec succès !';
 
 if(isset($_POST['supprsnd']) && !empty($_POST['supprsnd'])){
 	$nomduson = $_POST['supprsnd'];
