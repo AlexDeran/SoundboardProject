@@ -25,6 +25,12 @@ $stmtw->execute([
 
 $resultsw = $stmtw->fetchAll();
 
+$stmtwtc = $pdo->prepare("SELECT * FROM `wtc` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
+$stmtwtc->execute([
+	"%" . $_POST['search'] . "%",
+	"%" . $_POST['search'] . "%"
+]);
 
+$resultswtc = $stmtwtc->fetchAll();
 
 ?>

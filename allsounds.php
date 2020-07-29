@@ -30,7 +30,7 @@ $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
 				$lenomw = false;
 		endif;    
 
-$nomwtc = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "Antoine Daniel, WTC, What The Cut"');
+$nomwtc = $pdo->query('SELECT Nom, Son FROM wtc');
 
 		if($nomwtc):
 				$lenomwtc = $nomwtc->fetchAll(PDO::FETCH_ASSOC);
@@ -164,7 +164,7 @@ $nomwtc = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "Antoine Da
 											<?php echo($lesonwtc['Nom']) ?>
 										</div>
 										<audio controls>
-											<source src="SBP/SFR/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+											<source src="SBP/WTC/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
 										</audio>
 									</div>
 								</div>

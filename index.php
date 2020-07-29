@@ -46,6 +46,24 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 				$lesnomw = false;
 		endif;
 
+$nomwtc = $pdo->query('SELECT Nom, Son FROM wtc');
+
+		if($nomwtc):
+				$lenomwtc = $nomwtc->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lenomwtc = false;
+		endif;
+
+$onlynomwtc = $pdo->query('SELECT Nom FROM wtc');
+
+		if($onlynomwtc):
+				$lesnomwtc = $onlynomwtc->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lesnomwtc = false;
+		endif;
+
 if(isset($_POST['search'])){
 	require "search.php";
 }
@@ -104,9 +122,10 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 			<?php
 
 	############################################### RECHERCHE GLOBALE e###############################################
+if(isset($_POST['search'])){
+		switch($_POST['search']){
 
-			if(isset($_POST['search'])){
-				if(count($resultsfr)> 0 && count($resultsw) > 0) {?>
+				case(count($resultsfr)> 0 && count($resultsw) > 0 && count($resultswtc) > 0) : ?>
 				
 				<nav id="navbox" class="row">
 					<div class= "col-8">
@@ -164,15 +183,171 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 							</div>
 						</div>
 					</article>
+					<article class="wtcsearch">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomwtc as $lesonwtc):?>
+								<div class="contsndbox wat">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonwtc['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/WTC/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+        </article>
 				</section>
 				<div id="btnfr" class="container-fluid">
 					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
 				</div>
-				<?php }
+								<?php break;
+
+################################################ RECHERCHE FR + WRLD ###############################################
+
+								case(count($resultsfr)> 0 && count($resultsw) > 0) : ?>
+				
+				<nav id="navbox" class="row">
+					<div class= "col-8">
+						<div class="container-fluid">
+							<a class="btn btn-success btn-lg btn-block btnsnd returnh"
+								href="index.php"
+								role="button"
+							>
+							Retour à l'accueil
+							</a>
+						</div>
+					</div>
+					<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+						<input id="searchbox" class="form-control mr-sm-2" type="search"
+							name="search" placeholder="Rechercher un son" aria-label="Search" required>
+						<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+					</form>
+				</nav>
+				<section>
+					<article class="frsearch">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsfr as $r):?>
+										<div class="contsndbox fra">
+											<div id="sndbox">
+												<div class="col" id="sndname"><?php echo($r['Nom']) ?>
+												</div>
+												<audio controls>
+													<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+												</audio>
+											</div>
+										</div>
+									<?php endforeach;?>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="wrldsearch worldfr">
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsw as $rw): ?>
+									<div class="contsndbox world">
+										<div id="sndbox">
+											<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/SWLD/<?= $rw["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</article>
+				</section>
+				<div id="btnfr" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+								<?php break;
+
+################################################ RECHERCHE FR + WTC ###############################################
+
+				case (count($resultsfr)> 0 && count($resultswtc) > 0) : ?>
+				
+				<nav id="navbox" class="row">
+					<div class= "col-8">
+						<div class="container-fluid">
+							<a class="btn btn-success btn-lg btn-block btnsnd returnh"
+								href="index.php"
+								role="button"
+							>
+							Retour à l'accueil
+							</a>
+						</div>
+					</div>
+					<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+						<input id="searchbox" class="form-control mr-sm-2" type="search"
+							name="search" placeholder="Rechercher un son" aria-label="Search" required>
+						<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+					</form>
+				</nav>
+				<section>
+					<article class="frsearch">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsfr as $r):?>
+										<div class="contsndbox fra">
+											<div id="sndbox">
+												<div class="col" id="sndname"><?php echo($r['Nom']) ?>
+												</div>
+												<audio controls>
+													<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+												</audio>
+											</div>
+										</div>
+									<?php endforeach;?>
+								</div>
+							</div>
+						</div>
+					</article>
+					<article class="wtcsearch">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomwtc as $lesonwtc):?>
+								<div class="contsndbox wat">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonwtc['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/WTC/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+        </article>
+				</section>
+				<div id="btnfr" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+								<?php break;
 
 		################################################ RECHERCHE FR ###############################################
 
-				elseif(count($resultsfr)> 0 && count($resultsw) == 0){ ?>
+				case (count($resultsfr)> 0 ) : ?>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
 						<div class= "col-8">
@@ -217,11 +392,80 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 				<div id="btnfr" class="container-fluid">
 					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
 				</div>
-				<?php }
+									<?php break;
+################################################ RECHERCHE WRLD + WTC ##############################################
+
+				case (count($resultsw)> 0 && count($resultswtc) > 0) : ?>
+				
+				<nav id="navbox" class="row">
+					<div class= "col-8">
+						<div class="container-fluid">
+							<a class="btn btn-success btn-lg btn-block btnsnd returnh"
+								href="index.php"
+								role="button"
+							>
+							Retour à l'accueil
+							</a>
+						</div>
+					</div>
+					<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+						<input id="searchbox" class="form-control mr-sm-2" type="search"
+							name="search" placeholder="Rechercher un son" aria-label="Search" required>
+						<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+					</form>
+				</nav>
+				<section>
+					<article class="wrldsearch">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+							<div class="container-fluid">
+								<div class="row">
+									<div class="col">
+											<?php foreach ($resultsw as $rw): ?>
+											<div class="contsndbox world">
+												<div id="sndbox">
+													<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
+												</div>
+												<audio controls>
+													<source src="SBP/SWLD/<?= $rw["Son"]?>" type="audio/mpeg">
+												</audio>
+											</div>
+										</div>
+										<?php endforeach;?>
+									</div>
+								</div>
+							</div>
+						</article>
+					<article class="wtcsearch">
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomwtc as $lesonwtc):?>
+								<div class="contsndbox wat">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonwtc['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/WTC/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+        </article>
+				</section>
+				<div id="btnfr" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+								<?php break;
+
 
 	############################################### RECHERCHE WORLD ###############################################
 
-					elseif(count($resultsw)> 0 && count($resultsfr) == 0){ ?>
+					case (count($resultsw)>0): ?>
 						<nav class="container-fluid">
 							<div id="navbox" class="row">
 								<div class= "col-8">
@@ -267,11 +511,64 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 							<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
 						</div>
 						<?php 
-							} 
+							break;
+
+
+
+			############################################### WTC ###############################################
+			
+			case (count($resultswtc)> 0) : ?>
+		<nav class="container-fluid">
+					<div id="navbox" class="row">
+						<div class= "col-8">
+							<div class="container-fluid">
+								<a class="btn btn-success btn-lg btn-block btnsnd returnh"
+									href="index.php"
+									role="button"
+								>
+								Retour à l'accueil
+								</a>
+							</div>
+						</div>
+						<form id="searchbox2" action="index.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+							<input id="searchbox" class="form-control mr-sm-2" type="search"
+								name="search" placeholder="Rechercher un son" aria-label="Search" required>
+							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+						</form>
+					</div>
+				</nav>
+				<section>
+					<article class="wtc">
+					<h2 class="sndtitle" id="sndwtc">What the Cut ?!</h2>
+					<div class="container-fluid">
+						<div class="row">
+							<div class="col">
+								<?php
+								foreach ($lenomwtc as $lesonwtc):?>
+								<div class="contsndbox wat">
+									<div id="sndbox">
+										<div class="col" id="sndname">
+											<?php echo($lesonwtc['Nom']) ?>
+										</div>
+										<audio controls>
+											<source src="SBP/WTC/<?= $lesonwtc["Son"]?>" type="audio/mpeg">
+										</audio>
+									</div>
+								</div>
+								<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+        </article>
+			</section>
+			<div id="btnfr" class="container-fluid">
+				<a href="#top" id="myBtnfr2top" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+			</div>
+							<?php break;
 
 					############################################### NO SOUND ###############################################
 
-						else{?>
+						default :?>
 						<nav class="container-fluid">
 							<div id="navbox" class="row">
 								<div class= "col-8">
@@ -300,11 +597,11 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 						</article>
 					</section>
 					<?php
-					}
-				}
+	}
+}
  ############################################# NORMAL PAGE (NO SEARCH) #############################################
 
-				else{?>
+				else {?>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
 						<div class= "gestsnd row container-fluid">
@@ -375,6 +672,10 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
 														<label class="form-check-label" for="catson2"> Son World</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
+														<label class="form-check-label" for="catson3"> WTC</label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -468,7 +769,7 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 												<div class="modal-body">
 													<label for="form-row"><b>Choisir le son à supprimer</b></label>
 													<div class="form-row">
-														<div class="form-group col-md-6">
+														<div class="form-group col-md-4">
 															<label for="inputson"><b>FR</b></label>
 															<select id="inputson" name="supprsnd" class="form-control">
 																<option></option>
@@ -477,12 +778,21 @@ if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-6">
+														<div class="form-group col-md-4">
 															<label for="inputsonw"><b>WORLD</b></label>
 															<select id="inputsonw" name="supprsndw" class="form-control">
 																<option></option>
 																<?php foreach ($lesnomw as $allnomsw):?>
 																<option><?php echo $allnomsw['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-4">
+															<label for="inputsonw"><b>WTC</b></label>
+															<select id="inputsonwtc" name="supprsndwtc" class="form-control">
+																<option></option>
+																<?php foreach ($lesnomwtc as $allnomswtc):?>
+																<option><?php echo $allnomswtc['Nom'] ?></option>
 																<?php endforeach ?>
 															</select>
 														</div>

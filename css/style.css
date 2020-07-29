@@ -312,7 +312,6 @@ audio {
 	border-right: solid black;
 	background-image: url(../img/earth-1149733_1920.jpg);
 	background-position: center;
-	border-radius: 0em 0em 1.5em 1.5em;
 }
 
 .frsearch {
@@ -490,4 +489,18 @@ span {
 
 #errorkey:hover {
 	color: lightgray;
+}
+
+.wtcsearch {
+	background-image: url(../img/WTC.jpg);
+	margin-left: 1em;
+	margin-right: 1em;
+	border-radius: 1.5em;
+	border: solid black;
+	border-radius: 0em 0em 1.5em 1.5em;
+	padding-top: 1em;
+}
+
+.worldfr {
+	border-radius: 0em 0em 1.5em 1.5em;
 }

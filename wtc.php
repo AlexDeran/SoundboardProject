@@ -12,7 +12,7 @@ if(!$pdo){
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if($_POST["soundwtc"] == " "){
-  $nom = $pdo->query('SELECT Nom, Son FROM soundfr WHERE keywords = "Antoine Daniel, WTC, What The Cut"');
+  $nom = $pdo->query('SELECT Nom, Son FROM wtc');
 
 		if($nom):
 				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
@@ -88,7 +88,7 @@ if($_POST["soundwtc"] == " "){
 											<?php echo($leson['Nom']) ?>
 										</div>
 										<audio controls>
-											<source src="SBP/SFR/<?= $leson["Son"]?>" type="audio/mpeg">
+											<source src="SBP/WTC/<?= $leson["Son"]?>" type="audio/mpeg">
 										</audio>
 									</div>
 								</div>
