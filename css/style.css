@@ -122,6 +122,7 @@ header {
 	background-position: center;
 	color: black;
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	background-size: cover;
 }
 
 #myBtn2 {
@@ -139,7 +140,7 @@ header {
 #myBtnWTC {
 	background-image: url(../img/WTC.jpg.);
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	max-width: 100%;
 	max-height: 100%;
 	padding-right: 3.6em;
@@ -442,7 +443,7 @@ span {
 #myBtnWTCAll {
 	background-image: url(../img/WTC.jpg.);
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: cover;
 	padding-left: 1em;
 	padding-right: 1em;
 	font-size: 8em;
