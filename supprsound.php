@@ -53,6 +53,19 @@ elseif(isset($_POST['supprsndwtc']) && !empty($_POST['supprsndwtc'])){
 				</div>');
 }
 
+elseif(isset($_POST['supprsndwjd']) && !empty($_POST['supprsndjd'])){
+	$nomduson = $_POST['supprsndjd'];
+ 	$supprsnd = $pdo->prepare("DELETE FROM `jday` WHERE Nom = :nom ");
+ 	$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
+	$supprsnd->execute();
+	echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+					' .$successwtc. ' 
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>');
+}
+
 else{
 echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 					' .$error. ' 

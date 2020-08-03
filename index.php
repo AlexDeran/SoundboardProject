@@ -64,6 +64,15 @@ $onlynomwtc = $pdo->query('SELECT Nom FROM wtc');
 				$lesnomwtc = false;
 		endif;
 
+$nomjday = $pdo->query('SELECT Nom, Son FROM jday ORDER BY Nom ASC');
+
+		if($nomjday):
+				$lenomjday = $nomjday->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lenomjday = false;
+		endif;		
+
 if(isset($_POST['search'])){
 	require "search.php";
 }
@@ -671,11 +680,19 @@ if(isset($_POST['search'])){
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
-														<label class="form-check-label" for="catson2"> Son World</label>
+														<label class="form-check-label" for="catson2">Son World</label>
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
-														<label class="form-check-label" for="catson3"> WTC</label>
+														<label class="form-check-label" for="catson3">WTC</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="JDay">
+														<label class="form-check-label" for="catson3">JDay</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="Inconnus">
+														<label class="form-check-label" for="catson3">Les Inconnus</label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -769,7 +786,7 @@ if(isset($_POST['search'])){
 												<div class="modal-body">
 													<label for="form-row"><b>Choisir le son à supprimer</b></label>
 													<div class="form-row">
-														<div class="form-group col-md-4">
+														<div class="form-group col-md-3">
 															<label for="inputson"><b>FR</b></label>
 															<select id="inputson" name="supprsnd" class="form-control">
 																<option></option>
@@ -778,7 +795,7 @@ if(isset($_POST['search'])){
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-4">
+														<div class="form-group col-md-3">
 															<label for="inputsonw"><b>WORLD</b></label>
 															<select id="inputsonw" name="supprsndw" class="form-control">
 																<option></option>
@@ -787,12 +804,21 @@ if(isset($_POST['search'])){
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-4">
+														<div class="form-group col-md-3">
 															<label for="inputsonw"><b>WTC</b></label>
 															<select id="inputsonwtc" name="supprsndwtc" class="form-control">
 																<option></option>
 																<?php foreach ($lesnomwtc as $allnomswtc):?>
 																<option><?php echo $allnomswtc['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-3">
+															<label for="inputsonw"><b>JDay</b></label>
+															<select id="inputsonjd" name="supprsndjd" class="form-control">
+																<option></option>
+																<?php foreach ($lenomjday as $jday):?>
+																<option><?php echo $jday['Nom'] ?></option>
 																<?php endforeach ?>
 															</select>
 														</div>
@@ -832,11 +858,11 @@ if(isset($_POST['search'])){
 								<form id="showJDG" action="jdg.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnJDG" class="butcons" type="submit" name="soundjdg" value=" " title="Joueur du Grenier"></input>
 								</form>
-								<form id="show" action="" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnZa" class="butcons" type="submit" name="sound" value="ZA WARUDO" title="Joueur du Grenier"></input>
+								<form id="showJDay" action="JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnJDay" class="butcons" type="submit" name="soundjday" value=" " title="MisterJDay"></input>
 								</form>
-								<form id="show" action="" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnUn" class="butcons" type="submit" name="sound" value="Undefined" title="Joueur du Grenier"></input>
+								<form id="showinc" action="inconnus.php" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtninc" class="butcons" type="submit" name="soundinc" value=" " title="Les Inconnus"></input>
 								</form>
 							</div>
 					</div>
@@ -847,7 +873,6 @@ if(isset($_POST['search'])){
 	<!-- ############################################### FOOTER ############################################### -->
 
 	<footer>Bravo à toi, tu es en bas.</footer>
-	<script src="js/app.js"></script>
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

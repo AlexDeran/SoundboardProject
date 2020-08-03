@@ -186,15 +186,23 @@ a:hover {
 	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
-#myBtnZa,
-#myBtnUn {
-	background-color: black;
-	padding-top: 2em;
-	font-size: 2em;
-	padding-bottom: 8%;
-	line-height: 2.5;
+#myBtnJDay {
+	background-image: url(../img/misterjday.jpg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	padding-right: 1.2em;
+	font-size: 6em;
+	padding-bottom: 7%;
 }
 
+#myBtninc {
+	background-image: url(../img/inconnus.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-right: 2em;
+	font-size: 6em;
+	padding-bottom: 8%;
+}
 /* ############################################### TITRES ############################################### */
 
 .sndtitle {
@@ -503,4 +511,22 @@ span {
 
 .worldfr {
 	border-radius: 0em 0em 1.5em 1.5em;
+}
+
+/* ############################################### JDAY ############################################### */
+
+.jday {
+	background-image: url(../img/misterjday.jpg);
+	margin: 1em;
+	background-position: top;
+	border-radius: 1.5em;
+	border: solid black;
+}
+
+.inconnus {
+	background-image: url(../img/inconnus.jpg);
+	margin: 1em;
+	background-position: top;
+	border-radius: 1.5em;
+	border: solid black;
 }

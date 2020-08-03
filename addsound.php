@@ -234,6 +234,42 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 									</div>');
 			}
 		break;
+
+		case 'JDay':
+
+			$verifsndjd = $pdo->prepare("SELECT COUNT(*) FROM jday WHERE Nom = :nom OR Son = :snd");
+			$verifsndjd->bindParam(':nom',$nom,PDO::PARAM_STR);
+			$verifsndjd->bindParam(':snd',$snd,PDO::PARAM_STR);
+			$verifsndjd->execute();
+			$result = $verifsndjd->fetchColumn();
+
+			if($result > 0){
+					echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$error. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+						}
+							
+			else{
+								################# INSERT SON + KEYW ############################
+						$keywordjd = 'MisterJDay, Mr Connard';
+						$uploaddir = 'SBP/JDay/';
+						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
+						$addsndjd = $pdo->prepare("INSERT INTO `jday` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
+						$addsndjd->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndjd->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndjd->bindParam(':keyw',$keywordjd,PDO::PARAM_STR);
+						$addsndjd->execute();
+						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+										' .$success. ' 
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>');
+			}
+		break;
 	}
 	
 }
