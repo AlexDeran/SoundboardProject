@@ -30,7 +30,7 @@ $nomw = $pdo->query('SELECT Nom, Son FROM soundw');
 				$lenomw = false;
 		endif;    
 
-$nomwtc = $pdo->query('SELECT Nom, Son FROM wtc');
+$nomwtc = $pdo->query('SELECT Nom, Son FROM wtc ORDER BY keywords DESC');
 
 		if($nomwtc):
 				$lenomwtc = $nomwtc->fetchAll(PDO::FETCH_ASSOC);

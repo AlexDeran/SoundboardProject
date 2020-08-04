@@ -12,7 +12,7 @@ if(!$pdo){
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if($_POST["soundwtc"] == " "){
-  $nom = $pdo->query('SELECT Nom, Son FROM wtc');
+  $nom = $pdo->query('SELECT Nom, Son FROM wtc ORDER BY keywords DESC');
 
 		if($nom):
 				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);

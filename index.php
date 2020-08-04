@@ -93,6 +93,13 @@ $keywordsw = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WORLD" O
 				$keywrdw = false;
 		endif;
 
+$keywordswtc = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "WTC" ORDER BY Nom ASC');
+if($keywordswtc):
+		$keywrdwtc = $keywordswtc->fetchAll(PDO::FETCH_ASSOC);
+else:
+		$keywrdwtc = false;
+endif;
+
  if(isset($_POST['nom'])){
 	require "addsound.php";
 	}
@@ -707,7 +714,7 @@ if(isset($_POST['search'])){
 												</div>
 												<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
 												<div class="form-row">
-													<div class="form-group col-md-6">
+													<div class="form-group col-md-4">
 														<label for="exampleFormControlSelect1"><b>FR</b></label>
 														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
 															<option></option>
@@ -716,12 +723,21 @@ if(isset($_POST['search'])){
 															<?php endforeach ?>
 														</select>
 													</div>
-													<div class="form-group col-md-6">
+													<div class="form-group col-md-4">
 														<label for="exampleFormControlSelect1"><b>WORLD</b></label>
 														<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
 															<option></option>
 															<?php foreach ($keywrdw as $keyww):?>
 															<option><?php echo $keyww['Nom']?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-4">
+														<label for="exampleFormControlSelect1"><b>WTC</b></label>
+														<select name="keywordswtc" class="form-control" id="exampleFormControlSelect2">
+															<option></option>
+															<?php foreach ($keywrdwtc as $keywtc):?>
+															<option><?php echo $keywtc['Nom']?></option>
 															<?php endforeach ?>
 														</select>
 													</div>

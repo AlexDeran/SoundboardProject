@@ -216,9 +216,25 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 								</div>');
 						}
 							
+				if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
+					$newkeywtc = htmlspecialchars($_POST['keywordnew']);
+					$verifkeywtc = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
+					$verifkeywtc->bindParam(':Nom',$newkeywtc, PDO::PARAM_STR);
+					$verifkeywtc->execute();
+					$resultk = $verifkeywtc->fetchColumn();
+
+					if($resultk > 0){
+							echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+											' .$errork. ' 
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>');
+					}
+		
 			else{
 								################# INSERT SON + KEYW ############################
-						$keywordwtc = 'Antoine Daniel, WTC, What The Cut';
+						$keywordwtc = $newkeywtc.', WTC';
 						$uploaddir = 'SBP/WTC/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
@@ -233,6 +249,24 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 										</button>
 									</div>');
 			}
+		}
+		
+				elseif(isset($_POST['keywordswtc'])){
+					$keywrdwtc = $_POST['keywordswtc'].', WTC';
+					$uploaddir = 'SBP/WTC/';
+					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
+					$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
+					$addsndwtc->bindParam(':nom',$nom,PDO::PARAM_STR);
+					$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
+					$addsndwtc->bindParam(':keyw',$keywrdwtc,PDO::PARAM_STR);
+					$addsndwtc->execute();
+					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$success. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+				}
 		break;
 
 		case 'JDay':
