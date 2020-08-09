@@ -10,6 +10,14 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+ if(isset($_POST['nom'])){
+	require "addsound.php";
+	}
+
+if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
+	require "supprsound.php";
+}
+
 $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 
 		if($nom):
@@ -100,13 +108,7 @@ else:
 		$keywrdwtc = false;
 endif;
 
- if(isset($_POST['nom'])){
-	require "addsound.php";
-	}
 
-if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
-	require "supprsound.php";
-}
 
 ?>
 

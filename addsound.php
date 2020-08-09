@@ -215,7 +215,8 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 									</button>
 								</div>');
 						}
-							
+			else{
+
 				if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
 					$newkeywtc = htmlspecialchars($_POST['keywordnew']);
 					$verifkeywtc = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
@@ -232,8 +233,17 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 										</div>');
 					}
 		
-			else{
-								################# INSERT SON + KEYW ############################
+					else{
+								################# INSERT NEW KEYW ############################
+
+						$catkeyw = "WTC";
+						$insertnewkeyw = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
+						$insertnewkeyw->bindParam(':keynom',$newkeywtc,PDO::PARAM_STR);
+						$insertnewkeyw->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
+						$insertnewkeyw->execute();	
+
+							################# INSERT SON + KEYW ############################
+
 						$keywordwtc = $newkeywtc.', WTC';
 						$uploaddir = 'SBP/WTC/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
@@ -248,8 +258,8 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>');
-			}
-		}
+					}
+				}
 		
 				elseif(isset($_POST['keywordswtc'])){
 					$keywrdwtc = $_POST['keywordswtc'].', WTC';
@@ -267,6 +277,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 									</button>
 								</div>');
 				}
+			}
 		break;
 
 		case 'JDay':
