@@ -33,4 +33,12 @@ $stmtwtc->execute([
 
 $resultswtc = $stmtwtc->fetchAll();
 
+$stmtjd = $pdo->prepare("SELECT * FROM `jday` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
+$stmtjd->execute([
+	"%" . $_POST['search'] . "%",
+	"%" . $_POST['search'] . "%"
+]);
+
+$resultsjd = $stmtjd->fetchAll();
+
 ?>
