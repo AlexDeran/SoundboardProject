@@ -9,6 +9,15 @@ a#top:hover {
 	text-decoration: none;
 }
 
+.srcvid {
+	color: black;
+}
+
+.srcvid:hover {
+	color: darkslategray;
+	text-decoration: underline;
+}
+
 #myBtnfr2top {
 	background-color: crimson; /* Set a background color */
 	font-size: 29px; /* Increase font size */

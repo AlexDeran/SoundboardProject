@@ -12,14 +12,16 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if($_POST["soundfr"] == "Sons FR"){
 
-$nom = $pdo->query('SELECT Nom, Son FROM soundfr');
+$nom = $pdo->query('SELECT Nom, Son, source FROM soundfr ORDER BY Nom ASC');
 
-		if($nom):
+			if($nom):
 				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
 
 		else:
 				$lenom = false;
 		endif;
+
+$n='1';
 
 ?>
 
@@ -37,6 +39,7 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 		<link rel="stylesheet" href="css/style.css" />
 			<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
+
 		<title>Soundboard</title>
 	</head>
 	<body>
@@ -85,14 +88,25 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 								<div class="contsndbox fra">
 									<div id="sndbox">
 										<div class="col" id="sndname">
+										<?php if ($leson['source'] != ""){ ?>
+											<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
 											<?php echo($leson['Nom']) ?>
+											</a>
+											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered">
+													<div class="modal-content">
+														<iframe class="vidsrc" width="560" height="315" src="<?=$leson['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													</div>
+												</div>
+											</div>
+										<?php $n++; } else echo($leson['Nom']); ?>
 										</div>
 										<audio controls>
 											<source src="SBP/SFR/<?= $leson["Son"]?>" type="audio/mpeg">
 										</audio>
 									</div>
 								</div>
-								<?php endforeach;?>
+								<?php endforeach ?>
 							</div>
 						</div>
 					</div>
@@ -106,8 +120,7 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 	<!-- ############################################### FOOTER ############################################### -->
 
 	<footer>Bravo à toi, tu es en bas.</footer>
-	<script src="js/app.js"></script>
-	<script
+			<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"
@@ -122,6 +135,7 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundfr');
 		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
 		crossorigin="anonymous"
 	></script>
+			<script src="js/app.js"></script>
 	</body>
 </html>
 
