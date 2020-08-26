@@ -756,6 +756,17 @@ if(isset($_POST['search'])){
 														name="snd"
 													/>
 												</div>
+												<div class="form-group">
+													<label for="videosrc"><b>Source vidéo</b></label>
+													<input
+														name="videosrc"  
+														type="text"
+														class="form-control"
+														id="srcvideo"
+														placeholder="Par exemple : https://youtube.com/embed/..."
+														maxlength="200"
+													/>
+												</div>
 												<label for="catsnd"><strong> Quel type de son ?</strong></label>
 												<div id="catsnd" class="form-group">
 													<div class="form-check form-check-inline">

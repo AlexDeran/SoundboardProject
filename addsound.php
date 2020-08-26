@@ -20,6 +20,9 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 	$nom = htmlspecialchars($_POST['nom']);
 	$snd = ($_FILES['snd']['name']);
 	$catsnd = ($_POST['catsnd']);
+	if(isset($_POST['videosrc']) && !empty($_POST['videosrc'])){
+		$videosrc = $_POST['videosrc'];
+	}
 
 				################# SON FR ############################
 
@@ -76,11 +79,21 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 						$uploaddir = 'SBP/SFR/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
-						$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd,:keyw)");
-						$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-						$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-						$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
-						$addsndfr->execute();
+						if($videosrc != ""){
+							$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
+							$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndfr->execute();
+						}
+						else{
+							$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, '')");
+							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
+							$addsndfr->execute();
+						}
 						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 										' .$success. ' 
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
@@ -96,11 +109,21 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$keywrd = $_POST['keywords'];
 					$uploaddir = 'SBP/SFR/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
-					$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd,:keyw)");
-					$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-					$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-					$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
-					$addsndfr->execute();
+					if($videosrc != ""){
+						$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+						$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+						$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
+						$addsndfr->execute();
+						}
+					else{
+						$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, '')");
+							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+							$addsndfr->execute();
+					}
 					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 									' .$success. ' 
 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
