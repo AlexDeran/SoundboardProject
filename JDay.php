@@ -76,13 +76,13 @@ if($_POST["soundjday"] == " "){
 
 			<section>
 				<article class="jday">
-					<h2 class="sndtitle" id="sndjdg">MisterJDay</h2>
+					<h2 class="sndtitle wpad" id="sndjdg">MisterJDay</h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
 								<?php
 								foreach ($lenom as $leson):?>
-								<div class="contsndbox">
+								<div class="contsndbox JD">
 									<div id="sndbox">
 										<div class="col" id="sndname">
 											<?php echo($leson['Nom']) ?>

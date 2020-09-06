@@ -76,7 +76,7 @@ if($_POST["soundjdg"] == " "){
 
 			<section>
 				<article class="jdg">
-					<h2 class="sndtitle" id="sndjdg">Joueur du Grenier</h2>
+					<h2 class="sndtitle wpad" id="sndjdg">Joueur du Grenier</h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">

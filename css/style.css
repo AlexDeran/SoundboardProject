@@ -38,7 +38,7 @@ a#top:hover {
 /* ############################################### HEADER ############################################### */
 
 header h1 {
-	font-size: 80px;
+	font-size: 3.5em;
 	color: white;
 	font-weight: 600;
 }
@@ -119,7 +119,6 @@ header {
 	cursor: pointer; /* Add a mouse pointer on hover */
 	border-radius: 5px; /* Rounded corners */
 	font-family: 'Raleway', sans-serif;
-	font-weight: 900;
 	text-transform: uppercase;
 }
 
@@ -170,7 +169,7 @@ header {
 #frbuttton,
 #myBtnAll,
 #myBtnW {
-	font-size: 4em; /* Increase font size */
+	font-size: 3.5em; /* Increase font size */
 	line-height: 1.5;
 	margin-bottom: 0.2em;
 	margin-top: 2%;
@@ -198,10 +197,10 @@ a:hover {
 #myBtnJDay {
 	background-image: url(../img/misterjday.jpg);
 	background-repeat: no-repeat;
-	background-size: contain;
-	padding-right: 1.2em;
+	background-size: cover;
+	padding-right: 1.3em;
 	font-size: 6em;
-	padding-bottom: 7%;
+	padding-bottom: 8%;
 }
 
 #myBtninc {
@@ -215,10 +214,14 @@ a:hover {
 /* ############################################### TITRES ############################################### */
 
 .sndtitle {
-	font-size: 60px;
+	font-size: 50px;
 	border-radius: 20px 20px 0px 0px;
 	border-bottom: solid black;
 	margin-bottom: 0.8em;
+}
+
+.wpad {
+	padding-bottom: 0.2em;
 }
 
 .sndquery {
@@ -235,6 +238,19 @@ a:hover {
 #sndw {
 	background-image: url(../img/Collection-national-flags.png);
 	background-position: bottom left;
+	font-size: 3.5em;
+}
+
+/* ############################################### PAGINATION ############################################## */
+
+.page-link.ad {
+	background-color: black;
+	color: white;
+}
+
+.page-link.ad:hover {
+	background-color: white;
+	color: black;
 }
 
 /* ############################################### ARTICLE ############################################## */
@@ -527,6 +543,11 @@ span {
 	border-radius: 1.5em;
 	border: solid black;
 }
+
+.JD {
+	background-color: black;
+}
+/* ############################################### INCONNUS ############################################### */
 
 .inconnus {
 	background-image: url(../img/inconnus.jpg);

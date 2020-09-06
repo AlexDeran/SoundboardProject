@@ -1,34 +1,26 @@
 <?php
-session_start();
-//DB login
 
 $pdo =new PDO('mysql:host=localhost; dbname=sbp; charset=utf8','root','');
 
-if(!$pdo){
-		echo "Erreur de connexion à la base de données.";
-}
+// User input
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-	// User input
+$perPage = 16;
 
-	$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-	$perPage = 16;
+$nom = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM soundfr ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
 
-	$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+$nom->execute();
 
-	$nom = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM soundfr ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+$nom= $nom->fetchAll(PDO::FETCH_ASSOC);
 
-	$nom->execute();
+$total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
 
-	$nom= $nom->fetchAll(PDO::FETCH_ASSOC);
+$pages = ceil($total / $perPage);
 
-	$total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
-
-	$pages = ceil($total / $perPage);
-
-	$n = 1;
+$n = 1;
 
 
 ?>
@@ -48,7 +40,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
-	<title>Sons FR</title>
+	<title>Pagination</title>
 </head>
 <body>
 	<header class="container-fluid">
@@ -74,13 +66,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			</form>
 		</div>
 	</nav>
-
-	
-	<?php
-	
-	########################################### PAGE DOES NOT EXIST (404) ############################################
-
-	if($page <1 || $page > $pages){?>
+	<?php if($page <1 || $page > $pages){?>
 	<section class="container-fluid">
 		<article id="nosearch">
 			<div id="noresults">
@@ -88,11 +74,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			</div>
 		</article>
 	</section>
-	<?php
-
-################################################## PAGE DOES EXIST #################################################
-
-} else {  ?>
+	<?php } else {  ?>
 	<section>
 		<article class="fr">
 			<h2 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="75" width="75"> Sons FR <img src="img/ecufr.png" height="75" width="75"></h2>
@@ -127,9 +109,6 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			</div>
 		</article>
 	</section>
-
-				<!-- ########################################## PAGINATION ########################################## -->
-
 	<nav aria-label="Page navigation example">
 		<ul class="pagination pagination-lg justify-content-center">
 			<li class="page-item <?php if($page - 1 === 0){echo 'disabled';}?>">
@@ -144,12 +123,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		</ul>
 	</nav>
 	<?php } ?>
-			<hr>
 
-	<!-- ############################################### FOOTER ############################################### -->
-
-	<footer>Bravo à toi, tu es en bas.</footer>
-			<script
+					<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"
@@ -165,6 +140,5 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		crossorigin="anonymous"
 	></script>
 			<script src="js/app.js"></script>
-	</body>
+</body>
 </html>
-

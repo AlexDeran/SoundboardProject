@@ -10,16 +10,23 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if($_POST["soundw"] == "Sons World"){
+$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-$nom = $pdo->query('SELECT Nom, Son FROM soundw');
+$perPage = 16;
 
-		if($nom):
-				$lenomw = $nom->fetchAll(PDO::FETCH_ASSOC);
+$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-		else:
-				$lenomw = false;
-		endif;
+$nomw = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son FROM soundw ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+
+$nomw->execute();
+
+$nomw= $nomw->fetchAll(PDO::FETCH_ASSOC);
+
+$total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
+
+$pages = ceil($total / $perPage);
+
+$n = 1;
 
 ?>
 
@@ -72,15 +79,29 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundw');
         </div>
 			</nav>
 
-	<!-- ############################################### SOUND FR ############################################### -->
+	<?php 
+	########################################### PAGE DOES NOT EXIST (404) ############################################
+
+	if($page <1 || $page > $pages){?>
+	<section class="container-fluid">
+		<article id="nosearch">
+			<div id="noresults">
+				<p>La page que vous demandez n'existe pas !</p>
+			</div>
+		</article>
+	</section>
+	<?php
+
+################################################## PAGE DOES EXIST #################################################
+	} else {  ?>
 
 			<section>
 				<article class="wrld">
-					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png"> Sons World <img src="img/earth-min.png" ></h2>
+					<h2 class="sndtitle" id="sndw"><img src="img/earth-min.png" height="75" width="75" > Sons World <img src="img/earth-min.png" height="75" width="75" ></h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
-									<?php foreach ($lenomw as $lesonw): ?>
+									<?php foreach ($nomw as $lesonw): ?>
 									<div class="contsndbox world">
 										<div id="sndbox">
 											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
@@ -96,10 +117,20 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundw');
 					</div>
 				</article>
 			</section>
-      <div id="btntop" class="container-fluid">
-        <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-      </div>
-			<hr>
+    	<nav aria-label="Page navigation example">
+				<ul class="pagination pagination-lg justify-content-center">
+					<li class="page-item <?php if($page - 1 === 0){echo 'disabled';}?>">
+						<a class="page-link ad" href="?page=<?=$page - 1;?>" tabindex="-1" aria-disabled="true">Précédent</a>
+					</li>
+					<?php for($x=1; $x <= $pages; $x++): ?>
+					<li class="page-item <?php if($page === $x){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$x; ?>"><?=$x ?></a></li>
+					<?php endfor; ?>
+					<li class="page-item <?php if($page == $pages){echo 'disabled';}?>">
+						<a class="page-link ad" href="?page=<?=$page + 1; ?>">Suivant</a>
+					</li>
+				</ul>
+			</nav>
+		<?php } ?>
 
 	<!-- ############################################### FOOTER ############################################### -->
 
@@ -122,10 +153,3 @@ $nom = $pdo->query('SELECT Nom, Son FROM soundw');
 	></script>
 	</body>
 </html>
-
-<?php 
-}
-else{
-  header("Location : index.php");
-}
-?>

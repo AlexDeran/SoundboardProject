@@ -951,9 +951,6 @@ if(isset($_POST['search'])){
 								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
 									<input id="myBtn2" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
 								</form>
-								<form id="showall" action="allsounds.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="myBtnAll" class="butcons container-fluid"  type="submit" name="allsnds" value="Tous les sons" title="Voir tous les sons"></input>
-								</form>
 							</div>
 							<div id="smallbuttons" class="row">
 								<form id="showwtc" action="wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
