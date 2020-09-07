@@ -10,6 +10,31 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+if(isset($_POST['search'])){
+
+	// $pageS = isset($_GET['pageS']) ? (int)$_GET['pageS'] : 1;
+
+	// $perPageS = 16;
+
+	// $begginS = ($pageS > 1) ? ($pageS * $perPageS) - $perPageS : 0;
+
+	$stmt = $pdo->prepare("SELECT * FROM `soundw` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
+
+	$stmt->execute([
+	"%" . $_POST['search'] . "%",
+	"%" . $_POST['search'] . "%"
+	]);
+
+	$resultsw = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+	// $totalS = $pdo->query("SELECT FOUND_ROWS() as totalS ")->fetch()['totalS'] ;
+
+	// $pagesS = ceil($totalS / $perPageS);
+
+}
+
+else{
+
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
 $perPage = 16;
@@ -25,6 +50,8 @@ $nomw= $nomw->fetchAll(PDO::FETCH_ASSOC);
 $total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
 
 $pages = ceil($total / $perPage);
+
+}
 
 $n = 1;
 
@@ -53,13 +80,7 @@ $n = 1;
 		<header class="container-fluid">
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
-
-      <?php
-      
- ############################################# NORMAL PAGE (NO SEARCH) #############################################
-
-				?>
-    <nav class="container-fluid">
+		<nav class="container-fluid">
       <div id="navbox" class="row">
         <div class= "col-9">
           <div class="container-fluid">
@@ -71,7 +92,7 @@ $n = 1;
             </a>
           </div>
         </div>
-        <form id="search" action="index.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
+        <form id="search" action="soundworld.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
             <input id="searchbox" class="form-control mr-sm-2" type="search"
               name="search" placeholder="Rechercher un son" aria-label="Search" required>
             <button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
@@ -79,7 +100,59 @@ $n = 1;
         </div>
 			</nav>
 
+      <?php
+      
+ ############################################# RECHERCHE #############################################
+
+	if(isset($_POST['search'])){
+		if(count($resultsw)> 0){
+			
+			######################################## PAGE DOES EXIST ######################################
+		
+			?>
+				<section>
+					<article class="wrld">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsw as $rw):?>
+									<div class="contsndbox world">
+										<div id="sndbox">
+											<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
+											</div>
+											<audio controls>
+											<source src="SBP/SWLD/<?= $rw['Son']?>" type="audio/mpeg">
+											</audio>
+										</div>
+									</div>
+								<?php endforeach;?>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+				<div id="btntop" class="container-fluid">
+        	<a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+      	</div>
 	<?php 
+			}
+			else{
+############################################# NO RESULTS #############################################
+		?>
+			<section class="container-fluid">
+				<article id="nosearch">
+					<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+					<div id="noresults">
+						<p>Aucun son trouvé !</p>
+					</div>
+				</article>
+			</section>
+	<?php
+		}
+}
+	else{
+
 	########################################### PAGE DOES NOT EXIST (404) ############################################
 
 	if($page <1 || $page > $pages){?>
@@ -130,7 +203,10 @@ $n = 1;
 					</li>
 				</ul>
 			</nav>
-		<?php } ?>
+		<?php 
+		} 
+	} 
+	?>
 
 	<!-- ############################################### FOOTER ############################################### -->
 

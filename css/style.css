@@ -32,7 +32,7 @@ a#top:hover {
 	cursor: pointer; /* Add a mouse pointer on hover */
 	padding: 8px; /* Some padding */
 	border-radius: 10px; /* Rounded corners */
-	font-size: 20px; /* Increase font size */
+	font-weight: 900;
 }
 
 /* ############################################### HEADER ############################################### */
@@ -167,14 +167,13 @@ header {
 
 #myBtn2,
 #frbuttton,
-#myBtnAll,
 #myBtnW {
 	font-size: 3.5em; /* Increase font size */
 	line-height: 1.5;
 	margin-bottom: 0.2em;
 	margin-top: 2%;
-	margin-right: 4%;
-	margin-left: 2%;
+	margin-right: 3%;
+	margin-left: 3%;
 	padding-left: 0.8em;
 	padding-right: 0.8em;
 	text-align: center;
@@ -186,12 +185,6 @@ a {
 
 a:hover {
 	color: seashell;
-}
-
-#myBtnAll {
-	background-image: url(../img/speakers2.jpg);
-	background-position: center;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 #myBtnJDay {
@@ -289,6 +282,7 @@ a:hover {
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
+	background-position: center;
 }
 
 .world {
@@ -330,41 +324,6 @@ audio {
 
 #searchbox2 {
 	padding-bottom: 1%;
-}
-
-.wrldsearch {
-	padding-top: 1em;
-	margin-left: 1em;
-	margin-right: 1em;
-	border-left: solid black;
-	border-bottom: solid black;
-	border-right: solid black;
-	background-image: url(../img/earth-1149733_1920.jpg);
-	background-position: center;
-}
-
-.frsearch {
-	border-radius: 1.5em 1.5em 0em 0em;
-	margin-left: 1em;
-	margin-right: 1em;
-	border-top: solid black;
-	border-right: solid black;
-	border-left: solid black;
-	background: rgb(0, 87, 255);
-	background: linear-gradient(
-		90deg,
-		rgba(0, 87, 255, 1) 0%,
-		rgb(255, 255, 255) 50%,
-		rgba(255, 0, 0, 1) 100%
-	);
-}
-.fronly {
-	border-radius: 0em 0em 1.5em 1.5em;
-}
-
-.wrldonly {
-	border-radius: 1.5em 1.5em 0em 0em;
-	background-position: center;
 }
 
 #sndsearch {

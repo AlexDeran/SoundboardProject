@@ -11,16 +11,24 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if($_POST["soundjday"] == " "){
-  $nom = $pdo->query('SELECT Nom, Son FROM jday');
+if(isset($_POST['search'])){
 
-		if($nom):
-				$lenom = $nom->fetchAll(PDO::FETCH_ASSOC);
+$stmtjd = $pdo->prepare("SELECT * FROM `jday` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ");
+$stmtjd->execute([
+	"%" . $_POST['search'] . "%",
+	"%" . $_POST['search'] . "%"
+]);
 
-		else:
-				$lenom = false;
-    endif;
-    
+$resultsjd = $stmtjd->fetchAll();
+}
+
+$nomjd = $pdo->prepare("SELECT Nom, Son FROM jday ORDER BY Nom");
+
+$nomjd->execute();
+
+$nomjd= $nomjd->fetchAll(PDO::FETCH_ASSOC);
+
+$n = 1;
   ?>
 
 <!DOCTYPE html>
@@ -46,12 +54,6 @@ if($_POST["soundjday"] == " "){
 		<header class="container-fluid">
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
-
-      <?php
-      
- ############################################# NORMAL PAGE (NO SEARCH) #############################################
-
-				?>
     <nav class="container-fluid">
       <div id="navbox" class="row">
         <div class= "col-9">
@@ -64,15 +66,61 @@ if($_POST["soundjday"] == " "){
             </a>
           </div>
         </div>
-        <form id="search" action="index.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
+        <form id="search" action="JDay.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
             <input id="searchbox" class="form-control mr-sm-2" type="search"
               name="search" placeholder="Rechercher un son" aria-label="Search" required>
             <button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
           </form>	
         </div>
 			</nav>
-
-	<!-- ############################################### SOUND FR ############################################### -->
+<?php
+			 	if(isset($_POST['search'])){
+		if(count($resultsjd)> 0){
+			
+			######################################## PAGE DOES EXIST ######################################
+		
+			?>
+				<section>
+					<article class="jday">
+						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsjd as $rjd):?>
+									<div class="contsndbox JD">
+										<div id="sndbox">
+											<div class="col" id="sndname"><?php echo($rjd['Nom']) ?>
+											</div>
+											<audio controls>
+											<source src="SBP/JDay/<?= $rjd['Son']?>" type="audio/mpeg">
+											</audio>
+										</div>
+									</div>
+								<?php endforeach;?>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+	<?php 
+			}
+			else{
+############################################# NO RESULTS #############################################
+		?>
+			<section class="container-fluid">
+				<article id="nosearch">
+					<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+					<div id="noresults">
+						<p>Aucun son trouvé !</p>
+					</div>
+				</article>
+			</section>
+	<?php
+		}
+}
+else {
+?>
+	<!-- ############################################### JDAY############################################### -->
 
 			<section>
 				<article class="jday">
@@ -81,7 +129,7 @@ if($_POST["soundjday"] == " "){
 						<div class="row">
 							<div class="col">
 								<?php
-								foreach ($lenom as $leson):?>
+								foreach ($nomjd as $leson):?>
 								<div class="contsndbox JD">
 									<div id="sndbox">
 										<div class="col" id="sndname">
@@ -98,11 +146,8 @@ if($_POST["soundjday"] == " "){
 					</div>
         </article>
 			</section>
-      <div id="btntop" class="container-fluid">
-        <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-      </div>
 			<hr>
-
+	<?php } ?>
 	<!-- ############################################### FOOTER ############################################### -->
 
 	<footer>Bravo à toi, tu es en bas.</footer>
@@ -124,10 +169,3 @@ if($_POST["soundjday"] == " "){
 	></script>
 	</body>
 </html>
-
-<?php 
-}
-else{
-  header("Location : index.php");
-}
-?>

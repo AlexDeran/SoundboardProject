@@ -64,7 +64,7 @@ if($_POST["soundinc"] == " "){
             </a>
           </div>
         </div>
-        <form id="search" action="index.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
+        <form id="search" action="inconnus.php" class="form-inline my-2 my-lg-0 col-md-3" method="POST">
             <input id="searchbox" class="form-control mr-sm-2" type="search"
               name="search" placeholder="Rechercher un son" aria-label="Search" required>
             <button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
