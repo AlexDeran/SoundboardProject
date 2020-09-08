@@ -9,7 +9,7 @@ if(!$pdo){
 }
 
 //$_POST['keywordnew'],$_POST['keywords'],
-
+$globalerror = '<i class="fas fa-exclamation-circle"></i> Veuillez au moins remplir les champs Nom et Type du son ainsi qu\'importer un ficher sonore valide !'; 
 $error='<i class="fas fa-exclamation-circle"></i> Le nom '.$_POST['nom'].' et/ou le son '.$_FILES['snd']['name'].' existe(nt) déja !';
 $success='<i class="fas fa-check"></i> Le son '.$_POST['nom'].' a été ajouté avec succès !';
 $errork='<i class="fas fa-exclamation-circle"></i> Le mot-clé '.$_POST['keywordnew'].' existe déja ! Merci de réessayer en utilisant <a id="errorkey" data-toggle="modal" data-target="#exampleModalCenter"><u>la liste des mots-clés existants</u></a>.';
@@ -22,6 +22,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 	$catsnd = ($_POST['catsnd']);
 	if(isset($_POST['videosrc']) && !empty($_POST['videosrc'])){
 		$videosrc = $_POST['videosrc'];
+		
 	}
 
 				################# SON FR ############################
@@ -137,7 +138,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 				################# COUNT SON ############################
 
-		case 'Son WORLD':
+		case 'Son World':
 			$verifsndw = $pdo->prepare("SELECT COUNT(*) FROM soundw WHERE Nom = :nom OR Son = :snd");
 			$verifsndw->bindParam(':nom',$nom,PDO::PARAM_STR);
 			$verifsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
@@ -340,6 +341,15 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 		break;
 	}
 	
+}
+
+else{
+	echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$globalerror. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
 }
 
 

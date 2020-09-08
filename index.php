@@ -183,6 +183,7 @@ endif;
 														class="form-control-file"
 														id="importsound"
 														name="snd"
+														required
 													/>
 												</div>
 												<div class="form-group">
@@ -197,7 +198,7 @@ endif;
 													/>
 												</div>
 												<label for="catsnd"><strong> Quel type de son ?</strong></label>
-												<div id="catsnd" class="form-group">
+												<div id="catsnd" class="form-group" required>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
 														<label class="form-check-label" for="catson">Son FR</label>
