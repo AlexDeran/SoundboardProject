@@ -9,9 +9,13 @@ if(!$pdo){
 }
 
 //$_POST['keywordnew'],$_POST['keywords'],
+
 $globalerror = '<i class="fas fa-exclamation-circle"></i> Veuillez au moins remplir les champs Nom et Type du son ainsi qu\'importer un ficher sonore valide !'; 
+
 $error='<i class="fas fa-exclamation-circle"></i> Le nom '.$_POST['nom'].' et/ou le son '.$_FILES['snd']['name'].' existe(nt) déja !';
+
 $success='<i class="fas fa-check"></i> Le son '.$_POST['nom'].' a été ajouté avec succès !';
+
 $errork='<i class="fas fa-exclamation-circle"></i> Le mot-clé '.$_POST['keywordnew'].' existe déja ! Merci de réessayer en utilisant <a id="errorkey" data-toggle="modal" data-target="#exampleModalCenter"><u>la liste des mots-clés existants</u></a>.';
 
 
@@ -80,7 +84,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 						$uploaddir = 'SBP/SFR/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
-						if($videosrc != ""){
+						if(isset($videosrc) && $videosrc != ""){
 							$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
 							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
 							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
@@ -110,7 +114,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$keywrd = $_POST['keywords'];
 					$uploaddir = 'SBP/SFR/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
-					if($videosrc != ""){
+					if(isset($videosrc) && $videosrc != ""){
 						$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
 						$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
 						$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
@@ -222,6 +226,8 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				}
 			};
 		break;
+
+		################# SON WTC ############################
 
 		case 'WTC':
 

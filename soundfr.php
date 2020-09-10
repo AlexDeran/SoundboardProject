@@ -117,10 +117,21 @@ else{
 									<?php foreach ($resultsfr as $r):?>
 									<div class="contsndbox fra">
 										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($r['Nom']) ?>
+											<div class="col" id="sndname">	<?php if ($r['source'] != ""){ ?>
+												<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
+												<?php echo($r['Nom']) ?>
+												</a>
+												<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered">
+														<div class="modal-content">
+															<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+														</div>
+													</div>
+												</div>
+											<?php $n++; } else echo($r['Nom']); ?>
 											</div>
 											<audio controls>
-											<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+												<source src="SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
 											</audio>
 										</div>
 									</div>
@@ -204,7 +215,7 @@ else{
 				<!-- ########################################## PAGINATION ########################################## -->
 
 	<nav aria-label="Page navigation example">
-		<ul class="pagination pagination-lg justify-content-center">
+		<ul class="pagination pagination justify-content-center">
 			<li class="page-item <?php if($page - 1 === 0){echo 'disabled';}?>">
 				<a class="page-link" href="?page=<?=$page - 1;?>" tabindex="-1" aria-disabled="true">Précédent</a>
 			</li>

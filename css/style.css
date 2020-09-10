@@ -295,6 +295,8 @@ audio {
 	border-top: solid black;
 	border-bottom: solid black;
 	background-color: whitesmoke;
+	border-left: none;
+	border-right: none;
 }
 
 #sndname {
