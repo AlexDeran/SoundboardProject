@@ -327,11 +327,14 @@ audio {
 #searchbox2 {
 	padding-bottom: 1%;
 }
+#sndfr,
+#searchfr {
+	background-image: url(../img/france-flag-1058699_1280.jpg);
+	background-position: center;
+}
 
-#sndsearch {
-	padding: 0.2em;
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
+#searchfr {
+	padding-bottom: 0.3em;
 }
 
 #nosearch {
