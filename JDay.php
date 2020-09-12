@@ -22,7 +22,7 @@ $stmtjd->execute([
 $resultsjd = $stmtjd->fetchAll();
 }
 
-$nomjd = $pdo->prepare("SELECT Nom, Son FROM jday ORDER BY Nom");
+$nomjd = $pdo->prepare("SELECT Nom, Son, source FROM jday ORDER BY Nom");
 
 $nomjd->execute();
 
@@ -89,7 +89,19 @@ $n = 1;
 									<?php foreach ($resultsjd as $rjd):?>
 									<div class="contsndbox JD">
 										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($rjd['Nom']) ?>
+											<div class="col" id="sndname">
+												<?php if ($rjd['source'] != ""){ ?>
+												<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
+												<?php echo($rjd['Nom']) ?>
+												</a>
+												<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered">
+														<div class="modal-content">
+															<iframe class="vidsrc" width="560" height="315" src="<?=$rjd['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+														</div>
+													</div>
+												</div>
+											<?php $n++; } else echo($rjd['Nom']); ?>
 											</div>
 											<audio controls>
 											<source src="SBP/JDay/<?= $rjd['Son']?>" type="audio/mpeg">
@@ -133,7 +145,18 @@ else {
 								<div class="contsndbox JD">
 									<div id="sndbox">
 										<div class="col" id="sndname">
+											<?php if ($leson['source'] != ""){ ?>
+											<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
 											<?php echo($leson['Nom']) ?>
+											</a>
+											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered">
+													<div class="modal-content">
+														<iframe class="vidsrc" width="560" height="315" src="<?=$leson['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													</div>
+												</div>
+											</div>
+										<?php $n++; } else echo($leson['Nom']); ?>
 										</div>
 										<audio controls>
 											<source src="SBP/JDay/<?= $leson["Son"]?>" type="audio/mpeg">

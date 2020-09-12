@@ -40,7 +40,7 @@ $perPage = 16;
 
 $beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-$nomwtc = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son FROM wtc ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+$nomwtc = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM wtc ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
 
 $nomwtc->execute();
 
@@ -118,7 +118,18 @@ $n = 1;
 									<?php foreach ($resultswtc as $rwtc):?>
 									<div class="contsndbox wat">
 										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($rwtc['Nom']) ?>
+											<div class="col" id="sndname"><?php if ($rwtc['source'] != ""){ ?>
+												<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
+												<?php echo($rwtc['Nom']) ?>
+												</a>
+												<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered">
+														<div class="modal-content">
+															<iframe class="vidsrc" width="560" height="315" src="<?=$rwtc['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+														</div>
+													</div>
+												</div>
+											<?php $n++; } else echo($rwtc['Nom']); ?>
 											</div>
 											<audio controls>
 											<source src="SBP/WTC/<?= $rwtc['Son']?>" type="audio/mpeg">
@@ -176,7 +187,18 @@ $n = 1;
 								<div class="contsndbox wat">
 									<div id="sndbox">
 										<div class="col" id="sndname">
+											<?php if ($leson['source'] != ""){ ?>
+											<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
 											<?php echo($leson['Nom']) ?>
+											</a>
+											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered">
+													<div class="modal-content">
+														<iframe class="vidsrc" width="560" height="315" src="<?=$leson['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													</div>
+												</div>
+											</div>
+										<?php $n++; } else echo($leson['Nom']); ?>
 										</div>
 										<audio controls>
 											<source src="SBP/WTC/<?= $leson["Son"]?>" type="audio/mpeg">

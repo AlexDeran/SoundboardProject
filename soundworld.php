@@ -41,7 +41,7 @@ $perPage = 16;
 
 $beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-$nomw = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son FROM soundw ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+$nomw = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM soundw ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
 
 $nomw->execute();
 
@@ -119,8 +119,18 @@ $n = 1;
 									<?php foreach ($resultsw as $rw):?>
 									<div class="contsndbox world">
 										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($rw['Nom']) ?>
-											</div>
+											<div class="col" id="sndname"><?php if ($rw['source'] != ""){ ?>
+												<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
+												<?php echo($rw['Nom']) ?>
+												</a>
+												<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+													<div class="modal-dialog modal-dialog-centered">
+														<div class="modal-content">
+															<iframe class="vidsrc" width="560" height="315" src="<?=$rw['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+														</div>
+													</div>
+												</div>
+											<?php $n++; } else echo($rw['Nom']); ?>
 											<audio controls>
 											<source src="SBP/SWLD/<?= $rw['Son']?>" type="audio/mpeg">
 											</audio>
@@ -177,7 +187,18 @@ $n = 1;
 									<?php foreach ($nomw as $lesonw): ?>
 									<div class="contsndbox world">
 										<div id="sndbox">
-											<div class="col" id="sndname"><?php echo($lesonw['Nom']) ?>
+											<div class="col" id="sndname"><?php if ($lesonw['source'] != ""){ ?>
+									<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
+									<?php echo($lesonw['Nom']) ?>
+									</a>
+									<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content">
+												<iframe class="vidsrc" width="560" height="315" src="<?=$lesonw['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</div>
+										</div>
+									</div>
+								<?php $n++; } else echo($lesonw['Nom']); ?>
 										</div>
 										<audio controls>
 											<source src="SBP/SWLD/<?= $lesonw["Son"]?>" type="audio/mpeg">
