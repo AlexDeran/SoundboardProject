@@ -206,13 +206,13 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 						$addsndw->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
 						$addsndw->execute();
+						}
 						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 										' .$success. ' 
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
-									</div>');
-						}
+									</div>');	
 					}
 				}
 
@@ -236,13 +236,14 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndw->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
 					$addsndw->execute();
+				}
 					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 									' .$success. ' 
 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>');
-					}
+					
 				}
 			};
 		break;
@@ -311,13 +312,15 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
 						$addsndwtc->bindParam(':keyw',$keywordwtc,PDO::PARAM_STR);
 						$addsndwtc->execute();
+					}
+
 						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 										' .$success. ' 
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>');
-						}
+						
 					}
 				}
 		
@@ -339,13 +342,14 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
 					$addsndwtc->bindParam(':keyw',$keywrdwtc,PDO::PARAM_STR);
 					$addsndwtc->execute();
+				}
 					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 									' .$success. ' 
 									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 										<span aria-hidden="true">&times;</span>
 									</button>
 								</div>');
-					}
+					
 				}
 			}
 		break;
@@ -386,13 +390,14 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						$addsndjd->bindParam(':snd',$snd,PDO::PARAM_STR);
 						$addsndjd->bindParam(':keyw',$keywordjd,PDO::PARAM_STR);
 						$addsndjd->execute();
+						}
 						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
 										' .$success. ' 
 										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 											<span aria-hidden="true">&times;</span>
 										</button>
 									</div>');
-						}
+						
 			}
 		break;
 	}

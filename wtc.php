@@ -111,7 +111,7 @@ $n = 1;
 			?>
 				<section>
 					<article class="wtc">
-						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<h2 class="sndtitle wpad sndwtc"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -152,7 +152,7 @@ $n = 1;
 		?>
 			<section class="container-fluid">
 				<article id="nosearch">
-					<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+					<h2 class="sndquery wpad sndwtc"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
 					</div>
@@ -178,7 +178,7 @@ $n = 1;
 	} else {  ?>
 			<section>
 				<article class="wtc">
-					<h2 class="sndtitle wpad" id="sndwtc">What the Cut ?!</h2>
+					<h2 class="sndtitle wpad sndwtc">What the Cut ?!</h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">

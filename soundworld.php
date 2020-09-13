@@ -112,7 +112,7 @@ $n = 1;
 			?>
 				<section>
 					<article class="wrld">
-						<h2 class="sndtitle" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<h2 class="sndtitle" id="sndwld"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($_POST['search']) ?> <img src="img/earth-min.png" height="75" width="75" > </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -131,6 +131,7 @@ $n = 1;
 													</div>
 												</div>
 											<?php $n++; } else echo($rw['Nom']); ?>
+											</div>
 											<audio controls>
 											<source src="SBP/SWLD/<?= $rw['Son']?>" type="audio/mpeg">
 											</audio>
@@ -152,7 +153,7 @@ $n = 1;
 		?>
 			<section class="container-fluid">
 				<article id="nosearch">
-					<h2 class="sndquery" id="sndsearch"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+					<h2 class="sndquery" id="sndwld"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($_POST['search']) ?> <img src="img/earth-min.png" height="75" width="75" > </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
 					</div>

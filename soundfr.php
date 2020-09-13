@@ -110,7 +110,7 @@ else{
 			?>
 				<section>
 					<article class="fr fronly">
-						<h2 class="sndtitle" id="searchfr"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+						<h2 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_POST['search']) ?><img src="img/ecufr.png" height="75" width="75"> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -151,7 +151,7 @@ else{
 		?>
 			<section class="container-fluid">
 				<article id="nosearch">
-					<h2 class="sndquery" id="searchfr"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
+					<h2 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_POST['search']) ?><img src="img/ecufr.png" height="75" width="75"> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
 					</div>

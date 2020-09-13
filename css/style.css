@@ -223,15 +223,15 @@ a:hover {
 	border-bottom: solid black;
 }
 
-#sndfr {
-	background-image: url(../img/france-flag-1058699_1280.jpg);
-	background-position: center;
-}
-
+#sndwld,
 #sndw {
 	background-image: url(../img/Collection-national-flags.png);
 	background-position: bottom left;
 	font-size: 3.5em;
+}
+
+#sndwld {
+	padding-bottom: 0.1em;
 }
 
 /* ############################################### PAGINATION ############################################## */
@@ -334,7 +334,7 @@ audio {
 }
 
 #searchfr {
-	padding-bottom: 0.3em;
+	padding-bottom: 0.1em;
 }
 
 #nosearch {
@@ -407,7 +407,7 @@ span {
 	background-color: rosybrown;
 }
 
-#sndwtc {
+.sndwtc {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
 }
