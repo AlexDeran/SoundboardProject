@@ -235,10 +235,20 @@ a:hover {
 }
 
 /* ############################################### PAGINATION ############################################## */
-
-.page-link.ad {
+.ad {
 	background-color: black;
 	color: white;
+}
+
+.ad,
+.page-link {
+	border: none;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+.page-link:hover,
+.page-link.ad:hover {
+	border-radius: 5px;
 }
 
 .page-link.ad:hover {

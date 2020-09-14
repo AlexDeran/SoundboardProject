@@ -213,15 +213,23 @@ $n = 1;
 			</section>
       <nav aria-label="Page navigation example">
 		<ul class="pagination pagination-lg justify-content-center">
-			<li class="page-item <?php if($page - 1 === 0){echo 'disabled';}?>">
-				<a class="page-link ad" href="?page=<?=$page - 1;?>" tabindex="-1" aria-disabled="true">Précédent</a>
-			</li>
-			<?php for($x=1; $x <= $pages; $x++): ?>
-			<li class="page-item <?php if($page === $x){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$x; ?>"><?=$x ?></a></li>
+			<?php if($page > 1){
+			$prev = $page -1;
+			echo'<li class="page-item ">
+				<a class="page-link ad" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
+			</li>';} ?>
+			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link ad" href="?page=1">1<a></li> 
+			<?php for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
+			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$i; ?>"><?=$i ?></a></li>
 			<?php endfor; ?>
-			<li class="page-item <?php if($page == $pages){echo 'disabled';}?>">
-				<a class="page-link ad" href="?page=<?=$page + 1; ?>">Suivant</a>
-			</li>
+			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$pages?>"><?=$pages?><a></li> 
+			<?php if($page != $pages){
+				$next = $page + 1;
+				echo'
+			<li class="page-item">
+				<a class="page-link ad" href="?page='.$next.'">Suivant</a>
+			</li>'
+				;}?>
 		</ul>
 	</nav>
 	<?php 

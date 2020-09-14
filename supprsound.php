@@ -13,6 +13,8 @@ $error=`<i class="fas fa-exclamation-circle"></i> Une erreur est survenue ! Aucu
 $success='<i class="fas fa-check"></i> Le son '.$_POST['supprsnd'].' a été supprimé avec succès !';
 $successw='<i class="fas fa-check"></i> Le son '.$_POST['supprsndw'].' a été supprimé avec succès !';
 $successwtc='<i class="fas fa-check"></i> Le son '.$_POST['supprsndwtc'].' a été supprimé avec succès !';
+$successjd='<i class="fas fa-check"></i> Le son '.$_POST['supprsndjd'].' a été supprimé avec succès !';
+$successinc='<i class="fas fa-check"></i> Le son '.$_POST['supprsndinc'].' a été supprimé avec succès !';
 
 if(isset($_POST['supprsnd']) && !empty($_POST['supprsnd'])){
 	$nomduson = $_POST['supprsnd'];
@@ -53,13 +55,26 @@ elseif(isset($_POST['supprsndwtc']) && !empty($_POST['supprsndwtc'])){
 				</div>');
 }
 
-elseif(isset($_POST['supprsndwjd']) && !empty($_POST['supprsndjd'])){
+elseif(isset($_POST['supprsndjd']) && !empty($_POST['supprsndjd'])){
 	$nomduson = $_POST['supprsndjd'];
  	$supprsnd = $pdo->prepare("DELETE FROM `jday` WHERE Nom = :nom ");
  	$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
 	$supprsnd->execute();
 	echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
-					' .$successwtc. ' 
+					' .$successjd. ' 
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>');
+}
+
+elseif(isset($_POST['supprsndinc']) && !empty($_POST['supprsndinc'])){
+	$nomduson = $_POST['supprsndinc'];
+ 	$supprsnd = $pdo->prepare("DELETE FROM `inconnus` WHERE Nom = :nom ");
+ 	$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
+	$supprsnd->execute();
+	echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+					' .$successinc. ' 
 					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>

@@ -138,9 +138,9 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				}	
 			}
 		break;
-			################# SON WORLD ############################
+			################################## SON WORLD ########################################################
 
-				################# COUNT SON ############################
+				############################################# COUNT SON ###################################################
 
 		case 'Son World':
 			$verifsndw = $pdo->prepare("SELECT COUNT(*) FROM soundw WHERE Nom = :nom OR Son = :snd");
@@ -160,7 +160,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 							
 			else{
 
-				################# COUNT NEW KEYW ############################
+				################################## COUNT NEW KEYW #############################################
 
 				if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
 					$newkeyw = htmlspecialchars($_POST['keywordnew']);
@@ -180,7 +180,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 					else{
 
-								################# INSERT NEW KEYW ############################
+								################################## INSERT NEW KEYW #############################################
 
 						$catkeyw = "WORLD";
 						$addkeywr = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
@@ -188,17 +188,17 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						$addkeywr->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
 						$addkeywr->execute();
 
-								################# INSERT SON + KEYW ############################
+			################################################### INSERT SON + KEYW ############################
 
 						$uploaddir = 'SBP/SWLD/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 							if(isset($videosrc) && $videosrc != ""){
-							$addsndfr = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
-							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-							$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
-							$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
-							$addsndfr->execute();
+							$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndw->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndw->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
+							$addsndw->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndw->execute();
 						}
 						else{
 						$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw, '')");
@@ -216,19 +216,19 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					}
 				}
 
-					################# INSERT SON SI KEYW EXISTE DEJA ############################
+					################################## INSERT SON SI KEYW EXISTE DEJA ############################
 
 				elseif(isset($_POST['keywordsw'])){
 					$keywrd = $_POST['keywordsw'];
 					$uploaddir = 'SBP/SWLD/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
-						$addsndfr = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
-						$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-						$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-						$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
-						$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
-						$addsndfr->execute();
+						$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+						$addsndw->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndw->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndw->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+						$addsndw->bindParam(':src',$videosrc,PDO::PARAM_STR);
+						$addsndw->execute();
 						}
 					else{
 					$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw, '')");
@@ -248,7 +248,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 			};
 		break;
 
-		################# SON WTC ############################
+		################################## SON WTC ##############################################################
 
 		case 'WTC':
 
@@ -285,7 +285,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					}
 		
 					else{
-								################# INSERT NEW KEYW ############################
+								################################## INSERT NEW KEYW #############################################
 
 						$catkeyw = "WTC";
 						$insertnewkeyw = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
@@ -293,18 +293,18 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						$insertnewkeyw->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
 						$insertnewkeyw->execute();	
 
-							################# INSERT SON + KEYW ############################
+							################################## INSERT SON + KEYW #############################################
 
 						$keywordwtc = $newkeywtc.', WTC';
 						$uploaddir = 'SBP/WTC/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
-							$addsndfr = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
-							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-							$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
-							$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
-							$addsndfr->execute();
+							$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndwtc->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndwtc->bindParam(':keyw',$keywordwtc,PDO::PARAM_STR);
+							$addsndwtc->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndwtc->execute();
 						}
 						else{
 						$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw,'')");
@@ -330,11 +330,11 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
 						$addsndfr = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
-						$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-						$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-						$addsndfr->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
-						$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
-						$addsndfr->execute();
+						$addsndwtc->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndwtc->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+						$addsndwtc->bindParam(':src',$videosrc,PDO::PARAM_STR);
+						$addsndwtc->execute();
 						}
 					else{
 					$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw, '')");
@@ -372,17 +372,17 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 						}
 							
 			else{
-								################# INSERT SON + KEYW ############################
+		################################################ INSERT SON + KEYW #############################################
 						$keywordjd = 'MisterJDay, Mr Connard';
 						$uploaddir = 'SBP/JDay/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
-							$addsndfr = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
-							$addsndfr->bindParam(':nom',$nom,PDO::PARAM_STR);
-							$addsndfr->bindParam(':snd',$snd,PDO::PARAM_STR);
-							$addsndfr->bindParam(':keyw',$newkeyw,PDO::PARAM_STR);
-							$addsndfr->bindParam(':src',$videosrc,PDO::PARAM_STR);
-							$addsndfr->execute();
+							$addsndjd = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndjd->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndjd->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndjd->bindParam(':keyw',$keywordjd,PDO::PARAM_STR);
+							$addsndjd->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndjd->execute();
 						}
 						else{
 						$addsndjd = $pdo->prepare("INSERT INTO `jday` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
@@ -398,6 +398,111 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 										</button>
 									</div>');
 						
+			}
+		break;
+
+			################################################### INCONNUS #############################################
+
+		case 'Inconnus':
+
+			$verifsndinc = $pdo->prepare("SELECT COUNT(*) FROM inconnus WHERE Nom = :nom OR Son = :snd");
+			$verifsndinc->bindParam(':nom',$nom,PDO::PARAM_STR);
+			$verifsndinc->bindParam(':snd',$snd,PDO::PARAM_STR);
+			$verifsndinc->execute();
+			$result = $verifsndinc->fetchColumn();
+
+			if($result > 0){
+					echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$error. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+						}
+			else{
+
+				if(isset($_POST['keywordnew']) && !empty($_POST['keywordnew'])){
+					$newkeyinc = htmlspecialchars($_POST['keywordnew']);
+					$verifkeyinc = $pdo->prepare("SELECT COUNT(*) FROM keywrds WHERE Nom = :Nom ");
+					$verifkeyinc->bindParam(':Nom',$newkeyinc, PDO::PARAM_STR);
+					$verifkeyinc->execute();
+					$resultk = $verifkeyinc->fetchColumn();
+
+					if($resultk > 0){
+							echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+											' .$errork. ' 
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>');
+					}
+		
+					else{
+								################# INSERT NEW KEYW ############################
+
+						$catkeyw = "INCONNUS";
+						$insertnewkeyinc = $pdo->prepare("INSERT INTO keywrds (`Nom`,`Appartenance`) VALUES (:keynom, :keycat)");
+						$insertnewkeyinc->bindParam(':keynom',$newkeyinc,PDO::PARAM_STR);
+						$insertnewkeyinc->bindParam(':keycat',$catkeyw,PDO::PARAM_STR);
+						$insertnewkeyinc->execute();	
+
+							################# INSERT SON + KEYW ############################
+
+						$uploaddir = 'SBP/Inconnus/';
+						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
+						if(isset($videosrc) && $videosrc != ""){
+							$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndinc->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndinc->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndinc->bindParam(':keyw',$newkeyinc,PDO::PARAM_STR);
+							$addsndinc->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndinc->execute();
+						}
+						else{
+						$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw,'')");
+						$addsndinc->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndinc->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndinc->bindParam(':keyw',$keywordinc,PDO::PARAM_STR);
+						$addsndinc->execute();
+					}
+
+						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+										' .$success. ' 
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>');
+						
+					}
+				}
+		
+				elseif(isset($_POST['keywordsinc'])){
+					$keywrd = $_POST['keywordsinc'];
+					$uploaddir = 'SBP/Inconnus/';
+					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
+					if(isset($videosrc) && $videosrc != ""){
+						$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+						$addsndinc->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndinc->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndinc->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+						$addsndinc->bindParam(':src',$videosrc,PDO::PARAM_STR);
+						$addsndinc->execute();
+						}
+					else{
+					$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd, :keyw, '')");
+					$addsndinc->bindParam(':nom',$nom,PDO::PARAM_STR);
+					$addsndinc->bindParam(':snd',$snd,PDO::PARAM_STR);
+					$addsndinc->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+					$addsndinc->execute();
+				}
+					echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$success. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+					
+				}
 			}
 		break;
 	}

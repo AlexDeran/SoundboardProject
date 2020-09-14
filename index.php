@@ -27,15 +27,6 @@ $onlynom = $pdo->query('SELECT Nom  FROM soundfr');
 				$lesnom = false;
 		endif;
 
-$nomw = $pdo->query('SELECT Nom, Son FROM soundw');
-
-		if($nomw):
-				$lenomw = $nomw->fetchAll(PDO::FETCH_ASSOC);
-
-		else:
-				$lenomw = false;
-		endif;
-
 $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 
 		if($onlynomw):
@@ -43,15 +34,6 @@ $onlynomw = $pdo->query('SELECT Nom FROM soundw');
 
 		else:
 				$lesnomw = false;
-		endif;
-
-$nomwtc = $pdo->query('SELECT Nom, Son FROM wtc');
-
-		if($nomwtc):
-				$lenomwtc = $nomwtc->fetchAll(PDO::FETCH_ASSOC);
-
-		else:
-				$lenomwtc = false;
 		endif;
 
 $onlynomwtc = $pdo->query('SELECT Nom FROM wtc');
@@ -63,15 +45,24 @@ $onlynomwtc = $pdo->query('SELECT Nom FROM wtc');
 				$lesnomwtc = false;
 		endif;
 
-$nomjday = $pdo->query('SELECT Nom, Son FROM jday ORDER BY Nom ASC');
+$onlynomjd = $pdo->query('SELECT Nom FROM JDay');
 
-		if($nomjday):
-				$lenomjday = $nomjday->fetchAll(PDO::FETCH_ASSOC);
+		if($onlynomjd):
+				$lenomjday = $onlynomjd->fetchAll(PDO::FETCH_ASSOC);
 
 		else:
 				$lenomjday = false;
-		endif;		
+		endif;
 
+
+$onlynominc = $pdo->query('SELECT Nom FROM inconnus');
+
+		if($onlynominc):
+				$lenominc = $onlynominc->fetchAll(PDO::FETCH_ASSOC);
+
+		else:
+				$lenominc = false;
+		endif;
 
 $keywordsfr = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "FR" ORDER BY Nom ASC');
 		if($keywordsfr):
@@ -94,6 +85,13 @@ if($keywordswtc):
 		$keywrdwtc = $keywordswtc->fetchAll(PDO::FETCH_ASSOC);
 else:
 		$keywrdwtc = false;
+endif;
+
+$keywordsinc = $pdo->query('SELECT Nom FROM keywrds WHERE Appartenance = "Inconnus" ORDER BY Nom ASC');
+if($keywordsinc):
+		$keywrdinc = $keywordsinc->fetchAll(PDO::FETCH_ASSOC);
+else:
+		$keywrdinc = false;
 endif;
 
 
@@ -213,11 +211,11 @@ endif;
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="JDay">
-														<label class="form-check-label" for="catson3">JDay</label>
+														<label class="form-check-label" for="catson4">JDay</label>
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="Inconnus">
-														<label class="form-check-label" for="catson3">Les Inconnus</label>
+														<label class="form-check-label" for="catson5">Les Inconnus</label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -232,7 +230,7 @@ endif;
 												</div>
 												<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
 												<div class="form-row">
-													<div class="form-group col-md-4">
+													<div class="form-group col-md-6">
 														<label for="exampleFormControlSelect1"><b>FR</b></label>
 														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
 															<option></option>
@@ -241,8 +239,8 @@ endif;
 															<?php endforeach ?>
 														</select>
 													</div>
-													<div class="form-group col-md-4">
-														<label for="exampleFormControlSelect1"><b>WORLD</b></label>
+													<div class="form-group col-md-6">
+														<label for="exampleFormControlSelect2"><b>WORLD</b></label>
 														<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
 															<option></option>
 															<?php foreach ($keywrdw as $keyww):?>
@@ -250,12 +248,23 @@ endif;
 															<?php endforeach ?>
 														</select>
 													</div>
-													<div class="form-group col-md-4">
-														<label for="exampleFormControlSelect1"><b>WTC</b></label>
-														<select name="keywordswtc" class="form-control" id="exampleFormControlSelect2">
+												</div>
+												<div class="form-row">
+													<div class="form-group col-md-6">
+														<label for="exampleFormControlSelect3"><b>WTC</b></label>
+														<select name="keywordswtc" class="form-control" id="exampleFormControlSelect3">
 															<option></option>
 															<?php foreach ($keywrdwtc as $keywtc):?>
 															<option><?php echo $keywtc['Nom']?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+														<div class="form-group col-md-6">
+														<label for="exampleFormControlSelect4"><b>INCONNUS</b></label>
+														<select name="keywordsinc" class="form-control" id="exampleFormControlSelect4">
+															<option></option>
+															<?php foreach ($keywrdinc as $keyinc):?>
+															<option><?php echo $keyinc['Nom']?></option>
 															<?php endforeach ?>
 														</select>
 													</div>
@@ -315,7 +324,7 @@ endif;
 												<div class="modal-body">
 													<label for="form-row"><b>Choisir le son à supprimer</b></label>
 													<div class="form-row">
-														<div class="form-group col-md-3">
+														<div class="form-group col-md-4">
 															<label for="inputson"><b>FR</b></label>
 															<select id="inputson" name="supprsnd" class="form-control">
 																<option></option>
@@ -324,7 +333,7 @@ endif;
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-3">
+														<div class="form-group col-md-4">
 															<label for="inputsonw"><b>WORLD</b></label>
 															<select id="inputsonw" name="supprsndw" class="form-control">
 																<option></option>
@@ -333,7 +342,7 @@ endif;
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-3">
+														<div class="form-group col-md-4">
 															<label for="inputsonw"><b>WTC</b></label>
 															<select id="inputsonwtc" name="supprsndwtc" class="form-control">
 																<option></option>
@@ -342,12 +351,23 @@ endif;
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-3">
+													</div>
+													<div class="form-row">
+														<div class="form-group col-md-6">
 															<label for="inputsonw"><b>JDay</b></label>
 															<select id="inputsonjd" name="supprsndjd" class="form-control">
 																<option></option>
 																<?php foreach ($lenomjday as $jday):?>
 																<option><?php echo $jday['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-6">
+															<label for="inputsonw"><b>INCONNUS</b></label>
+															<select id="inputsoninc" name="supprsndinc" class="form-control">
+																<option></option>
+																<?php foreach ($lenominc as $inc):?>
+																<option><?php echo $inc['Nom'] ?></option>
 																<?php endforeach ?>
 															</select>
 														</div>
