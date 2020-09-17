@@ -159,7 +159,7 @@ $n = 1;
 ############################################# NO RESULTS #############################################
 		?>
 			<section class="container-fluid">
-				<article id="nosearch">
+				<article id="nosearch" class="inconnus">
 					<h2 class="sndquery wpad sndwtc"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
@@ -174,7 +174,7 @@ $n = 1;
 
 	if($page <1 || $page > $pages){?>
 	<section class="container-fluid">
-		<article id="nosearch">
+		<article id="nosearch" class="inconnus">
 			<div id="noresults">
 				<p>La page que vous demandez n'existe pas !</p>
 			</div>
@@ -186,13 +186,13 @@ $n = 1;
 	} else {  ?>
 			<section>
 				<article class="inconnus">
-					<h2 class="sndtitle wpad" id="sndjdg">Les inconnus</h2>
+					<h2 class="sndtitle" id="sndinc"> <img src="img/inconnus.png" height="100" width="258"> </h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">
 								<?php
 								foreach ($lenom as $leson):?>
-								<div class="contsndbox">
+								<div class="contsndbox wat">
 									<div id="sndbox">
 										<div class="col" id="sndname">
 											<?php if ($leson['source'] != ""){ ?>

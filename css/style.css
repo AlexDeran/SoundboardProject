@@ -156,15 +156,6 @@ header {
 	padding-bottom: 25%;
 }
 
-#myBtnJDG {
-	background-image: url(../img/JDG.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-right: 2em;
-	font-size: 6em;
-	padding-bottom: 8%;
-}
-
 #myBtn2,
 #frbuttton,
 #myBtnW {
@@ -408,13 +399,13 @@ span {
 /* ############################################### WTC ############################################### */
 
 .wtc {
-	background-image: url(../img/WTC.jpg);
+	background-image: url(../img/wtcban.jpg);
 	margin: 1em;
 	border-radius: 1.5em;
 	border: solid black;
 }
 .wat {
-	background-color: rosybrown;
+	background-color: white;
 }
 
 .sndwtc {
@@ -422,6 +413,10 @@ span {
 	background-position: left;
 }
 
+.sndwtcimg {
+	background-color: black;
+	border-bottom: solid white;
+}
 /* ############################################### ALL ############################################### */
 
 #ButtonsAll {
@@ -451,8 +446,8 @@ span {
 	font-size: 8em;
 }
 
-#myBtnJDGAll {
-	background-image: url(../img/JDG.jpg);
+#myBtnMVAll {
+	background-image: url(../img/mistermv.png);
 	background-repeat: no-repeat;
 	background-size: contain;
 	padding-right: 2em;
@@ -477,9 +472,17 @@ span {
 	border: solid black;
 }
 
-#sndjdg {
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
+#sndjd {
+	background-image: linear-gradient(
+		to bottom,
+		#f7f7f7,
+		#fdfdfd,
+		#f5f5f5,
+		#e2e2e2,
+		#d2d2d2,
+		#c7c7c7,
+		#c9c9c9
+	);
 }
 
 .jou {
@@ -524,9 +527,44 @@ span {
 /* ############################################### INCONNUS ############################################### */
 
 .inconnus {
-	background-image: url(../img/inconnus.jpg);
+	background-image: url(../img/inconnusnoban.jpg);
 	margin: 1em;
 	background-position: top;
 	border-radius: 1.5em;
 	border: solid black;
+}
+
+#sndinc {
+	background-color: white;
+}
+
+/* ############################################### MV ############################################### */
+
+.mv {
+	background-image: url(../img/mistermvplain.jpg);
+	margin: 1em;
+	background-position: top;
+	border-radius: 1.5em;
+	border: solid black;
+}
+
+#myBtnMV {
+	background-image: url(../img/mistermv.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding-right: 2em;
+	font-size: 6em;
+	padding-bottom: 8%;
+}
+
+#sndmv {
+	border-bottom: solid white;
+	background-color: black;
+}
+
+#searchmv {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 0.2em;
 }

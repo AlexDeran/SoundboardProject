@@ -120,7 +120,7 @@ $n = 1;
 ############################################# NO RESULTS #############################################
 		?>
 			<section class="container-fluid">
-				<article id="nosearch">
+				<article id="nosearch" class="jday">
 					<h2 class="sndquery wpad sndwtc"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
@@ -136,7 +136,7 @@ else {
 
 			<section>
 				<article class="jday">
-					<h2 class="sndtitle wpad" id="sndjdg">MisterJDay</h2>
+					<h2 class="sndtitle" id="sndjd"> <img src="img/misterjday.jpg" height="100" width="100"> </h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">

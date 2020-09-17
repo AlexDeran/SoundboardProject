@@ -151,7 +151,7 @@ $n = 1;
 ############################################# NO RESULTS #############################################
 		?>
 			<section class="container-fluid">
-				<article id="nosearch">
+				<article id="nosearch" class="wtc">
 					<h2 class="sndquery wpad sndwtc"> Sons relatifs à <?php echo($_POST['search']) ?> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
@@ -166,7 +166,7 @@ $n = 1;
 
 	if($page <1 || $page > $pages){?>
 	<section class="container-fluid">
-		<article id="nosearch">
+		<article id="nosearch" class="wtc">
 			<div id="noresults">
 				<p>La page que vous demandez n'existe pas !</p>
 			</div>
@@ -178,7 +178,7 @@ $n = 1;
 	} else {  ?>
 			<section>
 				<article class="wtc">
-					<h2 class="sndtitle wpad sndwtc">What the Cut ?!</h2>
+					<h2 class="sndtitle sndwtcimg"> <img src="img/wtc.jpg" height="100" width="150"> </h2>
 					<div class="container-fluid">
 						<div class="row">
 							<div class="col">

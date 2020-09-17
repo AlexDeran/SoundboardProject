@@ -15,6 +15,7 @@ $successw='<i class="fas fa-check"></i> Le son '.$_POST['supprsndw'].' a été s
 $successwtc='<i class="fas fa-check"></i> Le son '.$_POST['supprsndwtc'].' a été supprimé avec succès !';
 $successjd='<i class="fas fa-check"></i> Le son '.$_POST['supprsndjd'].' a été supprimé avec succès !';
 $successinc='<i class="fas fa-check"></i> Le son '.$_POST['supprsndinc'].' a été supprimé avec succès !';
+$successmv='<i class="fas fa-check"></i> Le son '.$_POST['supprsndmv'].' a été supprimé avec succès !';
 
 if(isset($_POST['supprsnd']) && !empty($_POST['supprsnd'])){
 	$nomduson = $_POST['supprsnd'];
@@ -55,6 +56,19 @@ elseif(isset($_POST['supprsndwtc']) && !empty($_POST['supprsndwtc'])){
 				</div>');
 }
 
+elseif(isset($_POST['supprsndmv']) && !empty($_POST['supprsndmv'])){
+	$nomduson = $_POST['supprsndmv'];
+ 	$supprsnd = $pdo->prepare("DELETE FROM `mv` WHERE Nom = :nom ");
+ 	$supprsnd->bindParam(':nom',$nomduson,PDO::PARAM_STR);
+	$supprsnd->execute();
+	echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+					' .$successmv. ' 
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>');
+}
+
 elseif(isset($_POST['supprsndjd']) && !empty($_POST['supprsndjd'])){
 	$nomduson = $_POST['supprsndjd'];
  	$supprsnd = $pdo->prepare("DELETE FROM `jday` WHERE Nom = :nom ");
@@ -80,6 +94,7 @@ elseif(isset($_POST['supprsndinc']) && !empty($_POST['supprsndinc'])){
 					</button>
 				</div>');
 }
+
 
 else{
 echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">

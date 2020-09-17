@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 13 sep. 2020 à 18:01
+-- Généré le : jeu. 17 sep. 2020 à 21:34
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -21,6 +21,29 @@ SET time_zone = "+00:00";
 --
 -- Base de données : `sbp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `inconnus`
+--
+
+CREATE TABLE `inconnus` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Nom` varchar(255) NOT NULL,
+  `Son` varchar(255) NOT NULL,
+  `keywords` text NOT NULL,
+  `source` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Déchargement des données de la table `inconnus`
+--
+
+INSERT INTO `inconnus` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
+(1, 'Auteuil Neuilly Passy', 'Les Inconnus - Auteuil Neuilly Passy.mp3', 'Auteuil Neuilly Passy', 'https://www.youtube.com/embed/L1N3WXZ_1LM'),
+(2, 'A.N.P Refrain', 'Auteuil Neuilly Passy refrain.mp3', 'Auteuil Neuilly Passy', 'https://www.youtube.com/embed/L1N3WXZ_1LM?start=48'),
+(3, 'Slt tu vas bien ?', 'Slt tu vas bien.mp3', 'Auteuil Neuilly Passy', 'https://www.youtube.com/embed/L1N3WXZ_1LM?start=54');
 
 -- --------------------------------------------------------
 
@@ -106,7 +129,7 @@ INSERT INTO `keywrds` (`ID`, `Nom`, `Appartenance`) VALUES
 (30, 'René Malleville', 'FR'),
 (31, 'C\'est moi', 'FR'),
 (32, 'Grigny la Grande Borne', 'FR'),
-(33, 'Mister MV', 'FR'),
+(33, 'Mister MV', 'Mister MV'),
 (34, 'Kaaris', 'FR'),
 (35, 'Maité, sucer le derrière', 'FR'),
 (36, 'Tibo InShape', 'FR'),
@@ -201,7 +224,56 @@ INSERT INTO `keywrds` (`ID`, `Nom`, `Appartenance`) VALUES
 (126, 'Jiraya, La Jij', 'FR'),
 (127, 'Freeze Corleone, Ekip, 667', 'FR'),
 (128, 'Bitconnect', 'WORLD'),
-(129, 'Risitas, ISSOU', 'WORLD');
+(129, 'Risitas, ISSOU', 'WORLD'),
+(130, 'Auteuil Neuilly Passy', 'INCONNUS');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `mv`
+--
+
+CREATE TABLE `mv` (
+  `ID` int(10) UNSIGNED NOT NULL,
+  `Nom` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `Son` varchar(255) CHARACTER SET utf8 NOT NULL,
+  `keywords` text CHARACTER SET utf8 NOT NULL,
+  `source` text CHARACTER SET utf8 NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Déchargement des données de la table `mv`
+--
+
+INSERT INTO `mv` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
+(1, 'Connasse', 'connasse.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=596'),
+(2, 'Incroyable du cul M. PDB', 'incroyable-du-cul-monsieur-pot-de-beurre.mp3', 'Mister MV', 'https://www.youtube.com/embed/PIVY12K2CwM'),
+(3, 'La boule magique', 'La boule magique.mp3', 'Mister MV', 'https://www.youtube.com/embed/Kdv3GqmGfIE'),
+(4, 'Mon sexe est en feu', 'Mon sexe est en feu.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=198'),
+(5, 'OSKUR', 'oskur.mp3', 'Mister MV', ''),
+(6, 'C\'est des saucisses', 'saucisses.mp3', 'Mister MV', ''),
+(7, 'Random du Stuntfest', 'MV - Le random du stuntfest.mp3', 'Mister MV', ''),
+(8, 'Incroyable du cul', 'incroyable du cul mistermv.mp3', 'Mister MV', 'https://www.youtube.com/embed/tHvok3kwD_g'),
+(9, 'Le respect', 'MV - Le respect.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=268'),
+(10, 'Report à Montpellier', 'MV - Reportage à Montpellier.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=285'),
+(11, 'ASMR dodo', 'MV - ASMR Dodo.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=505'),
+(12, 'Ma force ancestrale', 'MV - Ma force ancetrahahaooool.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=744'),
+(13, 'C\'est mon rêve', 'MV - c\'est mon reve 1000 balles.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=766'),
+(14, 'A quel moment', 'MV - A quel moment on en arrive la.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=812'),
+(15, 'The Zboui Anthem', 'MV - The Zboui Anthem.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=234'),
+(16, 'Les photos sur le FB', 'MV - tu a reçu les photos sur le fb.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE'),
+(17, 'Douleur anale et photos', 'MV - Douleur anale et photos.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=45'),
+(18, 'Flemme stop stream', 'MV - Flemme de fermer le stream.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=60'),
+(19, 'Les Boomers', 'MV - Les Boomers.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=67'),
+(20, 'Jouissance', 'MV - JOuissance.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=58'),
+(21, 'Orgasme', 'MV - Orgasme.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=287'),
+(22, 'Et j\'adore le Zboub ', 'J\'adore Le Zboub.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
+(23, 'Le Zboub refrain', 'J\'adore le zboub refrain.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
+(24, 'J\'adore le Zboub ', 'J\'adore le zboub court.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
+(25, 'Le clavier qui colle', 'MV - clavier qui colle.mp3', 'Mister MV', 'https://www.youtube.com/embed/obDYHxCzx-g?start=10'),
+(26, 'J\'adore les saucisses', 'Musique des Saucisses Herta! (Mister MV ZEvent).mp3', 'Mister MV', 'https://www.youtube.com/embed/rNxRhDukwSc'),
+(27, 'Instru Coldplay', 'MV - Instru Coldplay.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=439'),
+(28, 'Promo bâtons Coraya', 'MV - Promo sur les batons coraya.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA');
 
 -- --------------------------------------------------------
 
@@ -275,15 +347,12 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (51, 'René - On s\'en bat les couilles', 'On s\'en bat les couilles René Malleville.mp3', 'René Malleville', 'https://www.youtube.com/embed/3FlE7nWZBEo'),
 (52, 'C\'est mwa', 'c\'est mwa.mp3', 'C\'est moi', 'https://www.youtube.com/embed/3N-2UlT7UF4?start=101'),
 (53, 'Grigny BJ Ms Dames', 'Bien joue messieurs dames.mp3', 'Grigny la Grande Borne', 'https://www.youtube.com/embed/Ho8xZ5VN9oM?start=27'),
-(54, 'MV - Connasse', 'connasse.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=596'),
 (55, 'K2A - Contrôle de CW', 'Contrôle de chicken wings.mp3', 'Kaaris', 'https://www.youtube.com/embed/yB4zZjXAWx0?start=145'),
 (56, 'Maité - l\'ortolan', 'Culte Maïté explique comment manger un ortolan Archive INA.mp3', 'Maité, sucer le derrière', 'https://www.youtube.com/embed/SEPMuyGe7dg?start=86'),
 (57, 'Damn les gens', 'DAMN LES GENS.mp3', 'Tibo InShape', 'https://www.youtube.com/embed/QVEg6o3hV1o?start=13'),
 (58, 'Alors peut être !', 'Finish INCROYABLE - France relais 4x400m Femme Championnat d\'Europe 2014 Women - Incredible fini.mp3', '', 'https://www.youtube.com/embed/G-VYwC28KXI?start=43'),
 (59, 'AH !', 'Denis Brogniart AH.mp3', 'Denis Brogniart', 'https://www.youtube.com/embed/XE6YaLtctcI'),
 (60, 'Grigny la grande borne', 'Grigny la grande borne.mp3', 'Grigny la Grande Borne', 'https://www.youtube.com/embed/Ho8xZ5VN9oM?start=2'),
-(61, 'MV - Incroyable du cul M. PDB', 'incroyable-du-cul-monsieur-pot-de-beurre.mp3', 'Mister MV', 'https://www.youtube.com/embed/PIVY12K2CwM'),
-(62, 'MV - La boule magique', 'La boule magique.mp3', 'Mister MV', 'https://www.youtube.com/embed/Kdv3GqmGfIE'),
 (63, 'Je vais t\'enculer', 'J\'vais t\'enculer et tu jouiras....mp3', 'Depardieu', 'https://www.youtube.com/embed/tjqJK-8PpkI'),
 (64, 'L\'amour sans prélis', 'l\'amour sans preliminaire.mp3', '', 'https://www.youtube.com/embed/EvVAxJ7sJAE?start=16'),
 (65, 'Jeanne au secours !', 'Jean Marie Le Pen - Jeanne au secours !!.mp3', 'JMLP, Jean Marie Le Pen', 'https://www.youtube.com/embed/v1mxMtr8Mws'),
@@ -292,7 +361,6 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (68, 'Le raaaaaaaaaaanch', 'Le raaaaaaaaaanch.mp3', 'Vieux Callaghan', 'https://www.youtube.com/embed/ZEfvyTMA1nQ?start=52'),
 (69, 'Mister V - Le Bâtiment 4 ', 'mais jamais vous allez trouver misterv.mp3', 'Mister V', 'https://www.youtube.com/embed/MxsDaDuEDBg?start=26'),
 (70, 'Mister V - Claqué au sol', 'Mister V - Claqué au sol.mp3', 'Mister V', 'https://www.youtube.com/embed/sLl4YXqHMRQ'),
-(71, 'MV - Mon sexe est en feu', 'Mon sexe est en feu.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=198'),
 (72, 'Tkt ça va bien se passer', 'Ne tinquiète pas ça va bien se passer.mp3', '', 'https://www.youtube.com/embed/q6VxDM8Wd-o'),
 (73, 'Michel c\'est le Brésil', 'Michel c\'est le Brésil !! 1.mp3', 'Palmashow', 'https://www.youtube.com/embed/sxO0j5V9jtY?start=3'),
 (74, 'Michel c\'est le Velux', 'Michel c\'est le Brésil !! 2.mp3', 'Palmashow', 'https://www.youtube.com/embed/sxO0j5V9jtY?start=9'),
@@ -316,7 +384,6 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (94, 'Oh patron court', 'oh patron court.mp3', 'Bonne Nuit les Petits, Nounours', ''),
 (95, 'Oh patron long', 'oh patron long.mp3', 'Bonne Nuit les Petits, Nounours', ''),
 (96, 'Ah c\'est marrant ', 'Orelsan - Ah c\'est marrant.mp3', 'Orelsan', 'https://www.youtube.com/embed/Ngw-8_No6b0'),
-(97, 'MV - OSKUR', 'oskur.mp3', 'Mister MV', ''),
 (98, 'OSS - Oh si c\'est rigolo ', 'OSS 117 - Oh si, c\'est rigolo !.mp3', 'OSS 117', 'https://www.youtube.com/embed/OYz_BD3I9w0?start=1'),
 (99, 'OSS - Une dictature ', 'OSS 117-Rio ne répond plus-Une dictature.mp3', 'OSS 117', 'https://www.youtube.com/embed/NOnESat0mwM'),
 (100, 'OUI', 'oui_2.mp3', 'Zerator', 'https://www.youtube.com/embed/4on2DZUb0M0?start=7'),
@@ -328,7 +395,6 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (108, 'Sard - Mal a la queue', 'sard-mal-a-la-queue.mp3', 'Sardoche', ''),
 (109, 'Sard - la team Pavard', 'sardoche-jeduque-un-enfant_zholfoqh.mp3', 'Sardoche', 'https://www.youtube.com/embed/2nl1kF4XdJU?start=30'),
 (110, 'Sard - la team Mbappé', 'sardoche-kylian-mbappe-music.mp3', 'Sardoche', 'https://www.youtube.com/embed/6K2l0i3PXTg?start=18'),
-(111, 'MV - C\'est des saucisses', 'saucisses.mp3', 'Mister MV', ''),
 (112, 'Second poteau Pavard !', 'second-poteau-pavard-tf1-france-argentine-world-cup-2018.mp3', '', 'https://www.youtube.com/embed/hK7BjNE2TTA?start=22'),
 (113, 'Il en suffira d\'une', 'Il en suffira d\'une.mp3', '', 'https://www.youtube.com/embed/46sOX45vzlw?start=4'),
 (114, 'J\'en ai rien a foutre ', 'siphano-jen-ai-rien-a-foutre-1.mp3', 'Siphano', 'https://www.youtube.com/embed/oLSd2VVkvU8'),
@@ -419,159 +485,137 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (200, 'Bosh - Sac à dos non vidé', 'j\'ai pas vidé le sac a dos.mp3', 'Bosh, Djomb, piece', 'https://www.youtube.com/embed/zquFZaHw2TQ?start=111'),
 (201, 'Bosh - Finir dans sa lune', 'je vais finir sur sa lune.mp3', 'Bosh, Djomb, piece', 'https://www.youtube.com/embed/zquFZaHw2TQ?start=71'),
 (202, 'Objection !', 'phoenix-objection.mp3', '', ''),
-(2315, 'GBS - KOUHIZINNE', 'COUHIZINNE.mp3', 'CUISINE, Le BOUFF Sexiste, La place', 'https://www.youtube.com/embed/adCyaYx4h_M?start=40'),
-(2316, 'GBS - Gros BOUFF Sexiste', 'Gros BOUFF Sexiste.mp3', 'CUISINE, Le BOUFF Sexiste, La place', 'https://www.youtube.com/embed/adCyaYx4h_M'),
-(2317, 'AD - Le Buzz avec un double Z', 'ANTOINE DANIEL A FAIT LE BUZZ AVEC UN DOUBLE Z !!!!!.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/-D0t0LdLz9A'),
-(2322, 'Renaud - Toujours Vivant', 'Toujours vivant.mp3', 'Renaud, Toujours la banane', 'https://www.youtube.com/embed/uv37yxc51bE?start=35'),
-(2323, 'Renaud - Corona Song', 'Corona Song.mp3', 'Renaud, connard de virus', 'https://www.youtube.com/embed/RK3J2sDEQ1M?start=14'),
-(2324, 'Renaud - Connard de Virus', 'Connard de Virus.mp3', 'Renaud, connard de virus', 'https://www.youtube.com/embed/RK3J2sDEQ1M?start=17'),
-(2325, 'DLP - Wallah', 'David Lafarge Wallah.mp3', 'David Lafarge Pokémon', 'https://www.youtube.com/embed/j9vYCAsMy7Y?start=3'),
-(2326, 'Quadricolor', 'Quadricolor.mp3', '', 'https://www.youtube.com/embed/7TcfhntQdYg'),
-(2327, 'Que des N°10 dans ma team', 'Que des N°10 dans ma team.mp3', 'Booba', 'https://www.youtube.com/embed/IZmCwtYk98A?start=15'),
-(2328, 'Le dessert', 'YTP]FR Le dessert.mp3', '', 'https://www.youtube.com/embed/C5vL4qVff6Y'),
-(2329, 'Dommage', 'Dommage Edouard Phillippe.mp3', '', 'https://www.youtube.com/embed/3PZ35tHyzSk'),
-(2330, 'Ça ça va la ', 'ça ça va la.mp3', 'Valorant', 'https://www.youtube.com/embed/jUE-pYTG6wk'),
-(2331, 'Oh purée de pomme de terre', 'OH PURÉE DE POMME DE TERRE MAIS CEST PAS VRAI ÇA.mp3', '', 'https://www.youtube.com/embed/cbb4ltI3Xuw?start=1'),
-(2332, 'JDG - Achète ma merde', 'JDG - Joueur du Grenier - Achète ma merde.mp3', 'JDG, Joueur du Grenier', 'https://www.youtube.com/embed/GIWIjw-yotQ'),
-(2333, 'CHAOS - Un petit peu vulgaire', 'Un petit peu vulgaire.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/OpqzEd7Ktlc?start=8'),
-(2334, 'CHAOS - Des Hamsters ?!', 'Des Hamsters genre !.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/OpqzEd7Ktlc?start=33'),
-(2335, 'CHAOS - Dommage', 'DOMMAGE DU CHAOS DE ANTOINE DANIEL.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/toUbk23yu7Q'),
-(2336, 'AD - Philippe', 'PHILIPPE.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/bIft0PeKoJw'),
-(2337, 'Le Récap - Started FTB', 'Started from the bottom.mp3', 'Le Récap', 'https://www.youtube.com/embed/Eg1Fcyz-Tvo?start=23'),
-(2338, 'Le Récap - Salut la commu !', 'Salut la commu.mp3', 'Le Récap', 'https://www.youtube.com/embed/Eg1Fcyz-Tvo?start=28'),
-(2339, 'Alerte Générale !', 'Alerte generale - Taxi - Gilbert.mp3', 'Taxi', 'https://www.youtube.com/embed/LACbRkqcbhU'),
-(2340, 'Pensez printemps !', 'Pensez printemps les amis.mp3', '', 'https://www.youtube.com/embed/KOGeO6nY6fk'),
-(2341, 'MA LUBULLULE - 8.6', '8 morts 6 blessés.mp3', '8 morts 6 blessés, je pète ma bière, ma lubullule, ma libellule', 'https://www.youtube.com/embed/XCBQZ3xdDu0'),
-(2342, 'Ma lubullule', 'Ma lubullule.mp3', '8 morts 6 blessés, je pète ma bière, ma lubullule, ma libellule', 'https://www.youtube.com/embed/XCBQZ3xdDu0?start=8'),
-(2343, 'OUI Didier Drogba', 'what-the-cut-oui.mp3', '', 'https://www.youtube.com/embed/9MpXQEIkfjc?start=15'),
-(2344, 'Le Récap - HORAS', 'HORAS.mp3', 'Le Récap', 'https://www.youtube.com/embed/IHygqjQz1LQ?start=421'),
-(2345, 'JAAAAAAAUNE', 'jaune (34alain34).wmv.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM'),
-(2346, 'Jaaaaaaaaune Intro', 'jaune intro.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM'),
-(2347, 'Jaaaaaaaune Refrain', 'jaune refrain.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM?start=86'),
-(2348, 'Sard - DOMO, je suis japonais', 'je suis japonais.mp3', 'Sardoche', 'https://www.youtube.com/embed/niD-zC_1tPU?start=66'),
-(2349, 'AU REVOIR', 'Au revoir mitterand.mp3', '', 'https://www.youtube.com/embed/Dq5XnXh1nDY?start=6'),
-(2356, 'PANO - Si on peut parking', 'Si on peut parking alors on park.mp3', 'Ya pas de Pano', 'https://www.youtube.com/embed/LjWjBjyr_Y8?start=38'),
-(2357, 'C\'est la mer noire Full', 'mer noire.mp3', '', 'https://www.youtube.com/embed/0SdcfsD_WVE?start=36'),
-(2358, 'C\'est la mer noire ?', 'c\'est la mer noire.mp3', '', 'https://www.youtube.com/embed/0SdcfsD_WVE?start=49'),
-(2359, 'Nanar 70\'s - Le Tampax ', 'Nanar 70\'s - le Tampax.mp3', 'Nanar 70\'s', ''),
-(2360, 'MV - Random du Stuntfest', 'MV - Le random du stuntfest.mp3', 'Mister MV', ''),
-(2361, 'Ça va péter ! Full ', 'Ca va péter full.mp3', '', 'https://www.youtube.com/embed/tX0oyVX8KWE?start=5'),
-(2362, 'Ça va péter !', 'Ca va péter.mp3', '', 'https://www.youtube.com/embed/tX0oyVX8KWE?start=5'),
-(2363, 'MV - Instru Coldplay', 'MV - Instru Coldplay.mp3', '', 'https://www.youtube.com/embed/19g8gv1FnuA?start=439'),
-(2364, 'MV - Promo bâtons Coraya', 'MV - Promo sur les batons coraya.mp3', '', 'https://www.youtube.com/embed/19g8gv1FnuA'),
-(2365, 'KF - Double ration frites', 'KF - Double ration de frites.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/jiAm8OC2pXk?start=46'),
-(2366, 'Ne laisse pas t\'aspirer !', 'Ne le laisse pas t\'aspirer.mp3', 'F1', 'https://www.youtube.com/embed/wpmBNu8NEsk?start=71'),
-(2367, 'Accélère Accélère !', 'Accelere accelere.mp3', 'F1', 'https://www.youtube.com/embed/wpmBNu8NEsk?start=81'),
-(2368, 'Ah ouais ouais ouais', '[MEME] AH OUAIS OUAIS OUAIS ! - JULIEN LEPERS.mp3', '', 'https://www.youtube.com/embed/zfLGVxTC5F0'),
-(2369, 'Alerte aux gogoles', 'alerte aux gogoles.mp3', '', 'https://www.youtube.com/embed/NzT2y9S60U0?start=9'),
-(2370, 'Allez viens !', 'Allez viens !.mp3', '', 'https://www.youtube.com/embed/5SIQPfeUTtg?start=25'),
-(2371, 'Allez viens ! Full', 'Allez viens full !.mp3', '', 'https://www.youtube.com/embed/5SIQPfeUTtg?start=9'),
-(2372, 'Arrête la drogue !', 'arrete_la_drogue.mp3', '', 'https://www.youtube.com/embed/E0GikSsNEy8'),
-(2373, 'On attends pas Patrick ?', 'attendre_patrick.mp3', '', 'https://www.youtube.com/embed/iiNIKedJAkE?start=6'),
-(2374, 'Base virale VPS a jour', 'base_viral_mis_a_jour.mp3', '', 'https://www.youtube.com/embed/4hMv_rIZBtg?start=6'),
-(2375, 'Oui Monsieur', 'OUI Monsieur.mp3', '', 'https://www.youtube.com/embed/5MeEToOPwa0?start=59'),
-(2376, 'OSS - Beurrer la biscotte', 'OSS 117 beurrer la biscotte.mp3', 'OSS 117', 'https://www.youtube.com/embed/H6mZBrQc8EI?start=32'),
-(2377, 'Faire caca chez Paul', 'caca_paul.mp3', '', 'https://www.youtube.com/embed/sdBYEHt65M4?start=8'),
-(2378, 'Ali ben c\'est un cafard', 'aliben cafard.mp3', '', 'https://www.youtube.com/embed/dbPIJf7cFp8?start=4'),
-(2379, 'Che ne comprends pas', 'b20 che ne comprends pas.mp3', 'Booba', 'https://www.youtube.com/embed/ksRVImNfEwQ?start=10'),
-(2380, 'Comme j\'aime', 'comme_jem_sourier.mp3', '', 'https://www.youtube.com/embed/olYZ5MbA8xQ'),
-(2382, 'Coucou dobby', 'coucou_dobby.mp3', '', 'https://www.youtube.com/embed/3rfuffQUhfQ'),
-(2383, 'Demande de vous arrêter', 'demande_arreter_final.mp3', '', 'https://www.youtube.com/embed/V_4CZu4ghMo'),
-(2384, 'Et la c\'est le drame', 'et la c\'est le drame.mp3', '', 'https://www.youtube.com/embed/OXjNZZO4axk?start=265'),
-(2385, 'Fils de berger', 'fils_de_berger.mp3', '', 'https://www.youtube.com/embed/OWqP7fRe3jg?start=8'),
-(2386, 'Fuites urinaires', 'fuite_urinaire.mp3', '', ''),
-(2387, 'Goutte d\'eau cruche', 'goutte_do_cruche jojo.mp3', '', 'https://www.youtube.com/embed/r2PAwI2EI9E?start=95'),
-(2388, 'Rue des potiers', 'rue ds potiers.mp3', '', 'https://www.youtube.com/embed/42K4NUdbKNg'),
-(2389, 'Les hendeks arrivent', 'hendek_final.mp3', '', 'https://www.youtube.com/embed/eyfh7LG0eUA?start=11'),
-(2390, 'Je suis 1 homme en COLÈRE', 'homme_colere.mp3', '', 'https://www.youtube.com/embed/I457tqgON8E'),
-(2391, 'Hôpital se fout charrette', 'hopital_charette jojo.mp3', '', 'https://www.youtube.com/embed/r2PAwI2EI9E?start=46'),
-(2392, 'La moitié du sel FR', 'ICI ON RECOLTE LA MOITIE DU SEL FRANCAIS.mp3', '', 'https://www.youtube.com/embed/z6aelNSRr9s?start=1'),
-(2393, 'MV - Incroyable du cul', 'incroyable du cul mistermv.mp3', 'Mister MV', 'https://www.youtube.com/embed/tHvok3kwD_g'),
-(2394, 'Ish Ish', 'ish_ish_final.mp3', '', 'https://www.youtube.com/embed/XZBU7BWQsZs?start=107'),
-(2395, 'J\'ai pas touché', 'brandao g pas touché.mp3', '', 'https://www.youtube.com/embed/FCCGQ9SBTuI?start=9'),
-(2396, 'Je suis papa !', 'je_suis_papa.mp3', '', 'https://www.youtube.com/embed/eX1VsLaS2Q4?start=8'),
-(2397, 'KF - Perlimpinpin', 'KF - Perlimpinpin.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/rCK-7Hki4II?start=10'),
-(2398, 'Lâche moi Michel', 'lache moi michel.mp3', '', 'https://www.youtube.com/embed/DR6fIOpAzPI?start=2'),
-(2399, 'Le gravier', 'le_gravier.mp3', '', 'https://www.youtube.com/embed/APe0V--peNY?start=96'),
-(2400, 'MV - Le respect', 'MV - Le respect.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=268'),
-(2401, 'MV - Report à Montpellier', 'MV - Reportage à Montpellier.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=285'),
-(2402, 'MV - ASMR dodo', 'MV - ASMR Dodo.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=505'),
-(2403, 'MV - Ma force ancestrale', 'MV - Ma force ancetrahahaooool.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=744'),
-(2404, 'MV - C\'est mon rêve', 'MV - c\'est mon reve 1000 balles.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=766'),
-(2405, 'MV - A quel moment', 'MV - A quel moment on en arrive la.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=812'),
-(2406, 'MV -  The Zboui Anthem', 'MV - The Zboui Anthem.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=234'),
-(2407, 'Moi je mange la glace', 'Coucou les musulmans moi je mange la glace !.mp3', '', 'https://www.youtube.com/embed/Q9lotttWizc'),
-(2408, 'KF - Je mange la glace', 'KF - Moi je mange la glace.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/6Bxi6hXhNyo'),
-(2409, 'OSS - Faisons comme ça', 'OSS 117  faisons comme ça.mp3', 'OSS 117', 'https://www.youtube.com/embed/xkUoUnYLSto'),
-(2410, 'KF - Vous m\'emmerdez ', 'KF - Vous m\'emmerdez.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/h8-QGeOHx_Y?start=46'),
-(2411, 'KF - AH ! ', 'KF - AH remix.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/Ri7GzCUTC5s'),
-(2412, 'Commence à me parler poli', 'commence a me parler poliment.mp3', '', 'https://www.youtube.com/embed/MX_l4pRMI8w?start=48'),
-(2413, 'Bordel j\'ai le droit', 'mais bordel j\'ai le droit.mp3', '', 'https://www.youtube.com/embed/-bVL_Nvm4A8'),
-(2414, 'Non binaire', 'non binaire.mp3', '', 'https://www.youtube.com/embed/ZDjymMD7PTU?start=23'),
-(2415, 'Mais c\'est contre nature ', 'c\'est contre nature han.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=14'),
-(2416, 'NTM Marine Le Pen', 'marine le pen ntm.mp3', 'MLP, Marine Le Pen', 'https://www.youtube.com/embed/cSyOyeH3wWE?start=4'),
-(2417, 'Hollande et l\'Anglais', 'hollande et l\'anglais.mp3', '', 'https://www.youtube.com/embed/M2wyG8Kt3fA?start=4'),
-(2418, 'Ils sont la partout MLP', 'Ils sont la ils sont partout.mp3', 'MLP, Marine Le Pen', 'https://www.youtube.com/embed/Y6UHYemqvco'),
-(2419, 'Marina passe tu t’écartes', 'Marina passe et tu t\'ecartes.mp3', '', 'https://www.youtube.com/embed/_MX-YiYs9YU?start=21'),
-(2420, 'Kalash kalash', 'kalash kalash.mp3', '', 'https://www.youtube.com/embed/_MX-YiYs9YU?start=35'),
-(2421, 'Savez-vous ce que c\'est ?', 'micose_vaginale.mp3', '', ''),
-(2422, 'MV - les photos sur le FB', 'MV - tu a reçu les photos sur le fb.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE'),
-(2423, 'MV - Douleur anale photos', 'MV - Douleur anale et photos.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=45'),
-(2424, 'MV - Flemme stop stream', 'MV - Flemme de fermer le stream.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=60'),
-(2425, 'MV - Les Boomers', 'MV - Les Boomers.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=67'),
-(2426, 'Mon sac est fait', 'mon_sac_est_fait.mp3', '', 'https://www.youtube.com/embed/05yQW0Sbrv8'),
-(2427, 'Multiplex', 'multiplex.mp3', '', 'https://www.youtube.com/embed/vF34AHJzbU0'),
-(2428, 'MV - Jouissance', 'MV - JOuissance.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=58'),
-(2429, 'MV - Orgasme', 'MV - Orgasme.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=287'),
-(2430, 'Les nerfs sont tendus', 'nerf_tendu.mp3', '', 'https://www.youtube.com/embed/2lNDfxSddUg?start=53'),
-(2431, 'Non ! ', 'non mario.mp3', '', 'https://www.youtube.com/embed/caXgpo5Ezo4'),
-(2432, 'Doucement ac les bonbons', 'oh-doucement-avec-les-bonbons.mp3', '', 'https://www.youtube.com/embed/kvmyR2AuQVc?start=420'),
-(2433, 'Mister V - OK ', 'ok_mister_v_final.mp3', 'Mister V', 'https://www.youtube.com/embed/OxvinfGPtQM'),
-(2434, 'Okay ! Jacquouille', 'okay_jacquoille_final.mp3', '', 'https://www.youtube.com/embed/zZURohVP5JY?start=8'),
-(2435, 'Macron - Oui d\'accord', 'oui_d_accord.mp3', 'Macron, le M', 'https://www.youtube.com/embed/Z8et47AbmgU'),
-(2436, 'C\'est pas faux', 'pas_faux_final.mp3', '', 'https://www.youtube.com/embed/3w5cwBrvtf4?start=1'),
-(2437, 'KF - Mais t\'es pas net ?', 'pas_net_remix.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/pQjg6GlkQYM?start=56'),
-(2438, 'J\'suis pas ta mère', 'pas_ta_mere_jojo.mp3', '', ''),
-(2439, 'Je suis Passe Partout', 'passe_partout.mp3', '', 'https://www.youtube.com/embed/Z8wZ7JaSP64?start=59'),
-(2440, 'Petit Poney', 'petit poney.mp3', '', 'https://www.youtube.com/embed/u5Ho1trvlro'),
-(2441, 'Petit Poney refrain', 'petit poney refrain.mp3', '', 'https://www.youtube.com/embed/u5Ho1trvlro'),
-(2442, 'Poce bleu', 'poce_bleu_final.mp3', '', ''),
-(2443, 'Ton coté = feu éteint', 'Si de ton côté le feu s\'est éteint.mp3', '', 'https://www.youtube.com/embed/4BP__EF9ess?start=15'),
-(2444, 'Slt a tous, c\'est Lasalle', 'slt_lasalle.mp3', '', 'https://www.youtube.com/embed/9JGNQvL7teE?start=15'),
-(2445, 'Du Sprite sa mère', 'sprite_mere_final.mp3', '', 'https://www.youtube.com/embed/uEov4qWmHCY?start=6'),
-(2446, 'Super Spermatoz Jamy !', 'superbe_zigote_jamy.mp3', 'Jamy', 'https://www.youtube.com/embed/Sqgr2WNHRkM'),
-(2447, 'T\'en as trop pris gros !', 'trop_pris_gros.mp3', 'SLG, Salut les Geeks', 'https://www.youtube.com/embed/4wxsLz9RLrY'),
-(2448, 'JCVD - 1 +1 = 11 ', 'un_plus_un_jcdm.mp3', 'JCVD', 'https://www.youtube.com/embed/FTKV29C7yJE?start=21'),
-(2449, 'Véga Missile', 'vega_misyl_satellise.mp3', '', 'https://www.youtube.com/embed/5V2D1aXX_UM?start=132'),
-(2450, 'Zbeub Zbeub', 'zbeub_final.mp3', '', ''),
-(2451, 'MV - Et j\'adore le Zboub ', 'J\'adore Le Zboub.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
-(2452, 'MV - Le Zboub refrain', 'J\'adore le zboub refrain.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
-(2453, 'MV - J\'adore le Zboub ', 'J\'adore le zboub court.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
-(2454, 'Mister V - Koba LA D FULL', 'MAIS COMMENT VOUS M AVEZ TROUVÉ - MISTER V.mp3', 'Mister V', 'https://www.youtube.com/embed/MxsDaDuEDBg'),
-(2455, 'MV - Le clavier qui colle', 'MV - clavier qui colle.mp3', 'Mister MV', 'https://www.youtube.com/embed/obDYHxCzx-g?start=10'),
-(2456, 'Très très sale ', 'Très très sale - Maitre Van Diest ft M6 Boutique.mp3', '', 'https://www.youtube.com/embed/jwMFYcXjTbQ'),
-(2457, 'PTDR T KI ?', 'Ptdr t ki.mp3', 'Jiraya, La Jij', 'https://www.youtube.com/embed/u4SklJm7ZHQ?start=198'),
-(2458, 'Ça c\'était gratuit Maskey', 'ÇA C\'ÉTAIT GRATUIT - Maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/1IuAmxG0Mb4'),
-(2459, 'On appelle ça une douille', 'on appelle ça une douille maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/QJH00mv8Y4I'),
-(2460, 'MV - J\'adore les saucisses', 'Musique des Saucisses Herta! (Mister MV ZEvent).mp3', 'Mister MV', 'https://www.youtube.com/embed/rNxRhDukwSc'),
-(2461, 'Naissance probable Maskey', 'Naissance probable de maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=34'),
-(2462, 'Parce que c\'est la hess', 'Parce que c\'est la hess.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=70'),
-(2463, 'Parce que j\'ai la flemme', 'Parce que j\'ai la flemme.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=64'),
-(2464, 'Psartek le génie', 'Psartek le génie.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=44'),
-(2465, 'Mensonge', 'Mensonge.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=52'),
-(2466, 'Au chômage', 'AU chomage.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=121'),
-(2467, 'Moi je quitte cet endroit', 'moi je quitte cet endroit.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=145'),
-(2468, 'P.A.T.U.F', 'PATUF.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=161'),
-(2469, 'Catapulte tes morts', 'catapulte tes morts.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=171'),
-(2470, 'Forceur', 'Forceur.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=185'),
-(2471, 'J’apprécie moyen la', 'j\'apprecie moyen.mp3', '', ''),
-(2472, 'L’expérimental', 'L\'expérimental.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=306'),
-(2473, 'Je suis le chasseur !', 'Je suis... Le chasseur ! SOVA - SONS VALORANT - ClepsydreTV Soundbox.mp3', 'Valorant', 'https://www.youtube.com/embed/obITlzbOecw'),
-(2474, 'Un nouveau subterfuge ?!', 'Vont-ils essayer un nouveau subterfuge CYPHER - VALORANT SOUND - ClepsydreTV Soundbox.mp3', 'Valorant', 'https://www.youtube.com/embed/jfwZ7TJOdms'),
-(2475, 'Domo, je suis japonais', 'Monster - je suis japonais.mp3', '', 'https://www.youtube.com/embed/ylZpdAQdqqc'),
-(2476, 'Ohlala c\'est la décadence', 'ohlala c\'est la décadence.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=71'),
-(2477, 'Ekip 667', 'Ekip.mp3', 'Freeze Corleone, Ekip, 667', 'https://www.youtube.com/embed/rshUZPcUrJQ?start=13'),
-(2478, 'Zumba, caféw, carnaval', 'Zumba cafew carnaval.mp3', '', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=194');
+(203, 'GBS - KOUHIZINNE', 'COUHIZINNE.mp3', 'CUISINE, Le BOUFF Sexiste, La place', 'https://www.youtube.com/embed/adCyaYx4h_M?start=40'),
+(204, 'GBS - Gros BOUFF Sexiste', 'Gros BOUFF Sexiste.mp3', 'CUISINE, Le BOUFF Sexiste, La place', 'https://www.youtube.com/embed/adCyaYx4h_M'),
+(205, 'AD - Le Buzz avec un double Z', 'ANTOINE DANIEL A FAIT LE BUZZ AVEC UN DOUBLE Z !!!!!.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/-D0t0LdLz9A'),
+(206, 'Renaud - Toujours Vivant', 'Toujours vivant.mp3', 'Renaud, Toujours la banane', 'https://www.youtube.com/embed/uv37yxc51bE?start=35'),
+(207, 'Renaud - Corona Song', 'Corona Song.mp3', 'Renaud, connard de virus', 'https://www.youtube.com/embed/RK3J2sDEQ1M?start=14'),
+(208, 'Renaud - Connard de Virus', 'Connard de Virus.mp3', 'Renaud, connard de virus', 'https://www.youtube.com/embed/RK3J2sDEQ1M?start=17'),
+(209, 'DLP - Wallah', 'David Lafarge Wallah.mp3', 'David Lafarge Pokémon', 'https://www.youtube.com/embed/j9vYCAsMy7Y?start=3'),
+(210, 'Quadricolor', 'Quadricolor.mp3', '', 'https://www.youtube.com/embed/7TcfhntQdYg'),
+(211, 'Que des N°10 dans ma team', 'Que des N°10 dans ma team.mp3', 'Booba', 'https://www.youtube.com/embed/IZmCwtYk98A?start=15'),
+(212, 'Le dessert', 'YTP]FR Le dessert.mp3', '', 'https://www.youtube.com/embed/C5vL4qVff6Y'),
+(213, 'Dommage', 'Dommage Edouard Phillippe.mp3', '', 'https://www.youtube.com/embed/3PZ35tHyzSk'),
+(214, 'Ça ça va la ', 'ça ça va la.mp3', 'Valorant', 'https://www.youtube.com/embed/jUE-pYTG6wk'),
+(215, 'Oh purée de pomme de terre', 'OH PURÉE DE POMME DE TERRE MAIS CEST PAS VRAI ÇA.mp3', '', 'https://www.youtube.com/embed/cbb4ltI3Xuw?start=1'),
+(216, 'JDG - Achète ma merde', 'JDG - Joueur du Grenier - Achète ma merde.mp3', 'JDG, Joueur du Grenier', 'https://www.youtube.com/embed/GIWIjw-yotQ'),
+(217, 'CHAOS - Un petit peu vulgaire', 'Un petit peu vulgaire.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/OpqzEd7Ktlc?start=8'),
+(218, 'CHAOS - Des Hamsters ?!', 'Des Hamsters genre !.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/OpqzEd7Ktlc?start=33'),
+(219, 'CHAOS - Dommage', 'DOMMAGE DU CHAOS DE ANTOINE DANIEL.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/toUbk23yu7Q'),
+(220, 'AD - Philippe', 'PHILIPPE.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/bIft0PeKoJw'),
+(221, 'Le Récap - Started FTB', 'Started from the bottom.mp3', 'Le Récap', 'https://www.youtube.com/embed/Eg1Fcyz-Tvo?start=23'),
+(222, 'Le Récap - Salut la commu !', 'Salut la commu.mp3', 'Le Récap', 'https://www.youtube.com/embed/Eg1Fcyz-Tvo?start=28'),
+(223, 'Alerte Générale !', 'Alerte generale - Taxi - Gilbert.mp3', 'Taxi', 'https://www.youtube.com/embed/LACbRkqcbhU'),
+(224, 'Pensez printemps !', 'Pensez printemps les amis.mp3', '', 'https://www.youtube.com/embed/KOGeO6nY6fk'),
+(225, 'MA LUBULLULE - 8.6', '8 morts 6 blessés.mp3', '8 morts 6 blessés, je pète ma bière, ma lubullule, ma libellule', 'https://www.youtube.com/embed/XCBQZ3xdDu0'),
+(226, 'Ma lubullule', 'Ma lubullule.mp3', '8 morts 6 blessés, je pète ma bière, ma lubullule, ma libellule', 'https://www.youtube.com/embed/XCBQZ3xdDu0?start=8'),
+(227, 'OUI Didier Drogba', 'what-the-cut-oui.mp3', '', 'https://www.youtube.com/embed/9MpXQEIkfjc?start=15'),
+(228, 'Le Récap - HORAS', 'HORAS.mp3', 'Le Récap', 'https://www.youtube.com/embed/IHygqjQz1LQ?start=421'),
+(229, 'JAAAAAAAUNE', 'jaune (34alain34).wmv.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM'),
+(230, 'Jaaaaaaaaune Intro', 'jaune intro.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM'),
+(231, 'Jaaaaaaaune Refrain', 'jaune refrain.mp3', 'Jaune', 'https://www.youtube.com/embed/wNch1OqYgIM?start=86'),
+(232, 'Sard - DOMO, je suis japonais', 'je suis japonais.mp3', 'Sardoche', 'https://www.youtube.com/embed/niD-zC_1tPU?start=66'),
+(233, 'AU REVOIR', 'Au revoir mitterand.mp3', '', 'https://www.youtube.com/embed/Dq5XnXh1nDY?start=6'),
+(234, 'PANO - Si on peut parking', 'Si on peut parking alors on park.mp3', 'Ya pas de Pano', 'https://www.youtube.com/embed/LjWjBjyr_Y8?start=38'),
+(235, 'C\'est la mer noire Full', 'mer noire.mp3', '', 'https://www.youtube.com/embed/0SdcfsD_WVE?start=36'),
+(236, 'C\'est la mer noire ?', 'c\'est la mer noire.mp3', '', 'https://www.youtube.com/embed/0SdcfsD_WVE?start=49'),
+(237, 'Nanar 70\'s - Le Tampax ', 'Nanar 70\'s - le Tampax.mp3', 'Nanar 70\'s', ''),
+(238, 'Ça va péter ! Full ', 'Ca va péter full.mp3', '', 'https://www.youtube.com/embed/tX0oyVX8KWE?start=5'),
+(239, 'Ça va péter !', 'Ca va péter.mp3', '', 'https://www.youtube.com/embed/tX0oyVX8KWE?start=5'),
+(240, 'KF - Double ration frites', 'KF - Double ration de frites.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/jiAm8OC2pXk?start=46'),
+(241, 'Ne laisse pas t\'aspirer !', 'Ne le laisse pas t\'aspirer.mp3', 'F1', 'https://www.youtube.com/embed/wpmBNu8NEsk?start=71'),
+(242, 'Accélère Accélère !', 'Accelere accelere.mp3', 'F1', 'https://www.youtube.com/embed/wpmBNu8NEsk?start=81'),
+(243, 'Ah ouais ouais ouais', '[MEME] AH OUAIS OUAIS OUAIS ! - JULIEN LEPERS.mp3', '', 'https://www.youtube.com/embed/zfLGVxTC5F0'),
+(244, 'Alerte aux gogoles', 'alerte aux gogoles.mp3', '', 'https://www.youtube.com/embed/NzT2y9S60U0?start=9'),
+(245, 'Allez viens !', 'Allez viens !.mp3', '', 'https://www.youtube.com/embed/5SIQPfeUTtg?start=25'),
+(246, 'Allez viens ! Full', 'Allez viens full !.mp3', '', 'https://www.youtube.com/embed/5SIQPfeUTtg?start=9'),
+(247, 'Arrête la drogue !', 'arrete_la_drogue.mp3', '', 'https://www.youtube.com/embed/E0GikSsNEy8'),
+(248, 'On attends pas Patrick ?', 'attendre_patrick.mp3', '', 'https://www.youtube.com/embed/iiNIKedJAkE?start=6'),
+(249, 'Base virale VPS a jour', 'base_viral_mis_a_jour.mp3', '', 'https://www.youtube.com/embed/4hMv_rIZBtg?start=6'),
+(250, 'Oui Monsieur', 'OUI Monsieur.mp3', '', 'https://www.youtube.com/embed/5MeEToOPwa0?start=59'),
+(251, 'OSS - Beurrer la biscotte', 'OSS 117 beurrer la biscotte.mp3', 'OSS 117', 'https://www.youtube.com/embed/H6mZBrQc8EI?start=32'),
+(252, 'Faire caca chez Paul', 'caca_paul.mp3', '', 'https://www.youtube.com/embed/sdBYEHt65M4?start=8'),
+(253, 'Ali ben c\'est un cafard', 'aliben cafard.mp3', '', 'https://www.youtube.com/embed/dbPIJf7cFp8?start=4'),
+(254, 'Che ne comprends pas', 'b20 che ne comprends pas.mp3', 'Booba', 'https://www.youtube.com/embed/ksRVImNfEwQ?start=10'),
+(255, 'Comme j\'aime', 'comme_jem_sourier.mp3', '', 'https://www.youtube.com/embed/olYZ5MbA8xQ'),
+(256, 'Coucou dobby', 'coucou_dobby.mp3', '', 'https://www.youtube.com/embed/3rfuffQUhfQ'),
+(257, 'Demande de vous arrêter', 'demande_arreter_final.mp3', '', 'https://www.youtube.com/embed/V_4CZu4ghMo'),
+(258, 'Et la c\'est le drame', 'et la c\'est le drame.mp3', '', 'https://www.youtube.com/embed/OXjNZZO4axk?start=265'),
+(259, 'Fils de berger', 'fils_de_berger.mp3', '', 'https://www.youtube.com/embed/OWqP7fRe3jg?start=8'),
+(260, 'Fuites urinaires', 'fuite_urinaire.mp3', '', ''),
+(261, 'Goutte d\'eau cruche', 'goutte_do_cruche jojo.mp3', '', 'https://www.youtube.com/embed/r2PAwI2EI9E?start=95'),
+(262, 'Rue des potiers', 'rue ds potiers.mp3', '', 'https://www.youtube.com/embed/42K4NUdbKNg'),
+(263, 'Les hendeks arrivent', 'hendek_final.mp3', '', 'https://www.youtube.com/embed/eyfh7LG0eUA?start=11'),
+(264, 'Je suis 1 homme en COLÈRE', 'homme_colere.mp3', '', 'https://www.youtube.com/embed/I457tqgON8E'),
+(265, 'Hôpital se fout charrette', 'hopital_charette jojo.mp3', '', 'https://www.youtube.com/embed/r2PAwI2EI9E?start=46'),
+(266, 'La moitié du sel FR', 'ICI ON RECOLTE LA MOITIE DU SEL FRANCAIS.mp3', '', 'https://www.youtube.com/embed/z6aelNSRr9s?start=1'),
+(267, 'Ish Ish', 'ish_ish_final.mp3', '', 'https://www.youtube.com/embed/XZBU7BWQsZs?start=107'),
+(268, 'J\'ai pas touché', 'brandao g pas touché.mp3', '', 'https://www.youtube.com/embed/FCCGQ9SBTuI?start=9'),
+(269, 'Je suis papa !', 'je_suis_papa.mp3', '', 'https://www.youtube.com/embed/eX1VsLaS2Q4?start=8'),
+(270, 'KF - Perlimpinpin', 'KF - Perlimpinpin.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/rCK-7Hki4II?start=10'),
+(271, 'Lâche moi Michel', 'lache moi michel.mp3', '', 'https://www.youtube.com/embed/DR6fIOpAzPI?start=2'),
+(272, 'Le gravier', 'le_gravier.mp3', '', 'https://www.youtube.com/embed/APe0V--peNY?start=96'),
+(273, 'Moi je mange la glace', 'Coucou les musulmans moi je mange la glace !.mp3', '', 'https://www.youtube.com/embed/Q9lotttWizc'),
+(274, 'KF - Je mange la glace', 'KF - Moi je mange la glace.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/6Bxi6hXhNyo'),
+(275, 'OSS - Faisons comme ça', 'OSS 117  faisons comme ça.mp3', 'OSS 117', 'https://www.youtube.com/embed/xkUoUnYLSto'),
+(276, 'KF - Vous m\'emmerdez ', 'KF - Vous m\'emmerdez.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/h8-QGeOHx_Y?start=46'),
+(277, 'KF - AH ! ', 'KF - AH remix.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/Ri7GzCUTC5s'),
+(278, 'Commence à me parler poli', 'commence a me parler poliment.mp3', '', 'https://www.youtube.com/embed/MX_l4pRMI8w?start=48'),
+(279, 'Bordel j\'ai le droit', 'mais bordel j\'ai le droit.mp3', '', 'https://www.youtube.com/embed/-bVL_Nvm4A8'),
+(280, 'Non binaire', 'non binaire.mp3', '', 'https://www.youtube.com/embed/ZDjymMD7PTU?start=23'),
+(281, 'Mais c\'est contre nature ', 'c\'est contre nature han.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=14'),
+(282, 'NTM Marine Le Pen', 'marine le pen ntm.mp3', 'MLP, Marine Le Pen', 'https://www.youtube.com/embed/cSyOyeH3wWE?start=4'),
+(283, 'Hollande et l\'Anglais', 'hollande et l\'anglais.mp3', '', 'https://www.youtube.com/embed/M2wyG8Kt3fA?start=4'),
+(284, 'Ils sont la partout MLP', 'Ils sont la ils sont partout.mp3', 'MLP, Marine Le Pen', 'https://www.youtube.com/embed/Y6UHYemqvco'),
+(285, 'Marina passe tu t’écartes', 'Marina passe et tu t\'ecartes.mp3', '', 'https://www.youtube.com/embed/_MX-YiYs9YU?start=21'),
+(286, 'Kalash kalash', 'kalash kalash.mp3', '', 'https://www.youtube.com/embed/_MX-YiYs9YU?start=35'),
+(287, 'Savez-vous ce que c\'est ?', 'micose_vaginale.mp3', '', ''),
+(288, 'Mon sac est fait', 'mon_sac_est_fait.mp3', '', 'https://www.youtube.com/embed/05yQW0Sbrv8'),
+(289, 'Multiplex', 'multiplex.mp3', '', 'https://www.youtube.com/embed/vF34AHJzbU0'),
+(290, 'Les nerfs sont tendus', 'nerf_tendu.mp3', '', 'https://www.youtube.com/embed/2lNDfxSddUg?start=53'),
+(291, 'Non ! ', 'non mario.mp3', '', 'https://www.youtube.com/embed/caXgpo5Ezo4'),
+(292, 'Doucement ac les bonbons', 'oh-doucement-avec-les-bonbons.mp3', '', 'https://www.youtube.com/embed/kvmyR2AuQVc?start=420'),
+(293, 'Mister V - OK ', 'ok_mister_v_final.mp3', 'Mister V', 'https://www.youtube.com/embed/OxvinfGPtQM'),
+(294, 'Okay ! Jacquouille', 'okay_jacquoille_final.mp3', '', 'https://www.youtube.com/embed/zZURohVP5JY?start=8'),
+(295, 'Macron - Oui d\'accord', 'oui_d_accord.mp3', 'Macron, le M', 'https://www.youtube.com/embed/Z8et47AbmgU'),
+(296, 'C\'est pas faux', 'pas_faux_final.mp3', '', 'https://www.youtube.com/embed/3w5cwBrvtf4?start=1'),
+(297, 'KF - Mais t\'es pas net ?', 'pas_net_remix.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/pQjg6GlkQYM?start=56'),
+(298, 'J\'suis pas ta mère', 'pas_ta_mere_jojo.mp3', '', ''),
+(299, 'Je suis Passe Partout', 'passe_partout.mp3', '', 'https://www.youtube.com/embed/Z8wZ7JaSP64?start=59'),
+(300, 'Petit Poney', 'petit poney.mp3', '', 'https://www.youtube.com/embed/u5Ho1trvlro'),
+(301, 'Petit Poney refrain', 'petit poney refrain.mp3', '', 'https://www.youtube.com/embed/u5Ho1trvlro'),
+(302, 'Poce bleu', 'poce_bleu_final.mp3', '', ''),
+(303, 'Ton coté = feu éteint', 'Si de ton côté le feu s\'est éteint.mp3', '', 'https://www.youtube.com/embed/4BP__EF9ess?start=15'),
+(304, 'Slt a tous, c\'est Lasalle', 'slt_lasalle.mp3', '', 'https://www.youtube.com/embed/9JGNQvL7teE?start=15'),
+(305, 'Du Sprite sa mère', 'sprite_mere_final.mp3', '', 'https://www.youtube.com/embed/uEov4qWmHCY?start=6'),
+(306, 'Super Spermatoz Jamy !', 'superbe_zigote_jamy.mp3', 'Jamy', 'https://www.youtube.com/embed/Sqgr2WNHRkM'),
+(307, 'T\'en as trop pris gros !', 'trop_pris_gros.mp3', 'SLG, Salut les Geeks', 'https://www.youtube.com/embed/4wxsLz9RLrY'),
+(308, 'JCVD - 1 +1 = 11 ', 'un_plus_un_jcdm.mp3', 'JCVD', 'https://www.youtube.com/embed/FTKV29C7yJE?start=21'),
+(309, 'Véga Missile', 'vega_misyl_satellise.mp3', '', 'https://www.youtube.com/embed/5V2D1aXX_UM?start=132'),
+(310, 'Zbeub Zbeub', 'zbeub_final.mp3', '', ''),
+(311, 'Mister V - Koba LA D FULL', 'MAIS COMMENT VOUS M AVEZ TROUVÉ - MISTER V.mp3', 'Mister V', 'https://www.youtube.com/embed/MxsDaDuEDBg'),
+(312, 'Très très sale ', 'Très très sale - Maitre Van Diest ft M6 Boutique.mp3', '', 'https://www.youtube.com/embed/jwMFYcXjTbQ'),
+(313, 'PTDR T KI ?', 'Ptdr t ki.mp3', 'Jiraya, La Jij', 'https://www.youtube.com/embed/u4SklJm7ZHQ?start=198'),
+(314, 'Ça c\'était gratuit Maskey', 'ÇA C\'ÉTAIT GRATUIT - Maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/1IuAmxG0Mb4'),
+(315, 'On appelle ça une douille', 'on appelle ça une douille maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/QJH00mv8Y4I'),
+(316, 'Naissance probable Maskey', 'Naissance probable de maskey.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=34'),
+(317, 'Parce que c\'est la hess', 'Parce que c\'est la hess.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=70'),
+(318, 'Parce que j\'ai la flemme', 'Parce que j\'ai la flemme.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=64'),
+(319, 'Psartek le génie', 'Psartek le génie.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=44'),
+(320, 'Mensonge', 'Mensonge.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=52'),
+(321, 'Au chômage', 'AU chomage.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=121'),
+(322, 'Moi je quitte cet endroit', 'moi je quitte cet endroit.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=145'),
+(323, 'P.A.T.U.F', 'PATUF.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=161'),
+(324, 'Catapulte tes morts', 'catapulte tes morts.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=171'),
+(325, 'Forceur', 'Forceur.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=185'),
+(326, 'J’apprécie moyen la', 'j\'apprecie moyen.mp3', '', ''),
+(327, 'L’expérimental', 'L\'expérimental.mp3', 'Maskey', 'https://www.youtube.com/embed/jd9bzsyhbr8?start=306'),
+(328, 'Je suis le chasseur !', 'Je suis... Le chasseur ! SOVA - SONS VALORANT - ClepsydreTV Soundbox.mp3', 'Valorant', 'https://www.youtube.com/embed/obITlzbOecw'),
+(329, 'Un nouveau subterfuge ?!', 'Vont-ils essayer un nouveau subterfuge CYPHER - VALORANT SOUND - ClepsydreTV Soundbox.mp3', 'Valorant', 'https://www.youtube.com/embed/jfwZ7TJOdms'),
+(330, 'Domo, je suis japonais', 'Monster - je suis japonais.mp3', '', 'https://www.youtube.com/embed/ylZpdAQdqqc'),
+(331, 'Ohlala c\'est la décadence', 'ohlala c\'est la décadence.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=71'),
+(332, 'Ekip 667', 'Ekip.mp3', 'Freeze Corleone, Ekip, 667', 'https://www.youtube.com/embed/rshUZPcUrJQ?start=13'),
+(333, 'Zumba, caféw, carnaval', 'Zumba cafew carnaval.mp3', '', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=194');
 
 -- --------------------------------------------------------
 
@@ -976,6 +1020,16 @@ INSERT INTO `wtc` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 --
 
 --
+-- Index pour la table `inconnus`
+--
+ALTER TABLE `inconnus`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Nom` (`Nom`),
+  ADD KEY `Son` (`Son`),
+  ADD KEY `keywords` (`keywords`(1000)),
+  ADD KEY `source` (`source`(1000));
+
+--
 -- Index pour la table `jday`
 --
 ALTER TABLE `jday`
@@ -992,6 +1046,16 @@ ALTER TABLE `keywrds`
   ADD PRIMARY KEY (`ID`),
   ADD KEY `Nom` (`Nom`),
   ADD KEY `Appartenance` (`Appartenance`);
+
+--
+-- Index pour la table `mv`
+--
+ALTER TABLE `mv`
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `Son` (`Son`),
+  ADD KEY `Nom` (`Nom`) USING BTREE,
+  ADD KEY `keywords` (`keywords`(1000)),
+  ADD KEY `source` (`source`(1000));
 
 --
 -- Index pour la table `soundfr`
@@ -1028,6 +1092,12 @@ ALTER TABLE `wtc`
 --
 
 --
+-- AUTO_INCREMENT pour la table `inconnus`
+--
+ALTER TABLE `inconnus`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT pour la table `jday`
 --
 ALTER TABLE `jday`
@@ -1037,13 +1107,19 @@ ALTER TABLE `jday`
 -- AUTO_INCREMENT pour la table `keywrds`
 --
 ALTER TABLE `keywrds`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=130;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=131;
+
+--
+-- AUTO_INCREMENT pour la table `mv`
+--
+ALTER TABLE `mv`
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT pour la table `soundfr`
 --
 ALTER TABLE `soundfr`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2479;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
 
 --
 -- AUTO_INCREMENT pour la table `soundw`

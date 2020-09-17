@@ -505,6 +505,53 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				}
 			}
 		break;
+
+			case 'MV':
+
+			$verifsndmv = $pdo->prepare("SELECT COUNT(*) FROM mv WHERE Nom = :nom OR Son = :snd");
+			$verifsndmv->bindParam(':nom',$nom,PDO::PARAM_STR);
+			$verifsndmv->bindParam(':snd',$snd,PDO::PARAM_STR);
+			$verifsndmv->execute();
+			$result = $verifsndmv->fetchColumn();
+
+			if($result > 0){
+					echo('<div class="alert alert-danger alert-dismissible fixed-top fade show container-fluid" role="alert">
+									' .$error. ' 
+									<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+										<span aria-hidden="true">&times;</span>
+									</button>
+								</div>');
+						}
+							
+			else{
+		################################################ INSERT SON + KEYW #############################################
+						$keywordmv = 'Mister MV';
+						$uploaddir = 'SBP/MV/';
+						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
+						if(isset($videosrc) && $videosrc != ""){
+							$addsndmv = $pdo->prepare("INSERT INTO `mv` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+							$addsndmv->bindParam(':nom',$nom,PDO::PARAM_STR);
+							$addsndmv->bindParam(':snd',$snd,PDO::PARAM_STR);
+							$addsndmv->bindParam(':keyw',$keywordjd,PDO::PARAM_STR);
+							$addsndmv->bindParam(':src',$videosrc,PDO::PARAM_STR);
+							$addsndmv->execute();
+						}
+						else{
+						$addsndmv = $pdo->prepare("INSERT INTO `mv` (`Nom`,`Son`,`keywords`) VALUES (:nom, :snd, :keyw)");
+						$addsndmv->bindParam(':nom',$nom,PDO::PARAM_STR);
+						$addsndmv->bindParam(':snd',$snd,PDO::PARAM_STR);
+						$addsndmv->bindParam(':keyw',$keywordmv,PDO::PARAM_STR);
+						$addsndmv->execute();
+						}
+						echo('<div class="alert alert-success alert-dismissible fixed-top fade show container-fluid" role="alert">
+										' .$success. ' 
+										<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+											<span aria-hidden="true">&times;</span>
+										</button>
+									</div>');
+						
+			}
+		break;
 	}
 	
 }
@@ -517,7 +564,5 @@ else{
 									</button>
 								</div>');
 }
-
-
 
 ?>

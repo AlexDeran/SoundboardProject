@@ -45,6 +45,15 @@ $onlynomwtc = $pdo->query('SELECT Nom FROM wtc');
 				$lesnomwtc = false;
 		endif;
 
+$onlynommv = $pdo->query('SELECT Nom FROM mv');
+
+if($onlynommv):
+		$lesnommv = $onlynommv->fetchAll(PDO::FETCH_ASSOC);
+
+else:
+		$lesnommv = false;
+endif;
+
 $onlynomjd = $pdo->query('SELECT Nom FROM JDay');
 
 		if($onlynomjd):
@@ -145,7 +154,7 @@ endif;
 								aria-labelledby="exampleModalCenterTitle"
 								aria-hidden="true"
 							>
-								<div class="modal-dialog modal-dialog-centered" role="document">
+								<div class="modal-dialog modal-dialog-scrollable modal-dialog-centered" role="document">
 									<div class="modal-content">
 										<div class="modal-header">
 											<h5 class="modal-title" id="exampleModalCenterTitle">
@@ -199,23 +208,27 @@ endif;
 												<div id="catsnd" class="form-group" required>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
-														<label class="form-check-label" for="catson">Son FR</label>
+														<label class="form-check-label" for="catson">FR</label>
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
-														<label class="form-check-label" for="catson2">Son World</label>
+														<label class="form-check-label" for="catson2">World</label>
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
 														<label class="form-check-label" for="catson3">WTC</label>
 													</div>
 													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="JDay">
-														<label class="form-check-label" for="catson4">JDay</label>
+														<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="MV">
+														<label class="form-check-label" for="catson4">MV</label>
 													</div>
 													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="Inconnus">
-														<label class="form-check-label" for="catson5">Les Inconnus</label>
+														<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="JDay">
+														<label class="form-check-label" for="catson5">JDay</label>
+													</div>
+													<div class="form-check form-check-inline">
+														<input class="form-check-input" type="radio" name="catsnd" id="catson6" value="Inconnus">
+														<label class="form-check-label" for="catson6">Inconnus</label>
 													</div>
 												</div>
 												<div class="form-group">
@@ -343,7 +356,7 @@ endif;
 															</select>
 														</div>
 														<div class="form-group col-md-4">
-															<label for="inputsonw"><b>WTC</b></label>
+															<label for="inputsonwtc"><b>WTC</b></label>
 															<select id="inputsonwtc" name="supprsndwtc" class="form-control">
 																<option></option>
 																<?php foreach ($lesnomwtc as $allnomswtc):?>
@@ -353,8 +366,17 @@ endif;
 														</div>
 													</div>
 													<div class="form-row">
-														<div class="form-group col-md-6">
-															<label for="inputsonw"><b>JDay</b></label>
+														<div class="form-group col-md-4">
+															<label for="inputsonmv"><b>MV</b></label>
+															<select id="inputsonmv" name="supprsndmv" class="form-control">
+																<option></option>
+																<?php foreach ($lesnommv as $mv):?>
+																<option><?php echo $mv['Nom'] ?></option>
+																<?php endforeach ?>
+															</select>
+														</div>
+														<div class="form-group col-md-4">
+															<label for="inputsonjd"><b>JDay</b></label>
 															<select id="inputsonjd" name="supprsndjd" class="form-control">
 																<option></option>
 																<?php foreach ($lenomjday as $jday):?>
@@ -362,8 +384,8 @@ endif;
 																<?php endforeach ?>
 															</select>
 														</div>
-														<div class="form-group col-md-6">
-															<label for="inputsonw"><b>INCONNUS</b></label>
+														<div class="form-group col-md-4">
+															<label for="inputsoninc"><b>Inconnus</b></label>
 															<select id="inputsoninc" name="supprsndinc" class="form-control">
 																<option></option>
 																<?php foreach ($lenominc as $inc):?>
@@ -401,8 +423,8 @@ endif;
 								<form id="showwtc" action="wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value=" " title="What the Cut ?!"></input>
 								</form>
-								<form id="showJDG" action="jdg.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnJDG" class="butcons" type="submit" name="soundjdg" value=" " title="Joueur du Grenier"></input>
+								<form id="showMV" action="mv.php" class="form-inline my-2 my-lg-0 3" method="POST">
+									<input id="myBtnMV" class="butcons" type="submit" name="soundjdg" value=" " title="MisterMV"></input>
 								</form>
 								<form id="showJDay" action="JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnJDay" class="butcons" type="submit" name="soundjday" value=" " title="MisterJDay"></input>
