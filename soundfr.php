@@ -12,13 +12,13 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if(isset($_POST['search'])){
 
-	// $pageS = isset($_GET['pageS']) ? (int)$_GET['pageS'] : 1;
+	$pagesearch = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-	// $perPageS = 16;
+	$perPagesearch = 16;
 
-	// $begginS = ($pageS > 1) ? ($pageS * $perPageS) - $perPageS : 0;
+	$begginsearch = ($pagesearch > 1) ? ($pagesearch * $perPagesearch) - $perPagesearch : 0;
 
-	$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
+	$stmt = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC LIMIT {$begginsearch} , {$perPagesearch}");
 
 	$stmt->execute([
 	"%" . $_POST['search'] . "%",
@@ -27,11 +27,10 @@ if(isset($_POST['search'])){
 
 	$resultsfr = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	// $totalS = $pdo->query("SELECT FOUND_ROWS() as totalS ")->fetch()['totalS'] ;
+	$totalsearch = $pdo->query("SELECT FOUND_ROWS() as totalsearch ")->fetch()['totalsearch'] ;
 
-	// $pagesS = ceil($totalS / $perPageS);
-
-}
+	$pagessearch = ceil($totalsearch / $perPagesearch);
+	}
 
 else{
 	// User input
@@ -141,9 +140,37 @@ else{
 						</div>
 					</article>
 				</section>
-				<div id="btntop" class="container-fluid">
-        <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-      </div>
+				<nav aria-label="Page navigation example">
+					<ul class="pagination pagination-lg justify-content-center">
+						<?php if($pagesearch > 1)
+						{
+							$prev = $pagesearch -1;
+							echo'
+						<li class="page-item ">
+							<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
+						</li>';}
+
+						 if($pagessearch > 1) : ?>
+						<li class="page-item <?php if($pagesearch === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> 
+						<?php endif; ?>
+
+						<?php for($i = max(2, $pagesearch - 3); $i <= min($pagesearch + 3, $pagessearch - 1); $i++):?>
+						<li class="page-item <?php if($pagesearch === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
+						<?php endfor; ?>
+
+						<?php if($pagessearch > 1) : ?>
+						<li class="page-item <?php if($pagesearch == $pagessearch){echo 'active';} ?>"><a class="page-link" href="?page=<?=$pagessearch?>"><?=$pagessearch?><a></li> 
+						<?php endif; ?>
+
+						<?php if($pagesearch != $pagessearch){
+							$next = $pagesearch + 1;
+							echo'
+						<li class="page-item">
+							<a class="page-link" href="?page='.$next.'">Suivant</a>
+						</li>'
+							;}?>
+					</ul>
+				</nav>
 	<?php 
 			}
 			else{

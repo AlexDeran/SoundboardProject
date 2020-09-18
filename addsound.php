@@ -506,7 +506,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 			}
 		break;
 
-			case 'MV':
+		case 'MV':
 
 			$verifsndmv = $pdo->prepare("SELECT COUNT(*) FROM mv WHERE Nom = :nom OR Son = :snd");
 			$verifsndmv->bindParam(':nom',$nom,PDO::PARAM_STR);
@@ -532,7 +532,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 							$addsndmv = $pdo->prepare("INSERT INTO `mv` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
 							$addsndmv->bindParam(':nom',$nom,PDO::PARAM_STR);
 							$addsndmv->bindParam(':snd',$snd,PDO::PARAM_STR);
-							$addsndmv->bindParam(':keyw',$keywordjd,PDO::PARAM_STR);
+							$addsndmv->bindParam(':keyw',$keywordmv,PDO::PARAM_STR);
 							$addsndmv->bindParam(':src',$videosrc,PDO::PARAM_STR);
 							$addsndmv->execute();
 						}
