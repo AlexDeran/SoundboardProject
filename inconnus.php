@@ -221,18 +221,27 @@ $n = 1;
 			</section>
       <nav aria-label="Page navigation example">
 		<ul class="pagination pagination-lg justify-content-center">
-					<?php if($page > 1){
+
+				<?php if($page > 1){
 				$prev = $page -1;
 				echo'
 			<li class="page-item ">
 				<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
-			</li>';} ?>
+			</li>';} 
+			if($pages > 1){
+			?>
 			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> 
-			<?php for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
+			<?php ;}
+			 for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
 			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
-			<?php endfor; ?>
+			<?php endfor;
+				if($pages > 1){
+			?>
+			
 			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link" href="?page=<?=$pages?>"><?=$pages?><a></li> 
-			<?php if($page != $pages){
+
+				<?php ;}
+				 if($page != $pages){
 				$next = $page + 1;
 				echo'
 			<li class="page-item">
