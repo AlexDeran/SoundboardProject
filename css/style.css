@@ -1,3 +1,9 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
 /* ############################################### BODY ############################################### */
 
 body {
@@ -42,7 +48,7 @@ header h1 {
 	color: white;
 	font-weight: 600;
 }
-header {
+header.index {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
 	padding-bottom: 1%;
@@ -197,13 +203,6 @@ a:hover {
 }
 /* ############################################### TITRES ############################################### */
 
-.sndtitle {
-	font-size: 50px;
-	border-radius: 20px 20px 0px 0px;
-	border-bottom: solid black;
-	margin-bottom: 0.8em;
-}
-
 .wpad {
 	padding-bottom: 0.2em;
 }
@@ -252,11 +251,12 @@ a:hover {
 .col {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: space-evenly;
 }
-
+.sounds {
+	margin-bottom: 2em;
+}
 .fr {
-	background: rgb(0, 87, 255);
 	background: linear-gradient(
 		90deg,
 		rgba(0, 87, 255, 1) 0%,
@@ -266,16 +266,6 @@ a:hover {
 	border-radius: 1.5em;
 	margin: 1em;
 	border: solid black;
-}
-
-.fra {
-	background: rgb(0, 48, 145);
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		rgb(255, 255, 255) 50%,
-		rgb(173, 2, 2) 100%
-	);
 }
 
 .wrld {
@@ -292,28 +282,13 @@ a:hover {
 }
 /* ############################################### SON RELATED ############################################### */
 
-audio {
-	border-top: solid black;
-	border-bottom: solid black;
-	background-color: whitesmoke;
-	border-left: none;
-	border-right: none;
-}
-
 #sndname {
 	justify-content: center;
-	background-color: rgb(236, 214, 184);
-	border-radius: 4px 4px 0px 0px;
+	background-color: white;
 	font-family: 'Raleway', sans-serif;
-	font-size: 14px;
 	font-weight: 800;
 	text-transform: uppercase;
-}
-
-#sndbox {
-	border-radius: 5px;
-	border: solid black;
-	background-color: rgb(236, 214, 184);
+	border-radius: 1em;
 }
 
 .contsndbox {
@@ -327,6 +302,7 @@ audio {
 
 #searchbox2 {
 	padding-bottom: 1%;
+	text-align: center;
 }
 #sndfr,
 #searchfr {
@@ -351,7 +327,8 @@ audio {
 	text-align: center;
 }
 
-.returnh {
+.returnhg,
+.returnhb {
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
@@ -360,6 +337,10 @@ audio {
 	background-color: darkgreen;
 }
 
+.returnhb:hover {
+	background-color: darkblue;
+	border-color: darkblue;
+}
 /* ############################################### FOOTER ############################################### */
 
 footer {
@@ -567,4 +548,23 @@ span {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
 	padding-bottom: 0.2em;
+}
+
+.imgsnd {
+	text-align: center;
+}
+
+.imgsnd img {
+	cursor: pointer;
+}
+.sndbox {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		rgb(255, 255, 255) 50%,
+		rgb(173, 2, 2) 100%
+	);
 }

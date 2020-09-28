@@ -126,7 +126,7 @@ endif;
 
 		<!--############################################### HEADER ###############################################-->
 
-		<header class="container-fluid">
+		<header class="container-fluid index">
 					
 			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>

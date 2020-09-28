@@ -10,26 +10,17 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if(isset($_POST['search'])){
+if(isset($_GET['search'])){
 
-	$pagesearch = isset($_GET['page']) ? (int)$_GET['page'] : 1;
-
-	$perPagesearch = 16;
-
-	$begginsearch = ($pagesearch > 1) ? ($pagesearch * $perPagesearch) - $perPagesearch : 0;
-
-	$stmt = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC LIMIT {$begginsearch} , {$perPagesearch}");
+	$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
 
 	$stmt->execute([
-	"%" . $_POST['search'] . "%",
-	"%" . $_POST['search'] . "%"
+	"%" . $_GET['search'] . "%",
+	"%" . $_GET['search'] . "%"
 	]);
 
 	$resultsfr = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-	$totalsearch = $pdo->query("SELECT FOUND_ROWS() as totalsearch ")->fetch()['totalsearch'] ;
-
-	$pagessearch = ceil($totalsearch / $perPagesearch);
 	}
 
 else{
@@ -53,7 +44,6 @@ else{
 }
 
 	$n = 1;
-
 
 ?>
 
@@ -90,7 +80,7 @@ else{
 					</a>
 				</div>
 			</div>
-			<form id="searchbox2" action="soundfr.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+			<form id="searchbox2" action="soundfr.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="search" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
@@ -100,8 +90,7 @@ else{
 	<?php 
 	
 	################################################ RECHERCHE #############################################
-
-	if(isset($_POST['search'])){
+	if(isset($_GET['search'])){
 		if(count($resultsfr)> 0){
 			
 			######################################## PAGE DOES EXIST ######################################
@@ -109,7 +98,7 @@ else{
 			?>
 				<section>
 					<article class="fr fronly">
-						<h2 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_POST['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
+						<h2 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -140,45 +129,18 @@ else{
 						</div>
 					</article>
 				</section>
-				<nav aria-label="Page navigation example">
-					<ul class="pagination pagination-lg justify-content-center">
-						<?php if($pagesearch > 1)
-						{
-							$prev = $pagesearch -1;
-							echo'
-						<li class="page-item ">
-							<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
-						</li>';}
-
-						 if($pagessearch > 1) : ?>
-						<li class="page-item <?php if($pagesearch === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> 
-						<?php endif; ?>
-
-						<?php for($i = max(2, $pagesearch - 3); $i <= min($pagesearch + 3, $pagessearch - 1); $i++):?>
-						<li class="page-item <?php if($pagesearch === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
-						<?php endfor; ?>
-
-						<?php if($pagessearch > 1) : ?>
-						<li class="page-item <?php if($pagesearch == $pagessearch){echo 'active';} ?>"><a class="page-link" href="?page=<?=$pagessearch?>"><?=$pagessearch?><a></li> 
-						<?php endif; ?>
-
-						<?php if($pagesearch != $pagessearch){
-							$next = $pagesearch + 1;
-							echo'
-						<li class="page-item">
-							<a class="page-link" href="?page='.$next.'">Suivant</a>
-						</li>'
-							;}?>
-					</ul>
-				</nav>
+				<div id="btntop" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
 	<?php 
+
 			}
 			else{
 ############################################# NO RESULTS #############################################
 		?>
 			<section class="container-fluid">
 				<article id="nosearch" class="fr">
-					<h2 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_POST['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
+					<h2 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
 					</div>
