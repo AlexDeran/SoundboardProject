@@ -19,8 +19,12 @@ a#top:hover {
 	color: black;
 }
 
-.srcvid:hover {
-	color: darkslategray;
+.srcvidw {
+	color: white;
+}
+
+.srcvidw:hover {
+	color: lightgrey;
 	text-decoration: underline;
 }
 
@@ -48,6 +52,10 @@ header h1 {
 	color: white;
 	font-weight: 600;
 }
+.pgtitle {
+	margin-bottom: 2em;
+}
+
 header.index {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
@@ -254,6 +262,7 @@ a:hover {
 	justify-content: space-evenly;
 }
 .sounds {
+	margin-top: 2em;
 	margin-bottom: 2em;
 }
 .fr {
@@ -291,13 +300,14 @@ a:hover {
 	border-radius: 1em;
 }
 
-.contsndbox {
-	padding: 0.5%;
-	border-radius: 5px;
-	border: solid black;
-	margin-bottom: 2%;
+#sndnamew {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
 }
-
 /* ############################################### SEARCH ############################################### */
 
 #searchbox2 {
@@ -557,6 +567,7 @@ span {
 .imgsnd img {
 	cursor: pointer;
 }
+
 .sndbox {
 	margin: 1em;
 	border-radius: 1em;
@@ -567,4 +578,12 @@ span {
 		rgb(255, 255, 255) 50%,
 		rgb(173, 2, 2) 100%
 	);
+}
+
+.sndboxw {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background-image: url(../img/earth-1365995_19204545.jpg);
+	background-position: right;
 }
