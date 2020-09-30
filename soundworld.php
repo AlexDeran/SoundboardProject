@@ -101,7 +101,7 @@ $n = 1;
 						</div>
 						<div class= "col-4">
 							<div class="container-fluid">
-								<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+								<a class="btn btn-dark btn-lg btn-block btnsnd returnhb"
 									href="soundworld.php"
 									role="button"
 								>
@@ -175,7 +175,7 @@ $n = 1;
 						</div>
 						<div class= "col-4">
 							<div class="container-fluid">
-								<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+								<a class="btn btn-dark btn-lg btn-block btnsnd returnhb"
 									href="soundworld.php"
 									role="button"
 								>
@@ -222,7 +222,7 @@ $n = 1;
 			</div>
 			<div class= "col-4">
 				<div class="container-fluid">
-					<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+					<a class="btn btn-dark btn-lg btn-block btnsnd returnhb"
 						href="soundworld.php"
 						role="button"
 					>

@@ -1,13 +1,26 @@
+/* ############################################### GLOBAUX ############################################### */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-/* ############################################### BODY ############################################### */
-
 body {
 	background-image: url(../img/audience-1853662_1920.jpg);
+}
+
+header h1 {
+	font-size: 3.5em;
+}
+
+/* liens */
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: seashell;
 }
 
 a:hover,
@@ -15,18 +28,54 @@ a#top:hover {
 	text-decoration: none;
 }
 
-.srcvid {
-	color: black;
+/* titre de page */
+
+.pgtitle {
+	margin-bottom: 2em;
 }
 
-.srcvidw {
-	color: white;
-}
-
-.srcvidw:hover {
+#top,
+.sndtitle,
+.sndquery {
 	color: lightgrey;
-	text-decoration: underline;
+	letter-spacing: 0.1em;
+	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+		0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+		0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+		0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+		0 22px 30px rgba(0, 0, 0, 0.9);
+	color: lightgrey;
+	text-transform: uppercase;
+	text-align: center;
 }
+
+.col {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+/*article*/
+
+.sounds {
+	margin-top: 2em;
+	margin-bottom: 2em;
+}
+
+footer {
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	line-height: 72px;
+	text-transform: uppercase;
+	padding: 1%;
+}
+
+/*bouton back to top recherche */
 
 #myBtnfr2top {
 	background-color: crimson; /* Set a background color */
@@ -45,78 +94,8 @@ a#top:hover {
 	font-weight: 900;
 }
 
-/* ############################################### HEADER ############################################### */
-
-header h1 {
-	font-size: 3.5em;
-	color: white;
-	font-weight: 600;
-}
-.pgtitle {
-	margin-bottom: 2em;
-}
-
-header.index {
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
-	padding-bottom: 1%;
-}
-
-#top,
-.sndtitle,
-.sndquery {
-	color: lightgrey;
-	letter-spacing: 0.1em;
-	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
-		0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
-		0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
-		0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
-		0 22px 30px rgba(0, 0, 0, 0.9);
-	color: lightgrey;
-	text-transform: uppercase;
-	text-align: center;
-}
-
-/* ############################################### BOUTONS ############################################### */
-
-#navbox {
-	display: flex;
-}
-
-.gestsnd {
-	justify-content: space-around;
-	padding-top: 1%;
-	padding-bottom: 1%;
-	margin-left: 0%;
-}
-#get2sw {
-	background-color: burlywood;
-	border-radius: 1.5em;
-	border: solid black;
-	text-align: center;
-	margin-left: 2%;
-}
-
-.btnsnd {
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
-	font-weight: 800;
-	line-height: 48px;
-	text-transform: uppercase;
-}
-
-#searchnworld {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	margin-bottom: 2%;
-}
-
-#smallbuttons {
-	flex-direction: row;
-	justify-content: space-around;
-	margin-bottom: 2%;
+#myBtnfr2top:hover {
+	background-color: darkred; /* Add a dark-grey background on hover */
 }
 
 #btntop {
@@ -126,117 +105,20 @@ header.index {
 	align-self: stretch;
 }
 
-.butcons {
-	border: none;
-	outline: none;
-	color: white; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	border-radius: 5px; /* Rounded corners */
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-}
-
-#myBtnfr2top:hover {
-	background-color: darkred; /* Add a dark-grey background on hover */
-}
-#frbuttton {
-	background-image: url(../img/banfrance.jpg);
-	background-position: center;
-	color: black;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	background-size: cover;
-}
-
-#myBtn2 {
-	background-image: url(../img/earth-1149733_1920.jpg);
-	background-position: center;
-	color: white;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-#myBtnW {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: top left;
-}
-
-#myBtnWTC {
-	background-image: url(../img/WTC.jpg.);
-	background-repeat: no-repeat;
-	background-size: cover;
-	max-width: 100%;
-	max-height: 100%;
-	padding-right: 3.6em;
-	font-size: 4em;
-	padding-bottom: 25%;
-}
-
-#myBtn2,
-#frbuttton,
-#myBtnW {
-	font-size: 3.5em; /* Increase font size */
-	line-height: 1.5;
-	margin-bottom: 0.2em;
-	margin-top: 2%;
-	margin-right: 3%;
-	margin-left: 3%;
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	text-align: center;
-}
-
-a {
-	color: white;
-}
-
-a:hover {
-	color: seashell;
-}
-
-#myBtnJDay {
-	background-image: url(../img/misterjday.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-right: 1.3em;
-	font-size: 6em;
-	padding-bottom: 8%;
-}
-
-#myBtninc {
-	background-image: url(../img/inconnus.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-right: 2em;
-	font-size: 6em;
-	padding-bottom: 8%;
-}
-/* ############################################### TITRES ############################################### */
+/* search title wtc inc jd & mv */
 
 .wpad {
 	padding-bottom: 0.2em;
 }
 
-.sndquery {
-	font-size: 60px;
-	border-radius: 20px 20px 0px 0px;
-	border-bottom: solid black;
-}
+/*pagination noire */
 
-#sndwld,
-#sndw {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: bottom left;
-	font-size: 3.5em;
-}
-
-#sndwld {
-	padding-bottom: 0.1em;
-}
-
-/* ############################################### PAGINATION ############################################## */
 .ad {
 	background-color: black;
 	color: white;
 }
+
+/*pagination*/
 
 .ad,
 .page-link {
@@ -254,74 +136,13 @@ a:hover {
 	color: black;
 }
 
-/* ############################################### ARTICLE ############################################## */
+/*fin pagination*/
 
-.col {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-evenly;
-}
-.sounds {
-	margin-top: 2em;
-	margin-bottom: 2em;
-}
-.fr {
-	background: linear-gradient(
-		90deg,
-		rgba(0, 87, 255, 1) 0%,
-		rgb(255, 255, 255) 50%,
-		rgba(255, 0, 0, 1) 100%
-	);
-	border-radius: 1.5em;
-	margin: 1em;
-	border: solid black;
-}
-
-.wrld {
-	background-image: url(../img/earth-1149733_1920.jpg);
-	border-radius: 1.5em;
-	margin: 1em;
-	border: solid black;
-	background-position: center;
-}
-
-.world {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: right;
-}
-/* ############################################### SON RELATED ############################################### */
-
-#sndname {
-	justify-content: center;
-	background-color: white;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
-	text-transform: uppercase;
-	border-radius: 1em;
-}
-
-#sndnamew {
-	justify-content: center;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-	font-weight: 800;
-	text-transform: uppercase;
-	border-radius: 1em;
-}
-/* ############################################### SEARCH ############################################### */
+/*barre de recherche*/
 
 #searchbox2 {
 	padding-bottom: 1%;
 	text-align: center;
-}
-#sndfr,
-#searchfr {
-	background-image: url(../img/france-flag-1058699_1280.jpg);
-	background-position: center;
-}
-
-#searchfr {
-	padding-bottom: 0.1em;
 }
 
 #nosearch {
@@ -329,16 +150,20 @@ a:hover {
 	background-position: center;
 }
 #noresults {
-	font-size: 4.9em;
+	font-size: 5em;
 	line-height: 3;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: white;
 	text-align: center;
+	margin-top: 0.5em;
 }
 
+/*buttons retour accueil et page prec*/
+
 .returnhg,
-.returnhb {
+.returnhb,
+.returnjd {
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
@@ -348,23 +173,29 @@ a:hover {
 }
 
 .returnhb:hover {
-	background-color: darkblue;
-	border-color: darkblue;
+	background-color: black;
+	border-color: black;
 }
-/* ############################################### FOOTER ############################################### */
 
-footer {
+/*img sound*/
+
+.imgsnd {
 	text-align: center;
-	font-size: 40px;
-	color: white;
-	display: flex;
-	justify-content: space-around;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
-	line-height: 72px;
-	text-transform: uppercase;
-	padding: 1%;
 }
+
+.imgsnd img {
+	cursor: pointer;
+}
+
+/* ############################################### INDEX ############################################### */
+
+header.index {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 1%;
+}
+
+/*alertes gestion sons*/
 
 .alert {
 	text-align: center;
@@ -383,12 +214,205 @@ footer {
 	background-color: darkgreen;
 }
 
-span {
+#navbox {
+	display: flex;
+}
+
+.gestsnd {
+	justify-content: space-around;
+	padding-top: 1%;
+	padding-bottom: 1%;
+	margin-left: 0%;
+}
+
+/* ajouter un son*/
+
+.btnsnd {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 48px;
+	text-transform: uppercase;
+}
+
+/* BUTTONS */
+
+/*box contenant btn fr & world */
+
+#searchworld {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	margin-bottom: 2%;
+}
+
+.butcons {
+	border: none;
+	outline: none;
+	color: white; /* Text color */
+	cursor: pointer; /* Add a mouse pointer on hover */
+	border-radius: 5px; /* Rounded corners */
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+}
+
+#frbutton {
+	background-image: url(../img/banfrance.jpg);
+	background-position: center;
+	color: black;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+	background-size: cover;
+}
+
+#myBtnWorld {
+	background-image: url(../img/earth-1149733_1920.jpg);
+	background-position: center;
+	color: white;
+	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#myBtnWorld,
+#frbutton,
+#myBtnW {
+	font-size: 3.5em; /* Increase font size */
+	line-height: 1.5;
+	margin-bottom: 0.2em;
+	margin-top: 2%;
+	margin-right: 3%;
+	margin-left: 3%;
+	padding-left: 0.8em;
+	padding-right: 0.8em;
+	text-align: center;
+}
+
+/* petits buttons */
+
+#smallbuttons {
+	flex-direction: row;
+	justify-content: space-around;
+	margin-bottom: 2%;
+}
+
+#myBtnWTC {
+	background-image: url(../img/WTC.jpg.);
+	background-repeat: no-repeat;
+	background-size: cover;
+	max-width: 100%;
+	max-height: 100%;
+	padding-right: 3.6em;
+	font-size: 4em;
+	padding-bottom: 25%;
+}
+
+#myBtnJDay {
+	background-image: url(../img/misterjday.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-right: 1.35em;
+	font-size: 6em;
+	padding-bottom: 8%;
+}
+
+#myBtninc {
+	background-image: url(../img/inconnus.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding-right: 2em;
+	font-size: 6em;
+	padding-bottom: 8%;
+}
+
+#myBtnMV {
+	background-image: url(../img/mistermv.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	padding-right: 2em;
+	font-size: 6em;
+	padding-bottom: 8%;
+}
+
+/* ############################################### SOUNDFR ############################################### */
+
+.srcvid {
+	color: black;
+}
+.srcvid:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}
+
+#sndname {
+	justify-content: center;
+	background-color: white;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+#sndfr,
+#searchfr {
+	background-image: url(../img/france-flag-1058699_1280.jpg);
+	background-position: center;
+}
+
+#searchfr {
+	padding-bottom: 0.1em;
+}
+
+.sndbox {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		rgb(255, 255, 255) 50%,
+		rgb(173, 2, 2) 100%
+	);
+}
+/* ############################################### SOUNDWORLD ############################################### */
+
+.world {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: right;
+}
+
+.srcvidw {
 	color: white;
 }
 
-/* ############################################### WTC ############################################### */
+.srcvidw:hover {
+	color: lightgrey;
+	text-decoration: underline;
+}
 
+#sndw {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: bottom left;
+	font-size: 3.5em;
+}
+
+#sndnamew {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+.sndboxw {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background-image: url(../img/earth-1365995_19204545.jpg);
+	background-position: right;
+}
+
+/* ############################################### WTC ############################################### */
 .wtc {
 	background-image: url(../img/wtcban.jpg);
 	margin: 1em;
@@ -408,112 +432,66 @@ span {
 	background-color: black;
 	border-bottom: solid white;
 }
-/* ############################################### ALL ############################################### */
-
-#ButtonsAll {
-	flex-direction: row;
-	justify-content: space-around;
-	margin-bottom: 3%;
-}
-
-#myBtnWAll {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: top left;
-	font-size: 2em; /* Increase font size */
-	line-height: 3;
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	padding-top: 1em;
-	padding-bottom: 1em;
-	text-align: center;
-}
-
-#myBtnWTCAll {
-	background-image: url(../img/WTC.jpg.);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-left: 1em;
-	padding-right: 1em;
-	font-size: 8em;
-}
-
-#myBtnMVAll {
-	background-image: url(../img/mistermv.png);
-	background-repeat: no-repeat;
-	background-size: contain;
-	padding-right: 2em;
-	font-size: 8em;
-}
-
-#myBtnZaw,
-#myBtnUnd {
-	background-color: black;
-	padding-top: 2em;
-	font-size: 2em;
-	padding-bottom: 2%;
-	line-height: 1;
-}
-
-/* ############################################### JDG ############################################### */
-
-.jdg {
-	background-image: url(../img/JDG.jpg);
-	margin: 1em;
-	border-radius: 1.5em;
-	border: solid black;
-}
-
-#sndjd {
-	background-image: linear-gradient(
-		to bottom,
-		#f7f7f7,
-		#fdfdfd,
-		#f5f5f5,
-		#e2e2e2,
-		#d2d2d2,
-		#c7c7c7,
-		#c9c9c9
-	);
-}
-
-.jou {
-	background-color: gold;
-}
-
-#errorkey {
-	cursor: pointer;
-}
-
-#errorkey:hover {
-	color: lightgray;
-}
-
-.wtcsearch {
-	background-image: url(../img/WTC.jpg);
-	margin-left: 1em;
-	margin-right: 1em;
-	border-radius: 1.5em;
-	border: solid black;
-	border-radius: 0em 0em 1.5em 1.5em;
-	padding-top: 1em;
-}
-
-.worldfr {
-	border-radius: 0em 0em 1.5em 1.5em;
-}
 
 /* ############################################### JDAY ############################################### */
 
 .jday {
-	background-image: url(../img/misterjday.jpg);
-	margin: 1em;
-	background-position: top;
-	border-radius: 1.5em;
-	border: solid black;
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
 }
 
 .JD {
-	background-color: black;
+	background: linear-gradient(90deg, lightgrey 0%, gray 50%, lightgrey 100%);
+	padding-bottom: 0.3em;
+}
+
+.sndboxjday {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+}
+
+#sndnamejd {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+.srcvidjday {
+	color: black;
+}
+.srcvidjday:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}
+
+.returnjd:hover {
+	background-color: lightslategray;
+	border-color: lightslategray;
+}
+.custom-shape-divider-bottom-1601491360 {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	overflow: hidden;
+	line-height: 0;
+	transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1601491360 svg {
+	position: relative;
+	display: block;
+	width: calc(100% + 1.3px);
+	height: 223px;
+}
+
+.custom-shape-divider-bottom-1601491360 .shape-fill {
+	fill: #d3d3d3;
 }
 /* ############################################### INCONNUS ############################################### */
 
@@ -529,7 +507,7 @@ span {
 	background-color: white;
 }
 
-/* ############################################### MV ############################################### */
+/* ############################################### MISTERMV ############################################### */
 
 .mv {
 	background-image: url(../img/mistermvplain.jpg);
@@ -537,16 +515,6 @@ span {
 	background-position: top;
 	border-radius: 1.5em;
 	border: solid black;
-}
-
-#myBtnMV {
-	background-image: url(../img/mistermv.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding-right: 2em;
-	font-size: 6em;
-	padding-bottom: 8%;
 }
 
 #sndmv {
@@ -558,32 +526,4 @@ span {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
 	padding-bottom: 0.2em;
-}
-
-.imgsnd {
-	text-align: center;
-}
-
-.imgsnd img {
-	cursor: pointer;
-}
-
-.sndbox {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid black;
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		rgb(255, 255, 255) 50%,
-		rgb(173, 2, 2) 100%
-	);
-}
-
-.sndboxw {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid black;
-	background-image: url(../img/earth-1365995_19204545.jpg);
-	background-position: right;
 }

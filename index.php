@@ -411,12 +411,12 @@ endif;
 
 	<!-- ############################################### BOUTONS ############################################### -->
 													
-							<div id="searchnworld" class="row butindex">
+							<div id="searchworld" class="row">
 								<form id="showfr" action="soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="frbuttton" class="butcons container-fluid" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
+									<input id="frbutton" class="butcons container-fluid" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
 								</form>
 								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
-									<input id="myBtn2" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
+									<input id="myBtnWorld" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
 								</form>
 							</div>
 							<div id="smallbuttons" class="row">
@@ -424,7 +424,7 @@ endif;
 									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value=" " title="What the Cut ?!"></input>
 								</form>
 								<form id="showMV" action="mv.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnMV" class="butcons" type="submit" name="soundjdg" value=" " title="MisterMV"></input>
+									<input id="myBtnMV" class="butcons" type="submit" name="sounndmv" value=" " title="MisterMV"></input>
 								</form>
 								<form id="showJDay" action="JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnJDay" class="butcons" type="submit" name="soundjday" value=" " title="MisterJDay"></input>
