@@ -128,7 +128,7 @@ endif;
 
 		<header class="container-fluid index">
 					
-			<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
+			<h1 id="top" class="soundboard"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
 
 				<nav class="container-fluid">
@@ -436,10 +436,7 @@ endif;
 					</div>
 				</div>
 			</nav>
-
-	<!-- ############################################### FOOTER ############################################### -->
-
-	<footer>Bravo à toi, tu es en bas.</footer>
+			
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"

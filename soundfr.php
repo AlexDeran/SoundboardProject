@@ -12,11 +12,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 if(isset($_GET['search'])){
 
+	$search = htmlspecialchars($_GET['search']); 
 	$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
 
 	$stmt->execute([
-	"%" . $_GET['search'] . "%",
-	"%" . $_GET['search'] . "%"
+	"%" . $search . "%",
+	"%" . $search . "%"
 	]);
 
 $resultsfr = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -68,14 +69,14 @@ else{
 	<?php 
 	################################################ RECHERCHE #############################################
 
-	if(isset($_GET['search'])){
+	if(isset($search)){
 		if(count($resultsfr)> 0){
 			
 			######################################## PAGE DOES EXIST ######################################
 		
 			?>
 				<header class="pgtitle">	
-					<h1 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h1>
+					<h1 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($search) ?> <img src="img/ecufr.png" height="75" width="75"> </h1>
 				</header>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
@@ -91,7 +92,7 @@ else{
 						</div>
 						<div class= "col-4">
 							<div class="container-fluid">
-								<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+								<a class="btn btn-primary btn-lg btn-block btnsnd returnfr"
 									href="soundfr.php"
 									role="button"
 								>
@@ -149,7 +150,7 @@ else{
 ############################################# NO RESULTS #############################################
 		?>
 		<header class="pgtitle">	
-		<h1 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h1>
+		<h1 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($search) ?> <img src="img/ecufr.png" height="75" width="75"> </h1>
 	</header>
 	<nav class="container-fluid">
 					<div id="navbox" class="row">
@@ -165,7 +166,7 @@ else{
 						</div>
 						<div class= "col-4">
 							<div class="container-fluid">
-								<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+								<a class="btn btn-primary btn-lg btn-block btnsnd returnfr"
 									href="soundfr.php"
 									role="button"
 								>
@@ -212,7 +213,7 @@ else{
 			</div>
 			<div class= "col-4">
 				<div class="container-fluid">
-					<a class="btn btn-primary btn-lg btn-block btnsnd returnhb"
+					<a class="btn btn-primary btn-lg btn-block btnsnd returnfr"
 						href="soundfr.php"
 						role="button"
 					>
@@ -229,7 +230,7 @@ else{
 	</nav>
 	<section class="container-fluid">
 		<article id="nosearch" class="fr">
-			<div id="noresults">
+			<div id="nopage">
 				<p>La page que vous demandez n'existe pas !</p>
 			</div>
 		</article>

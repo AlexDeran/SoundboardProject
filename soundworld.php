@@ -17,12 +17,13 @@ if(isset($_GET['search'])){
 	// $perPageS = 16;
 
 	// $begginS = ($pageS > 1) ? ($pageS * $perPageS) - $perPageS : 0;
+	$search = htmlspecialchars($$_GET['search']); 
 
 	$stmt = $pdo->prepare("SELECT * FROM `soundw` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
 
 	$stmt->execute([
-	"%" . $_GET['search'] . "%",
-	"%" . $_GET['search'] . "%"
+	"%" . $search . "%",
+	"%" . $search . "%"
 	]);
 
 	$resultsw = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -78,14 +79,14 @@ $n = 1;
 	<?php 
 	################################################ RECHERCHE #############################################
 
-	if(isset($_GET['search'])){
+	if(isset($search)){
 		if(count($resultsw)> 0){
 			
 			######################################## PAGE DOES EXIST ######################################
 		
 			?>
 				<header class="pgtitle">	
-					<h1 class="sndtitle world"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/earth-min.png" height="75" width="75" > </h1>
+					<h1 class="sndtitle world"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($search) ?> <img src="img/earth-min.png" height="75" width="75" > </h1>
 				</header>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
@@ -159,7 +160,7 @@ $n = 1;
 ############################################# NO RESULTS #############################################
 		?>
 		<header class="pgtitle">	
-		<h1 class="sndquery world"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/earth-min.png" height="75" width="75" > </h1>
+		<h1 class="sndquery world"><img src="img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo($search) ?> <img src="img/earth-min.png" height="75" width="75" > </h1>
 	</header>
 	<nav class="container-fluid">
 					<div id="navbox" class="row">
@@ -239,7 +240,7 @@ $n = 1;
 	</nav>
 	<section class="container-fluid">
 		<article id="nosearch" class="fr">
-			<div id="noresults">
+			<div id="nopage">
 				<p>La page que vous demandez n'existe pas !</p>
 			</div>
 		</article>

@@ -10,13 +10,13 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if(isset($_GET['search'])){
+if(isset($search)){
 
 	$stmt = $pdo->prepare("SELECT * FROM `soundfr` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
 
 	$stmt->execute([
-	"%" . $_GET['search'] . "%",
-	"%" . $_GET['search'] . "%"
+	"%" . $search . "%",
+	"%" . $search . "%"
 	]);
 
 	$resultsfr = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -90,7 +90,7 @@ else{
 	<?php 
 	
 	################################################ RECHERCHE #############################################
-	if(isset($_GET['search'])){
+	if(isset($search)){
 		if(count($resultsfr)> 0){
 			
 			######################################## PAGE DOES EXIST ######################################
@@ -98,7 +98,7 @@ else{
 			?>
 				<section>
 					<article class="fr fronly">
-						<h2 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
+						<h2 class="sndtitle" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($search) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
 						<div class="container-fluid">
 							<div class="row">
 								<div class="col">
@@ -140,7 +140,7 @@ else{
 		?>
 			<section class="container-fluid">
 				<article id="nosearch" class="fr">
-					<h2 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($_GET['search']) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
+					<h2 class="sndquery" id="searchfr"><img src="img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($search) ?> <img src="img/ecufr.png" height="75" width="75"> </h2>
 					<div id="noresults">
 						<p>Aucun son trouvé !</p>
 					</div>

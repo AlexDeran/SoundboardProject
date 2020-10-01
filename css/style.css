@@ -9,10 +9,6 @@ body {
 	background-image: url(../img/audience-1853662_1920.jpg);
 }
 
-header h1 {
-	font-size: 3.5em;
-}
-
 /* liens */
 
 a {
@@ -44,7 +40,6 @@ a#top:hover {
 		0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
 		0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
 		0 22px 30px rgba(0, 0, 0, 0.9);
-	color: lightgrey;
 	text-transform: uppercase;
 	text-align: center;
 }
@@ -151,7 +146,7 @@ footer {
 }
 #noresults {
 	font-size: 5em;
-	line-height: 3;
+	line-height: 5;
 	font-weight: bold;
 	text-transform: uppercase;
 	color: white;
@@ -159,22 +154,38 @@ footer {
 	margin-top: 0.5em;
 }
 
+#nopage {
+	font-size: 5em;
+	line-height: 3;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	margin-top: 0.2em;
+}
 /*buttons retour accueil et page prec*/
 
 .returnhg,
 .returnhb,
-.returnjd {
+.returnjd,
+.returnfr {
 	margin-top: 2%;
 	margin-bottom: 3%;
 }
 
-.returnh:hover {
+.returnhg:hover {
 	background-color: darkgreen;
+	border-color: darkgreen;
 }
 
 .returnhb:hover {
 	background-color: black;
 	border-color: black;
+}
+
+.returnfr:hover {
+	background-color: darkblue;
+	border-color: darkblue;
 }
 
 /*img sound*/
@@ -192,7 +203,11 @@ footer {
 header.index {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
-	padding-bottom: 1%;
+	padding-bottom: 0.5em;
+	margin-bottom: 1.7em;
+}
+.soundboard {
+	font-size: 3em;
 }
 
 /*alertes gestion sons*/
@@ -216,13 +231,13 @@ header.index {
 
 #navbox {
 	display: flex;
+	justify-content: space-around;
 }
 
 .gestsnd {
 	justify-content: space-around;
 	padding-top: 1%;
 	padding-bottom: 1%;
-	margin-left: 0%;
 }
 
 /* ajouter un son*/
@@ -358,10 +373,6 @@ header.index {
 	background-position: center;
 }
 
-#searchfr {
-	padding-bottom: 0.1em;
-}
-
 .sndbox {
 	margin: 1em;
 	border-radius: 1em;
@@ -439,11 +450,18 @@ header.index {
 	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
 }
 
-.JD {
-	background: linear-gradient(90deg, lightgrey 0%, gray 50%, lightgrey 100%);
-	padding-bottom: 0.3em;
+.searchtitle {
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
 }
 
+.sndtitlejd {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-family: 'Raleway', sans-serif;
+}
 .sndboxjday {
 	margin: 1em;
 	border-radius: 1em;
@@ -469,30 +487,6 @@ header.index {
 	text-decoration: underline;
 }
 
-.returnjd:hover {
-	background-color: lightslategray;
-	border-color: lightslategray;
-}
-.custom-shape-divider-bottom-1601491360 {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	overflow: hidden;
-	line-height: 0;
-	transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1601491360 svg {
-	position: relative;
-	display: block;
-	width: calc(100% + 1.3px);
-	height: 223px;
-}
-
-.custom-shape-divider-bottom-1601491360 .shape-fill {
-	fill: #d3d3d3;
-}
 /* ############################################### INCONNUS ############################################### */
 
 .inconnus {
