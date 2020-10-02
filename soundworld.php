@@ -17,7 +17,7 @@ if(isset($_GET['search'])){
 	// $perPageS = 16;
 
 	// $begginS = ($pageS > 1) ? ($pageS * $perPageS) - $perPageS : 0;
-	$search = htmlspecialchars($$_GET['search']); 
+	$search = htmlspecialchars($_GET['search']); 
 
 	$stmt = $pdo->prepare("SELECT * FROM `soundw` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
 

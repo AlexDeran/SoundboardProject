@@ -1,4 +1,5 @@
-<?php
+<?php 
+
 session_start();
 //DB login
 
@@ -10,53 +11,41 @@ if(!$pdo){
 
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-if(isset($_POST['search'])){
+if(isset($_GET['search'])){
 
-	// $pageS = isset($_GET['pageS']) ? (int)$_GET['pageS'] : 1;
+$search =	htmlspecialchars($_GET['search']);
 
-	// $perPageS = 16;
+$stmtmv = $pdo->prepare("SELECT * FROM `mv` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
+$stmtmv->execute([
+	"%" . $search . "%",
+	"%" . $search . "%"
+]);
 
-	// $begginS = ($pageS > 1) ? ($pageS * $perPageS) - $perPageS : 0;
-
-	$stmt = $pdo->prepare("SELECT * FROM `mv` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
-
-	$stmt->execute([
-	"%" . $_POST['search'] . "%",
-	"%" . $_POST['search'] . "%"
-	]);
-
-	$resultsmv = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-	// $totalS = $pdo->query("SELECT FOUND_ROWS() as totalS ")->fetch()['totalS'] ;
-
-	// $pagesS = ceil($totalS / $perPageS);
-
+$resultsmv = $stmtmv->fetchAll();
 }
 
 else{
-	// User input
-
 	$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-	$perPage = 16;
+	$perPage = 15;
 
 	$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-	$nomxd = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM mv ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+	$nommv = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM mv ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
 
-	$nomxd->execute();
+	$nommv->execute();
 
-	$nommv= $nomxd->fetchAll(PDO::FETCH_ASSOC);
+	$nommistermv= $nommv->fetchAll(PDO::FETCH_ASSOC);
 
 	$total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
 
 	$pages = ceil($total / $perPage);
+
 }
 
-	$n = 1;
+$n = 1;
 
-
-?>
+  ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -76,8 +65,188 @@ else{
 	<title>Mister MV</title>
 </head>
 <body>
-	<header class="container-fluid">	
-		<h1 id="top"><a id="top" href="index.php">Soundboard</a></h1>
+	<?php 
+	################################################ RECHERCHE #############################################
+
+	if(isset($search)){
+		if(count($resultsmv)> 0){
+			
+			######################################## PAGE DOES EXIST ######################################
+		
+			?>
+				<header class="pgtitle">
+					<div class="sndtitlejd mv">
+						<img src="img/mistermv.png" height="75" width="75">	
+						<h1 class="searchtitlemv"> Sons relatifs à <?php echo($search) ?></h1>
+					</div>
+				</header>
+				<nav class="container-fluid">
+					<div id="navbox" class="row">
+						<div class= "col-4">
+							<div class="container-fluid">
+								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
+									href="index.php"
+									role="button"
+								>
+								Retour à l'accueil
+								</a>
+							</div>
+						</div>
+						<div class= "col-4">
+							<div class="container-fluid">
+								<a class="btn btn-dark btn-lg btn-block btnsnd returnjd"
+									href="mv.php"
+									role="button"
+								>
+								Retour à Mister MV
+								</a>
+							</div>
+						</div>
+						<form id="searchbox2" action="mv.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+							<input id="searchbox" class="form-control mr-sm-2" type="search"
+								name="search" placeholder="Rechercher un son" aria-label="Search" required>
+							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+						</form>
+					</div>
+				</nav>
+				<section>
+					<article>
+						<div class="container-fluid">
+							<div class="row">
+								<div class="col">
+									<?php foreach ($resultsmv as $r):?>
+									<div class=" sndboxmv">
+										<audio id="myAudio">
+											<source src="SBP/MV/<?= $r['Son']?>" type="audio/mpeg">
+											Your browser does not support the audio element.
+										</audio>
+										<div class="imgsnd"><img src="img/mistermv.png" height="75" width="75" onmousedown="play('SBP/MV/<?= $r['Son']?>')"></div>
+										<div class="col" id="sndnamemv">
+										<?php if ($r['source'] != ""){ ?>
+											<a class="srcvidmv" href="#lienvid<?=$n?>" data-toggle="modal">
+											<?php echo($r['Nom']);?>
+											</a>
+											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+												<div class="modal-dialog modal-dialog-centered">
+													<div class="modal-content">
+														<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													</div>
+												</div>
+											</div>
+											<?php $n++; } else echo($r['Nom']); ?>
+										</div>
+									</div>
+								<?php endforeach;?>
+								</div>
+							</div>
+						</div>
+					</article>
+				</section>
+				<div id="btntop" class="container-fluid">
+					<a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
+				</div>
+	<?php 
+
+			}
+			else{
+############################################# NO RESULTS #############################################
+		?>
+	<header class="pgtitle">
+		<div class="sndtitlejd mv">
+			<img src="img/mistermv.png" height="75" width="75">		
+			<h1 class="searchtitlemv"> Sons relatifs à <?php echo($search) ?></h1>
+		</div>
+	</header>
+	<nav class="container-fluid">
+		<div id="navbox" class="row">
+			<div class= "col-4">
+				<div class="container-fluid">
+					<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
+						href="index.php"
+						role="button"
+					>
+					Retour à l'accueil
+					</a>
+				</div>
+			</div>
+			<div class= "col-4">
+				<div class="container-fluid">
+					<a class="btn btn-dark btn-lg btn-block btnsnd returnjd"
+						href="mv.php"
+						role="button"
+					>
+					Retour à Mister MV
+					</a>
+				</div>
+			</div>
+			<form id="searchbox2" action="mv.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+				<input id="searchbox" class="form-control mr-sm-2" type="search"
+					name="search" placeholder="Rechercher un son" aria-label="Search" required>
+				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+			</form>
+		</div>
+	</nav>
+	<section class="container-fluid">
+		<article id="nosearch" class="fr">
+			<div id="noresults">
+				<p>Aucun son trouvé !</p>
+			</div>
+		</article>
+	</section>
+	<?php
+		}
+}
+	else{
+
+	########################################### PAGE DOES NOT EXIST (404) ############################################
+
+	if($page <1 || $page > $pages){?>
+	<header class="pgtitle">	
+		<h1 class="sndtitlejd mv"><img src="img/mistermv.png" height="100" width="100"></h1>
+	</header>
+	<nav class="container-fluid">
+		<div id="navbox" class="row">
+			<div class= "col-4">
+				<div class="container-fluid">
+					<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
+						href="index.php"
+						role="button"
+					>
+					Retour à l'accueil
+					</a>
+				</div>
+			</div>
+			<div class= "col-4">
+				<div class="container-fluid">
+					<a class="btn btn-dark btn-lg btn-block btnsnd returnjd"
+						href="mv.php"
+						role="button"
+					>
+					Retour à Mister MV
+					</a>
+				</div>
+			</div>
+			<form id="searchbox2" action="mv.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+				<input id="searchbox" class="form-control mr-sm-2" type="search"
+					name="search" placeholder="Rechercher un son" aria-label="Search" required>
+				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+			</form>
+		</div>
+	</nav>
+	<section class="container-fluid">
+		<article id="nosearch" class="fr">
+			<div id="nopagemv">
+				<p>La page que vous demandez n'existe pas !</p>
+			</div>
+		</article>
+	</section>
+	<?php
+
+################################################## PAGE DOES EXIST #################################################
+
+} else {  ?>
+<header class="pgtitlemv">	
+		<h1 class="sndtitle mv"><img src="img/mistermv.png" height="100" width="100"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
@@ -91,118 +260,38 @@ else{
 					</a>
 				</div>
 			</div>
-			<form id="searchbox2" action="mv.php" class="form-inline my-2 my-lg-0 col-3" method="POST">
+			<form id="searchbox2" action="mv.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="search" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
 			</form>
 		</div>
 	</nav>
-	<?php 
-	
-	################################################ RECHERCHE #############################################
-
-	if(isset($_POST['search'])){
-		if(count($resultsmv)> 0){
-			
-			######################################## PAGE DOES EXIST ######################################
-		
-			?>
-				<section>
-					<article class="mv">
-						<h2 class="sndtitle" id="searchmv"> Sons relatifs à <?php echo($_POST['search']) ?>  </h2>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col">
-									<?php foreach ($resultsmv as $r):?>
-									<div class="contsndbox wat">
-										<div id="sndbox">
-											<div class="col" id="sndname">	<?php if ($r['source'] != ""){ ?>
-												<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
-												<?php echo($r['Nom']) ?>
-												</a>
-												<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-													<div class="modal-dialog modal-dialog-centered">
-														<div class="modal-content">
-															<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-														</div>
-													</div>
-												</div>
-											<?php $n++; } else echo($r['Nom']); ?>
-											</div>
-											<audio controls>
-												<source src="SBP/MV/<?= $r['Son']?>" type="audio/mpeg">
-											</audio>
-										</div>
-									</div>
-								<?php endforeach;?>
-								</div>
-							</div>
-						</div>
-					</article>
-				</section>
-				<div id="btntop" class="container-fluid">
-        <a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-      </div>
-	<?php 
-			}
-			else{
-############################################# NO RESULTS #############################################
-		?>
-			<section class="container-fluid">
-				<article id="nosearch" class="mv">
-					<h2 class="sndquery" id="searchmv">Sons relatifs à <?php echo($_POST['search']) ?> </h2>
-					<div id="noresults">
-						<p>Aucun son trouvé !</p>
-					</div>
-				</article>
-			</section>
-	<?php
-		}
-}
-	else{
-
-	########################################### PAGE DOES NOT EXIST (404) ############################################
-
-	if($page <1 || $page > $pages){?>
-	<section class="container-fluid">
-		<article id="nosearch" class="mv">
-			<div id="noresults">
-				<p>La page que vous demandez n'existe pas !</p>
-			</div>
-		</article>
-	</section>
-	<?php
-
-################################################## PAGE DOES EXIST #################################################
-
-} else {  ?>
 	<section>
-		<article class="mv">
-			<h2 class="sndtitle" id="sndmv"> <img src="img/mistermv.png" height="100" width="100"> </h2>
+		<article class="soundsmv">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col">
-					<?php foreach($nommv as $sons) : ?>
-						<div class="contsndbox wat">
-							<div id="sndbox">
-								<div class="col" id="sndname">
-								<?php if ($sons['source'] != ""){ ?>
-									<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
-									<?php echo($sons['Nom']) ?>
-									</a>
-									<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-										<div class="modal-dialog modal-dialog-centered">
-											<div class="modal-content">
-												<iframe class="vidsrc" width="560" height="315" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-											</div>
+					<?php foreach($nommistermv as $sons) : ?>
+						<div class=" sndboxmv">
+							<audio id="myAudio">
+								<source src="SBP/MV/<?= $sons['Son']?>" type="audio/mpeg">
+								Your browser does not support the audio element.
+							</audio>
+							<div class="imgsnd"><img src="img/mistermv.png" height="75" width="75" onmousedown="play('SBP/MV/<?= $sons['Son']?>')"></div>
+							<div class="col" id="sndnamemv">
+							<?php if ($sons['source'] != ""){ ?>
+								<a class="srcvidmv" href="#lienvid<?=$n?>" data-toggle="modal">
+								<?php echo($sons['Nom']);?>
+								</a>
+								<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+									<div class="modal-dialog modal-dialog-centered">
+										<div class="modal-content">
+											<iframe class="vidsrc" width="560" height="315" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 										</div>
 									</div>
-								<?php $n++; } else echo($sons['Nom']); ?>
 								</div>
-								<audio controls>
-									<source src="SBP/MV/<?= $sons["Son"]?>" type="audio/mpeg">
-								</audio>
+								<?php $n++; } else echo($sons['Nom']); ?>
 							</div>
 						</div>
 						<?php endforeach ?>
@@ -216,18 +305,26 @@ else{
 
 	<nav aria-label="Page navigation example">
 		<ul class="pagination pagination-lg justify-content-center">
-			<?php if($page > 1){
+				<?php if($page > 1){
 				$prev = $page -1;
 				echo'
-			<li class="page-item ">
+			<li class="page-item">
 				<a class="page-link ad" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
-			</li>';} ?>
+			</li>';} 
+			if($pages > 1){
+			?>
 			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link ad" href="?page=1">1<a></li> 
-			<?php for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
+			<?php ;}
+			 for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
 			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$i; ?>"><?=$i ?></a></li>
-			<?php endfor; ?>
+			<?php endfor;
+				if($pages > 1){
+			?>
+			
 			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$pages?>"><?=$pages?><a></li> 
-			<?php if($page != $pages){
+
+				<?php ;}
+				 if($page != $pages){
 				$next = $page + 1;
 				echo'
 			<li class="page-item">
@@ -241,9 +338,6 @@ else{
 	} 
 	?>
 
-	<!-- ############################################### FOOTER ############################################### -->
-
-	<footer>Bravo à toi, tu es en bas.</footer>
 			<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
