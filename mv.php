@@ -245,7 +245,7 @@ $n = 1;
 ################################################## PAGE DOES EXIST #################################################
 
 } else {  ?>
-<header class="pgtitlemv">	
+<header class="pgtitle">	
 		<h1 class="sndtitle mv"><img src="img/mistermv.png" height="100" width="100"></h1>
 	</header>
 	<nav class="container-fluid">
@@ -268,7 +268,7 @@ $n = 1;
 		</div>
 	</nav>
 	<section>
-		<article class="soundsmv">
+		<article class="sounds">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col">

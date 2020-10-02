@@ -168,6 +168,7 @@ footer {
 .returnhg,
 .returnhb,
 .returnjd,
+.returninc,
 .returnfr {
 	margin-top: 2%;
 	margin-bottom: 3%;
@@ -491,31 +492,47 @@ header.index {
 /* ############################################### INCONNUS ############################################### */
 
 .inconnus {
-	background-image: url(../img/inconnusnoban.jpg);
-	margin: 1em;
-	background-position: top;
-	border-radius: 1.5em;
-	border: solid black;
+	background-color: white;
+	border-bottom: solid #ca283f;
 }
 
 #sndinc {
 	background-color: white;
 }
+.sndboxinc {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid #ca283f;
+	background-color: white;
+}
 
+.searchtitleinc {
+	color: #ca283f;
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
+}
+
+.returninc {
+	color: #ca283f;
+}
+
+.returninc:hover {
+	color: #b22222;
+}
+
+.srcvidinc {
+	color: #ca283f;
+}
+.srcvidinc:hover {
+	color: #f56991;
+	text-decoration: underline;
+}
 /* ############################################### MISTERMV ############################################### */
 
 .mv {
 	background-color: black;
 	border-bottom: solid white;
-}
-
-.pgtitlemv {
-	margin-bottom: 1.5em;
-}
-
-.soundsmv {
-	margin-top: 1.5em;
-	margin-bottom: 2em;
 }
 
 #sndmv {
@@ -545,6 +562,7 @@ header.index {
 	letter-spacing: 0.1em;
 	font-family: 'Raleway', sans-serif;
 }
+
 .sndboxmv {
 	margin: 1em;
 	border-radius: 1em;
