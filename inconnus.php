@@ -246,7 +246,7 @@ $n = 1;
 
 } else {  ?>
 <header class="pgtitle">	
-		<h1 class="sndtitlejd inconnus"><img src="img/inconnus.png" height="100" width="230"></h1>
+		<h1 class="sndtitlejd inconnus"><img src="img/inconnus.png" height="100" width="260"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
