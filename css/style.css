@@ -429,12 +429,6 @@ header.index {
 }
 
 /* ############################################### WTC ############################################### */
-.wtc {
-	background-image: url(../img/wtcban.jpg);
-	margin: 1em;
-	border-radius: 1.5em;
-	border: solid black;
-}
 
 .sndwtc {
 	background-image: url(../img/guitar.jpg);
