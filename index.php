@@ -179,7 +179,7 @@ endif;
 														class="form-control"
 														id="soundname"
 														placeholder="Nom du son"
-														maxlength="25"
+														maxlength="50"
 														required
 													/>
 												</div>

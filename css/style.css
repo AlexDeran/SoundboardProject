@@ -30,6 +30,65 @@ a#top:hover {
 	margin-bottom: 1.5em;
 }
 
+.fa-stop-circle:before {
+	cursor: pointer;
+	font-size: 4em;
+}
+
+.blk {
+	background-color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.blk:hover {
+	background-color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.whyt {
+	background-color: black;
+	color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.whyt:hover {
+	background-color: black;
+	color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.france {
+	background-color: white;
+	color: #ca283f;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.france:hover {
+	background-color: white;
+	color: #ca283f;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.stopinc {
+	background-color: #ca283f;
+	color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.stopinc:hover {
+	background-color: #ca283f;
+	color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
 #top,
 .sndtitle,
 .sndquery {
@@ -138,11 +197,6 @@ footer {
 
 /*barre de recherche*/
 
-#searchbox2 {
-	padding-bottom: 1%;
-	text-align: center;
-}
-
 #nosearch {
 	background-image: url(../img/the-road-815297_1920.jpg);
 	background-position: center;
@@ -168,15 +222,6 @@ footer {
 }
 /*buttons retour accueil et page prec*/
 
-.returnhg,
-.returnhb,
-.returnjd,
-.returninc,
-.returnfr {
-	margin-top: 2%;
-	margin-bottom: 3%;
-}
-
 .returnhg:hover {
 	background-color: darkgreen;
 	border-color: darkgreen;
@@ -187,9 +232,28 @@ footer {
 	border-color: black;
 }
 
+.returnfr {
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		lightgrey 50%,
+		rgb(173, 2, 2) 100%
+	);
+	color: white;
+	opacity: 0.9;
+	border: none;
+}
+
 .returnfr:hover {
-	background-color: darkblue;
-	border-color: darkblue;
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		lightgrey 50%,
+		rgb(173, 2, 2) 100%
+	);
+	color: white;
+	opacity: 1;
+	border: none;
 }
 
 /*img sound*/
@@ -438,6 +502,10 @@ header.index {
 .sndwtcimg {
 	background-color: black;
 	border-bottom: solid white;
+}
+
+.schwtc {
+	padding-top: 2em;
 }
 
 /* ############################################### JDAY ############################################### */

@@ -102,6 +102,7 @@ $n = 1;
 								</a>
 							</div>
 						</div>
+						<span id="stopsnd" class="blk"></span>
 						<form id="searchbox2" action="wtc.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 							<input id="searchbox" class="form-control mr-sm-2" type="search"
 								name="search" placeholder="Rechercher un son" aria-label="Search" required>
@@ -113,7 +114,7 @@ $n = 1;
 					<article>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col">
+								<div class="col schwtc">
 									<?php foreach ($resultswtc as $r):?>
 									<div class=" sndboxmv">
 										<audio id="myAudio">
@@ -246,11 +247,11 @@ $n = 1;
 
 } else {  ?>
 <header class="pgtitle">	
-		<h1 class="sndtitle mv"><img src="img/wtc.jpg" height="100" width="160"></h1>
+		<h1 class="sndtitle mv"><img src="img/wtc.jpg" height="100" width="165"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
-			<div class= "col-9">
+			<div class= "col-6">
 				<div class="container-fluid">
 					<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 						href="index.php"
@@ -259,12 +260,14 @@ $n = 1;
 					Retour à l'accueil
 					</a>
 				</div>
-			</div>
+			</div>	
+			<span id="stopsnd" class="blk"></span>
 			<form id="searchbox2" action="wtc.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="search" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
 			</form>
+		
 		</div>
 	</nav>
 	<section>

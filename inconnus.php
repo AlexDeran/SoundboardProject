@@ -102,18 +102,20 @@ $n = 1;
 								</a>
 							</div>
 						</div>
+						<span id="stopsnd" class="stopinc"></span>
 						<form id="searchbox2" action="inconnus.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 							<input id="searchbox" class="form-control mr-sm-2" type="search"
 								name="search" placeholder="Rechercher un son" aria-label="Search" required>
 							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
 						</form>
 					</div>
+					
 				</nav>
 				<section>
 					<article>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col">
+								<div class="col schwtc">
 									<?php foreach ($resultsinc as $r):?>
 									<div class="sndboxinc">
 										<audio id="myAudio">
@@ -250,7 +252,7 @@ $n = 1;
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
-			<div class= "col-9">
+			<div class= "col-6">
 				<div class="container-fluid">
 					<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 						href="index.php"
@@ -260,6 +262,7 @@ $n = 1;
 					</a>
 				</div>
 			</div>
+			<span id="stopsnd" class="stopinc"></span>
 			<form id="searchbox2" action="inconnus.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="search" placeholder="Rechercher un son" aria-label="Search" required>

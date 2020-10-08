@@ -44,4 +44,14 @@ function play(url) {
 		});
 	};
 	request.send();
+	function addstop() {
+		document.getElementById('stopsnd').innerHTML =
+			'<i class="fas fa-stop-circle" onclick ="stop()">';
+	}
+	addstop();
+}
+
+function stop() {
+	source.stop();
+	document.getElementById('stopsnd').innerHTML = '';
 }
