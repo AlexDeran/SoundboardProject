@@ -312,26 +312,26 @@ $n = 1;
 				$prev = $page -1;
 				echo'
 			<li class="page-item">
-				<a class="page-link ad" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
+				<a class="page-link inc" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
 			</li>';} 
 			if($pages > 1){
 			?>
-			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link ad" href="?page=1">1<a></li> 
+			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link inc" href="?page=1">1<a></li> 
 			<?php ;}
 			 for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
-			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$i; ?>"><?=$i ?></a></li>
+			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link inc" href="?page=<?=$i; ?>"><?=$i ?></a></li>
 			<?php endfor;
 				if($pages > 1){
 			?>
 			
-			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link ad" href="?page=<?=$pages?>"><?=$pages?><a></li> 
+			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link inc" href="?page=<?=$pages?>"><?=$pages?><a></li> 
 
 				<?php ;}
 				 if($page != $pages){
 				$next = $page + 1;
 				echo'
 			<li class="page-item">
-				<a class="page-link ad" href="?page='.$next.'">Suivant</a>
+				<a class="page-link inc" href="?page='.$next.'">Suivant</a>
 			</li>'
 			 ;}?>
 		</ul>

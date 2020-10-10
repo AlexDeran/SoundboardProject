@@ -172,8 +172,16 @@ footer {
 	color: white;
 }
 
+.inc {
+	background-color: white;
+	color: #ca283f;
+}
+.inc:hover {
+	background-color: lightgrey;
+	color: darkred;
+}
 /*pagination*/
-
+.inc,
 .ad,
 .page-link {
 	border: none;
