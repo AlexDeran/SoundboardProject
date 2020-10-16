@@ -27,11 +27,11 @@ $resultsinc = $stmtinc->fetchAll();
 else{
 	$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
-	$perPage = 15;
+	$perPage = 12;
 
 	$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
 
-	$nominc = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM inconnus ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+	$nominc = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM inconnus ORDER BY keywords ASC LIMIT {$beggin} , {$perPage}");
 
 	$nominc->execute();
 
