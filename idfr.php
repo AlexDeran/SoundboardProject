@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 //DB login
 
@@ -8,33 +9,26 @@ if(!$pdo){
 		echo "Erreur de connexion à la base de données.";
 }
 
-else{
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-	// User input
+	$pageid = isset($_GET['pageid']) ? (int)$_GET['pageid'] : 1;
 
-	$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+	$perPageid = 15;
 
-	$perPage = 15;
+	$begginid = ($pageid > 1) ? ($pageid * $perPageid) - $perPageid : 0;
 
-	$beggin = ($page > 1) ? ($page * $perPage) - $perPage : 0;
+	$id = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM soundfr ORDER BY ID DESC LIMIT {$begginid} , {$perPageid}");
 
-	$nom = $pdo->prepare("SELECT SQL_CALC_FOUND_ROWS Nom, Son, source FROM soundfr ORDER BY Nom ASC LIMIT {$beggin} , {$perPage}");
+	$id->execute();
 
-	$nom->execute();
+	$idfinal = $id->fetchAll(PDO::FETCH_ASSOC);
 
-	$nomfinal= $nom->fetchAll(PDO::FETCH_ASSOC);
+	$totalid = $pdo->query("SELECT FOUND_ROWS() as totalid ")->fetch()['totalid'] ;
 
-	$total = $pdo->query("SELECT FOUND_ROWS() as total ")->fetch()['total'] ;
+	$pagesid = ceil($totalid / $perPageid);
 
-	$pages = ceil($total / $perPage);
-
-}
-
-	$n = 1;
-
+  $n = 1;
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -53,56 +47,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	<title>Sons FR</title>
 </head>
 <body>
-	<?php 
-
-	########################################### PAGE DOES NOT EXIST (404) ############################################
-
-	if($page <1 || $page > $pages){?>
 	<header class="pgtitle">	
-		<h1 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="75" width="75"> Sons FR <img src="img/ecufr.png" height="75" width="75"></h1>
-	</header>
-	<nav class="container-fluid">
-		<div id="navbox" class="row">
-			<div class= "col-4">
-				<div class="container-fluid">
-					<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-						href="index.php"
-						role="button"
-					>
-					Retour à l'accueil
-					</a>
-				</div>
-			</div>
-			<div class= "col-4">
-				<div class="container-fluid">
-					<a class="btn btn-primary btn-lg btn-block btnsnd returnfr"
-						href="soundfr.php"
-						role="button"
-					>
-					Retour aux sons FR
-					</a>
-				</div>
-			</div>
-			<form id="searchbox2" action="search.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
-				<input id="searchbox" class="form-control mr-sm-2" type="search"
-					name="search" placeholder="Rechercher un son" aria-label="Search" required>
-				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-			</form>
-		</div>
-	</nav>
-	<section class="container-fluid">
-		<article id="nosearch" class="fr">
-			<div id="nopage">
-				<p>La page que vous demandez n'existe pas !</p>
-			</div>
-		</article>
-	</section>
-	<?php
-}
-################################################## PAGE DOES EXIST #################################################
-
- else {  ?>
-<header class="pgtitle">	
 		<h1 class="sndtitle" id="sndfr"><img src="img/ecufr.png" height="75" width="75"> Sons FR <img src="img/ecufr.png" height="75" width="75"></h1>
 	</header>
 	<nav class="container-fluid">
@@ -119,19 +64,16 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			</div>
 				<div class= "col-3">
 				<div class="container-fluid">
-					<form action="idfr.php" method="POST">
-					<button class="btn btn-info btn-lg btn-block btnsnd returnh"
+					<a class="btn btn-info btn-lg btn-block btnsnd returnh"
+						href="soundfr.php"
 						role="button"
-						type="submit"
-						name="sortbyid"
 					>
-					Sort by NEW
-					</button>
-				</form>
+					Sort by A-Z
+					</a>
 				</div>
 			</div>
 			<span id="stopsnd" class="france"></span>
-			<form id="searchbox2" action="search.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+			<form id="searchbox2" action="soundfr.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="search" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
@@ -143,7 +85,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col">
-					<?php foreach($nomfinal as $sons) : ?>
+					<?php foreach($idfinal as $sons) : ?>
 						<div class="sndbox">
 							<audio id="myAudio">
 								<source src="SBP/SFR/<?= $sons['Son']?>" type="audio/mpeg">
@@ -176,31 +118,27 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	<nav aria-label="Page navigation example">
 		<ul class="pagination pagination-lg justify-content-center">
-			<?php if($page > 1){
-				$prev = $page -1;
+			<?php if($pageid > 1){
+				$prev = $pageid -1;
 				echo'
 			<li class="page-item ">
-				<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
+				<a class="page-link" href="?pageid='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
 			</li>';} ?>
-			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> 
-			<?php for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
-			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
+			<li class="page-item <?php if($pageid === 1){echo 'active';} ?>"><a class="page-link" href="?pageid=1">1<a></li> 
+			<?php for($i = max(2, $pageid - 3); $i <= min($pageid + 3, $pagesid - 1); $i++):?>
+			<li class="page-item <?php if($pageid === $i){echo 'active';} ?>"><a class="page-link" href="?pageid=<?=$i; ?>"><?=$i ?></a></li>
 			<?php endfor; ?>
-			<li class="page-item <?php if($page == $pages){echo 'active';} ?>"><a class="page-link" href="?page=<?=$pages?>"><?=$pages?><a></li> 
-			<?php if($page != $pages){
-				$next = $page + 1;
+			<li class="page-item <?php if($pageid == $pagesid){echo 'active';} ?>"><a class="page-link" href="?pageid=<?=$pagesid?>"><?=$pagesid?><a></li> 
+			<?php if($pageid != $pagesid){
+				$next = $pageid + 1;
 				echo'
 			<li class="page-item">
-				<a class="page-link" href="?page='.$next.'">Suivant</a>
+				<a class="page-link" href="?pageid='.$next.'">Suivant</a>
 			</li>'
 			 ;}?>
 		</ul>
-	</nav>
-	<?php
-	 }
-	?>
-
-			<script
+  </nav>
+  <script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"
@@ -218,4 +156,3 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			<script src="js/app.js"></script>
 	</body>
 </html>
-
