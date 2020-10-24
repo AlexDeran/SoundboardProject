@@ -70,6 +70,7 @@ $n = 1;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/404.css">
 			<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -96,6 +97,8 @@ $n = 1;
 									href="index.php"
 									role="button"
 								>
+									<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 								Retour à l'accueil
 								</a>
 							</div>
@@ -171,6 +174,8 @@ $n = 1;
 									href="index.php"
 									role="button"
 								>
+								<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 								Retour à l'accueil
 								</a>
 							</div>
@@ -218,6 +223,8 @@ $n = 1;
 						href="index.php"
 						role="button"
 					>
+					<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 					Retour à l'accueil
 					</a>
 				</div>
@@ -240,10 +247,12 @@ $n = 1;
 		</div>
 	</nav>
 	<section class="container-fluid">
-		<article id="nosearch" class="fr">
-			<div id="nopage">
-				<p>La page que vous demandez n'existe pas !</p>
-			</div>
+		<article class="noresults">
+			<main>
+				<h1 class="noresultstitle">4<span><i class="fas fa-music"></i></span>4</h1>
+				<h2 class="noresultssubtitle">Erreur: 404 page non trouvée</h2>
+				<p class="noresultstext">Désolé, mais la page que vous demandez n'existe pas !</p>
+			</main>
 		</article>
 	</section>
 	<?php
@@ -262,6 +271,8 @@ $n = 1;
 						href="index.php"
 						role="button"
 					>
+					<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 					Retour à l'accueil
 					</a>
 				</div>

@@ -58,6 +58,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						href="index.php"
 						role="button"
 					>
+					<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 					Retour à l'accueil
 					</a>
 				</div>
@@ -68,6 +70,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						href="soundfr.php"
 						role="button"
 					>
+					
 					Sort by A-Z
 					</a>
 				</div>

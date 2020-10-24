@@ -47,6 +47,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/404.css">
 			<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -69,6 +70,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						href="index.php"
 						role="button"
 					>
+					<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 					Retour à l'accueil
 					</a>
 				</div>
@@ -91,10 +94,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		</div>
 	</nav>
 	<section class="container-fluid">
-		<article id="nosearch" class="fr">
-			<div id="nopage">
-				<p>La page que vous demandez n'existe pas !</p>
-			</div>
+		<article class="noresults">
+			<main>
+				<h1 class="noresultstitle">4<span><i class="fas fa-music"></i></span>4</h1>
+				<h2 class="noresultssubtitle">Erreur: 404 page non trouvée</h2>
+				<p class="noresultstext">Désolé, mais la page que vous demandez n'existe pas !</p>
+			</main>
 		</article>
 	</section>
 	<?php
@@ -112,7 +117,8 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					<a class="btn btn-success btn-lg btn-block btnsnd returnh"
 						href="index.php"
 						role="button"
-					>
+					>	<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 					Retour à l'accueil
 					</a>
 				</div>
@@ -120,14 +126,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				<div class= "col-3">
 				<div class="container-fluid">
 					<form action="idfr.php" method="POST">
-					<button class="btn btn-info btn-lg btn-block btnsnd returnh"
-						role="button"
-						type="submit"
-						name="sortbyid"
-					>
-					Sort by NEW
-					</button>
-				</form>
+						<button style="--content: 'Sort by New'">
+							<div class="left"></div>
+								Sort by New
+							<div class="right"></div>
+						</button>
+ 					</form>
 				</div>
 			</div>
 			<span id="stopsnd" class="france"></span>

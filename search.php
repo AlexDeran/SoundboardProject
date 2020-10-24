@@ -11,7 +11,8 @@ if(!$pdo){
 else{
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  $search = htmlspecialchars($_GET['search']); 
+	if(isset($_GET['search'])){ $search = htmlspecialchars($_GET['search']); }
+ 
 	
   $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
@@ -72,6 +73,8 @@ $n=1;
 									href="index.php"
 									role="button"
 								>
+								<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 								Retour à l'accueil
 								</a>
 							</div>
@@ -171,6 +174,8 @@ $n=1;
 									href="index.php"
 									role="button"
 								>
+								<i class="fas fa-home"></i>
+						<i class="fas fa-caret-left"></i>
 								Retour à l'accueil
 								</a>
 							</div>
@@ -194,7 +199,7 @@ $n=1;
 				</nav>
 			<section class="container-fluid">
 				<article id="nosearch" class="fr">
-					<div id="noresults">
+					<div>
 						<p>Aucun son trouvé !</p>
 					</div>
 				</article>
