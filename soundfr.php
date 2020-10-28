@@ -123,13 +123,14 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 					</a>
 				</div>
 			</div>
-				<div class= "col-3">
+				<div class= "col-4">
 				<div class="container-fluid">
 					<form action="idfr.php" method="POST">
-						<button style="--content: 'Sort by New'">
-							<div class="left"></div>
-								Sort by New
-							<div class="right"></div>
+						<button class="bubble" style="--content: ''">
+						
+									<i class="fab fa-hotjar"></i> 
+									Sort by New
+					
 						</button>
  					</form>
 				</div>

@@ -70,7 +70,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 						href="soundfr.php"
 						role="button"
 					>
-					
+					<i class="fas fa-sort-alpha-up"></i>
 					Sort by A-Z
 					</a>
 				</div>

@@ -140,6 +140,7 @@ endif;
 								data-toggle="modal"
 								data-target="#exampleModalCenter"
 							>
+							<i class="fas fa-plus"></i>
 								Ajouter un son
 							</button>
 						
@@ -285,10 +286,12 @@ endif;
 											</div>
 											<div class="modal-footer">
 												<button type="submit" class="btn btn-success">
-													Valider
+												<i class="fas fa-check"></i>
+												<b>VALIDER</b>
 												</button>
 												<button type="button" class="btn btn-danger" data-dismiss="modal">
-													Annuler
+													<i class="fas fa-times"></i>
+													<b>ANNULER</b>
 												</button>
 											</div>
 										</form>
@@ -304,6 +307,7 @@ endif;
 									data-toggle="modal"
 									data-target="#exampleModalCenter3"
 								>
+								<i class="fas fa-trash-alt"></i>
 									Supprimer un son
 							</button>
 						</div>
@@ -396,11 +400,13 @@ endif;
 													</div>
 												</div>
 												<div class="modal-footer">
-													<button type="submit" class="btn btn-success">
-														Valider
+													<button class="btn btn-success" type="submit">
+													<i class="fas fa-trash-alt"></i>
+													<b>VALIDER</b>
 													</button>
 													<button type="button" class="btn btn-danger" data-dismiss="modal">
-														Annuler
+													<i class="fas fa-times"></i>
+													<b>ANNULER</b>
 													</button>
 												</div>
 											</form>
