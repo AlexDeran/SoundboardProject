@@ -11,11 +11,11 @@ if(!$pdo){
 $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
  if(isset($_POST['nom'])){
-	require "addsound.php";
+	require "gestsnd/addsound.php";
 	}
 
 if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
-	require "supprsound.php";
+	require "gestsnd/supprsound.php";
 }
 
 $onlynom = $pdo->query('SELECT Nom  FROM soundfr');
@@ -418,24 +418,24 @@ endif;
 	<!-- ############################################### BOUTONS ############################################### -->
 													
 							<div id="searchworld" class="row">
-								<form id="showfr" action="soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
+								<form id="showfr" action="fr/soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
 									<input id="frbutton" class="butcons container-fluid" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
 								</form>
-								<form id="showw" action="soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
+								<form id="showw" action="world/soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
 									<input id="myBtnWorld" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
 								</form>
 							</div>
 							<div id="smallbuttons" class="row">
-								<form id="showwtc" action="wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
+								<form id="showwtc" action="wtc/wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value=" " title="What the Cut ?!"></input>
 								</form>
-								<form id="showMV" action="mv.php" class="form-inline my-2 my-lg-0 3" method="POST">
+								<form id="showMV" action="mv/mv.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnMV" class="butcons" type="submit" name="sounndmv" value=" " title="MisterMV"></input>
 								</form>
-								<form id="showJDay" action="JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
+								<form id="showJDay" action="jday/JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtnJDay" class="butcons" type="submit" name="soundjday" value=" " title="MisterJDay"></input>
 								</form>
-								<form id="showinc" action="inconnus.php" class="form-inline my-2 my-lg-0 3" method="POST">
+								<form id="showinc" action="inconnus/inconnus.php" class="form-inline my-2 my-lg-0 3" method="POST">
 									<input id="myBtninc" class="butcons" type="submit" name="soundinc" value=" " title="Les Inconnus"></input>
 								</form>
 							</div>
