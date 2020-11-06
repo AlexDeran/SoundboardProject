@@ -46,8 +46,7 @@ $n = 1;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/404.css">
-			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
+		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
 	<title>Sons WORLD</title>
@@ -80,7 +79,7 @@ $n = 1;
 				</div>
 			</div>
 			<span id="stopsnd" class="blk"></span>
-			<form id="searchbox2" action="search.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+			<form id="searchbox2" action="searchw.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="searchw" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>

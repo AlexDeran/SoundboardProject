@@ -3,12 +3,9 @@
 session_start();
 //DB login
 
-	$pdo =new PDO('mysql:host=localhost; dbname=sbp; charset=utf8','root','');
+$pdo =new PDO('mysql:host=localhost; dbname=sbp; charset=utf8','root','');
 
-	 switch (isset($_POST)) {
-		 case isset($_POST['sndfr']) :
-		
-		if(!$pdo){
+if(!$pdo){
 		echo "Erreur de connexion à la base de données.";
 }
 
@@ -16,7 +13,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$pageid = isset($_GET['pageid']) ? (int)$_GET['pageid'] : 1;
 
-	$perPageid = 15;
+	$perPageid = 14;
 
 	$begginid = ($pageid > 1) ? ($pageid * $perPageid) - $perPageid : 0;
 
@@ -30,7 +27,12 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$pagesid = ceil($totalid / $perPageid);
 
-  $n = 1;
+	$n = 1;
+	
+	if($pageid <1 || $pageid > $pagesid){
+		header('Location:../404.html');
+}
+else {
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -47,7 +49,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
-	<title>Sons FR</title>
+	<title>Nouveaux Sons FR</title>
 </head>
 <body>
 	<header class="pgtitle">	
@@ -70,7 +72,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				<div class= "col-3">
 				<div class="container-fluid">
 					<a class="btn btn-info btn-lg btn-block btnsnd returnh"
-						href="../fr/soundfr.php"
+						href="soundfr.php"
 						role="button"
 					>
 					<i class="fas fa-sort-alpha-up"></i>
@@ -162,13 +164,6 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			<script src="../js/app.js"></script>
 	</body>
 </html>
-<?php
-
-break;
-
-// case isset($_POST) :
-
-default:
-		header('Location:../404.html');
+<?php 
 }
 ?>

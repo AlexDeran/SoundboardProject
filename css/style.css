@@ -529,6 +529,7 @@ header.index {
 
 .jday {
 	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+	border-bottom: solid black;
 }
 
 .searchtitle {
