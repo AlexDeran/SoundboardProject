@@ -1,0 +1,58 @@
+.btnreturn {
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	padding-bottom: 2.1em;
+}
+
+/* ############################## WTC ############################# */
+
+.watzecut {
+	background-image: url(../img/wtc.png);
+	background-color: black;
+	border: solid black;
+}
+
+.watzecut:hover {
+	border-bottom: solid white;
+}
+
+/* ############################## MV ############################# */
+
+.aimevai {
+	background-image: url(../img/mistermv.png);
+	background-color: black;
+	border: solid black;
+}
+.aimevai:hover {
+	border-bottom: solid white;
+}
+
+/* ############################## JD ############################# */
+
+.jydai {
+	background-image: url(../img/jday.png);
+	background-color: seashell;
+	border: solid seashell;
+}
+.jydai:hover {
+	border-bottom: solid black;
+}
+
+.jydai:hover,
+.unconnus:hover {
+	background-color: gainsboro;
+	border: solid gainsboro;
+}
+
+/* ############################## INCONNUS ############################# */
+
+.unconnus {
+	background-image: url(../img/inconnus.png);
+	background-color: ghostwhite;
+	border: solid ghostwhite;
+}
+
+.unconnus:hover {
+	border-bottom: solid #ca283f;
+}

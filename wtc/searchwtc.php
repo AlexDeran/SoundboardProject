@@ -56,7 +56,8 @@ else {
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
+		<link rel="stylesheet" href="../css/search.css" />
+		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
 	<title>Votre Recherche WTC</title>
@@ -88,13 +89,13 @@ else {
 								</a>
 							</div>
 						</div>
-						<div class= "col-4">
+						<div class="col-4">
 							<div class="container-fluid">
-								<a class="btn btn-lg btn-block"
+								<a
+									class="btn btn-dark btn-lg btn-block btnsnd btnreturn watzecut"
 									href="wtc.php"
 									role="button"
 								>
-								Retour à What the Cut ?!
 								</a>
 							</div>
 						</div>

@@ -93,37 +93,49 @@ p.noresultstext {
 	background-repeat: no-repeat;
 	padding-bottom: 3em;
 	margin-top: 1em;
-	border: none;
 }
 
 .wtc {
 	background-image: url(../img/wtc.png);
 	background-color: black;
-}
-
-.wtc:hover {
-	background-color: rgb(51, 51, 51);
-}
-
-.mv {
-	background-image: url(../img/mistermv.png);
-	background-color: white;
 	border: solid black;
 }
 
 .mv:hover,
+.wtc:hover {
+	background-color: rgb(51, 51, 51);
+	border: solid rgb(51, 51, 51);
+	border-bottom: solid white;
+}
+
+.mv {
+	background-image: url(../img/mistermv.png);
+	background-color: black;
+	border: solid black;
+}
+
 .jd:hover,
 .inc:hover {
 	background-color: gainsboro;
+	border: solid gainsboro;
 }
 
 .jd {
 	background-image: url(../img/jday.png);
 	background-color: seashell;
+	border: solid seashell;
+}
+
+.jd:hover {
+	border-bottom: solid black;
 }
 
 .inc {
 	background-image: url(../img/inconnus.png);
 	background-color: ghostwhite;
-	border: solid #ca283f;
+	border: solid ghostwhite;
+}
+
+.inc:hover {
+	border-bottom: solid #ca283f;
 }

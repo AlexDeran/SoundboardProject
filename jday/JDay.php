@@ -66,142 +66,6 @@ $n = 1;
 </head>
 <body>
 	<?php 
-	################################################ RECHERCHE #############################################
-
-	if(isset($search)){
-		if(count($resultsjd)> 0){
-			
-			######################################## PAGE DOES EXIST ######################################
-		
-			?>
-				<header class="pgtitle">
-					<div class="sndtitlejd jday">
-						<img src="../img/jday.png" height="75" width="75">	
-						<h1 class="searchtitle"> Sons relatifs à <?php echo($search) ?></h1>
-					</div>
-				</header>
-				<nav class="container-fluid">
-					<div id="navbox" class="row">
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-									href="../index.php"
-									role="button"
-								>
-								<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-								Retour à l'accueil
-								</a>
-							</div>
-						</div>
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-light btn-lg btn-block btnsnd returnjd"
-									href="JDay.php"
-									role="button"
-								>
-								Retour à Mister JDay
-								</a>
-							</div>
-						</div>
-						<span id="stopsnd" class="whyt"></span>
-						<form id="searchbox2" action="JDay.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
-							<input id="searchbox" class="form-control mr-sm-2" type="search"
-								name="search" placeholder="Rechercher un son" aria-label="Search" required>
-							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-						</form>
-					</div>
-				</nav>
-				<section>
-					<article>
-						<div class="container-fluid">
-							<div class="row">
-								<div class="col schwtc">
-									<?php foreach ($resultsjd as $r):?>
-									<div class="sndboxjday">
-										<audio id="myAudio">
-											<source src="../SBP/JDay/<?= $r['Son']?>" type="audio/mpeg">
-											Your browser does not support the audio element.
-										</audio>
-										<div class="imgsnd"><img src="../img/jday.png" height="75" width="75" onmousedown="play('../SBP/JDay/<?= $r['Son']?>')"></div>
-										<div class="col" id="sndnamejd">
-										<?php if ($r['source'] != ""){ ?>
-											<a class="srcvidjday" href="#lienvid<?=$n?>" data-toggle="modal">
-											<?php echo($r['Nom']);?>
-											</a>
-											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-												<div class="modal-dialog modal-dialog-centered">
-													<div class="modal-content">
-														<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-													</div>
-												</div>
-											</div>
-											<?php $n++; } else echo($r['Nom']); ?>
-										</div>
-									</div>
-								<?php endforeach;?>
-								</div>
-							</div>
-						</div>
-					</article>
-				</section>
-				<div id="btntop" class="container-fluid">
-					<a href="#top" id="myBtnfr2top" class="butcons" title="Go to top"><i class="fas fa-chevron-up"></i> GO UP </a> 
-				</div>
-	<?php 
-
-			}
-			else{
-############################################# NO RESULTS #############################################
-		?>
-	<header class="pgtitle">
-		<div class="sndtitlejd jday">
-			<img src="../img/jday.png" height="75" width="75">		
-			<h1 class="searchtitle"> Sons relatifs à <?php echo($search) ?></h1>
-		</div>
-	</header>
-	<nav class="container-fluid">
-					<div id="navbox" class="row">
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-									href="../index.php"
-									role="button"
-								>
-								<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-								Retour à l'accueil
-								</a>
-							</div>
-						</div>
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-light btn-lg btn-block btnsnd returnjd"
-									href="JDay.php"
-									role="button"
-								>
-								Retour à Mister JDay
-								</a>
-							</div>
-						</div>
-						<form id="searchbox2" action="JDay.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
-							<input id="searchbox" class="form-control mr-sm-2" type="search"
-								name="search" placeholder="Rechercher un son" aria-label="Search" required>
-							<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-						</form>
-					</div>
-				</nav>
-			<section class="container-fluid">
-				<article id="nosearch" class="fr">
-					<div id="noresults">
-						<p>Aucun son trouvé !</p>
-					</div>
-				</article>
-			</section>
-	<?php
-		}
-}
-	else{
 
 	########################################### PAGE DOES NOT EXIST (404) ############################################
 
@@ -229,9 +93,9 @@ $n = 1;
 				</div>
 			</div>
 			<span id="stopsnd" class="whyt"></span>
-			<form id="searchbox2" action="JDay.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+			<form id="searchbox2" action="searchjd.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
-					name="search" placeholder="Rechercher un son" aria-label="Search" required>
+					name="searchjday" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
 			</form>
 		</div>
@@ -302,12 +166,7 @@ $n = 1;
 			 ;}?>
 		</ul>
 	</nav>
-	<?php
-	 }
-	} 
-	?>
-
-			<script
+	<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 		crossorigin="anonymous"
@@ -325,4 +184,9 @@ $n = 1;
 			<script src="../js/app.js"></script>
 	</body>
 </html>
+
+	<?php
+	 } 
+	?>
+
 
