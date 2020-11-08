@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : sam. 03 oct. 2020 à 20:44
+-- Généré le : Dim 08 nov. 2020 à 21:43
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -47,13 +47,89 @@ INSERT INTO `inconnus` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (4, 'Stéphanie de Monaco', 'stéphanie de monaco.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=215'),
 (5, 'Golo golo dans la case', 'golo golo dans la case.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=101'),
 (6, 'Golo golo', 'golo golo.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=277'),
-(7, 'Répéter la question ?', 'pouvez repeter la question.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=352'),
+(7, 'Vous pouvez répéter la question ?', 'pouvez repeter la question.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=352'),
 (8, 'Miou-Miou', 'Miou-Miou.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=572'),
 (9, 'Gagner le golo', 'gagner le golo.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/BDaUNr3unU0?start=352'),
 (10, 'L\'urgence non urgente', 'lurgence.mp3', 'Hôpital', 'https://www.youtube.com/embed/RFLxu5_m3r8?start=42'),
 (11, 'J\'ai beau être matinal', 'jai beau etre matinal.mp3', 'Youpi Matin', 'https://www.youtube.com/embed/YYnNnhA9AQY?start=227'),
 (12, 'Bon et mauvais chasseur', 'le bon et le mauvais chasseur.mp3', 'Les chasseurs', 'https://www.youtube.com/embed/QuGcoOJKXT8?start=179'),
-(13, 'Brocouille', 'Brocouille.mp3', 'Les chasseurs', 'https://www.youtube.com/embed/QuGcoOJKXT8?start=110');
+(13, 'Brocouille', 'Brocouille.mp3', 'Les chasseurs', 'https://www.youtube.com/embed/QuGcoOJKXT8?start=110'),
+(14, 'Insultes', 'Une famille en plomb - Insultes.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=473'),
+(15, 'Rien à foutre', 'Une famille en plomb - Rien a foutre.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=538'),
+(16, 'Des casseroles', 'Une famille en plomb -  Des casseroles.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=137'),
+(17, 'On ouvre et c\'est froid', 'Une famille en plomb -  On ouvre et cest froid.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=158'),
+(18, 'Les coucougnous', 'Une famille en plomb -  Les coucougnous.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=333'),
+(19, 'Rap-tout - Refrain', 'Rap-tout.mp3', 'Rap-tout', 'https://www.youtube.com/embed/fy5ewMwLvMc?start=92'),
+(20, 'Salle inondée', 'Fort Boyaux - Salle inondée.mp3', 'Fort Boyaux', 'https://www.youtube.com/embed/pGQ_vwobVF0?start=84'),
+(21, 'Cri de guerre', 'Fort Boyaux - Cri de guerre.mp3', 'Fort Boyaux', 'https://www.youtube.com/embed/pGQ_vwobVF0?start=91'),
+(22, 'Enfoiré', 'Fort Boyaux - Enfoiré.mp3', 'Fort Boyaux', 'https://www.youtube.com/embed/pGQ_vwobVF0?start=393'),
+(23, 'Énigme Père Fouras', 'Fort Boyaux - Enigme Père Fouras.mp3', 'Fort Boyaux', 'https://www.youtube.com/embed/pGQ_vwobVF0?start=293'),
+(24, 'Manu tu descends ?', 'La ZUP - Manu tu descends.mp3', 'La ZUP', 'https://www.youtube.com/embed/uHdKki05MX4?start=98'),
+(25, 'Si tu descends j\'te descends', 'La ZUP - Si tu descends je te descends.mp3', 'La ZUP', 'https://www.youtube.com/embed/uHdKki05MX4?start=160'),
+(26, 'Le Pahatois', 'La ZUP - Le Pahatois.mp3', 'La ZUP', 'https://www.youtube.com/embed/uHdKki05MX4?start=309'),
+(27, 'Les gardiens de la paix', 'Le Commissariat de police - Les gardiens de la paix.mp3', 'Le Commissariat de police', 'https://www.youtube.com/embed/mo2O1desNHA?start=17'),
+(28, 'À fortiori', 'Commissariat - à Fortiori.mp3', 'Le Commissariat de police', 'https://www.youtube.com/embed/mo2O1desNHA?start=38'),
+(29, 'Vice et versa', 'Vice et versa.mp3', 'Vice et versa', 'https://www.youtube.com/embed/ZTeqM5gciH8'),
+(30, 'Vice et versa - Refrain', 'Vice et versa - Refrain.mp3', 'Vice et versa', 'https://www.youtube.com/embed/ZTeqM5gciH8?start=35'),
+(31, 'L\'alcôve multicolore', 'Vice et versa - Lalcôve multicolor.mp3', 'Vice et versa', 'https://www.youtube.com/embed/ZTeqM5gciH8?start=143'),
+(32, 'Cautionner l\'irréalité', 'Vice et versa - Cautionner lirréalité.mp3', 'Vice et versa', 'https://www.youtube.com/embed/ZTeqM5gciH8?start=173'),
+(33, 'F bonne maman', 'Une famille en plomb - F bonne maman.mp3', 'Un famille en plomb', 'https://www.youtube.com/embed/NtLnbWuMlp0?start=72'),
+(34, 'Le roi Henri  XVI', 'La révolution - le roi Henri XVI.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=68'),
+(35, 'Le roi et le peuple', 'La révolution - le roi et le peuple.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=85'),
+(36, 'Difficile d\'être le roi', 'La révolution - quil est difficile detre le roi de la france.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=179'),
+(37, 'Il a la fève', 'La révolution - il a la fève.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=225'),
+(38, 'La faim du peuple et son régime', 'La révolution - la faim du peuple et son régime.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=247'),
+(39, 'Mac Gyver émigre à Varennes', 'La révolution - Mac Gyver émigre à Varennes.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=395'),
+(40, 'Eh le schtroumpf ici !', 'La révolution - Eh le schtroumpf ici.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=492'),
+(41, 'La guillotine', 'La révolution - La guillotine.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=516'),
+(42, 'Louis Croix V Baton', 'La révolution - Louis Croix V Baton.mp3', 'La révolution', 'https://www.youtube.com/embed/pibSbfAPE-g?start=256'),
+(43, 'Méditation Richenou', 'Les sectes - Méditation Richenou.mp3', 'Les sectes', 'https://www.youtube.com/embed/dOJwGl3yLMU?start=168'),
+(44, 'Skippy et les soucis', 'Les sectes - Skippy et les soucis.mp3', 'Les sectes', 'https://www.youtube.com/embed/dOJwGl3yLMU?start=41'),
+(45, 'Totale liberté de pensée cosmique', 'Les sectes - Totale liberté de pensée.mp3', 'Les sectes', 'https://www.youtube.com/embed/dOJwGl3yLMU?start=41'),
+(46, 'Cela ne nous regarde pas', 'Athlétisme - Cela ne nous regarde pas.mp3', 'Athlétisme', 'https://www.youtube.com/embed/MyNoWkXCEA8?start=267'),
+(47, 'L\'hernie testiculaire', 'Athlétisme - Hernie testiculaire.mp3', 'Athlétisme', 'https://www.youtube.com/embed/MyNoWkXCEA8?start=264'),
+(48, 'La vie sexuelle de JC', 'Athlétisme - La vie sexuelle de JC.mp3', 'Athlétisme', 'https://www.youtube.com/embed/MyNoWkXCEA8?start=462'),
+(49, 'Le panache à la française', 'Athlétisme - Le panache à la française.mp3', 'Athlétisme', 'https://www.youtube.com/embed/MyNoWkXCEA8?start=559'),
+(50, 'C\'est toi que je t\'aime', 'Cest toi que je taime.mp3', 'C\'est toi que je t\'aime', 'https://www.youtube.com/embed/DPnk1H1m7Cs?start=126'),
+(51, 'Le suicide forcé', 'Le jeu de la vérité vraie - Le suicide forcé.mp3', 'Le jeu de la vérité vraie', 'https://www.youtube.com/embed/6d27K-nxi48?start=163'),
+(52, 'Responsable mais pas coupable', 'Le jeu de la vérité vraie - Responsable mais pas coupable.mp3', 'Le jeu de la vérité vraie', 'https://www.youtube.com/embed/6d27K-nxi48?start=202'),
+(53, 'C\'est ton destin', 'Cest ton destin.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU'),
+(54, 'Dans le RER', 'Cest ton destin - Dans le RER.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU?start=5'),
+(55, 'Pas de soumission à ta vouloir', 'Cest ton destin - pas de soumission a ta vouloir.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU?start=24'),
+(56, 'Eh manu tu descends ?', 'Cest ton destin - Eh manu.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU?start=58'),
+(57, 'C\'est ton destin - Refrain', 'Cest ton destin - refrain.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU?start=11'),
+(58, 'Rien à dire de plus', 'Cest ton destin - Rien a dire de plus.mp3', 'C\'est ton destin', 'https://www.youtube.com/embed/1V0IE87waHU?start=78'),
+(59, 'Biouman - Intro', 'Biouman - Intro.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY'),
+(60, 'La gentille et le méchant', 'Biouman - La gentille et le méchant.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=63'),
+(61, 'Oh mais que ce passe t-il ?', 'Biouman - Oh mais que se passe til.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=77'),
+(62, 'Un méchant ?!', 'Biouman - Un mechant.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=90'),
+(63, 'Je suis le méchant', 'Biouman - Je suis le mechant.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=109'),
+(64, 'Parce que t\'es une gentille', 'Biouman - Parce que tes une gentille.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=114'),
+(65, 'Tiens prends ça dans ta gl', 'Biouman - tiens prends ca.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=187'),
+(66, 'Le Bio de PQ', 'Biouman - Besoin de Bio de PQ.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=208'),
+(67, 'On aime pas les méchants', 'Biouman - On aime pas les mechants.mp3', 'Biouman', 'https://www.youtube.com/embed/-WoQsLZmynY?start=270'),
+(68, '100 % sauveur', '100 pour 100 sauveur.mp3', 'Jésus II le retour', 'https://www.youtube.com/embed/-xSORIDw1Sg?start=123'),
+(69, 'Maintenant ça va chier', 'Maintenant ca va chier.mp3', 'Jésus II le retour', 'https://www.youtube.com/embed/-xSORIDw1Sg?start=212'),
+(70, 'Pilate Ponce Pilate', 'Ponce pilate.mp3', 'Jésus II le retour', 'https://www.youtube.com/embed/-xSORIDw1Sg?start=178'),
+(71, 'Pour sauver sa peau il doit mourir', 'Pour sauver sa peau il doit mourrir.mp3', 'Jésus II le retour', 'https://www.youtube.com/embed/-xSORIDw1Sg?start=169'),
+(72, 'Vous allez tous vous aimez ', 'vous allez vous aimer bordel.mp3', 'Jésus II le retour', 'https://www.youtube.com/embed/-xSORIDw1Sg?start=107'),
+(73, 'Gwendoline a les yeux verts', 'Gwendoline à les yeux verts.mp3', 'Isabelle a les yeux bleus', 'https://www.youtube.com/embed/kKAI6gp7jIc?start=202'),
+(74, 'Isabelle - Refrain', 'Isabelle a les yeux bleus - refrain.mp3', 'Isabelle a les yeux bleus', 'https://www.youtube.com/embed/kKAI6gp7jIc?start=6'),
+(75, 'On privilégie surtout les paroles', 'On privilégie surtout les paroles.mp3', 'Isabelle a les yeux bleus', 'https://www.youtube.com/embed/kKAI6gp7jIc?start=100'),
+(76, 'Isabelle a les yeux bleus', 'Les Inconnus Isabelle a les yeux bleus.mp3', 'Isabelle a les yeux bleus', 'https://www.youtube.com/embed/xGQSPnvSlHE'),
+(77, 'Alain de loin', 'Alain de loin.mp3', 'Tournez ménages', 'https://www.youtube.com/embed/-wF6n9t5LxQ?start=274'),
+(78, 'Ingrid es-ce que tu baises ?', 'Ingrid esce que tu baises.mp3', 'Tournez ménages', 'https://www.youtube.com/embed/-wF6n9t5LxQ?start=73'),
+(79, 'Je m\'en vais comme un prince', 'je men vais comme un prince.mp3', 'Tournez ménages', 'https://www.youtube.com/embed/-wF6n9t5LxQ?start=346'),
+(80, 'Voyage en polygamie française', 'Voyage en polygamie francaise.mp3', 'Télémagouilles', 'https://www.youtube.com/embed/-wF6n9t5LxQ?start=200'),
+(81, 'Soudain quand elle est partie', 'Soudain quand elle est partie.mp3', 'Isabelle a les yeux bleus', 'https://www.youtube.com/embed/kKAI6gp7jIc?start=17'),
+(82, 'Le saxophone', 'la set (peinture sculpture) le saxophone.mp3', 'La set (peinture - sculpture)', 'https://www.youtube.com/embed/1yKay8HDjPU?start=261'),
+(83, 'Le père Ducrasse', 'Le pere ducrasse.mp3', 'Le père Ducrasse ', 'https://www.youtube.com/embed/dIy1Jma43WI'),
+(84, 'Je vais vous bouffer tout cru', 'savon camux - je vais vous bouffer tout cru.mp3', 'Savon Camux', 'https://www.youtube.com/embed/-tcJKk9Xb_o?start=85'),
+(85, 'Un chagrin d\'amour', 'Les Inconnus - Un chagrin damour.mp3', 'Un chagrin d\'amour', 'https://www.youtube.com/embed/z-sXHFzcdiI'),
+(86, 'À l’hôpital Velpeau ?', 'hopital velpeau.mp3', 'Maîtresses et patients', 'https://www.youtube.com/embed/_dLzh-DFu4s?start=201'),
+(87, 'Juliette Godemiche', 'linsupportable.mp3', 'Les escarres', 'https://www.youtube.com/embed/tqdk0k_U8Zg?start=143'),
+(88, 'Peux-tu seulement le comprendre ?', 'peux tu seulement le comprendre.mp3', 'Les escarres', 'https://www.youtube.com/embed/tqdk0k_U8Zg?start=168'),
+(89, 'Edith Piaf est morte ?!', 'edith piaf est morte.mp3', 'Les commerces', 'https://www.youtube.com/embed/TpNYDEd5dx8?start=225');
 
 -- --------------------------------------------------------
 
@@ -79,7 +155,6 @@ INSERT INTO `jday` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (3, 'Pub Michel Baie', 'Pub Michel Baie.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/VR6G3DHIZiU?start=1426'),
 (4, 'Le club Mickey en SVT', 'Lillumination du club mickey.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/YJ5NrgDJ0dE?start=668'),
 (5, 'Au parc Saint Paul', 'Au parc Saint Paul.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/VR6G3DHIZiU?start=1868'),
-(6, 'Emile Louis', 'Emile Louis.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/YJ5NrgDJ0dE?start=757'),
 (7, 'Homme &amp; petit Garçon', 'Homme & petit garçon.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/VR6G3DHIZiU?start=406'),
 (8, 'Ya tout dans ce magasin', 'Ya tout dans le magasin.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/VR6G3DHIZiU?start=393'),
 (9, 'Staline, l\'eau minerale', 'Staline ça coule de source.mp3', 'MisterJDay, Mr Connard', 'https://www.youtube.com/embed/1yxqZ_mMCoc?start=681'),
@@ -241,7 +316,35 @@ INSERT INTO `keywrds` (`ID`, `Nom`, `Appartenance`) VALUES
 (133, 'Youpi Matin', 'INCONNUS'),
 (134, 'Les chasseurs', 'INCONNUS'),
 (135, 'Kamini', 'FR'),
-(136, 'Samy Naceri', 'FR');
+(136, 'Samy Naceri', 'FR'),
+(137, 'Da Foncesca', 'FR'),
+(138, 'La kette', 'FR'),
+(139, 'Un famille en plomb', 'INCONNUS'),
+(140, 'Rap-tout', 'INCONNUS'),
+(141, 'Fort Boyaux', 'INCONNUS'),
+(142, 'La ZUP', 'INCONNUS'),
+(143, 'Le Commissariat de police', 'INCONNUS'),
+(144, 'Vice et versa', 'INCONNUS'),
+(145, 'La révolution', 'INCONNUS'),
+(146, 'Chef Dumas', 'FR'),
+(147, 'Les sectes', 'INCONNUS'),
+(148, 'Athlétisme', 'INCONNUS'),
+(149, 'C\'est toi que je t\'aime', 'INCONNUS'),
+(150, 'Le jeu de la vérité vraie', 'INCONNUS'),
+(151, 'C\'est ton destin', 'INCONNUS'),
+(152, 'Biouman', 'INCONNUS'),
+(153, 'Bande organisée', 'FR'),
+(154, 'Jésus II le retour', 'INCONNUS'),
+(155, 'Isabelle a les yeux bleus', 'INCONNUS'),
+(156, 'Tournez ménages', 'INCONNUS'),
+(157, 'La set (peinture - sculpture)', 'INCONNUS'),
+(158, 'Le père Ducrasse ', 'INCONNUS'),
+(159, 'Savon Camux', 'INCONNUS'),
+(160, 'Un chagrin d\'amour', 'INCONNUS'),
+(161, 'Maîtresses et patients', 'INCONNUS'),
+(162, 'Les escarres', 'INCONNUS'),
+(163, 'Les commerces', 'INCONNUS'),
+(164, '4 mariages pour 1 lune de miel', 'FR');
 
 -- --------------------------------------------------------
 
@@ -373,7 +476,7 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (59, 'AH !', 'Denis Brogniart AH.mp3', 'Denis Brogniart', 'https://www.youtube.com/embed/XE6YaLtctcI'),
 (60, 'Grigny la grande borne', 'Grigny la grande borne.mp3', 'Grigny la Grande Borne', 'https://www.youtube.com/embed/Ho8xZ5VN9oM?start=2'),
 (63, 'Je vais t\'enculer', 'Jvais tenculer et tu jouiras....mp3', 'Depardieu', 'https://www.youtube.com/embed/tjqJK-8PpkI'),
-(64, 'L\'amour sans prélis', 'lamour sans preliminaire.mp3', '', 'https://www.youtube.com/embed/EvVAxJ7sJAE?start=16'),
+(64, 'DF - L\'amour sans préliminaires', 'lamour sans preliminaire.mp3', 'Da Foncesca', 'https://www.youtube.com/embed/EvVAxJ7sJAE?start=16'),
 (65, 'Jeanne au secours !', 'Jean Marie Le Pen - Jeanne au secours !!.mp3', 'JMLP, Jean Marie Le Pen', 'https://www.youtube.com/embed/v1mxMtr8Mws'),
 (66, 'K2A - Oh pute ! ', 'Kaaris Oh Pute !.mp3', 'Kaaris', 'https://www.youtube.com/embed/TwOQtV5vy10?start=3'),
 (67, 'Lopez - Le joe le david', 'le djo le david.mp3', 'Le joe, le david, hoffman, calotte, de ces morts, ta femme, ferme ta gueule, ftg, lopez', 'https://www.youtube.com/embed/kLwy1uYfpRo?start=3'),
@@ -579,7 +682,7 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (275, 'OSS - Faisons comme ça', 'OSS 117  faisons comme ça.mp3', 'OSS 117', 'https://www.youtube.com/embed/xkUoUnYLSto'),
 (276, 'KF - Vous m\'emmerdez ', 'KF - Vous memmerdez.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/h8-QGeOHx_Y?start=46'),
 (277, 'KF - AH ! ', 'KF - AH remix.mp3', 'Khaled Freak', 'https://www.youtube.com/embed/Ri7GzCUTC5s'),
-(278, 'Commence à me parler poli', 'commence a me parler poliment.mp3', '', 'https://www.youtube.com/embed/MX_l4pRMI8w?start=48'),
+(278, 'Commence à me parler poliment', 'commence a me parler poliment.mp3', '', 'https://www.youtube.com/embed/MX_l4pRMI8w?start=48'),
 (279, 'Bordel j\'ai le droit', 'mais bordel jai le droit.mp3', '', 'https://www.youtube.com/embed/-bVL_Nvm4A8'),
 (280, 'Non binaire', 'non binaire.mp3', '', 'https://www.youtube.com/embed/ZDjymMD7PTU?start=23'),
 (281, 'Mais c\'est contre nature ', 'cest contre nature han.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=14'),
@@ -633,8 +736,8 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (329, 'Un nouveau subterfuge ?!', 'Vont-ils essayer un nouveau subterfuge.mp3', 'Valorant', 'https://www.youtube.com/embed/jfwZ7TJOdms'),
 (330, 'Domo, je suis japonais', 'Monster - je suis japonais.mp3', '', 'https://www.youtube.com/embed/ylZpdAQdqqc'),
 (331, 'Ohlala c\'est la décadence', 'ohlala cest la décadence.mp3', '', 'https://www.youtube.com/embed/a3WuxELOKJA?start=71'),
-(332, 'Ekip 667', 'Ekip.mp3', 'Freeze Corleone, Ekip, 667', 'https://www.youtube.com/embed/rshUZPcUrJQ?start=13'),
-(333, 'BO - Zumba, caféw, carnaval', 'Zumba cafew carnaval.mp3', '', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=194'),
+(332, 'Ekip 667', 'Ekip.mp3', 'Freeze Corleone, Ekip, 667', 'https://www.youtube.com/embed/tr2zDYYKLMM?start=185'),
+(333, 'BO - Et ça fait zumba cafew', 'Zumba cafew carnaval.mp3', 'Bande organisée', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=194'),
 (334, 'Pas de préliminaires !', 'Pas besoin de préliminaire !.mp3', '', 'https://www.youtube.com/embed/sIKS1vjXWA4'),
 (335, 'Le coup du foulard', 'le coup du foulaaaaard.mp3', '', 'https://www.youtube.com/embed/4kkagtURMxg?start=450'),
 (336, 'Quel goût !', 'Quel gout.mp3', '', 'https://www.youtube.com/embed/4N9Endw_nD8?start=10'),
@@ -642,7 +745,38 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (338, 'SN - J\'ai fait des conneries', 'Jai fait des conneries.mp3', 'Samy Naceri', 'https://www.youtube.com/embed/V6ljXkkGXG0?start=64'),
 (339, 'SN - Les rimes en &quot;ence&quot;', 'Les rimes en ence.mp3', 'Samy Naceri', 'https://www.youtube.com/embed/V6ljXkkGXG0?start=164'),
 (340, 'SN - Oui j\'ai envie', 'oui jai envie.mp3', 'Samy Naceri', 'https://www.youtube.com/embed/V6ljXkkGXG0?start=95'),
-(341, 'BO - Canebière &amp; Vieux Port', 'La cannebiere et le vieux port.mp3', '', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=83');
+(341, 'BO - Canebière &amp; Vieux Port', 'La cannebiere et le vieux port.mp3', 'Bande organisée', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=83'),
+(342, 'Champion du moooonde', 'Champion du mooooooonde.mp3', '', 'https://www.youtube.com/embed/h75PJ-xfsFY?start=600'),
+(343, 'DF - Le coup de soufflage', 'Da Foncesca - le coup de soufflage.mp3', 'Da Foncesca', ''),
+(344, 'DF - Le rouge à lèvres', 'Da Foncesca - Le rouge à lévres.mp3', 'Da Foncesca', ''),
+(345, 'Enculé', 'ENCULÉ.mp3', '', 'https://www.youtube.com/embed/okEqM6VOOj8?start=34'),
+(346, 'Crucifié x3', 'crucifié crucifié crucifié.mp3', '', 'https://www.youtube.com/embed/lSeUQn_ErRU?start=31'),
+(347, 'Il est de retour', 'il est de retour.mp3', '', 'https://www.youtube.com/embed/lSeUQn_ErRU?start=13'),
+(348, 'L\'ange s\'est envolé', 'lange sest envolé.mp3', '', 'https://www.youtube.com/embed/lSeUQn_ErRU?start=21'),
+(349, 'Indétectable', 'Indétectable.mp3', '', 'https://www.youtube.com/embed/e5RsjgA_ehY?start=56'),
+(350, 'Je l\'ai dit bordel', 'je lai dit bordel.mp3', '', 'https://www.youtube.com/embed/zDlLKmvcqhQ?start=104'),
+(351, 'AD - La ligne 4', 'La ligne 4.mp3', 'Antoine Daniel', 'https://www.youtube.com/embed/cBItJUwqlQk?start=55'),
+(352, 'Ta mère elle va jumper', 'Ta mére elle va jumpey.mp3', '', 'https://www.youtube.com/embed/pZRR35zFnhg?start=217'),
+(353, 'La kette - Sucer la kette', 'Sucer la kette.mp3', 'La kette', 'https://www.youtube.com/embed/LCvt-l-mLsI?start=126'),
+(354, 'La kette - Qu\'elle est belle ta kette', 'Quelle est belle ta kette.mp3', 'La kette', 'https://www.youtube.com/embed/LCvt-l-mLsI?start=135'),
+(355, 'La kette - Addiction à la kette', 'Addiction à la kette.mp3', 'La kette', 'https://www.youtube.com/embed/LCvt-l-mLsI?start=166'),
+(356, 'La kette - Les pompiers sans témoins', 'La kette faire les pompiers.mp3', 'La kette', 'https://www.youtube.com/embed/LCvt-l-mLsI?start=274'),
+(357, 'La kette - Lui faire minette', 'quand je lui faisait minette.mp3', 'La kette', 'https://www.youtube.com/embed/LCvt-l-mLsI?start=286'),
+(358, 'Je code avec le cul', 'jecodeaveclecul.mp3', '', 'https://www.youtube.com/embed/MYZ67-Sh7kM?start=55'),
+(359, 'C\'est non !', 'cest non.mp3', '', 'https://www.youtube.com/embed/hSpQkbcw0TE?start=1'),
+(360, 'Chef Dumas - Salut la visite !', 'Chef Dumas - Salut la visite.mp3', 'Chef Dumas', 'https://www.youtube.com/embed/KAfC7XAHN14?start=3'),
+(361, 'Chef Dumas - Maître d\'hôtel ', 'Chef Dumas - Maitre dhotel.mp3', 'Chef Dumas', 'https://www.youtube.com/embed/KAfC7XAHN14?start=717'),
+(362, 'BO - Oui ma gâtée', 'oui ma gatée.mp3', 'Bande organisée', 'https://www.youtube.com/embed/-CVn3-3g_BI?start=26'),
+(363, 'Let\'s go les gars !', 'Lets go les gars.mp3', '', ''),
+(364, 'Un petit géranium', 'et juste la un petit geranium.mp3', '', 'https://www.youtube.com/embed/YjBdJqUT1XY?start=19'),
+(365, 'Le lion ne s\'associe pas avec le cafard', 'le lion et le cafard.mp3', '', 'https://www.youtube.com/embed/Q_apYjjyD-o?start=4'),
+(366, 'K2A - La marée est haute ', 'La maree est haute.mp3', 'Kaaris', 'https://www.youtube.com/embed/GJ56Pulj968?start=26'),
+(367, 'Une robe vraimeeent', 'UNE ROBE VRAIMENT.mp3', '4 mariages pour 1 lune de miel', 'https://www.youtube.com/embed/atRlF-En7wA?start=5'),
+(368, 'Pet-pite de chocolat', 'Pet-pite de chocolat.mp3', '', 'https://www.youtube.com/embed/SEHoOSQWxyU?start=5'),
+(369, 'Pépite de chocolat', 'Pepite de chocolat.mp3', '', 'https://www.youtube.com/embed/SEHoOSQWxyU?start=6'),
+(370, 'Gourmande', 'Gourmande.mp3', '4 mariages pour 1 lune de miel', ''),
+(371, 'MmmmhOUIIIIII', 'MmhOUI.mp3', '4 mariages pour 1 lune de miel', ''),
+(372, 'Même les diabétiques ?! WOW', 'Meme les diabetiques.mp3', '4 mariages pour 1 lune de miel', 'https://www.youtube.com/embed/atRlF-En7wA?start=88');
 
 -- --------------------------------------------------------
 
@@ -754,7 +888,17 @@ INSERT INTO `soundw` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (94, 'La Chancla', 'Risitas La Chancla.mp3', 'Risitas, ISSOU', 'https://www.youtube.com/embed/oEwkEFH78bg'),
 (95, 'It\'s time to stop', 'its time to stop.mp3', '', 'https://www.youtube.com/embed/2k0SmqbBIpQ'),
 (96, 'Another One', 'DJ Khaled another one.mp3', '', 'https://www.youtube.com/embed/5xntOpWCIfo'),
-(97, 'Right in her pussy', 'Fuck her right in the pussy original.mp3', '', 'https://www.youtube.com/embed/CdIT74L8hGI?start=5');
+(97, 'Right in her pussy', 'Fuck her right in the pussy original.mp3', '', 'https://www.youtube.com/embed/CdIT74L8hGI?start=5'),
+(98, 'Hello there !', 'Hello there.mp3', '', 'https://www.youtube.com/embed/rEq1Z0bjdwc?start=8'),
+(99, 'Hello there general kenobi', 'Hello there general kenobi.mp3', '', 'https://www.youtube.com/embed/rEq1Z0bjdwc?start=8'),
+(100, 'Gaggin\' on da spoon', 'Gagging on the spoon.mp3', '', 'https://www.youtube.com/embed/6Qbqo8EFd7A?start=2'),
+(101, 'RUN', 'RUN.mp3', '', 'https://www.youtube.com/embed/mw2kKyJu9gY?start=125'),
+(102, 'AHHHHHH w/ intro', 'AHHHHHH +  intro.mp3', '', 'https://www.youtube.com/embed/yBLdQ1a4-JI'),
+(103, 'AHHHHHH', 'AHHHHHH.mp3', '', 'https://www.youtube.com/embed/yBLdQ1a4-JI?start=13'),
+(104, 'JOJO Goldenwind', 'JOJO Goldenwind.mp3', '', 'https://www.youtube.com/embed/U0TXIXTzJEY?start=222'),
+(105, 'Kirby runnin\'', 'kirby running.mp3', '', 'https://www.youtube.com/embed/QN7ME5tqBsk'),
+(106, 'Yoshi.mp4', 'Yoshimp4.mp3', '', 'https://www.youtube.com/embed/q5-cZIpldFk'),
+(107, 'Yoshi Flower Garden', 'Yoshi Flower garden.mp3', '', 'https://www.youtube.com/embed/oL5fbozc3kU');
 
 -- --------------------------------------------------------
 
@@ -1040,7 +1184,8 @@ INSERT INTO `wtc` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (267, 'Pq la vie ? Pq la mort ?', 'Pourquoi la vie pk la mort japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
 (268, 'Parce que le Japon !', 'Parce que le japon ! japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
 (269, 'Bad case of diarrhea', 'i have a bad case of diahrea japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
-(270, 'Bad case of diarrhea song', 'i have a bad case of diahrea song japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI');
+(270, 'Bad case of diarrhea song', 'i have a bad case of diahrea song japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
+(271, 'Dans les hautes herbes', '33 Jaime me masturber ds les hautes herbes.mp3', 'WHAT THE CUT #33, WTC', 'https://www.youtube.com/embed/CjsPSeupj2w');
 
 --
 -- Index pour les tables déchargées
@@ -1122,7 +1267,7 @@ ALTER TABLE `wtc`
 -- AUTO_INCREMENT pour la table `inconnus`
 --
 ALTER TABLE `inconnus`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT pour la table `jday`
@@ -1134,7 +1279,7 @@ ALTER TABLE `jday`
 -- AUTO_INCREMENT pour la table `keywrds`
 --
 ALTER TABLE `keywrds`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 
 --
 -- AUTO_INCREMENT pour la table `mv`
@@ -1146,19 +1291,19 @@ ALTER TABLE `mv`
 -- AUTO_INCREMENT pour la table `soundfr`
 --
 ALTER TABLE `soundfr`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=373;
 
 --
 -- AUTO_INCREMENT pour la table `soundw`
 --
 ALTER TABLE `soundw`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
 
 --
 -- AUTO_INCREMENT pour la table `wtc`
 --
 ALTER TABLE `wtc`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=271;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

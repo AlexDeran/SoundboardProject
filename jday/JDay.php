@@ -9,22 +9,9 @@ if(!$pdo){
 		echo "Erreur de connexion à la base de données.";
 }
 
-$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-if(isset($_GET['search'])){
-
-$search =	htmlspecialchars($_GET['search']);
-
-$stmtjd = $pdo->prepare("SELECT * FROM `jday` WHERE `Nom` LIKE ? OR `keywords` LIKE ? ORDER BY Nom ASC");
-$stmtjd->execute([
-	"%" . $search . "%",
-	"%" . $search . "%"
-]);
-
-$resultsjd = $stmtjd->fetchAll();
-}
-
 else{
+	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 	$page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
 
 	$perPage = 15;
@@ -59,6 +46,7 @@ $n = 1;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -80,16 +68,33 @@ $n = 1;
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
-			<div class= "col-6">
+			<div class= "col-3">
 				<div class="container-fluid">
-					<a class="btn btn-success btn-lg btn-block btnsnd returnh"
-						href="../index.php"
-						role="button"
-					>
-					<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-					Retour à l'accueil
-					</a>
+					<ul class="btns">
+						<a href="../index.php">
+							<li class="btnmain acc">
+								<span></span><span></span><span></span><span></span>
+								<i class="fas fa-home"></i>
+								<i class="fas fa-caret-left"></i>
+									Retour à l'accueil
+								<span></span><span></span><span></span><span></span>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class= "col-3">
+				<div class="container-fluid">
+					<ul class="btns">
+						<a href="idjd.php">
+							<li class="btnmain suppr">
+								<span></span><span></span><span></span><span></span>
+								<i class="fab fa-hotjar"></i> 
+									Nouveaux sons
+								<span></span><span></span><span></span><span></span>
+							</li>
+						</a>
+					</ul>
 				</div>
 			</div>
 			<span id="stopsnd" class="whyt"></span>
@@ -101,17 +106,17 @@ $n = 1;
 		</div>
 	</nav>
 	<section>
-		<article class="sounds">
+		<article class="soundswtc">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col">
 					<?php foreach($nomjday as $sons) : ?>
 						<div class="sndboxjday">
 							<audio id="myAudio">
-								<source src="../SBP/JDay/<?= $sons['Son']?>" type="audio/mpeg">
+								<source src="../gestsnd/SBP/JDay/<?= $sons['Son']?>" type="audio/mpeg">
 								Your browser does not support the audio element.
 							</audio>
-							<div class="imgsnd"><img src="../img/jday.png" height="75" width="75" onmousedown="play('../SBP/JDay/<?= $sons['Son']?>')"></div>
+							<div class="imgsnd"><img src="../img/jday.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/JDay/<?= $sons['Son']?>')"></div>
 							<div class="col" id="sndnamejd">
 							<?php if ($sons['source'] != ""){ ?>
 								<a class="srcvidjday" href="#lienvid<?=$n?>" data-toggle="modal">

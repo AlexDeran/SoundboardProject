@@ -522,7 +522,18 @@ header.index {
 }
 
 .schwtc {
-	padding-top: 2em;
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.soundswtc {
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+}
+
+.schwtcfr {
+	padding-top: 1.5em;
+	padding-bottom: 2.5em;
 }
 
 /* ############################################### JDAY ############################################### */
@@ -669,102 +680,4 @@ header.index {
 	color: white;
 	text-align: center;
 	margin-top: 0.2em;
-}
-
-/* ###################################### BUTTONS BULLES ###################################### */
-
-:root {
-	--text-color: rgb(255, 255, 255);
-	--shadow-color: hsla(210, 40%, 52%, 0.4);
-	--btn-color: hsl(0, 80%, 42%);
-	--bg-color: hsl(0, 80%, 42%);
-}
-
-button.bubble {
-	position: relative;
-	padding: 10px 20px;
-	border: none;
-	background: none;
-	cursor: pointer;
-
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
-	text-transform: uppercase;
-	font-size: 25px;
-	line-height: 48px;
-	color: var(--text-color);
-
-	background-color: var(--btn-color);
-	box-shadow: var(--shadow-color) 2px 2px 22px;
-	border-radius: 4px;
-	z-index: 0;
-	overflow: hidden;
-}
-
-button.bubble:focus {
-	outline-color: red;
-	box-shadow: var(--btn-color) 2px 2px 22px;
-}
-
-.right::after,
-button.bubble::after {
-	content: var(--content);
-	display: block;
-	position: absolute;
-	white-space: nowrap;
-	padding: 40px 40px;
-	pointer-events: none;
-}
-
-button.bubble::after {
-	font-weight: 800;
-	top: -30px;
-	left: -20px;
-}
-
-/* bubbles */
-button.bubble::before {
-	content: '';
-	pointer-events: none;
-	opacity: 0.6;
-	background: radial-gradient(
-			circle at 20% 35%,
-			transparent 0,
-			transparent 2px,
-			var(--text-color) 3px,
-			var(--text-color) 4px,
-			transparent 4px
-		),
-		radial-gradient(
-			circle at 75% 44%,
-			transparent 0,
-			transparent 2px,
-			var(--text-color) 3px,
-			var(--text-color) 4px,
-			transparent 4px
-		),
-		radial-gradient(
-			circle at 46% 52%,
-			transparent 0,
-			transparent 4px,
-			var(--text-color) 5px,
-			var(--text-color) 6px,
-			transparent 6px
-		);
-
-	width: 100%;
-	height: 300%;
-	top: 0;
-	left: 0;
-	position: absolute;
-	animation: bubbles 5s linear infinite both;
-}
-
-@keyframes bubbles {
-	from {
-		transform: translate();
-	}
-	to {
-		transform: translate(0, -66.666%);
-	}
 }

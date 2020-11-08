@@ -82,7 +82,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 							################# INSERT SON + KEYW ############################
 
-						$uploaddir = 'SBP/SFR/';
+						$uploaddir = 'gestsnd/SBP/SFR/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
 							$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -112,7 +112,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 				}
 				elseif(isset($_POST['keywords'])){
 					$keywrd = $_POST['keywords'];
-					$uploaddir = 'SBP/SFR/';
+					$uploaddir = 'gestsnd/SBP/SFR/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
 						$addsndfr = $pdo->prepare("INSERT INTO `soundfr` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -190,7 +190,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 			################################################### INSERT SON + KEYW ############################
 
-						$uploaddir = 'SBP/SWLD/';
+						$uploaddir = 'gestsnd/SBP/SWLD/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 							if(isset($videosrc) && $videosrc != ""){
 							$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -220,7 +220,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 				elseif(isset($_POST['keywordsw'])){
 					$keywrd = $_POST['keywordsw'];
-					$uploaddir = 'SBP/SWLD/';
+					$uploaddir = 'gestsnd/SBP/SWLD/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
 						$addsndw = $pdo->prepare("INSERT INTO `soundw` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -296,7 +296,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 							################################## INSERT SON + KEYW #############################################
 
 						$keywordwtc = $newkeywtc.', WTC';
-						$uploaddir = 'SBP/WTC/';
+						$uploaddir = 'gestsnd/SBP/WTC/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
 							$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -326,13 +326,13 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 		
 				elseif(isset($_POST['keywordswtc'])){
 					$keywrdwtc = $_POST['keywordswtc'].', WTC';
-					$uploaddir = 'SBP/WTC/';
+					$uploaddir = 'gestsnd/SBP/WTC/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
-						$addsndfr = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
+						$addsndwtc = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
 						$addsndwtc->bindParam(':nom',$nom,PDO::PARAM_STR);
 						$addsndwtc->bindParam(':snd',$snd,PDO::PARAM_STR);
-						$addsndwtc->bindParam(':keyw',$keywrd,PDO::PARAM_STR);
+						$addsndwtc->bindParam(':keyw',$keywrdwtc,PDO::PARAM_STR);
 						$addsndwtc->bindParam(':src',$videosrc,PDO::PARAM_STR);
 						$addsndwtc->execute();
 						}
@@ -374,7 +374,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 			else{
 		################################################ INSERT SON + KEYW #############################################
 						$keywordjd = 'MisterJDay, Mr Connard';
-						$uploaddir = 'SBP/JDay/';
+						$uploaddir = 'gestsnd/SBP/JDay/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
 							$addsndjd = $pdo->prepare("INSERT INTO `wtc` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -448,7 +448,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 
 							################# INSERT SON + KEYW ############################
 
-						$uploaddir = 'SBP/Inconnus/';
+						$uploaddir = 'gestsnd/SBP/Inconnus/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
 							$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -478,7 +478,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 		
 				elseif(isset($_POST['keywordsinc'])){
 					$keywrd = $_POST['keywordsinc'];
-					$uploaddir = 'SBP/Inconnus/';
+					$uploaddir = 'gestsnd/SBP/Inconnus/';
 					$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 					if(isset($videosrc) && $videosrc != ""){
 						$addsndinc = $pdo->prepare("INSERT INTO `inconnus` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");
@@ -526,7 +526,7 @@ if(isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['catsnd']) && !
 			else{
 		################################################ INSERT SON + KEYW #############################################
 						$keywordmv = 'Mister MV';
-						$uploaddir = 'SBP/MV/';
+						$uploaddir = 'gestsnd/SBP/MV/';
 						$movefile = move_uploaded_file($_FILES['snd']['tmp_name'], $uploaddir . basename($_FILES['snd']['name']));
 						if(isset($videosrc) && $videosrc != ""){
 							$addsndmv = $pdo->prepare("INSERT INTO `mv` (`Nom`,`Son`,`keywords`,`source`) VALUES (:nom, :snd,:keyw, :src)");

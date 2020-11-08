@@ -55,16 +55,13 @@ else {
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
-
 	<title>Votre Recherche WORLD</title>
 </head>
 <body>
 	<?php 
-
-		if(count($resultsw)> 0){
-			
 			######################################## PAGE DOES EXIST ######################################
 		
 			?>
@@ -73,26 +70,47 @@ else {
 				</header>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
-						<div class= "col-4">
+						<div class= "col-3">
 							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-									href="../index.php"
-									role="button"
-								>
-									<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-								Retour à l'accueil
-								</a>
+								<ul class="btns">
+									<a href="../index.php">
+										<li class="btnmain acc">
+											<span></span><span></span><span></span><span></span>
+											<i class="fas fa-home"></i>
+											<i class="fas fa-caret-left"></i>
+												Retour à l'accueil
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
 						</div>
-						<div class= "col-4">
+						<div class= "col-3">
 							<div class="container-fluid">
-								<a class="btn btn-dark btn-lg btn-block btnsnd returnhb"
-									href="../world/soundworld.php"
-									role="button"
-								>
-								Retour aux sons WORLD
-								</a>
+								<ul class="btns">
+									<a href="soundworld.php">
+										<li class="btnmain a-z">
+											<span></span><span></span><span></span><span></span>
+											<i class="fas fa-sort-alpha-up"></i>
+												Ordre Alphabétique
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
+							</div>
+						</div>
+						<div class= "col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="idw.php">
+										<li class="btnmain suppr">
+											<span></span><span></span><span></span><span></span>
+											<i class="fab fa-hotjar"></i> 
+												Nouveaux sons
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
 						</div>
 						<span id="stopsnd" class="blk"></span>
@@ -102,14 +120,14 @@ else {
 					<article>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col schwtc">
+								<div class="col schwtcfr">
 									<?php foreach ($resultsw as $r):?>
 									<div class="sndboxw">
 										<audio id="myAudio">
-											<source src="../SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
+											<source src="../gestsnd/SBP/SWLD/<?= $r['Son']?>" type="audio/mpeg">
 											Your browser does not support the audio element.
 										</audio>
-										<div class="imgsnd"><img src="../img/earth-min.png" height="75" width="75" onmousedown="play('../SBP/SWLD/<?= $r['Son']?>')"></div>
+										<div class="imgsnd"><img src="../img/earth-min.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SWLD/<?= $r['Son']?>')"></div>
 										<div class="col" id="sndnamew">
 										<?php if ($r['source'] != ""){ ?>
 											<a class="srcvidw" href="#lienvid<?=$n?>" data-toggle="modal">
@@ -157,53 +175,7 @@ else {
 					;}?>
 				</ul>
 			</nav>
-	<?php 
-
-			}
-			else{
-############################################# NO RESULTS #############################################
-		?>
-		<header class="pgtitle">	
-      <h1 class="sndquery world"><img src="../img/earth-min.png" height="75" width="75" > Sons relatifs à <?php 
-      echo $searchw ?> <img src="../img/earth-min.png" height="75" width="75" > </h1>
-	  </header>
-	  <nav class="container-fluid">
-					<div id="navbox" class="row">
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-									href="../index.php"
-									role="button"
-								>
-								<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-								Retour à l'accueil
-								</a>
-							</div>
-						</div>
-						<div class= "col-4">
-							<div class="container-fluid">
-								<a class="btn btn-dark btn-lg btn-block btnsnd returnhb"
-									href="../world/soundworld.php"
-									role="button"
-								>
-								Retour aux sons WORLD
-								</a>
-							</div>
-						</div>
-					</div>
-				</nav>
-			<section class="container-fluid">
-				<article id="nosearch" class="fr">
-					<div id="noresults">
-						<p>Aucun son trouvé !</p>
-					</div>
-				</article>
-			</section>
-	<?php
-			}
-    ?>
-    <script
+    	<script
 				src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
 				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
 				crossorigin="anonymous"

@@ -57,6 +57,7 @@ else {
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/search.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
 		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -66,8 +67,7 @@ else {
 	<?php 
 
 			######################################## PAGE DOES EXIST ######################################
-		
-				if(count($resultswtc)> 0){
+
 			?>
 				<header class="pgtitle">
 					<div class="sndtitlejd mv">
@@ -79,24 +79,45 @@ else {
 					<div id="navbox" class="row">
 						<div class= "col-4">
 							<div class="container-fluid">
-								<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-									href="../index.php"
-									role="button"
-								>
-								<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-								Retour à l'accueil
-								</a>
+								<ul class="btns">
+									<a href="../index.php">
+										<li class="btnmain acc">
+											<span></span><span></span><span></span><span></span>
+											<i class="fas fa-home"></i>
+											<i class="fas fa-caret-left"></i>
+												Retour à l'accueil
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
 						</div>
-						<div class="col-4">
+						<div class= "col-3">
 							<div class="container-fluid">
-								<a
-									class="btn btn-dark btn-lg btn-block btnsnd btnreturn watzecut"
-									href="wtc.php"
-									role="button"
-								>
-								</a>
+								<ul class="btns">
+									<a href="wtc.php">
+										<li class="btnmain a-z">
+											<span></span><span></span><span></span><span></span>
+											<i class="fas fa-sort-alpha-up"></i>
+												Ordre Alphabétique
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
+							</div>
+						</div>
+						<div class= "col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="idwtc.php">
+										<li class="btnmain suppr">
+											<span></span><span></span><span></span><span></span>
+											<i class="fab fa-hotjar"></i> 
+												Nouveaux sons
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
 						</div>
 						<span id="stopsnd" class="blk"></span>
@@ -110,10 +131,10 @@ else {
 									<?php foreach ($resultswtc as $r):?>
 									<div class=" sndboxmv">
 										<audio id="myAudio">
-											<source src="../SBP/WTC/<?= $r['Son']?>" type="audio/mpeg">
+											<source src="../gestsnd/SBP/WTC/<?= $r['Son']?>" type="audio/mpeg">
 											Your browser does not support the audio element.
 										</audio>
-										<div class="imgsnd"><img src="../img/WTC.png" height="75" width="120" onmousedown="play('../SBP/WTC/<?= $r['Son']?>')"></div>
+										<div class="imgsnd"><img src="../img/WTC.png" height="75" width="120" onmousedown="play('../gestsnd/SBP/WTC/<?= $r['Son']?>')"></div>
 										<div class="col" id="sndnamemv">
 										<?php if ($r['source'] != ""){ ?>
 											<a class="srcvidmv" href="#lienvid<?=$n?>" data-toggle="modal">
@@ -136,7 +157,7 @@ else {
 					</article>
         </section>
         <nav aria-label="Page navigation example">
-		<ul class="pagination pagination-lg justify-content-center">
+					<ul class="pagination pagination-lg justify-content-center">
 						<?php if($pagewtc > 1){
 						$prevwtc = $pagewtc -1;
 						echo'
@@ -161,68 +182,21 @@ else {
 					;}?>
 				</ul>
 			</nav>
-	<?php 
-			}
-			else{
-############################################# NO RESULTS #############################################
-		?>
-	<header class="pgtitle">
-		<div class="sndtitlejd mv">
-			<img src="../img/WTC.jpg" height="75" width="120">		
-			<h1 class="searchtitlemv"> Sons relatifs à <?php echo($searchwtc) ?></h1>
-		</div>
-	</header>
-	<nav class="container-fluid">
-		<div id="navbox" class="row">
-			<div class= "col-4">
-				<div class="container-fluid">
-					<a class="btn btn-success btn-lg btn-block btnsnd returnhg"
-						href="../index.php"
-						role="button"
-					>
-					<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-					Retour à l'accueil
-					</a>
-				</div>
-			</div>
-			<div class= "col-4">
-				<div class="container-fluid">
-					<a class="btn btn-dark btn-lg btn-block btnsnd returnjd"
-						href="wtc.php"
-						role="button"
-					>
-					Retour à What The Cut ?!
-					</a>
-				</div>
-			</div>
-		</div>
-	</nav>
-	<section class="container-fluid">
-		<article id="nosearch" class="fr">
-			<div id="noresults">
-				<p>Aucun son trouvé !</p>
-			</div>
-		</article>
-	</section>
-<?php
-  }
-  ?>
-  <script
-		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-		integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-		crossorigin="anonymous"
-	></script>
-	<script
-		src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-		integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-		crossorigin="anonymous"
-	></script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-		integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-		crossorigin="anonymous"
-	></script>
+			<script
+				src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+				integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+				crossorigin="anonymous"
+			></script>
+			<script
+				src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+				integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+				crossorigin="anonymous"
+			></script>
+			<script
+				src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+				integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+				crossorigin="anonymous"
+			></script>
 			<script src="../js/app.js"></script>
 	</body>
 </html>

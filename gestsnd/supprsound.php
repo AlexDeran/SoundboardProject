@@ -8,7 +8,6 @@ if(!$pdo){
     echo "Erreur de connexion à la base de données.";
 }
 
-
 $error=`<i class="fas fa-exclamation-circle"></i> Une erreur est survenue ! Aucun son n'a été supprimé !` ;
 $success='<i class="fas fa-check"></i> Le son '.$_POST['supprsnd'].' a été supprimé avec succès !';
 $successw='<i class="fas fa-check"></i> Le son '.$_POST['supprsndw'].' a été supprimé avec succès !';

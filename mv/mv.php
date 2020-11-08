@@ -47,6 +47,7 @@ $n = 1;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -68,16 +69,33 @@ $n = 1;
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
-			<div class= "col-6">
+			<div class= "col-3">
 				<div class="container-fluid">
-					<a class="btn btn-success btn-lg btn-block btnsnd returnh"
-						href="../index.php"
-						role="button"
-					>
-						<i class="fas fa-home"></i>
-						<i class="fas fa-caret-left"></i>
-					Retour à l'accueil
-					</a>
+					<ul class="btns">
+						<a href="../index.php">
+							<li class="btnmain acc">
+								<span></span><span></span><span></span><span></span>
+								<i class="fas fa-home"></i>
+								<i class="fas fa-caret-left"></i>
+									Retour à l'accueil
+								<span></span><span></span><span></span><span></span>
+							</li>
+						</a>
+					</ul>
+				</div>
+			</div>
+			<div class= "col-3">
+				<div class="container-fluid">
+					<ul class="btns">
+						<a href="idmv.php">
+							<li class="btnmain suppr">
+								<span></span><span></span><span></span><span></span>
+								<i class="fab fa-hotjar"></i> 
+									Nouveaux sons
+								<span></span><span></span><span></span><span></span>
+							</li>
+						</a>
+					</ul>
 				</div>
 			</div>
 			<span id="stopsnd" class="blk"></span>
@@ -89,17 +107,17 @@ $n = 1;
 		</div>
 	</nav>
 	<section>
-		<article class="sounds">
+		<article class="soundswtc">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col">
 					<?php foreach($nommistermv as $sons) : ?>
 						<div class=" sndboxmv">
 							<audio id="myAudio">
-								<source src="../SBP/MV/<?= $sons['Son']?>" type="audio/mpeg">
+								<source src="../gestsnd/SBP/MV/<?= $sons['Son']?>" type="audio/mpeg">
 								Your browser does not support the audio element.
 							</audio>
-							<div class="imgsnd"><img src="../img/mistermv.png" height="75" width="75" onmousedown="play('../SBP/MV/<?= $sons['Son']?>')"></div>
+							<div class="imgsnd"><img src="../img/mistermv.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/MV/<?= $sons['Son']?>')"></div>
 							<div class="col" id="sndnamemv">
 							<?php if ($sons['source'] != ""){ ?>
 								<a class="srcvidmv" href="#lienvid<?=$n?>" data-toggle="modal">

@@ -118,6 +118,7 @@ endif;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/buttons.css" />
 		<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 		<title>Soundboard</title>
@@ -130,21 +131,19 @@ endif;
 					
 			<h1 id="top" class="soundboard"><a id="top" href="index.php">Soundboard</a></h1>
 		</header>
-
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
 						<div class= "gestsnd row container-fluid">
-							<button
-								type="button"
-								class="btn btn-success btn-lg btnsnd col-md-5"
-								data-toggle="modal"
-								data-target="#exampleModalCenter"
-							>
-							<i class="fas fa-plus"></i>
-								Ajouter un son
-							</button>
+							<ul class="btns col-md-5">
+								<li class="btnmain acc" data-toggle="modal"
+									data-target="#exampleModalCenter">
+									<span></span><span></span><span></span><span></span>
+									<i class="fas fa-plus"></i>
+										Ajouter un son
+									<span></span><span></span><span></span><span></span>
+								</li>
+						</ul>
 						
-
 <!-- ############################################### MODAL ADD ############################################### -->
 
 							<div
@@ -286,8 +285,8 @@ endif;
 											</div>
 											<div class="modal-footer">
 												<button type="submit" class="btn btn-success">
-												<i class="fas fa-check"></i>
-												<b>VALIDER</b>
+													<i class="fas fa-check"></i>
+													<b>VALIDER</b>
 												</button>
 												<button type="button" class="btn btn-danger" data-dismiss="modal">
 													<i class="fas fa-times"></i>
@@ -300,16 +299,15 @@ endif;
 							</div>
 
 <!-- ############################################# FIN MODAL ADD ############################################### -->
-
-							<button
-									type="button"
-									class="btn btn-danger btn-lg btnsnd col-md-5"
-									data-toggle="modal"
-									data-target="#exampleModalCenter3"
-								>
-								<i class="fas fa-trash-alt"></i>
-									Supprimer un son
-							</button>
+								<ul class="btns col-md-5">
+									<li class="btnmain suppr" data-toggle="modal"
+										data-target="#exampleModalCenter3">
+										<span></span><span></span><span></span><span></span>
+										<i class="fas fa-trash-alt"></i>
+											Supprimer un son
+										<span></span><span></span><span></span><span></span>
+									</li>
+							</ul>											
 						</div>
 
 <!-- ############################################### MODAL SUPPR ############################################### -->

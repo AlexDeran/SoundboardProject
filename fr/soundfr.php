@@ -58,6 +58,7 @@ else{
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -69,29 +70,49 @@ else{
 		</header>
 		<nav class="container-fluid">
 			<div id="navbox" class="row">
-				<div class= "col-4">
+				<div class="col-3">
 					<div class="container-fluid">
-						<a class="btn btn-success btn-lg btn-block btnsnd returnh"
-							href="../index.php"
-							role="button"
-						>	<i class="fas fa-home"></i>
-							<i class="fas fa-caret-left"></i>
-						Retour à l'accueil
-						</a>
+						<ul class="btns">
+							<a href="../index.php">
+								<li class="btnmain acc">
+									<span></span><span></span><span></span><span></span>
+									<i class="fas fa-home"></i>
+									<i class="fas fa-caret-left"></i>
+										Retour à l'accueil
+									<span></span><span></span><span></span><span></span>
+								</li>
+							</a>
+					 	</ul>
 					</div>
 				</div>
-				<div class= "col-4">
+				<div class= "col-3">
 					<div class="container-fluid">
-						<form action="idfr.php" method="POST">
-							<button class="bubble" name="sndfr" value="sndfr" style="--content: ''">
-							
-										<i class="fab fa-hotjar"></i> 
+						<ul class="btns">
+							<a href="idfr.php">
+								<li class="btnmain suppr">
+									<span></span><span></span><span></span><span></span>
+									<i class="fab fa-hotjar"></i> 
 										Nouveaux sons
-						
-							</button>
-						</form>
+									<span></span><span></span><span></span><span></span>
+								</li>
+							</a>
+						</ul>
 					</div>
 				</div>
+				<!-- <div class= "col-3">
+					<div class="container-fluid">
+						<ul class="btns">
+							<a href="idfr.php">
+								<li class="btnmain suppr">
+									<span></span><span></span><span></span><span></span>
+									<i class="fab fa-hotjar"></i> 
+										Nouveaux sons
+									<span></span><span></span><span></span><span></span>
+								</li>
+							</a>
+						</ul>
+					</div>
+				</div> -->
 				<span id="stopsnd" class="france"></span>
 				<form id="searchbox2" action="searchfr.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
 					<input id="searchbox" class="form-control mr-sm-2" type="search"
@@ -108,10 +129,10 @@ else{
 						<?php foreach($nomfinal as $sons) : ?>
 							<div class="sndbox">
 								<audio id="myAudio">
-									<source src="../SBP/SFR/<?= $sons['Son']?>" type="audio/mpeg">
+									<source src="../gestsnd/SBP/SFR/<?= $sons['Son']?>" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
-								<div class="imgsnd"><img src="../img/ecufr.png" height="75" width="75" onmousedown="play('../SBP/SFR/<?= $sons['Son']?>')"></div>
+								<div class="imgsnd"><img src="../img/ecufr.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SFR/<?= $sons['Son']?>')"></div>
 								<div class="col" id="sndname">
 								<?php if ($sons['source'] != ""){ ?>
 									<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">
