@@ -119,6 +119,7 @@ endif;
 		/>
 		<link rel="stylesheet" href="css/style.css" />
 		<link rel="stylesheet" href="css/buttons.css" />
+		<link rel="stylesheet" href="css/index.css">
 		<link rel="shortcut icon" href="img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 		<title>Soundboard</title>
@@ -312,131 +313,193 @@ endif;
 
 <!-- ############################################### MODAL SUPPR ############################################### -->
 
-								<div
-									class="modal fade"
-									id="exampleModalCenter3"
-									tabindex="-1"
-									role="dialog"
-									aria-labelledby="exampleModalCenterTitle"
-									aria-hidden="true"
-								>
-									<div class="modal-dialog modal-dialog-centered" role="document">
-										<div class="modal-content">
-											<div class="modal-header">
-												<h5 class="modal-title" id="exampleModalCenterTitle">
-													<b>Supprimer un son</b>
-												</h5>
-												<button
-													type="button"
-													class="close"
-													data-dismiss="modal"
-													aria-label="Close"
-												>
-													<span aria-hidden="true">&times;</span>
+						<div
+								class="modal fade"
+								id="exampleModalCenter3"
+								tabindex="-1"
+								role="dialog"
+								aria-labelledby="exampleModalCenterTitle"
+								aria-hidden="true"
+							>
+								<div class="modal-dialog modal-dialog-centered" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h5 class="modal-title" id="exampleModalCenterTitle">
+												<b>Supprimer un son</b>
+											</h5>
+											<button
+												type="button"
+												class="close"
+												data-dismiss="modal"
+												aria-label="Close"
+											>
+												<span aria-hidden="true">&times;</span>
+											</button>
+										</div>
+										<form action="index.php" class="form" role="form" method="POST">
+											<div class="modal-body">
+												<label for="form-row"><b>Choisir le son à supprimer</b></label>
+												<div class="form-row">
+													<div class="form-group col-md-4">
+														<label for="inputson"><b>FR</b></label>
+														<select id="inputson" name="supprsnd" class="form-control">
+															<option></option>
+															<?php foreach ($lesnom as $allnoms):?>
+															<option><?php echo $allnoms['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputsonw"><b>WORLD</b></label>
+														<select id="inputsonw" name="supprsndw" class="form-control">
+															<option></option>
+															<?php foreach ($lesnomw as $allnomsw):?>
+															<option><?php echo $allnomsw['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputsonwtc"><b>WTC</b></label>
+														<select id="inputsonwtc" name="supprsndwtc" class="form-control">
+															<option></option>
+															<?php foreach ($lesnomwtc as $allnomswtc):?>
+															<option><?php echo $allnomswtc['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+												</div>
+												<div class="form-row">
+													<div class="form-group col-md-4">
+														<label for="inputsonmv"><b>MV</b></label>
+														<select id="inputsonmv" name="supprsndmv" class="form-control">
+															<option></option>
+															<?php foreach ($lesnommv as $mv):?>
+															<option><?php echo $mv['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputsonjd"><b>JDay</b></label>
+														<select id="inputsonjd" name="supprsndjd" class="form-control">
+															<option></option>
+															<?php foreach ($lenomjday as $jday):?>
+															<option><?php echo $jday['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+													<div class="form-group col-md-4">
+														<label for="inputsoninc"><b>Inconnus</b></label>
+														<select id="inputsoninc" name="supprsndinc" class="form-control">
+															<option></option>
+															<?php foreach ($lenominc as $inc):?>
+															<option><?php echo $inc['Nom'] ?></option>
+															<?php endforeach ?>
+														</select>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button class="btn btn-success" type="submit">
+												<i class="fas fa-trash-alt"></i>
+												<b>VALIDER</b>
+												</button>
+												<button type="button" class="btn btn-danger" data-dismiss="modal">
+												<i class="fas fa-times"></i>
+												<b>ANNULER</b>
 												</button>
 											</div>
-											<form action="index.php" class="form" role="form" method="POST">
-												<div class="modal-body">
-													<label for="form-row"><b>Choisir le son à supprimer</b></label>
-													<div class="form-row">
-														<div class="form-group col-md-4">
-															<label for="inputson"><b>FR</b></label>
-															<select id="inputson" name="supprsnd" class="form-control">
-																<option></option>
-																<?php foreach ($lesnom as $allnoms):?>
-																<option><?php echo $allnoms['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-														<div class="form-group col-md-4">
-															<label for="inputsonw"><b>WORLD</b></label>
-															<select id="inputsonw" name="supprsndw" class="form-control">
-																<option></option>
-																<?php foreach ($lesnomw as $allnomsw):?>
-																<option><?php echo $allnomsw['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-														<div class="form-group col-md-4">
-															<label for="inputsonwtc"><b>WTC</b></label>
-															<select id="inputsonwtc" name="supprsndwtc" class="form-control">
-																<option></option>
-																<?php foreach ($lesnomwtc as $allnomswtc):?>
-																<option><?php echo $allnomswtc['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-													</div>
-													<div class="form-row">
-														<div class="form-group col-md-4">
-															<label for="inputsonmv"><b>MV</b></label>
-															<select id="inputsonmv" name="supprsndmv" class="form-control">
-																<option></option>
-																<?php foreach ($lesnommv as $mv):?>
-																<option><?php echo $mv['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-														<div class="form-group col-md-4">
-															<label for="inputsonjd"><b>JDay</b></label>
-															<select id="inputsonjd" name="supprsndjd" class="form-control">
-																<option></option>
-																<?php foreach ($lenomjday as $jday):?>
-																<option><?php echo $jday['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-														<div class="form-group col-md-4">
-															<label for="inputsoninc"><b>Inconnus</b></label>
-															<select id="inputsoninc" name="supprsndinc" class="form-control">
-																<option></option>
-																<?php foreach ($lenominc as $inc):?>
-																<option><?php echo $inc['Nom'] ?></option>
-																<?php endforeach ?>
-															</select>
-														</div>
-													</div>
-												</div>
-												<div class="modal-footer">
-													<button class="btn btn-success" type="submit">
-													<i class="fas fa-trash-alt"></i>
-													<b>VALIDER</b>
-													</button>
-													<button type="button" class="btn btn-danger" data-dismiss="modal">
-													<i class="fas fa-times"></i>
-													<b>ANNULER</b>
-													</button>
-												</div>
-											</form>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
+						</div>
 
 	<!-- ############################################### BOUTONS ############################################### -->
 													
-							<div id="searchworld" class="row">
-								<form id="showfr" action="fr/soundfr.php" class="form-inline my-2 my-lg-0 " method="POST">
-									<input id="frbutton" class="butcons container-fluid" type="submit" name="soundfr" value="Sons FR" title="Voir les Sons FR"></input>
-								</form>
-								<form id="showw" action="world/soundworld.php" class="form-inline my-2 my-lg-0" method="POST">
-									<input id="myBtnWorld" class="butcons container-fluid"  type="submit" name="soundw" value="Sons World" title="Voir les Sons World"></input>
-								</form>
+					<div id="btn1strow" class="row">
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="fr/soundfr.php">
+										<li class="btnmain frindex">
+											<span></span><span></span><span></span><span></span><span></span>
+											FRANCE
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
-							<div id="smallbuttons" class="row">
-								<form id="showwtc" action="wtc/wtc.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnWTC" class="butcons" type="submit" name="soundwtc" value=" " title="What the Cut ?!"></input>
-								</form>
-								<form id="showMV" action="mv/mv.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnMV" class="butcons" type="submit" name="sounndmv" value=" " title="MisterMV"></input>
-								</form>
-								<form id="showJDay" action="jday/JDay.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtnJDay" class="butcons" type="submit" name="soundjday" value=" " title="MisterJDay"></input>
-								</form>
-								<form id="showinc" action="inconnus/inconnus.php" class="form-inline my-2 my-lg-0 3" method="POST">
-									<input id="myBtninc" class="butcons" type="submit" name="soundinc" value=" " title="Les Inconnus"></input>
-								</form>
+						</div>
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="world/soundworld.php">
+										<li class="btnmain windex">
+											<span></span><span></span><span></span><span></span>
+											<i class="fas fa-globe-europe"></i>
+											<i class="fas fa-caret-left"></i>
+											MONDE
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
+						</div>
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="wtc/wtc.php">
+										<li class="btnmain wtcindex">
+											<span></span><span></span><span></span><span></span>
+												<p id="wtc">What the Cut ?!</p>
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div id="btn1strow" class="row">
+							<div class="col-3">
+								<div class="container-fluid">
+									<ul class="btns">
+										<a href="mv/mv.php">
+											<li class="btnmain mvindex">
+												<span></span><span></span><span></span><span></span>
+													<p id="mv">MisterMV</p>
+												<span></span><span></span><span></span><span></span>
+											</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="container-fluid">
+									<ul class="btns">
+										<a href="jday/JDay.php">
+											<li class="btnmain jdindex">
+												<span></span><span></span><span></span><span></span>
+													<p id="jd">MisterJDay</p>
+												<span></span><span></span><span></span><span></span>
+											</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="container-fluid">
+									<ul class="btns">
+										<a href="inconnus/inconnus.php">
+											<li class="btnmain incindex">
+												<span></span><span></span><span></span><span></span>
+												  <p id="inc">Les Inconnus</p>
+												<span></span><span></span><span></span><span></span>
+											</li>
+										</a>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</nav>

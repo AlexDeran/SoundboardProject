@@ -1,0 +1,60 @@
+/* ############################################### INDEX ############################################### */
+
+header.index {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 0.5em;
+	margin-bottom: 1.7em;
+}
+.soundboard {
+	font-size: 3em;
+}
+
+/*alertes gestion sons*/
+
+.alert {
+	text-align: center;
+	line-height: 1.5;
+	font-size: 1.5em;
+	font-weight: 700;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+}
+
+.alert-danger {
+	background-color: darkred;
+}
+
+.alert-success {
+	background-color: darkgreen;
+}
+
+.gestsnd {
+	justify-content: space-around;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+/* ajouter un son*/
+
+.btnsnd {
+	text-align: center;
+	font-family: 'Raleway', sans-serif;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 48px;
+	text-transform: uppercase;
+}
+
+/* BUTTONS */
+
+/*box contenant btn fr & world */
+
+#btn1strow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}

@@ -5,6 +5,16 @@
 	box-sizing: border-box;
 }
 
+header.index {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 0.5em;
+	margin-bottom: 1.7em;
+}
+.soundboard {
+	font-size: 3em;
+}
+
 main {
 	-webkit-box-align: center;
 	align-items: center;
@@ -94,48 +104,164 @@ p.noresultstext {
 	padding-bottom: 3em;
 	margin-top: 1em;
 }
+.w404 {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/earth-1365995_1920.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	line-height: 3;
+	border: 0.3em solid black;
+}
 
-.wtc {
+.w404:hover {
+	color: black;
+	border: 0.3em solid black;
+}
+
+.fr404 {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/france-flag-1058699_petit.jpg);
+	background-size: cover;
+	background-position: center;
+	line-height: 3;
+	font-size: 20px;
+	font-weight: 900;
+	border: 0.3em solid black;
+}
+
+.fr404:hover {
+	color: rgb(173, 2, 2);
+	border: 0.3em solid rgb(0, 47, 141);
+	line-height: 3;
+}
+
+.wtc404 {
+	--c: white;
+	color: var(--c);
 	background-image: url(../img/wtc.png);
 	background-color: black;
-	border: solid black;
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	line-height: 3;
+	border: 0.3em solid black;
+	padding-top: 0.7em;
 }
 
-.mv:hover,
-.wtc:hover {
-	background-color: rgb(51, 51, 51);
-	border: solid rgb(51, 51, 51);
-	border-bottom: solid white;
+#wtc {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
 }
 
-.mv {
+.wtc404:hover {
+	color: black;
+	background-color: black;
+	border: 0.3em solid black;
+}
+
+.wtc404:hover #wtc {
+	visibility: visible;
+	opacity: 1;
+}
+
+.mv404 {
+	--c: white;
+	color: var(--c);
 	background-image: url(../img/mistermv.png);
 	background-color: black;
-	border: solid black;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	line-height: 3;
+	border: 0.3em solid black;
+	padding-top: 0.7em;
 }
 
-.jd:hover,
-.inc:hover {
-	background-color: gainsboro;
-	border: solid gainsboro;
+#mv {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
 }
 
-.jd {
+.mv404:hover {
+	color: black;
+	background-color: black;
+	border: 0.3em solid black;
+}
+
+.mv404:hover #mv {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
+}
+
+.jd404 {
+	--c: black;
+	color: var(--c);
 	background-image: url(../img/jday.png);
-	background-color: seashell;
-	border: solid seashell;
+	background-color: gainsboro;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	line-height: 13;
+	border: 0.3em solid gainsboro;
+	padding-top: 0.7em;
 }
 
-.jd:hover {
-	border-bottom: solid black;
+#jd {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
 }
 
-.inc {
+.jd404:hover {
+	color: gainsboro;
+	background-color: gainsboro;
+	border: 0.3em solid gainsboro;
+}
+
+.jd404:hover #jd {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
+}
+
+.inc404 {
+	--c: #ca283f;
+	color: var(--c);
 	background-image: url(../img/inconnus.png);
-	background-color: ghostwhite;
-	border: solid ghostwhite;
+	background-color: seashell;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	line-height: 13;
+	border: 0.3em solid seashell;
+	padding-top: 0.7em;
 }
 
-.inc:hover {
-	border-bottom: solid #ca283f;
+#inc {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.inc404:hover {
+	color: seashell;
+	background-color: seashell;
+	border: 0.3em solid seashell;
+}
+
+.inc404:hover #inc {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
+}
+
+#btn1strow {
+	padding-top: 1em;
 }

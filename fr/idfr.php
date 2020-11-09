@@ -88,7 +88,7 @@ else {
 				</div>
 			</div>
 			<span id="stopsnd" class="france"></span>
-			<form id="searchbox2" action="searchfr.php" class="form-inline my-2 my-lg-0 col-3" method="GET">
+			<form id="searchbox2" action="searchfr.php" class="form-inline my-2 my-lg-0" method="GET">
 				<input id="searchbox" class="form-control mr-sm-2" type="search"
 					name="searchfr" placeholder="Rechercher un son" aria-label="Search" required>
 				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>

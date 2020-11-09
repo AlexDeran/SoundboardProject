@@ -109,6 +109,15 @@ a#top:hover {
 	justify-content: space-evenly;
 }
 
+#navbox {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.form-inline.my-2.my-lg-0 {
+	justify-content: flex-end;
+}
+
 /*article*/
 
 .sounds {
@@ -237,41 +246,6 @@ footer {
 	text-align: center;
 	margin-top: 0.2em;
 }
-/*buttons retour accueil et page prec*/
-
-.returnhg:hover {
-	background-color: darkgreen;
-	border-color: darkgreen;
-}
-
-.returnhb:hover {
-	background-color: black;
-	border-color: black;
-}
-
-.returnfr {
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		lightgrey 50%,
-		rgb(173, 2, 2) 100%
-	);
-	color: white;
-	opacity: 0.9;
-	border: none;
-}
-
-.returnfr:hover {
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		lightgrey 50%,
-		rgb(173, 2, 2) 100%
-	);
-	color: white;
-	opacity: 1;
-	border: none;
-}
 
 /*img sound*/
 
@@ -281,157 +255,6 @@ footer {
 
 .imgsnd img {
 	cursor: pointer;
-}
-
-/* ############################################### INDEX ############################################### */
-
-header.index {
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
-	padding-bottom: 0.5em;
-	margin-bottom: 1.7em;
-}
-.soundboard {
-	font-size: 3em;
-}
-
-/*alertes gestion sons*/
-
-.alert {
-	text-align: center;
-	line-height: 1.5;
-	font-size: 1.5em;
-	font-weight: 700;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-}
-
-.alert-danger {
-	background-color: darkred;
-}
-
-.alert-success {
-	background-color: darkgreen;
-}
-
-#navbox {
-	display: flex;
-	justify-content: space-around;
-}
-
-.gestsnd {
-	justify-content: space-around;
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-/* ajouter un son*/
-
-.btnsnd {
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
-	font-weight: 800;
-	line-height: 48px;
-	text-transform: uppercase;
-}
-
-/* BUTTONS */
-
-/*box contenant btn fr & world */
-
-#searchworld {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	margin-bottom: 2%;
-}
-
-.butcons {
-	border: none;
-	outline: none;
-	color: white; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	border-radius: 5px; /* Rounded corners */
-	font-family: 'Raleway', sans-serif;
-	text-transform: uppercase;
-}
-
-#frbutton {
-	background-image: url(../img/banfrance.jpg);
-	background-position: center;
-	color: black;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-	background-size: cover;
-}
-
-#myBtnWorld {
-	background-image: url(../img/earth-1149733_1920.jpg);
-	background-position: center;
-	color: white;
-	font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-}
-
-#myBtnWorld,
-#frbutton,
-#myBtnW {
-	font-size: 3.5em; /* Increase font size */
-	line-height: 1.5;
-	margin-bottom: 0.2em;
-	margin-top: 2%;
-	margin-right: 3%;
-	margin-left: 3%;
-	padding-left: 0.8em;
-	padding-right: 0.8em;
-	text-align: center;
-}
-
-/* petits buttons */
-
-#smallbuttons {
-	flex-direction: row;
-	justify-content: space-around;
-	margin-bottom: 2%;
-}
-
-#myBtnWTC {
-	background-image: url(../img/WTC.jpg);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: cover;
-	max-width: 100%;
-	max-height: 100%;
-	padding-right: 4em;
-	font-size: 4em;
-	padding-bottom: 25%;
-}
-
-#myBtnJDay {
-	background-image: url(../img/misterjday.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-right: 1.35em;
-	font-size: 6em;
-	padding-bottom: 8%;
-}
-
-#myBtninc {
-	background-image: url(../img/inconnus.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-	padding-right: 2em;
-	font-size: 6em;
-	padding-bottom: 8%;
-}
-
-#myBtnMV {
-	background-image: url(../img/mistermv.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-	padding-right: 2em;
-	font-size: 6em;
-	padding-bottom: 8%;
 }
 
 /* ############################################### SOUNDFR ############################################### */

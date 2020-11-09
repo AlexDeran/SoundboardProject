@@ -96,36 +96,164 @@ nav ul li span:nth-child(4) {
 	color: rgb(0, 72, 167);
 }
 
-/* button world 404*/
+/* INDEX */
 
-.w404 {
+.windex {
 	--c: white;
 	color: var(--c);
-	background-image: url(../img/earth-1365995_19204545.jpg);
-	background-size: cover;
+	background-image: url(../img/earth-11015_1920.jpg);
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-color: black;
+	height: 10em;
+	line-height: 10;
 	border: 0.3em solid black;
 }
 
-.w404:hover {
+.windex:hover {
+	color: black;
+	border: 0.3em solid black;
+}
+
+.frindex {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/france-flag-1058699_petit.jpg);
+	background-size: cover;
+	background-position: center;
+	height: 10em;
+	line-height: 10;
+	font-size: 20px;
+	font-weight: 900;
+	border: 0.3em solid black;
+}
+
+.frindex:hover {
+	color: rgb(173, 2, 2);
+	border: 0.3em solid rgb(0, 47, 141);
+	line-height: 10;
+	height: 10em;
+}
+
+.wtcindex {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/wtc.png);
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid black;
+}
+
+#wtc {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.wtcindex:hover {
 	color: black;
 	background-color: black;
 	border: 0.3em solid black;
 }
 
-/* button fr 404*/
-
-.fr404 {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/france-flag-1058699_petit.jpg);
-	background-size: cover;
-	height: 3.5em;
-	line-height: 3.5;
+.wtcindex:hover #wtc {
+	visibility: visible;
+	opacity: 1;
 }
 
-.fr404:hover {
-	color: rgb(173, 2, 2);
-	border: 0.3em solid rgb(0, 47, 141);
-	line-height: 3;
-	height: 3.5em;
+.mvindex {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/mistermv.png);
+	background-color: black;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid black;
+}
+
+#mv {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.mvindex:hover {
+	color: black;
+	background-color: black;
+	border: 0.3em solid black;
+}
+
+.mvindex:hover #mv {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
+}
+
+.jdindex {
+	--c: black;
+	color: var(--c);
+	background-image: url(../img/jday.png);
+	background-color: gainsboro;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid gainsboro;
+}
+
+#jd {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.jdindex:hover {
+	color: gainsboro;
+	background-color: gainsboro;
+	border: 0.3em solid gainsboro;
+}
+
+.jdindex:hover #jd {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
+}
+
+.incindex {
+	--c: #ca283f;
+	color: var(--c);
+	background-image: url(../img/inconnus.png);
+	background-color: seashell;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid seashell;
+}
+
+#inc {
+	visibility: hidden;
+	opacity: 0;
+	transition: visibility 0s, opacity 0.5s linear;
+}
+
+.incindex:hover {
+	color: seashell;
+	background-color: seashell;
+	border: 0.3em solid seashell;
+}
+
+.incindex:hover #inc {
+	visibility: visible;
+	opacity: 1;
+	background-position: center;
 }
