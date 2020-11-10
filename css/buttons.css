@@ -10,6 +10,10 @@
 }
 
 .btnmain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
 	font-size: 19px;
 	border-radius: 0.5em;
 	text-transform: uppercase;
@@ -41,7 +45,7 @@
 	transform: translateY(0) scale(2);
 }
 
-.btnmain span:nth-child(1) {
+nav ul li span:nth-child(1) {
 	--n: 1;
 }
 
@@ -99,41 +103,49 @@ nav ul li span:nth-child(4) {
 /* INDEX */
 
 .windex {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/earth-11015_1920.jpg);
+	--c: transparent;
+	color: white;
+	background-image: url(../img/sunrise-1756274_640.jpg);
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-color: black;
 	height: 10em;
 	line-height: 10;
-	border: 0.3em solid black;
 }
 
 .windex:hover {
 	color: black;
-	border: 0.3em solid black;
+	background-image: url(../img/hong-kong-1990268_640.jpg);
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .frindex {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/france-flag-1058699_petit.jpg);
+	--c: transparent;
+	color: black;
+	background-image: url(../img/banner-2024782_6402.png);
 	background-size: cover;
 	background-position: center;
+	background-repeat: no-repeat;
 	height: 10em;
-	line-height: 10;
-	font-size: 20px;
 	font-weight: 900;
-	border: 0.3em solid black;
 }
 
 .frindex:hover {
-	color: rgb(173, 2, 2);
-	border: 0.3em solid rgb(0, 47, 141);
-	line-height: 10;
-	height: 10em;
+	background-image: url(../img/eiffel-tower-3349075_640.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.frindex h1 {
+	color: black;
+}
+.frindex:hover h1 {
+	color: white;
 }
 
 .wtcindex {
@@ -148,21 +160,10 @@ nav ul li span:nth-child(4) {
 	border: 0.3em solid black;
 }
 
-#wtc {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
-}
-
 .wtcindex:hover {
 	color: black;
 	background-color: black;
 	border: 0.3em solid black;
-}
-
-.wtcindex:hover #wtc {
-	visibility: visible;
-	opacity: 1;
 }
 
 .mvindex {
@@ -256,4 +257,44 @@ nav ul li span:nth-child(4) {
 	visibility: visible;
 	opacity: 1;
 	background-position: center;
+}
+
+.wtcindex h1 {
+	display: none;
+}
+
+.wtcindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
+}
+
+.mvindex h1 {
+	display: none;
+}
+
+.mvindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
+}
+
+.jdindex h1 {
+	display: none;
+}
+
+.jdindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
+}
+
+.incindex h1 {
+	display: none;
+}
+
+.incindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
 }

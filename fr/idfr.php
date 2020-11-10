@@ -50,11 +50,11 @@ else {
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
-	<title>Nouveaux Sons FR</title>
+	<title>Nouveaux Sons FRANCE</title>
 </head>
 <body>
 	<header class="pgtitle">	
-		<h1 class="sndtitle" id="sndfr"><img src="../img/ecufr.png" height="75" width="75"> Sons FR <img src="../img/ecufr.png" height="75" width="75"></h1>
+		<h1 class="sndtitle" id="sndfr"><img src="../img/ecufr.png" height="75" width="75"> Sons FRANCE <img src="../img/ecufr.png" height="75" width="75"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
@@ -65,6 +65,7 @@ else {
 							<li class="btnmain acc">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-home"></i>
+									&nbsp;
 								<i class="fas fa-caret-left"></i>
 									Retour à l'accueil
 								<span></span><span></span><span></span><span></span>
@@ -80,6 +81,7 @@ else {
 							<li class="btnmain a-z">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-sort-alpha-up"></i>
+									&nbsp;
 									Ordre Alphabétique
 								<span></span><span></span><span></span><span></span>
 							</li>

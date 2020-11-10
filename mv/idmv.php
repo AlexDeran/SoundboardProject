@@ -76,6 +76,7 @@ $n = 1;
 							<li class="btnmain acc">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-home"></i>
+								&nbsp;
 								<i class="fas fa-caret-left"></i>
 									Retour à l'accueil
 								<span></span><span></span><span></span><span></span>
@@ -91,6 +92,7 @@ $n = 1;
 							<li class="btnmain a-z">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-sort-alpha-up"></i>
+								&nbsp;
 									Ordre Alphabétique
 								<span></span><span></span><span></span><span></span>
 							</li>

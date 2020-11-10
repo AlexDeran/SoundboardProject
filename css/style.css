@@ -226,16 +226,6 @@ footer {
 	text-align: center;
 	margin-top: 0.2em;
 }
-.noresults {
-	margin-top: 2em;
-	background-image: linear-gradient(
-			to bottom,
-			rgba(245, 246, 252, 0.4),
-			rgba(0, 0, 0, 0.73)
-		),
-		url(../img/the-road-815297_1920.jpg);
-	background-position: center;
-}
 
 #nopage {
 	font-size: 5em;
@@ -278,7 +268,7 @@ footer {
 
 #sndfr,
 #searchfr {
-	background-image: url(../img/france-flag-1058699_1280.jpg);
+	background-image: url(../img/banner-2024782_1920.png);
 	background-position: center;
 }
 

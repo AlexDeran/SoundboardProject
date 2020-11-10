@@ -62,7 +62,7 @@ else {
 				<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 			<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
-		<title>Votre Recherche FR</title>
+		<title>Votre Recherche FRANCE</title>
 	</head>
 	<body>
 		<header class="pgtitle">	
@@ -77,6 +77,7 @@ else {
 								<li class="btnmain acc">
 									<span></span><span></span><span></span><span></span>
 									<i class="fas fa-home"></i>
+										&nbsp;
 									<i class="fas fa-caret-left"></i>
 										Retour à l'accueil
 									<span></span><span></span><span></span><span></span>
@@ -92,6 +93,7 @@ else {
 								<li class="btnmain a-z">
 									<span></span><span></span><span></span><span></span>
 									<i class="fas fa-sort-alpha-up"></i>
+										&nbsp;
 										Ordre Alphabétique
 									<span></span><span></span><span></span><span></span>
 								</li>
@@ -106,6 +108,7 @@ else {
 								<li class="btnmain suppr">
 									<span></span><span></span><span></span><span></span>
 									<i class="fab fa-hotjar"></i> 
+										&nbsp;
 										Nouveaux sons
 									<span></span><span></span><span></span><span></span>
 								</li>

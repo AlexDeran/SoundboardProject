@@ -50,7 +50,7 @@ $n = 1;
 		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
-	<title>Nouveaux Sons WORLD</title>
+	<title>Nouveaux Sons MONDE</title>
 </head>
 <body>
 	<?php 
@@ -63,7 +63,7 @@ $n = 1;
 
 } else {  ?>
 <header class="pgtitle">	
-		<h1 class="sndtitle" id="sndw"><img src="../img/earth-min.png" height="75" width="75" > Sons WORLD <img src="../img/earth-min.png" height="75" width="75" ></h1>
+		<h1 class="sndtitle" id="sndw"><img src="../img/earth-min.png" height="75" width="75" > Sons MONDE <img src="../img/earth-min.png" height="75" width="75" ></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
@@ -74,6 +74,7 @@ $n = 1;
 							<li class="btnmain acc">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-home"></i>
+								&nbsp;
 								<i class="fas fa-caret-left"></i>
 									Retour à l'accueil
 								<span></span><span></span><span></span><span></span>
@@ -89,6 +90,7 @@ $n = 1;
 							<li class="btnmain a-z">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-sort-alpha-up"></i>
+								&nbsp;
 									Ordre Alphabétique
 								<span></span><span></span><span></span><span></span>
 							</li>

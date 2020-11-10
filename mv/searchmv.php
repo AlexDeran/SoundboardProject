@@ -83,6 +83,7 @@ else {
 										<li class="btnmain acc">
 											<span></span><span></span><span></span><span></span>
 											<i class="fas fa-home"></i>
+											&nbsp;
 											<i class="fas fa-caret-left"></i>
 												Retour à l'accueil
 											<span></span><span></span><span></span><span></span>
@@ -98,6 +99,7 @@ else {
 										<li class="btnmain a-z">
 											<span></span><span></span><span></span><span></span>
 											<i class="fas fa-sort-alpha-up"></i>
+											&nbsp;
 												Ordre Alphabétique
 											<span></span><span></span><span></span><span></span>
 										</li>
@@ -112,6 +114,7 @@ else {
 										<li class="btnmain suppr">
 											<span></span><span></span><span></span><span></span>
 											<i class="fab fa-hotjar"></i> 
+											&nbsp;
 												Nouveaux sons
 											<span></span><span></span><span></span><span></span>
 										</li>

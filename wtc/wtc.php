@@ -76,6 +76,7 @@ $n = 1;
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-home"></i>
 								<i class="fas fa-caret-left"></i>
+								&nbsp;
 									Retour à l'accueil
 								<span></span><span></span><span></span><span></span>
 							</li>
@@ -90,6 +91,7 @@ $n = 1;
 								<li class="btnmain suppr">
 									<span></span><span></span><span></span><span></span>
 									<i class="fab fa-hotjar"></i> 
+									&nbsp;
 										Nouveaux sons
 									<span></span><span></span><span></span><span></span>
 								</li>

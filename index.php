@@ -140,6 +140,7 @@ endif;
 									data-target="#exampleModalCenter">
 									<span></span><span></span><span></span><span></span>
 									<i class="fas fa-plus"></i>
+									&nbsp;
 										Ajouter un son
 									<span></span><span></span><span></span><span></span>
 								</li>
@@ -305,6 +306,7 @@ endif;
 										data-target="#exampleModalCenter3">
 										<span></span><span></span><span></span><span></span>
 										<i class="fas fa-trash-alt"></i>
+										&nbsp;
 											Supprimer un son
 										<span></span><span></span><span></span><span></span>
 									</li>
@@ -422,8 +424,8 @@ endif;
 								<ul class="btns">
 									<a href="fr/soundfr.php">
 										<li class="btnmain frindex">
-											<span></span><span></span><span></span><span></span><span></span>
-											FRANCE
+											<span></span><span></span><span></span><span></span>
+											<h1 aria-label="FRANCE"></h1>
 											<span></span><span></span><span></span><span></span>
 										</li>
 									</a>
@@ -435,11 +437,9 @@ endif;
 								<ul class="btns">
 									<a href="world/soundworld.php">
 										<li class="btnmain windex">
-											<span></span><span></span><span></span><span></span>
-											<i class="fas fa-globe-europe"></i>
-											<i class="fas fa-caret-left"></i>
-											MONDE
-											<span></span><span></span><span></span><span></span>
+												<span></span><span></span><span></span><span></span>
+											<h1 aria-label="MONDE"></h1>
+													<span></span><span></span><span></span><span></span>
 										</li>
 									</a>
 								</ul>
@@ -451,7 +451,7 @@ endif;
 									<a href="wtc/wtc.php">
 										<li class="btnmain wtcindex">
 											<span></span><span></span><span></span><span></span>
-												<p id="wtc">What the Cut ?!</p>
+												<h1 aria-label="What&nbsp;The&nbsp;Cut&nbsp;?!"></h1>
 											<span></span><span></span><span></span><span></span>
 										</li>
 									</a>
@@ -466,7 +466,7 @@ endif;
 										<a href="mv/mv.php">
 											<li class="btnmain mvindex">
 												<span></span><span></span><span></span><span></span>
-													<p id="mv">MisterMV</p>
+													<h1 aria-label="MisterMV"></h1>
 												<span></span><span></span><span></span><span></span>
 											</li>
 										</a>
@@ -479,7 +479,7 @@ endif;
 										<a href="jday/JDay.php">
 											<li class="btnmain jdindex">
 												<span></span><span></span><span></span><span></span>
-													<p id="jd">MisterJDay</p>
+													<h1 aria-label="MisterJDay"></h1>
 												<span></span><span></span><span></span><span></span>
 											</li>
 										</a>
@@ -492,7 +492,7 @@ endif;
 										<a href="inconnus/inconnus.php">
 											<li class="btnmain incindex">
 												<span></span><span></span><span></span><span></span>
-												  <p id="inc">Les Inconnus</p>
+												  <h1 aria-label="Les&nbsp;Inconnus"></h1>
 												<span></span><span></span><span></span><span></span>
 											</li>
 										</a>
