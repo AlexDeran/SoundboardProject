@@ -54,7 +54,7 @@ else {
 </head>
 <body>
 	<header class="pgtitle">	
-		<h1 class="sndtitle" id="sndfr"><img src="../img/ecufr.png" height="75" width="75"> Sons FRANCE <img src="../img/ecufr.png" height="75" width="75"></h1>
+		<h1 class="sndtitle" id="sndfr"><img src="../img/france-1524418_6402.png" height="75" width="75"> Sons FRANCE <img src="../img/france-1524418_6402.png" height="75" width="75"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
@@ -108,7 +108,7 @@ else {
 								<source src="../gestsnd/SBP/SFR/<?= $sons['Son']?>" type="audio/mpeg">
 								Your browser does not support the audio element.
 							</audio>
-							<div class="imgsnd"><img src="../img/ecufr.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SFR/<?= $sons['Son']?>')"></div>
+							<div class="imgsnd"><img src="../img/france-1524418_6402.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SFR/<?= $sons['Son']?>')"></div>
 							<div class="col" id="sndname">
 							<?php if ($sons['source'] != ""){ ?>
 								<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">

@@ -104,39 +104,57 @@ p.noresultstext {
 	padding-bottom: 3em;
 	margin-top: 1em;
 }
+
+.acc {
+	height: 4em;
+}
+
 .w404 {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/earth-1365995_1920.jpg);
+	color: white;
+	background-image: url(../img/sunrise-1756274_640360.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	background-color: black;
-	line-height: 3;
-	border: 0.3em solid black;
+	height: 4em;
+}
+
+.w404 h1 {
+	font-size: calc(3px + 3vw);
 }
 
 .w404:hover {
 	color: black;
-	border: 0.3em solid black;
+	background-image: url(../img/hong-kong-1990268_640.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
 }
 
 .fr404 {
-	--c: white;
+	--c: transparent;
 	color: black;
-	background-image: url(../img/france-flag-1058699_petit.jpg);
+	background-image: url(../img/banner-2024782_6402.png);
 	background-size: cover;
 	background-position: center;
-	line-height: 3;
-	font-size: 20px;
+	background-repeat: no-repeat;
+	height: 4em;
 	font-weight: 900;
-	border: 0.3em solid black;
 }
 
 .fr404:hover {
-	color: rgb(173, 2, 2);
-	border: 0.3em solid rgb(0, 47, 141);
-	line-height: 3;
+	background-image: url(../img/eiffel-tower-3349075_640.jpg);
+	background-size: cover;
+	background-position: center -25vh;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.fr404 h1 {
+	color: black;
+	font-size: calc(3px + 3vw);
+}
+.fr404:hover h1 {
+	color: white;
 }
 
 .wtc404 {
@@ -145,17 +163,10 @@ p.noresultstext {
 	background-image: url(../img/wtc.png);
 	background-color: black;
 	background-size: contain;
-	background-repeat: no-repeat;
 	background-position: center;
-	line-height: 3;
+	background-repeat: no-repeat;
+	height: 4.5em;
 	border: 0.3em solid black;
-	padding-top: 1em;
-}
-
-#wtc {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
 }
 
 .wtc404:hover {
@@ -164,9 +175,14 @@ p.noresultstext {
 	border: 0.3em solid black;
 }
 
-.wtc404:hover #wtc {
-	visibility: visible;
-	opacity: 1;
+.wtc404 h1 {
+	display: none;
+}
+
+.wtc404:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
 }
 
 .mv404 {
@@ -177,15 +193,8 @@ p.noresultstext {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	line-height: 3;
+	height: 4.5em;
 	border: 0.3em solid black;
-	padding-top: 1em;
-}
-
-#mv {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
 }
 
 .mv404:hover {
@@ -194,10 +203,14 @@ p.noresultstext {
 	border: 0.3em solid black;
 }
 
-.mv404:hover #mv {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
+.mv404 h1 {
+	display: none;
+}
+
+.mv404:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
 }
 
 .jd404 {
@@ -208,15 +221,9 @@ p.noresultstext {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	line-height: 13;
+	height: 4.5em;
+	line-height: 10;
 	border: 0.3em solid gainsboro;
-	padding-top: 1em;
-}
-
-#jd {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
 }
 
 .jd404:hover {
@@ -225,10 +232,14 @@ p.noresultstext {
 	border: 0.3em solid gainsboro;
 }
 
-.jd404:hover #jd {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
+.jd404 h1 {
+	display: none;
+}
+
+.jd404:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
 }
 
 .inc404 {
@@ -239,15 +250,9 @@ p.noresultstext {
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
-	line-height: 13;
+	height: 4.5em;
+	line-height: 10;
 	border: 0.3em solid seashell;
-	padding-top: 1em;
-}
-
-#inc {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
 }
 
 .inc404:hover {
@@ -256,10 +261,14 @@ p.noresultstext {
 	border: 0.3em solid seashell;
 }
 
-.inc404:hover #inc {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
+.inc404 h1 {
+	display: none;
+}
+
+.inc404:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
 }
 
 #btn1strow {
@@ -275,4 +284,57 @@ p.noresultstext {
 		),
 		url(../img/the-road-815297_1920.jpg);
 	background-position: center;
+}
+
+h1 {
+	position: relative;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: calc(4px + 4vw);
+	font-weight: 700;
+	color: #f5f5f5;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	perspective: 500px;
+}
+
+h1::before,
+h1::after {
+	content: attr(aria-label);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.3);
+	padding-top: 0.3em;
+}
+
+h1::before {
+	animation: floatAbove 3.5s ease-in-out infinite;
+	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+h1::after {
+	opacity: 0.6;
+	filter: blur(0.02em);
+	transform: translate(-50%, -50%) rotateX(21deg);
+	animation: floatBelow 3.5s ease-in-out infinite;
+	-webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+	clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes floatAbove {
+	50% {
+		transform: translate(-50%, -60%);
+		-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+		clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+	}
+}
+
+@keyframes floatBelow {
+	50% {
+		transform: translate(-50%, -60%) rotateX(10deg);
+		-webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+		clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+	}
 }

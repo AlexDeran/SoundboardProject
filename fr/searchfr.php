@@ -66,7 +66,7 @@ else {
 	</head>
 	<body>
 		<header class="pgtitle">	
-			<h1 class="sndtitle" id="searchfr"><img src="../img/ecufr.png" height="75" width="75"> Sons relatifs à <?php echo($searchfr) ?> <img src="../img/ecufr.png" height="75" width="75"> </h1>
+			<h1 class="sndtitle" id="searchfr"><img src="../img/france-1524418_6402.png" height="75" width="75"> Sons relatifs à <?php echo($searchfr) ?> <img src="../img/france-1524418_6402.png" height="75" width="75"> </h1>
 		</header>
 		<nav class="container-fluid">
 			<div id="navbox" class="row">
@@ -130,7 +130,7 @@ else {
 									<source src="../gestsnd/SBP/SFR/<?= $r['Son']?>" type="audio/mpeg">
 									Your browser does not support the audio element.
 								</audio>
-								<div class="imgsnd"><img src="../img/ecufr.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SFR/<?= $r['Son']?>')"></div>
+								<div class="imgsnd"><img src="../img/france-1524418_6402.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/SFR/<?= $r['Son']?>')"></div>
 								<div class="col" id="sndname">
 								<?php if ($r['source'] != ""){ ?>
 									<a class="srcvid" href="#lienvid<?=$n?>" data-toggle="modal">

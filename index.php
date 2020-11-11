@@ -214,7 +214,7 @@ endif;
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
-														<label class="form-check-label" for="catson2">World</label>
+														<label class="form-check-label" for="catson2">Monde</label>
 													</div>
 													<div class="form-check form-check-inline">
 														<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
@@ -255,7 +255,7 @@ endif;
 														</select>
 													</div>
 													<div class="form-group col-md-6">
-														<label for="exampleFormControlSelect2"><b>WORLD</b></label>
+														<label for="exampleFormControlSelect2"><b>MONDE</b></label>
 														<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
 															<option></option>
 															<?php foreach ($keywrdw as $keyww):?>
@@ -352,7 +352,7 @@ endif;
 														</select>
 													</div>
 													<div class="form-group col-md-4">
-														<label for="inputsonw"><b>WORLD</b></label>
+														<label for="inputsonw"><b>MONDE</b></label>
 														<select id="inputsonw" name="supprsndw" class="form-control">
 															<option></option>
 															<?php foreach ($lesnomw as $allnomsw):?>
@@ -460,49 +460,49 @@ endif;
 						</div>
 					</div>
 					<div id="btn1strow" class="row">
-							<div class="col-3">
-								<div class="container-fluid">
-									<ul class="btns">
-										<a href="mv/mv.php">
-											<li class="btnmain mvindex">
-												<span></span><span></span><span></span><span></span>
-													<h1 aria-label="MisterMV"></h1>
-												<span></span><span></span><span></span><span></span>
-											</li>
-										</a>
-									</ul>
-								</div>
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="mv/mv.php">
+										<li class="btnmain mvindex">
+											<span></span><span></span><span></span><span></span>
+												<h1 aria-label="MisterMV"></h1>
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
-							<div class="col-3">
-								<div class="container-fluid">
-									<ul class="btns">
-										<a href="jday/JDay.php">
-											<li class="btnmain jdindex">
-												<span></span><span></span><span></span><span></span>
-													<h1 aria-label="MisterJDay"></h1>
-												<span></span><span></span><span></span><span></span>
-											</li>
-										</a>
-									</ul>
-								</div>
+						</div>
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="jday/JDay.php">
+										<li class="btnmain jdindex">
+											<span></span><span></span><span></span><span></span>
+												<h1 aria-label="MisterJDay"></h1>
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
-							<div class="col-3">
-								<div class="container-fluid">
-									<ul class="btns">
-										<a href="inconnus/inconnus.php">
-											<li class="btnmain incindex">
-												<span></span><span></span><span></span><span></span>
-												  <h1 aria-label="Les&nbsp;Inconnus"></h1>
-												<span></span><span></span><span></span><span></span>
-											</li>
-										</a>
-									</ul>
-								</div>
+						</div>
+						<div class="col-3">
+							<div class="container-fluid">
+								<ul class="btns">
+									<a href="inconnus/inconnus.php">
+										<li class="btnmain incindex">
+											<span></span><span></span><span></span><span></span>
+												<h1 aria-label="Les&nbsp;Inconnus"></h1>
+											<span></span><span></span><span></span><span></span>
+										</li>
+									</a>
+								</ul>
 							</div>
 						</div>
 					</div>
 				</div>
-			</nav>
+			</div>
+		</nav>
 			
 	<script
 		src="https://code.jquery.com/jquery-3.4.1.slim.min.js"

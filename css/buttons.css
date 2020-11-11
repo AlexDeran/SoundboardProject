@@ -105,11 +105,10 @@ nav ul li span:nth-child(4) {
 .windex {
 	--c: transparent;
 	color: white;
-	background-image: url(../img/sunrise-1756274_640.jpg);
-	background-size: contain;
+	background-image: url(../img/sunrise-1756274_640360.jpg);
+	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
-	background-color: black;
+	background-position: -0.5vh;
 	height: 10em;
 	line-height: 10;
 }
@@ -117,7 +116,7 @@ nav ul li span:nth-child(4) {
 .windex:hover {
 	color: black;
 	background-image: url(../img/hong-kong-1990268_640.jpg);
-	background-size: contain;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 }
@@ -127,7 +126,7 @@ nav ul li span:nth-child(4) {
 	color: black;
 	background-image: url(../img/banner-2024782_6402.png);
 	background-size: cover;
-	background-position: center;
+	/* background-position: center; */
 	background-repeat: no-repeat;
 	height: 10em;
 	font-weight: 900;
@@ -179,22 +178,10 @@ nav ul li span:nth-child(4) {
 	border: 0.3em solid black;
 }
 
-#mv {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
-}
-
 .mvindex:hover {
 	color: black;
 	background-color: black;
 	border: 0.3em solid black;
-}
-
-.mvindex:hover #mv {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
 }
 
 .jdindex {
@@ -210,22 +197,10 @@ nav ul li span:nth-child(4) {
 	border: 0.3em solid gainsboro;
 }
 
-#jd {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
-}
-
 .jdindex:hover {
 	color: gainsboro;
 	background-color: gainsboro;
 	border: 0.3em solid gainsboro;
-}
-
-.jdindex:hover #jd {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
 }
 
 .incindex {
@@ -241,22 +216,10 @@ nav ul li span:nth-child(4) {
 	border: 0.3em solid seashell;
 }
 
-#inc {
-	visibility: hidden;
-	opacity: 0;
-	transition: visibility 0s, opacity 0.5s linear;
-}
-
 .incindex:hover {
 	color: seashell;
 	background-color: seashell;
 	border: 0.3em solid seashell;
-}
-
-.incindex:hover #inc {
-	visibility: visible;
-	opacity: 1;
-	background-position: center;
 }
 
 .wtcindex h1 {
