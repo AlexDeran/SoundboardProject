@@ -56,7 +56,7 @@ else {
 			crossorigin="anonymous"
 		/>
     <link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/search.css" />
+		<link rel="stylesheet" href="../css/inconnus.css" />
 		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
@@ -129,7 +129,7 @@ else {
 					<article>
 						<div class="container-fluid">
 							<div class="row">
-								<div class="col schwtc">
+								<div class="col search">
 									<?php foreach ($resultsinc as $r):?>
 									<div class=" sndboxinc">
 										<audio id="myAudio">
@@ -137,7 +137,7 @@ else {
 											Your browser does not support the audio element.
 										</audio>
 										<div class="imgsnd"><img src="../img/inconnus.png" height="75" width="200" onmousedown="play('../gestsnd/SBP/Inconnus/<?= $r['Son']?>')"></div>
-										<div class="col" id="sndnamemv">
+										<div class="col" id="sndnameinc">
 										<?php if ($r['source'] != ""){ ?>
 											<a class="srcvidinc" href="#lienvid<?=$n?>" data-toggle="modal">
 											<?php echo($r['Nom']);?>

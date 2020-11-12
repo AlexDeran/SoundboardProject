@@ -1,0 +1,11 @@
+/* ############################################### WTC ############################################### */
+
+.sndwtc {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+}
+
+.sndwtcimg {
+	background-color: black;
+	border-bottom: solid white;
+}

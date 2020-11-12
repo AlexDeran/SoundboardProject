@@ -1,0 +1,36 @@
+/* ############################################### SOUNDFR ############################################### */
+
+.srcvid {
+	color: black;
+}
+.srcvid:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}
+
+#sndname {
+	justify-content: center;
+	background-color: white;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+#sndfr,
+#searchfr {
+	background-image: url(../img/banner-2024782_1920.png);
+	background-position: center;
+}
+
+.sndbox {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background: linear-gradient(
+		90deg,
+		rgb(0, 47, 141) 0%,
+		rgb(255, 255, 255) 50%,
+		rgb(173, 2, 2) 100%
+	);
+}

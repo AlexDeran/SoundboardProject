@@ -105,17 +105,17 @@ nav ul li span:nth-child(4) {
 .windex {
 	--c: transparent;
 	color: white;
-	background-image: url(../img/sunrise-1756274_640360.jpg);
+	background-image: url(../img/international-space-station-1176518_1920.jpg);
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: -0.5vh;
+	background-position: center -1vh;
 	height: 10em;
 	line-height: 10;
 }
 
 .windex:hover {
 	color: black;
-	background-image: url(../img/hong-kong-1990268_640.jpg);
+	background-image: url(../img/hong-kong-1990268_19201277.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
@@ -126,7 +126,6 @@ nav ul li span:nth-child(4) {
 	color: black;
 	background-image: url(../img/banner-2024782_6402.png);
 	background-size: cover;
-	/* background-position: center; */
 	background-repeat: no-repeat;
 	height: 10em;
 	font-weight: 900;

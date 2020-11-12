@@ -47,6 +47,7 @@ $n = 1;
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/buttons.css" />
+				<link rel="stylesheet" href="../css/inconnus.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -118,7 +119,7 @@ $n = 1;
 								Your browser does not support the audio element.
 							</audio>
 							<div class="imgsnd"><img src="../img/inconnus.png" height="75" width="200" onmousedown="play('../gestsnd/SBP/Inconnus/<?= $sons['Son']?>')"></div>
-							<div class="col" id="sndnamemv">
+							<div class="col" id="sndnameinc">
 							<?php if ($sons['source'] != ""){ ?>
 								<a class="srcvidinc" href="#lienvid<?=$n?>" data-toggle="modal">
 								<?php echo($sons['Nom']);?>

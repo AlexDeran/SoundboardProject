@@ -30,6 +30,8 @@ a#top:hover {
 	margin-bottom: 1.5em;
 }
 
+/* boutons stop sons */
+
 .fa-stop-circle:before {
 	cursor: pointer;
 	font-size: 4em;
@@ -89,10 +91,12 @@ a#top:hover {
 	opacity: 1;
 }
 
+/* fin boutons stop sons */
+
 #top,
 .sndtitle,
 .sndquery {
-	color: lightgrey;
+	color: silver;
 	letter-spacing: 0.1em;
 	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
 		0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
@@ -138,42 +142,6 @@ footer {
 	padding: 1%;
 }
 
-/*bouton back to top recherche */
-
-#myBtnfr2top {
-	background-color: crimson; /* Set a background color */
-	font-size: 29px; /* Increase font size */
-	display: none; /* Hidden by default */
-	position: fixed; /* Fixed/sticky position */
-	bottom: 20px; /* Place the button at the bottom of the page */
-	right: 30px; /* Place the button 30px from the right */
-	z-index: 99; /* Make sure it does not overlap */
-	border: none; /* Remove borders */
-	outline: none; /* Remove outline */
-	color: white; /* Text color */
-	cursor: pointer; /* Add a mouse pointer on hover */
-	padding: 8px; /* Some padding */
-	border-radius: 10px; /* Rounded corners */
-	font-weight: 900;
-}
-
-#myBtnfr2top:hover {
-	background-color: darkred; /* Add a dark-grey background on hover */
-}
-
-#btntop {
-	text-align: right;
-	margin-top: 2%;
-	margin-bottom: 2%;
-	align-self: stretch;
-}
-
-/* search title wtc inc jd & mv */
-
-.wpad {
-	padding-bottom: 0.2em;
-}
-
 /*pagination noire */
 
 .ad {
@@ -189,6 +157,7 @@ footer {
 	background-color: lightgrey;
 	color: darkred;
 }
+
 /*pagination*/
 .inc,
 .ad,
@@ -212,31 +181,6 @@ footer {
 
 /*fin pagination*/
 
-/*barre de recherche*/
-
-#nosearch {
-	background-image: url(../img/the-road-815297_1920.jpg);
-	background-position: center;
-	margin-top: 2em;
-	font-size: 5em;
-	line-height: 6.5;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: white;
-	text-align: center;
-	margin-top: 0.2em;
-}
-
-#nopage {
-	font-size: 5em;
-	line-height: 3;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: white;
-	text-align: center;
-	margin-top: 0.2em;
-}
-
 /*img sound*/
 
 .imgsnd {
@@ -247,94 +191,23 @@ footer {
 	cursor: pointer;
 }
 
-/* ############################################### SOUNDFR ############################################### */
-
-.srcvid {
-	color: black;
-}
-.srcvid:hover {
-	color: darkslategrey;
-	text-decoration: underline;
-}
-
-#sndname {
-	justify-content: center;
-	background-color: white;
-	font-family: 'Raleway', sans-serif;
-	font-weight: 800;
+.sndtitlejd {
+	text-align: center;
 	text-transform: uppercase;
-	border-radius: 1em;
-}
-
-#sndfr,
-#searchfr {
-	background-image: url(../img/banner-2024782_1920.png);
-	background-position: center;
-}
-
-.sndbox {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid black;
-	background: linear-gradient(
-		90deg,
-		rgb(0, 47, 141) 0%,
-		rgb(255, 255, 255) 50%,
-		rgb(173, 2, 2) 100%
-	);
-}
-/* ############################################### SOUNDWORLD ############################################### */
-
-.world {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: right;
-}
-
-.srcvidw {
-	color: white;
-}
-
-.srcvidw:hover {
-	color: lightgrey;
-	text-decoration: underline;
-}
-
-#sndw {
-	background-image: url(../img/Collection-national-flags.png);
-	background-position: bottom left;
-	font-size: 3.5em;
-}
-
-#sndnamew {
-	justify-content: center;
+	letter-spacing: 0.1em;
 	font-family: 'Raleway', sans-serif;
-	color: white;
-	font-weight: 800;
-	text-transform: uppercase;
-	border-radius: 1em;
 }
 
-.sndboxw {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid black;
-	background-image: url(../img/earth-1365995_19204545.jpg);
-	background-position: right;
+/* search fr & world */
+
+.searchfrw {
+	padding-top: 1.5em;
+	padding-bottom: 2.5em;
 }
 
-/* ############################################### WTC ############################################### */
+/* autres search*/
 
-.sndwtc {
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
-}
-
-.sndwtcimg {
-	background-color: black;
-	border-bottom: solid white;
-}
-
-.schwtc {
+.search {
 	padding-top: 1em;
 	padding-bottom: 1em;
 }
@@ -342,155 +215,4 @@ footer {
 .soundswtc {
 	margin-top: 1em;
 	margin-bottom: 1.5em;
-}
-
-.schwtcfr {
-	padding-top: 1.5em;
-	padding-bottom: 2.5em;
-}
-
-/* ############################################### JDAY ############################################### */
-
-.jday {
-	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
-	border-bottom: solid black;
-}
-
-.searchtitle {
-	font-weight: 800;
-	line-height: 1.5;
-	font-size: 1.5em;
-}
-
-.sndtitlejd {
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-family: 'Raleway', sans-serif;
-}
-.sndboxjday {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid black;
-	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
-}
-
-#sndnamejd {
-	justify-content: center;
-	font-family: 'Raleway', sans-serif;
-	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
-	color: black;
-	font-weight: 800;
-	text-transform: uppercase;
-	border-radius: 1em;
-}
-.srcvidmv,
-.srcvidjday {
-	color: black;
-}
-.srcvidmv:hover,
-.srcvidjday:hover {
-	color: darkslategrey;
-	text-decoration: underline;
-}
-
-/* ############################################### INCONNUS ############################################### */
-
-.inconnus {
-	background-color: white;
-	border-bottom: solid #ca283f;
-}
-
-#sndinc {
-	background-color: white;
-}
-.sndboxinc {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid #ca283f;
-	background-color: white;
-}
-
-.searchtitleinc {
-	color: #ca283f;
-	font-weight: 800;
-	line-height: 1.5;
-	font-size: 1.5em;
-}
-
-.returninc {
-	color: #ca283f;
-}
-
-.returninc:hover {
-	color: #b22222;
-}
-
-.srcvidinc {
-	color: #ca283f;
-}
-.srcvidinc:hover {
-	color: #f56991;
-	text-decoration: underline;
-}
-/* ############################################### MISTERMV ############################################### */
-
-.mv {
-	background-color: black;
-	border-bottom: solid white;
-}
-
-#sndmv {
-	border-bottom: solid white;
-	background-color: black;
-}
-
-#searchmv {
-	background-image: url(../img/guitar.jpg);
-	background-position: left;
-	padding-bottom: 0.2em;
-}
-.jday {
-	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
-}
-
-.searchtitlemv {
-	color: white;
-	font-weight: 800;
-	line-height: 1.5;
-	font-size: 1.5em;
-}
-
-.sndtitlejd {
-	text-align: center;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-	font-family: 'Raleway', sans-serif;
-}
-
-.sndboxmv {
-	margin: 1em;
-	border-radius: 1em;
-	border: solid white;
-	background-color: black;
-}
-
-#sndnamemv {
-	justify-content: center;
-	font-family: 'Raleway', sans-serif;
-	background: white;
-	color: black;
-	font-weight: 800;
-	text-transform: uppercase;
-	border-radius: 1em;
-}
-
-#nopagemv {
-	font-size: 5em;
-	line-height: 2.9;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: white;
-	text-align: center;
-	margin-top: 0.2em;
 }

@@ -1,0 +1,62 @@
+/* ############################################### MISTERMV ############################################### */
+
+.srcvidmv {
+	color: black;
+}
+.srcvidmv:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}
+
+.mv {
+	background-color: black;
+	border-bottom: solid white;
+}
+
+#sndmv {
+	border-bottom: solid white;
+	background-color: black;
+}
+
+#searchmv {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 0.2em;
+}
+.jday {
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+}
+
+.searchtitlemv {
+	color: white;
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
+}
+
+.sndboxmv {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid white;
+	background-color: black;
+}
+
+#sndnamemv {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	background: white;
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+#nopagemv {
+	font-size: 5em;
+	line-height: 2.9;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: white;
+	text-align: center;
+	margin-top: 0.2em;
+}
