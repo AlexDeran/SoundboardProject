@@ -9,3 +9,40 @@
 	background-color: black;
 	border-bottom: solid white;
 }
+
+.wtc {
+	background-color: black;
+	border-bottom: solid white;
+}
+
+.sndboxwtc {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid white;
+	background-color: black;
+}
+
+#sndnamewtc {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	background: white;
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+.srcvidwtc {
+	color: black;
+}
+.srcvidwtc:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}
+
+.searchtitlewtc {
+	color: white;
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
+}

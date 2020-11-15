@@ -208,29 +208,33 @@ endif;
 												</div>
 												<label for="catsnd"><strong> Quel type de son ?</strong></label>
 												<div id="catsnd" class="form-group" required>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
-														<label class="form-check-label" for="catson">FR</label>
+													<div>
+														<div class="form-check form-check-inline col-4">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson" value="Son FR">
+															<label class="form-check-label" for="catson">France</label>
+														</div>
+														<div class="form-check form-check-inline col-4">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
+															<label class="form-check-label" for="catson2">Monde</label>
+														</div>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
+															<label class="form-check-label" for="catson3">WTC</label>
+														</div>
 													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson2" value="Son World">
-														<label class="form-check-label" for="catson2">Monde</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson3" value="WTC">
-														<label class="form-check-label" for="catson3">WTC</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="MV">
-														<label class="form-check-label" for="catson4">MV</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="JDay">
-														<label class="form-check-label" for="catson5">JDay</label>
-													</div>
-													<div class="form-check form-check-inline">
-														<input class="form-check-input" type="radio" name="catsnd" id="catson6" value="Inconnus">
-														<label class="form-check-label" for="catson6">Inconnus</label>
+													<div>
+														<div class="form-check form-check-inline col-4">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson4" value="MV">
+															<label class="form-check-label" for="catson4">MV</label>
+														</div>
+														<div class="form-check form-check-inline col-4">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson5" value="JDay">
+															<label class="form-check-label" for="catson5">JDay</label>
+														</div>
+														<div class="form-check form-check-inline">
+															<input class="form-check-input" type="radio" name="catsnd" id="catson6" value="Inconnus">
+															<label class="form-check-label" for="catson6">Inconnus</label>
+														</div>
 													</div>
 												</div>
 												<div class="form-group">
@@ -246,7 +250,7 @@ endif;
 												<label for="exampleFormControlSelect1"><b>Ou sélectionner un mot clé déjà existant</b></label>
 												<div class="form-row">
 													<div class="form-group col-md-6">
-														<label for="exampleFormControlSelect1"><b>FR</b></label>
+														<label for="exampleFormControlSelect1"><b>France</b></label>
 														<select name="keywords" class="form-control" id="exampleFormControlSelect1">
 															<option></option>
 															<?php foreach ($keywrdfr as $keywfr):?>
@@ -255,7 +259,7 @@ endif;
 														</select>
 													</div>
 													<div class="form-group col-md-6">
-														<label for="exampleFormControlSelect2"><b>MONDE</b></label>
+														<label for="exampleFormControlSelect2"><b>Monde</b></label>
 														<select name="keywordsw" class="form-control" id="exampleFormControlSelect2">
 															<option></option>
 															<?php foreach ($keywrdw as $keyww):?>
@@ -275,7 +279,7 @@ endif;
 														</select>
 													</div>
 														<div class="form-group col-md-6">
-														<label for="exampleFormControlSelect4"><b>INCONNUS</b></label>
+														<label for="exampleFormControlSelect4"><b>Inconnus</b></label>
 														<select name="keywordsinc" class="form-control" id="exampleFormControlSelect4">
 															<option></option>
 															<?php foreach ($keywrdinc as $keyinc):?>
@@ -343,7 +347,7 @@ endif;
 												<label for="form-row"><b>Choisir le son à supprimer</b></label>
 												<div class="form-row">
 													<div class="form-group col-md-4">
-														<label for="inputson"><b>FR</b></label>
+														<label for="inputson"><b>France</b></label>
 														<select id="inputson" name="supprsnd" class="form-control">
 															<option></option>
 															<?php foreach ($lesnom as $allnoms):?>
@@ -352,7 +356,7 @@ endif;
 														</select>
 													</div>
 													<div class="form-group col-md-4">
-														<label for="inputsonw"><b>MONDE</b></label>
+														<label for="inputsonw"><b>Monde</b></label>
 														<select id="inputsonw" name="supprsndw" class="form-control">
 															<option></option>
 															<?php foreach ($lesnomw as $allnomsw):?>

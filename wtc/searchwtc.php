@@ -70,9 +70,9 @@ else {
 
 			?>
 				<header class="pgtitle">
-					<div class="sndtitlejd mv">
+					<div class="sndtitlejd wtc">
 						<img src="../img/WTC.png" height="75" width="120">	
-						<h1 class="searchtitlemv"> Sons relatifs à <?php echo($searchwtc) ?></h1>
+						<h1 class="searchtitlewtc"> Sons relatifs à <?php echo($searchwtc) ?></h1>
 					</div>
 				</header>
 				<nav class="container-fluid">
@@ -132,15 +132,15 @@ else {
 							<div class="row">
 								<div class="col search">
 									<?php foreach ($resultswtc as $r):?>
-									<div class=" sndboxmv">
+									<div class=" sndboxwtc">
 										<audio id="myAudio">
 											<source src="../gestsnd/SBP/WTC/<?= $r['Son']?>" type="audio/mpeg">
 											Your browser does not support the audio element.
 										</audio>
 										<div class="imgsnd"><img src="../img/WTC.png" height="75" width="120" onmousedown="play('../gestsnd/SBP/WTC/<?= $r['Son']?>')"></div>
-										<div class="col" id="sndnamemv">
+										<div class="col" id="sndnamewtc">
 										<?php if ($r['source'] != ""){ ?>
-											<a class="srcvidmv" href="#lienvid<?=$n?>" data-toggle="modal">
+											<a class="srcvidwtc" href="#lienvid<?=$n?>" data-toggle="modal">
 											<?php echo($r['Nom']);?>
 											</a>
 											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -1,20 +1,20 @@
-mybutton = document.getElementById('myBtnfr2top');
+// mybutton = document.getElementById('myBtnfr2top');
 
-// When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function () {
-	scrollFunction();
-};
+// // When the user scrolls down 20px from the top of the document, show the button
+// window.onscroll = function () {
+// 	scrollFunction();
+// };
 
-function scrollFunction() {
-	if (
-		document.body.scrollTop > 800 ||
-		document.documentElement.scrollTop > 800
-	) {
-		mybutton.style.display = 'block';
-	} else {
-		mybutton.style.display = 'none';
-	}
-}
+// function scrollFunction() {
+// 	if (
+// 		document.body.scrollTop > 800 ||
+// 		document.documentElement.scrollTop > 800
+// 	) {
+// 		mybutton.style.display = 'block';
+// 	} else {
+// 		mybutton.style.display = 'none';
+// 	}
+// }
 
 // ya aurait juste a faire un foreach et une concaténation en php mais il n'y en a pas en js car c'est un langage incompréhensible qui pue la grosse merde
 
