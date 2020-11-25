@@ -13,7 +13,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 	$pageid = isset($_GET['pageid']) ? (int)$_GET['pageid'] : 1;
 
-	$perPageid = 14;
+	$perPageid = 13;
 
 	$begginid = ($pageid > 1) ? ($pageid * $perPageid) - $perPageid : 0;
 

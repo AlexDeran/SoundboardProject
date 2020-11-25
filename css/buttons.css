@@ -203,11 +203,9 @@ nav ul li span:nth-child(4) {
 }
 
 .incindex {
-	--c: #ca283f;
-	color: var(--c);
-	background-image: url(../img/inconnus.png);
+	background-image: url(../img/inconnuslogo.png);
 	background-color: seashell;
-	background-size: contain;
+	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	height: 10em;
@@ -217,7 +215,8 @@ nav ul li span:nth-child(4) {
 
 .incindex:hover {
 	color: seashell;
-	background-color: seashell;
+	background-image: url(../img/inconnusshort.png);
+	background-size: cover;
 	border: 0.3em solid seashell;
 }
 
