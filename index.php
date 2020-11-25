@@ -14,7 +14,7 @@ $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 	require "gestsnd/addsound.php";
 	}
 
-if(isset($_POST['supprsnd']) || isset($_POST['supprsndw'])){
+if(isset($_POST['supprsnd']) || isset($_POST['supprsndw']) || isset($_POST['supprsndwtc']) || isset($_POST['supprsndmv']) || isset($_POST['supprsndjd']) || isset($_POST['supprsndinc'])){
 	require "gestsnd/supprsound.php";
 }
 
