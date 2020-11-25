@@ -1,0 +1,39 @@
+/* ############################################### SOUNDWORLD ############################################### */
+
+.world {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: right;
+}
+
+.srcvidw {
+	color: white;
+}
+
+.srcvidw:hover {
+	color: lightgrey;
+	text-decoration: underline;
+}
+
+#sndw {
+	background-image: url(../img/Collection-national-flags.png);
+	background-position: bottom left;
+	font-size: 3.5em;
+}
+
+#sndnamew {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+
+.sndboxw {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background-image: url(../img/international-space-station-1176518_1920.jpg);
+	background-size: cover;
+	background-position: top;
+}

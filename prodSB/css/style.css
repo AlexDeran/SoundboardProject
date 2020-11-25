@@ -1,0 +1,218 @@
+/* ############################################### GLOBAUX ############################################### */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-image: url(../img/audience-1853662_1920.jpg);
+}
+
+/* liens */
+
+a {
+	color: white;
+}
+
+a:hover {
+	color: seashell;
+}
+
+a:hover,
+a#top:hover {
+	text-decoration: none;
+}
+
+/* titre de page */
+
+.pgtitle {
+	margin-bottom: 1.5em;
+}
+
+/* boutons stop sons */
+
+.fa-stop-circle:before {
+	cursor: pointer;
+	font-size: 4em;
+}
+
+.blk {
+	background-color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.blk:hover {
+	background-color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.whyt {
+	background-color: black;
+	color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.whyt:hover {
+	background-color: black;
+	color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.france {
+	background-color: white;
+	color: #ca283f;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.france:hover {
+	background-color: white;
+	color: #ca283f;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+.stopinc {
+	background-color: #ca283f;
+	color: white;
+	border-radius: 2em;
+	opacity: 0.9;
+}
+
+.stopinc:hover {
+	background-color: #ca283f;
+	color: white;
+	border-radius: 2em;
+	opacity: 1;
+}
+
+/* fin boutons stop sons */
+
+#top,
+.sndtitle,
+.sndquery {
+	color: silver;
+	letter-spacing: 0.1em;
+	text-shadow: 0 -1px 0 #fff, 0 1px 0 #2e2e2e, 0 2px 0 #2c2c2c, 0 3px 0 #2a2a2a,
+		0 4px 0 #282828, 0 5px 0 #262626, 0 6px 0 #242424, 0 7px 0 #222,
+		0 8px 0 #202020, 0 9px 0 #1e1e1e, 0 10px 0 #1c1c1c, 0 11px 0 #1a1a1a,
+		0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
+		0 22px 30px rgba(0, 0, 0, 0.9);
+	text-transform: uppercase;
+	text-align: center;
+}
+
+.col {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+#navbox {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.form-inline.my-2.my-lg-0 {
+	justify-content: flex-end;
+}
+
+/*article*/
+
+.sounds {
+	margin-top: 1.5em;
+	margin-bottom: 2em;
+}
+
+footer {
+	text-align: center;
+	font-size: 40px;
+	color: white;
+	display: flex;
+	justify-content: space-around;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 800;
+	line-height: 72px;
+	text-transform: uppercase;
+	padding: 1%;
+}
+
+/*pagination noire */
+
+.ad {
+	background-color: black;
+	color: white;
+}
+
+.inc {
+	background-color: white;
+	color: #ca283f;
+}
+.inc:hover {
+	background-color: lightgrey;
+	color: darkred;
+}
+
+/*pagination*/
+.inc,
+.ad,
+.page-link {
+	border: none;
+	border-radius: 5px;
+	margin-right: 10px;
+	font-family: 'Raleway', sans-serif;
+	text-transform: uppercase;
+	font-weight: bold;
+}
+.page-link:hover,
+.page-link.ad:hover {
+	border-radius: 5px;
+}
+
+.page-link.ad:hover {
+	background-color: white;
+	color: black;
+}
+
+/*fin pagination*/
+
+/*img sound*/
+
+.imgsnd {
+	text-align: center;
+}
+
+.imgsnd img {
+	cursor: pointer;
+}
+
+.sndtitlejd {
+	text-align: center;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	font-family: 'Raleway', sans-serif;
+}
+
+/* search fr & world */
+
+.searchfrw {
+	padding-top: 1.5em;
+	padding-bottom: 2.5em;
+}
+
+/* autres search*/
+
+.search {
+	padding-top: 1em;
+	padding-bottom: 1em;
+}
+
+.soundswtc {
+	margin-top: 1em;
+	margin-bottom: 1.5em;
+}

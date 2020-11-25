@@ -1,0 +1,49 @@
+/* ############################################### INCONNUS ############################################### */
+
+.inconnus {
+	background-color: white;
+	border-bottom: solid #ca283f;
+}
+
+#sndinc {
+	background-color: white;
+}
+.sndboxinc {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid #ca283f;
+	background-color: white;
+}
+
+.searchtitleinc {
+	color: #ca283f;
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
+}
+
+.returninc {
+	color: #ca283f;
+}
+
+.returninc:hover {
+	color: #b22222;
+}
+
+.srcvidinc {
+	color: #ca283f;
+}
+.srcvidinc:hover {
+	color: #f56991;
+	text-decoration: underline;
+}
+
+#sndnameinc {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	background: white;
+	color: #ca283f;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}

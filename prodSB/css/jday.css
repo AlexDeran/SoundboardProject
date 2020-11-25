@@ -1,0 +1,37 @@
+/* ############################################### JDAY ############################################### */
+
+.jday {
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+	border-bottom: solid black;
+}
+
+.searchtitle {
+	font-weight: 800;
+	line-height: 1.5;
+	font-size: 1.5em;
+}
+
+.sndboxjday {
+	margin: 1em;
+	border-radius: 1em;
+	border: solid black;
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+}
+
+#sndnamejd {
+	justify-content: center;
+	font-family: 'Raleway', sans-serif;
+	background: linear-gradient(90deg, lightgrey 0%, white 50%, lightgrey 100%);
+	color: black;
+	font-weight: 800;
+	text-transform: uppercase;
+	border-radius: 1em;
+}
+.srcvidjday {
+	color: black;
+}
+
+.srcvidjday:hover {
+	color: darkslategrey;
+	text-decoration: underline;
+}

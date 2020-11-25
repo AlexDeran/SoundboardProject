@@ -1,0 +1,132 @@
+/* ############################################### INDEX ############################################### */
+
+header.index {
+	background-image: url(../img/guitar.jpg);
+	background-position: left;
+	padding-bottom: 0.5em;
+	margin-bottom: 1.7em;
+}
+.soundboard {
+	font-size: 3em;
+}
+
+/*alertes gestion sons*/
+
+.alert {
+	text-align: center;
+	line-height: 1.5;
+	font-size: 1.5em;
+	font-weight: 700;
+	font-family: 'Raleway', sans-serif;
+	color: white;
+}
+
+.alert-danger {
+	background-color: darkred;
+}
+
+.alert-success {
+	background-color: darkgreen;
+}
+
+.gestsnd {
+	justify-content: space-around;
+	padding-top: 1%;
+	padding-bottom: 1%;
+}
+
+/* BUTTONS */
+
+/*box contenant btn fr & world */
+
+#btn1strow {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-evenly;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+h1 {
+	position: relative;
+	font-family: 'Roboto', Arial, sans-serif;
+	font-size: calc(4px + 4vw);
+	font-weight: 700;
+	color: #f5f5f5;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	perspective: 500px;
+}
+
+h1::before,
+h1::after {
+	content: attr(aria-label);
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: translate(-50%, -50%);
+	text-shadow: 0.01em 0.01em 0.01em rgba(0, 0, 0, 0.3);
+}
+
+h1::before {
+	animation: floatAbove 3.5s ease-in-out infinite;
+	-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+	clip-path: polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+}
+
+h1::after {
+	opacity: 0.6;
+	filter: blur(0.02em);
+	transform: translate(-50%, -50%) rotateX(21deg);
+	animation: floatBelow 3.5s ease-in-out infinite;
+	-webkit-clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+	clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+}
+
+@keyframes floatAbove {
+	50% {
+		transform: translate(-50%, -60%);
+		-webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+		clip-path: polygon(0% 0%, 100% 0%, 100% 60%, 0% 60%);
+	}
+}
+
+@keyframes floatBelow {
+	50% {
+		transform: translate(-50%, -60%) rotateX(10deg);
+		-webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+		clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
+	}
+}
+
+/* Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 575.98px) {
+	header.index {
+		padding-top: 1em;
+	}
+	.soundboard {
+		font-size: 1.5em;
+	}
+	.managesnd {
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+}

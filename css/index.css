@@ -3,52 +3,23 @@
 header.index {
 	background-image: url(../img/guitar.jpg);
 	background-position: left;
-	padding-bottom: 0.5em;
+	padding-bottom: 0.2em;
+
 	margin-bottom: 1.7em;
+	text-align: center;
 }
 .soundboard {
-	font-size: 3em;
-}
-
-/*alertes gestion sons*/
-
-.alert {
-	text-align: center;
-	line-height: 1.5;
-	font-size: 1.5em;
-	font-weight: 700;
-	font-family: 'Raleway', sans-serif;
-	color: white;
-}
-
-.alert-danger {
-	background-color: darkred;
-}
-
-.alert-success {
-	background-color: darkgreen;
-}
-
-.gestsnd {
-	justify-content: space-around;
-	padding-top: 1%;
-	padding-bottom: 1%;
-}
-
-/* ajouter un son*/
-
-.btnsnd {
-	text-align: center;
-	font-family: 'Raleway', sans-serif;
-	font-size: 25px;
-	font-weight: 800;
-	line-height: 48px;
-	text-transform: uppercase;
+	font-size: 4em;
+	padding-top: 0.2em;
 }
 
 /* BUTTONS */
 
 /*box contenant btn fr & world */
+
+.btnsbox {
+	margin-top: 6em;
+}
 
 #btn1strow {
 	display: flex;
@@ -56,7 +27,7 @@ header.index {
 	align-items: center;
 	justify-content: space-evenly;
 	margin-top: 2%;
-	margin-bottom: 2%;
+	margin-bottom: 4%;
 }
 
 h1 {
@@ -109,4 +80,97 @@ h1::after {
 		-webkit-clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
 		clip-path: polygon(0% 60%, 100% 60%, 100% 100%, 0% 100%);
 	}
+}
+
+/* Extra small devices (portrait phones, less than 576px)*/
+
+@media (max-width: 575.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+	#btn1strow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		margin-top: 2%;
+		margin-bottom: 4%;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+	#btn1strow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		margin-top: 2%;
+		margin-bottom: 4%;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+	#btn1strow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		margin-top: 2%;
+		margin-bottom: 4%;
+	}
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+	#btn1strow {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+		margin-top: 2%;
+		margin-bottom: 4%;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
 }

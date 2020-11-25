@@ -79,7 +79,7 @@ else {
 						<div class= "col-3">
 							<div class="container-fluid">
 								<ul class="btns">
-									<a href="../index.php">
+									<a href="../index.html">
 										<li class="btnmain acc">
 											<span></span><span></span><span></span><span></span>
 											<i class="fas fa-home"></i>

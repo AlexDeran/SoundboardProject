@@ -1,0 +1,259 @@
+/* ###################################### BUTTONS ###################################### */
+
+/* base buttons  */
+
+.btns {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+}
+
+.btnmain {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+	font-size: 19px;
+	border-radius: 0.5em;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: sans-serif;
+	letter-spacing: 0.1em;
+	text-align: center;
+	line-height: 3em;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	transition: 0.5s;
+}
+
+.btnmain span {
+	position: absolute;
+	width: 25%;
+	height: 100%;
+	background-color: var(--c);
+	transform: translateY(150%);
+	border-radius: 50%;
+	left: calc((var(--n) - 1) * 25%);
+	transition: 0.5s;
+	transition-delay: calc((var(--n) - 1) * 0.1s);
+	z-index: -1;
+}
+
+.btnmain:hover span {
+	transform: translateY(0) scale(2);
+}
+
+nav ul li span:nth-child(1) {
+	--n: 1;
+}
+
+nav ul li span:nth-child(2) {
+	--n: 2;
+}
+
+nav ul li span:nth-child(3) {
+	--n: 3;
+}
+
+nav ul li span:nth-child(4) {
+	--n: 4;
+}
+
+/* button add & accueil */
+
+.acc {
+	--c: white;
+	color: var(--c);
+	background-color: green;
+	border: 0.3em solid green;
+}
+
+.acc:hover {
+	color: green;
+}
+
+/* button suppr & nvx sons */
+
+.suppr {
+	--c: white;
+	color: var(--c);
+	background-color: #ca283f;
+	border: 0.3em solid #ca283f;
+}
+
+.suppr:hover {
+	color: #ca283f;
+}
+
+/* button sort by a-z */
+
+.a-z {
+	--c: white;
+	color: var(--c);
+	background-color: rgb(0, 72, 167);
+	border: 0.3em solid rgb(0, 72, 167);
+}
+
+.a-z:hover {
+	color: rgb(0, 72, 167);
+}
+
+/* INDEX */
+
+.windex {
+	--c: transparent;
+	color: white;
+	background-image: url(../img/international-space-station-1176518_1920.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center -1vh;
+	height: 10em;
+	line-height: 10;
+}
+
+.windex:hover {
+	color: black;
+	background-image: url(../img/hong-kong-1990268_19201277.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.frindex {
+	--c: transparent;
+	color: black;
+	background-image: url(../img/banner-2024782_6402.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 10em;
+	font-weight: 900;
+}
+
+.frindex:hover {
+	background-image: url(../img/eiffel-tower-3349075_640.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-color: black;
+}
+
+.frindex h1 {
+	color: silver;
+}
+.frindex:hover h1 {
+	color: white;
+}
+
+.wtcindex {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/wtc.png);
+	background-color: black;
+	background-size: cover;
+	background-position: center;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid black;
+}
+
+.wtcindex:hover {
+	color: black;
+	background-color: black;
+	border: 0.3em solid black;
+}
+
+.mvindex {
+	--c: white;
+	color: var(--c);
+	background-image: url(../img/mistermv.png);
+	background-color: black;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid black;
+}
+
+.mvindex:hover {
+	color: black;
+	background-color: black;
+	border: 0.3em solid black;
+}
+
+.jdindex {
+	--c: black;
+	color: var(--c);
+	background-image: url(../img/jday.png);
+	background-color: gainsboro;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+	border: 0.3em solid gainsboro;
+}
+
+.jdindex:hover {
+	color: gainsboro;
+	background-color: gainsboro;
+	border: 0.3em solid gainsboro;
+}
+
+.incindex {
+	background-image: url(../img/inconnuslogo.png);
+	background-color: seashell;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	height: 10em;
+	line-height: 10;
+}
+
+.incindex:hover {
+	color: seashell;
+	background-image: url(../img/inconnusshort.png);
+	background-size: cover;
+}
+
+.wtcindex h1 {
+	display: none;
+}
+
+.wtcindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
+}
+
+.mvindex h1 {
+	display: none;
+}
+
+.mvindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: black;
+}
+
+.jdindex h1 {
+	display: none;
+}
+
+.jdindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
+}
+
+.incindex h1 {
+	display: none;
+}
+
+.incindex:hover h1 {
+	display: block;
+	font-size: calc(2px + 2vw);
+	color: white;
+}

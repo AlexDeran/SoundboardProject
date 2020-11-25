@@ -45,19 +45,19 @@
 	transform: translateY(0) scale(2);
 }
 
-nav ul li span:nth-child(1) {
+ul li span:nth-child(1) {
 	--n: 1;
 }
 
-nav ul li span:nth-child(2) {
+ul li span:nth-child(2) {
 	--n: 2;
 }
 
-nav ul li span:nth-child(3) {
+ul li span:nth-child(3) {
 	--n: 3;
 }
 
-nav ul li span:nth-child(4) {
+ul li span:nth-child(4) {
 	--n: 4;
 }
 
@@ -256,4 +256,177 @@ nav ul li span:nth-child(4) {
 	display: block;
 	font-size: calc(2px + 2vw);
 	color: white;
+}
+
+@media (max-width: 575.98px) {
+	.frindex {
+		--c: transparent;
+		color: black;
+		background-image: url(../img/banner-2024782_6402.png);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-top: 0.5em;
+		height: 7em;
+		/* margin-left: 1em; */
+		font-weight: 900;
+		margin-bottom: 0em;
+		margin-bottom: 1em;
+	}
+	.frindex:hover {
+		background-image: url(../img/eiffel-tower-3349075_640.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-color: black;
+	}
+
+	.frindex h1 {
+		color: silver;
+		font-size: 3rem;
+	}
+	.frindex:hover h1 {
+		color: white;
+	}
+	.windex {
+		--c: transparent;
+		color: white;
+		background-image: url(../img/international-space-station-1176518_1920.jpg);
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+		padding-top: 0.5em;
+		font-weight: 900;
+		height: 8em;
+		/* margin-left: 1em; */
+		line-height: 10;
+		margin-bottom: 1em;
+	}
+
+	.windex:hover {
+		color: black;
+		background-image: url(../img/hong-kong-1990268_19201277.jpg);
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+	}
+	.windex h1 {
+		font-size: 3rem;
+	}
+
+	.wtcindex {
+		--c: white;
+		color: var(--c);
+		background-image: url(../img/wtc.png);
+		background-color: black;
+		background-size: cover;
+		background-position: center;
+		line-height: 10;
+		height: 8em;
+		/* margin-left: 1em; */
+		border: 0.3em solid black;
+	}
+
+	.wtcindex:hover {
+		color: black;
+		background-color: black;
+		border: 0.3em solid black;
+	}
+
+	.mvindex {
+		--c: white;
+		color: var(--c);
+		background-image: url(../img/mistermv.png);
+		background-color: black;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 8em;
+		line-height: 10;
+		margin-bottom: 1em;
+		border: 0.3em solid black;
+	}
+
+	.mvindex:hover {
+		color: black;
+		background-color: black;
+		border: 0.3em solid black;
+	}
+
+	.jdindex {
+		--c: black;
+		color: var(--c);
+		background-image: url(../img/jday.png);
+		background-color: gainsboro;
+		background-size: contain;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 8em;
+		line-height: 10;
+		margin-bottom: 1em;
+		border: 0.3em solid gainsboro;
+	}
+
+	.jdindex:hover {
+		color: gainsboro;
+		background-color: gainsboro;
+		border: 0.3em solid gainsboro;
+	}
+
+	.incindex {
+		background-image: url(../img/inconnuslogo.png);
+		background-color: seashell;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		height: 8em;
+		margin-bottom: 1em;
+		line-height: 10;
+	}
+
+	.incindex:hover {
+		color: seashell;
+		background-image: url(../img/inconnusshort.png);
+		background-size: cover;
+	}
+
+	.wtcindex h1 {
+		display: none;
+	}
+
+	.wtcindex:hover h1 {
+		display: block;
+		font-size: calc(2px + 2vw);
+		color: black;
+	}
+
+	.mvindex h1 {
+		display: none;
+	}
+
+	.mvindex:hover h1 {
+		display: block;
+		font-size: calc(2px + 2vw);
+		color: black;
+	}
+
+	.jdindex h1 {
+		display: none;
+	}
+
+	.jdindex:hover h1 {
+		display: block;
+		font-size: calc(2px + 2vw);
+		color: white;
+	}
+
+	.incindex h1 {
+		display: none;
+	}
+
+	.incindex:hover h1 {
+		display: block;
+		font-size: calc(2px + 2vw);
+		color: white;
+	}
 }
