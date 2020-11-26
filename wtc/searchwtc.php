@@ -56,7 +56,7 @@ else {
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/buttons.css" />
+	
 		<link rel="stylesheet" href="../css/wtc.css" />
 		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
