@@ -56,7 +56,6 @@ else {
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-	
 		<link rel="stylesheet" href="../css/wtc.css" />
 		<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
@@ -77,8 +76,8 @@ else {
 				</header>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
-						<div class= "col-4">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="../index.html">
 										<li class="btnmain acc">
@@ -93,8 +92,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="wtc.php">
 										<li class="btnmain a-z">
@@ -108,8 +107,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="idwtc.php">
 										<li class="btnmain suppr">
@@ -160,17 +159,17 @@ else {
 					</article>
         </section>
         <nav aria-label="Page navigation example">
-					<ul class="pagination pagination-lg justify-content-center">
+					<ul class="pagination justify-content-center">
 						<?php if($pagewtc > 1){
 						$prevwtc = $pagewtc -1;
 						echo'
-					<li class="page-item ">
+					<li class="page-item prev">
 						<a class="page-link ad" href="?pagewtc='.$prevwtc.'" tabindex="-1" aria-disabled="true">Précédent</a>
           </li>';} 
           if($pageswtc > 1){?>
           <li class="page-item <?php if($pagewtc === 1){echo 'active';} ?>"><a class="page-link ad" href="?pagewtc=1">1<a></li> 
           <?php } ?>
-					<?php for($i = max(2, $pagewtc - 3); $i <= min($pagewtc + 3, $pageswtc - 1); $i++):?>
+					<?php for($i = max(2, $pagewtc - 2); $i <= min($pagewtc + 2, $pageswtc - 1); $i++):?>
 					<li class="page-item <?php if($pagewtc === $i){echo 'active';} ?>"><a class="page-link ad" href="?pagewtc=<?=$i; ?>"><?=$i ?></a></li>
           <?php endfor;
           	if($pageswtc > 1){?>
@@ -179,7 +178,7 @@ else {
 					<?php if($pagewtc != $pageswtc){
 						$nextwtc = $pagewtc + 1;
 						echo'
-					<li class="page-item">
+					<li class="page-item next">
 						<a class="page-link ad" href="?pagewtc='.$nextwtc.'">Suivant</a>
 					</li>'
 					;}?>

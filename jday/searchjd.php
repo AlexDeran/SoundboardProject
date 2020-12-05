@@ -57,7 +57,6 @@ else {
 		/>
     <link rel="stylesheet" href="../css/style.css" />
 		<link rel="stylesheet" href="../css/jday.css" />
-	
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -76,8 +75,8 @@ else {
 				</header>
 				<nav class="container-fluid">
 					<div id="navbox" class="row">
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="../index.html">
 										<li class="btnmain acc">
@@ -92,8 +91,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="JDay.php">
 										<li class="btnmain a-z">
@@ -107,8 +106,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="idjd.php">
 										<li class="btnmain suppr">
@@ -159,17 +158,17 @@ else {
 					</article>
 				</section>
 				<nav aria-label="Page navigation example">
-		      <ul class="pagination pagination-lg justify-content-center">
+		      <ul class="pagination justify-content-center">
 						<?php if($pagejday > 1){
 						$prevjday = $pagejday -1;
 						echo'
-					<li class="page-item ">
+					<li class="page-item prev">
 						<a class="page-link ad" href="?pagejday='.$prevjday.'" tabindex="-1" aria-disabled="true">Précédent</a>
           </li>';} 
           if($pagesjday > 1){?>
           <li class="page-item <?php if($pagejday === 1){echo 'active';} ?>"><a class="page-link ad" href="?pagejday=1">1<a></li> 
           <?php } ?>
-					<?php for($i = max(2, $pagejday - 3); $i <= min($pagejday + 3, $pagesjday - 1); $i++):?>
+					<?php for($i = max(2, $pagejday - 2); $i <= min($pagejday + 2, $pagesjday - 1); $i++):?>
 					<li class="page-item <?php if($pagejday === $i){echo 'active';} ?>"><a class="page-link ad" href="?pagejday=<?=$i; ?>"><?=$i ?></a></li>
           <?php endfor;
           	if($pagesjday > 1){?>
@@ -178,7 +177,7 @@ else {
 					<?php if($pagejday != $pagesjday){
 						$nextjday = $pagejday + 1;
 						echo'
-					<li class="page-item">
+					<li class="page-item next">
 						<a class="page-link ad" href="?pagejday='.$nextjday.'">Suivant</a>
 					</li>'
 					;}?>

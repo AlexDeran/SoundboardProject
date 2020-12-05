@@ -58,7 +58,6 @@ else {
 				crossorigin="anonymous"
 			/>
 			<link rel="stylesheet" href="../css/style.css" />
-		
 				<link rel="stylesheet" href="../css/fr.css">
 				<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 			<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
@@ -71,8 +70,8 @@ else {
 		</header>
 		<nav class="container-fluid">
 			<div id="navbox" class="row">
-				<div class= "col-3">
-					<div class="container-fluid">
+				<div class= "col-md-3 col-sm-10">
+					<div>
 						<ul class="btns">
 							<a href="../index.html">
 								<li class="btnmain acc">
@@ -87,8 +86,8 @@ else {
 						</ul>
 					</div>
 				</div>
-				<div class= "col-3">
-					<div class="container-fluid">
+				<div class= "col-md-3 col-sm-10">
+					<div>
 						<ul class="btns">
 							<a href="soundfr.php">
 								<li class="btnmain a-z">
@@ -102,8 +101,8 @@ else {
 						</ul>
 					</div>
 				</div>
-				<div class= "col-3">
-					<div class="container-fluid">
+				<div class= "col-md-3 col-sm-10">
+					<div>
 						<ul class="btns">
 							<a href="idfr.php">
 								<li class="btnmain suppr">
@@ -154,17 +153,17 @@ else {
 			</article>
 		</section>
 		<nav aria-label="Page navigation example">
-			<ul class="pagination pagination-lg justify-content-center">
+			<ul class="pagination justify-content-center">
 				<?php if($page > 1){
 					$prev = $page -1;
 					echo'
-				<li class="page-item ">
+				<li class="page-item prev">
 					<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
 				</li>';}
 				if($pages > 1){
 	?>
 				<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> <?php }
-				for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
+				for($i = max(2, $page - 2); $i <= min($page + 2, $pages - 1); $i++):?>
 				<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
 				<?php endfor; 
 				if($pages > 1){
@@ -175,7 +174,7 @@ else {
 					if($page != $pages){
 					$next = $page + 1;
 					echo'
-				<li class="page-item">
+				<li class="page-item next">
 					<a class="page-link" href="?page='.$next.'">Suivant</a>
 				</li>'
 				;}?>

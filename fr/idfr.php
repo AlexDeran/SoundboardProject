@@ -59,8 +59,8 @@ else {
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
-			<div class= "col-3">
-				<div class="container-fluid">
+			<div class= "col-md-3 col-sm-10">
+				<div>
 					<ul class="btns">
 						<a href="../index.html">
 							<li class="btnmain acc">
@@ -75,8 +75,8 @@ else {
 					</ul>
 				</div>
 			</div>
-			<div class= "col-3">
-				<div class="container-fluid">
+			<div class= "col-md-3 col-sm-10">
+				<div>
 					<ul class="btns">
 						<a href="soundfr.php">
 							<li class="btnmain a-z">
@@ -135,22 +135,22 @@ else {
 				<!-- ########################################## PAGINATION ########################################## -->
 
 	<nav aria-label="Page navigation example">
-		<ul class="pagination pagination-lg justify-content-center">
+		<ul class="pagination justify-content-center">
 			<?php if($pageid > 1){
 				$prev = $pageid -1;
 				echo'
-			<li class="page-item ">
+			<li class="page-item prev">
 				<a class="page-link" href="?pageid='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
 			</li>';} ?>
 			<li class="page-item <?php if($pageid === 1){echo 'active';} ?>"><a class="page-link" href="?pageid=1">1<a></li> 
-			<?php for($i = max(2, $pageid - 3); $i <= min($pageid + 3, $pagesid - 1); $i++):?>
+			<?php for($i = max(2, $pageid - 2); $i <= min($pageid + 2, $pagesid - 1); $i++):?>
 			<li class="page-item <?php if($pageid === $i){echo 'active';} ?>"><a class="page-link" href="?pageid=<?=$i; ?>"><?=$i ?></a></li>
 			<?php endfor; ?>
 			<li class="page-item <?php if($pageid == $pagesid){echo 'active';} ?>"><a class="page-link" href="?pageid=<?=$pagesid?>"><?=$pagesid?><a></li> 
 			<?php if($pageid != $pagesid){
 				$next = $pageid + 1;
 				echo'
-			<li class="page-item">
+			<li class="page-item next">
 				<a class="page-link" href="?pageid='.$next.'">Suivant</a>
 			</li>'
 			 ;}?>

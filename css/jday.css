@@ -26,6 +26,7 @@
 	font-weight: 800;
 	text-transform: uppercase;
 	border-radius: 1em;
+	text-align: center;
 }
 .srcvidjday {
 	color: black;
@@ -34,4 +35,168 @@
 .srcvidjday:hover {
 	color: darkslategrey;
 	text-decoration: underline;
+}
+
+@media (max-width: 575.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	#searchfr,
+	#sndfr {
+		background-image: url(../img/banner-2024782_6402.png);
+		background-size: cover;
+	}
+	#searchbox2 {
+		justify-content: center;
+	}
+
+	.acc,
+	.suppr,
+	.a-z {
+		font-size: 1rem;
+		line-height: 1.2em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		height: 4em;
+	}
+
+	.prev,
+	.next {
+		display: none;
+	}
+
+	.page-link {
+		font-size: smaller;
+	}
+	.btnsbox {
+		margin-top: 2em;
+	}
+	#navbox {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (min-width: 576px) and (max-width: 767.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	#navbox {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-evenly;
+	}
+	.acc {
+		font-size: 0.7rem;
+		line-height: 1.2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+
+	#searchbox2 {
+		justify-content: center;
+	}
+	/* .srcvid {
+
+	} */
+	.acc,
+	.suppr,
+	.a-z {
+		font-size: 1rem;
+		line-height: 1.2em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		height: 4em;
+	}
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) and (max-width: 991.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.acc {
+		font-size: 0.7rem;
+		line-height: 1.2em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+
+	#searchbox2 {
+		justify-content: center;
+	}
+	/* .srcvid {
+
+	} */
+	.acc,
+	.suppr,
+	.a-z {
+		font-size: 1rem;
+		line-height: 1.2em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		height: 4em;
+	}
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+	header.index {
+		padding-bottom: 0.5em;
+	}
+	.soundboard {
+		font-size: 2em;
+	}
+
+	.acc {
+		font-size: 0.95em;
+		height: 4.5em;
+	}
+
+	.btnsbox {
+		margin-top: 2em;
+	}
+
+	#searchbox2 {
+		justify-content: center;
+	}
+	/* .srcvid {
+
+	} */
+	.acc,
+	.suppr,
+	.a-z {
+		font-size: 1rem;
+		line-height: 1.2em;
+		margin-top: 0.3em;
+		margin-bottom: 0.3em;
+		height: 4em;
+	}
+}
+
+/* Extra large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) {
+	.page-item {
+		font-size: 1.5rem;
+		font-weight: 100;
+	}
 }

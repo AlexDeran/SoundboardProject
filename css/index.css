@@ -273,10 +273,8 @@ h1::after {
 		background-repeat: no-repeat;
 		background-position: center;
 		padding-top: 0.5em;
-		height: 7em;
-		/* margin-left: 1em; */
+		height: 8em;
 		font-weight: 900;
-		margin-bottom: 0em;
 		margin-bottom: 1em;
 	}
 	.frindex:hover {
@@ -304,7 +302,6 @@ h1::after {
 		padding-top: 0.5em;
 		font-weight: 900;
 		height: 8em;
-		/* margin-left: 1em; */
 		line-height: 10;
 		margin-bottom: 1em;
 	}
@@ -330,7 +327,6 @@ h1::after {
 		background-position: center;
 		line-height: 10;
 		height: 8em;
-		/* margin-left: 1em; */
 		border: 0.3em solid black;
 	}
 
