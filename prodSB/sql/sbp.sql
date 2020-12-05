@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : Dim 08 nov. 2020 à 21:43
+-- Généré le : sam. 05 déc. 2020 à 22:13
 -- Version du serveur :  10.4.11-MariaDB
 -- Version de PHP : 7.4.3
 
@@ -129,7 +129,14 @@ INSERT INTO `inconnus` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (86, 'À l’hôpital Velpeau ?', 'hopital velpeau.mp3', 'Maîtresses et patients', 'https://www.youtube.com/embed/_dLzh-DFu4s?start=201'),
 (87, 'Juliette Godemiche', 'linsupportable.mp3', 'Les escarres', 'https://www.youtube.com/embed/tqdk0k_U8Zg?start=143'),
 (88, 'Peux-tu seulement le comprendre ?', 'peux tu seulement le comprendre.mp3', 'Les escarres', 'https://www.youtube.com/embed/tqdk0k_U8Zg?start=168'),
-(89, 'Edith Piaf est morte ?!', 'edith piaf est morte.mp3', 'Les commerces', 'https://www.youtube.com/embed/TpNYDEd5dx8?start=225');
+(89, 'Edith Piaf est morte ?!', 'edith piaf est morte.mp3', 'Les commerces', 'https://www.youtube.com/embed/TpNYDEd5dx8?start=225'),
+(90, 'Ça te barbera - Intro', 'ca te barbera intro.mp3', 'Ça te barbera', 'https://www.youtube.com/embed/t1_zaPfw-Wc'),
+(91, 'Agir autrement que tel que je l\'ai fait ?', 'Ca te barbera Esce que tu me comprends.mp3', 'Ça te barbera', 'https://www.youtube.com/embed/t1_zaPfw-Wc?start=44'),
+(92, 'Tu as des soucis ?', 'Ca te barbera tu as des soucis.mp3', 'Ça te barbera', 'https://www.youtube.com/embed/t1_zaPfw-Wc?start=177'),
+(93, 'Casser les couilles', 'florent brunel casser les couilles.mp3', 'Florent Brunel', 'https://www.youtube.com/embed/MFXEajm-a-E?start=55'),
+(94, 'Vous les politiciens', 'florent brunel vous les politiciens.mp3', 'Florent Brunel', 'https://www.youtube.com/embed/MFXEajm-a-E?start=61'),
+(95, 'Salut Charlie !', 'hamburger family salut charlie.mp3', 'Hamburger Family', 'https://www.youtube.com/embed/7yeC18AljL0?start=78'),
+(96, 'Jean-Pierre François', 'Les Inconnus - Jean-Pierre François.mp3', 'Jean-Pierre François', 'https://www.youtube.com/embed/O-Ad4bx579c?start=21');
 
 -- --------------------------------------------------------
 
@@ -344,7 +351,16 @@ INSERT INTO `keywrds` (`ID`, `Nom`, `Appartenance`) VALUES
 (161, 'Maîtresses et patients', 'INCONNUS'),
 (162, 'Les escarres', 'INCONNUS'),
 (163, 'Les commerces', 'INCONNUS'),
-(164, '4 mariages pour 1 lune de miel', 'FR');
+(164, '4 mariages pour 1 lune de miel', 'FR'),
+(165, 'Ça te barbera', 'INCONNUS'),
+(166, 'Florent Brunel', 'INCONNUS'),
+(167, 'Hamburger Family', 'INCONNUS'),
+(168, 'Jean-Pierre François', 'INCONNUS'),
+(169, 'WHAT THE CUT #30', 'WTC'),
+(170, 'All star, Shrek, Smash Mouth', 'WORLD'),
+(171, 'Omae wa mou shindeiru, Nani', 'WORLD'),
+(172, 'Bref', 'FR'),
+(173, 'Norman Genius', 'FR');
 
 -- --------------------------------------------------------
 
@@ -386,9 +402,9 @@ INSERT INTO `mv` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (19, 'Les Boomers', 'MV - Les Boomers.mp3', 'Mister MV', 'https://www.youtube.com/embed/aZyEXv9nRNE?start=67'),
 (20, 'Jouissance', 'MV - JOuissance.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=58'),
 (21, 'Orgasme', 'MV - Orgasme.mp3', 'Mister MV', 'https://www.youtube.com/embed/J76FgIA3Mb4?start=287'),
-(22, 'Et j\'adore le Zboub ', 'Jadore Le Zboub.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
+(22, 'J\'adore le Zboub ', 'Jadore Le Zboub.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
 (23, 'Le Zboub refrain', 'Jadore le zboub refrain.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
-(24, 'J\'adore le Zboub ', 'Jadore le zboub court.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
+(24, 'Et j\'adore le Zboub ', 'Jadore le zboub court.mp3', 'Mister MV', 'https://www.youtube.com/embed/2MnmEnOi27U'),
 (25, 'Le clavier qui colle', 'MV - clavier qui colle.mp3', 'Mister MV', 'https://www.youtube.com/embed/obDYHxCzx-g?start=10'),
 (26, 'J\'adore les saucisses', 'Musique des Saucisses Herta! (Mister MV ZEvent).mp3', 'Mister MV', 'https://www.youtube.com/embed/rNxRhDukwSc'),
 (27, 'Instru Coldplay', 'MV - Instru Coldplay.mp3', 'Mister MV', 'https://www.youtube.com/embed/19g8gv1FnuA?start=439'),
@@ -427,7 +443,7 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (9, 'Taisez vous !', 'Finkielkraut - taisez-vous.mp3', 'Finkelkraut', 'https://www.youtube.com/embed/9TKC27K8cIo'),
 (10, 'J\'ai un background', 'Jai une histoire, jai un background - DJ SNAKE.mp3', 'DJ Snake', 'https://www.youtube.com/embed/NLnKeM6sGj0'),
 (11, 'Sard - Mais c\'était sûr en fait', 'Sardoche - MAIS VOILA MAIS CÉTAIT SÛR EN FAIT.mp3', 'Sardoche', 'https://www.youtube.com/embed/zexeTY3347Y?start=6'),
-(12, 'Mister V - Encore ?!', 'Encore, Ca fait beaucoup la non! Mister V.mp3', 'Mister V', 'https://www.youtube.com/embed/6elK8VI1rPs'),
+(12, 'Mister V - Ça fait bcp la non ?', 'Encore, Ca fait beaucoup la non! Mister V.mp3', 'Mister V', 'https://www.youtube.com/embed/6elK8VI1rPs'),
 (13, 'Enorme', 'Enorme - Jamy (cest pas sorcier).mp3', 'Jamy', 'https://www.youtube.com/embed/biJq3CSBQ4s'),
 (14, 'Ecole vétérinaire MA', 'Je suis à lécole vétérinaire de Maison-Alfort, et je vais apprendre à masturber un chien .mp3', 'Maisons-Alfort', 'https://www.youtube.com/embed/vBqmxDKZRTg'),
 (15, 'Mon spermatoz', 'MON SPERME NE TA PAS SUFFIT.mp3', 'Mon sperme ', 'https://www.youtube.com/embed/Yazl_Ja9RVA?start=2'),
@@ -776,7 +792,19 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (369, 'Pépite de chocolat', 'Pepite de chocolat.mp3', '', 'https://www.youtube.com/embed/SEHoOSQWxyU?start=6'),
 (370, 'Gourmande', 'Gourmande.mp3', '4 mariages pour 1 lune de miel', ''),
 (371, 'MmmmhOUIIIIII', 'MmhOUI.mp3', '4 mariages pour 1 lune de miel', ''),
-(372, 'Même les diabétiques ?! WOW', 'Meme les diabetiques.mp3', '4 mariages pour 1 lune de miel', 'https://www.youtube.com/embed/atRlF-En7wA?start=88');
+(372, 'Même les diabétiques ?! WOW', 'Meme les diabetiques.mp3', '4 mariages pour 1 lune de miel', 'https://www.youtube.com/embed/atRlF-En7wA?start=88'),
+(373, 'Mister V - Encore ?!', 'encore mister v.mp3', 'Mister V', 'https://www.youtube.com/embed/6elK8VI1rPs'),
+(374, 'Oh ptn ça fait du bien', 'oh ptn ça fait du bien.mp3', '', 'https://www.youtube.com/embed/WXb2C4fHwvo'),
+(375, 'Capitaine, Capitaine !', 'Bref - Capitaine capitaine.mp3', 'Bref', 'https://www.youtube.com/embed/ryxGEUexfCc?start=2'),
+(376, 'Buona Sera', 'buena sera norman.mp3', 'Norman Genius', ''),
+(377, 'C\'est bien Eléonore', 'Cest bien Eleonore on est content.mp3', '', 'https://www.youtube.com/embed/L9e8tGd11vQ?start=7'),
+(378, 'C\'est reparti comme en 46 !', 'comme en 46.mp3', '', 'https://www.youtube.com/embed/nR_agiSh1nw?start=5'),
+(379, 'Continuez Jackson', 'Continuez Jackson.mp3', '', 'https://www.youtube.com/embed/mYo9OUy3gDI?start=1'),
+(380, 'La citrouille démoniaque', 'la citrouille.mp3', 'Norman Genius', ''),
+(381, 'Bouffe moi le cul !', 'le chien coquin.mp3', 'Norman Genius', ''),
+(382, 'Oh gourmande !', 'oh gourmande jamy.mp3', 'Jamy', 'https://www.youtube.com/embed/FNvKshhLE1o?start=1013'),
+(383, 'Oh la mamacitas', 'ohla mamacitas.mp3', 'Norman Genius', ''),
+(384, 'Je roucoule, je broie la langue de Molière', 'Je roucoule  je broie la langue de Molière.mp3', '', 'https://www.youtube.com/embed/MKr1CA1r5s4?start=14');
 
 -- --------------------------------------------------------
 
@@ -825,7 +853,7 @@ INSERT INTO `soundw` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (26, 'OOF', 'Roblox Death Sound - OOF Sound Effect.mp3', '', 'https://www.youtube.com/embed/HoBa2SyvtpE'),
 (27, 'Running in the 90\'s', 'running.mp3', '', 'https://www.youtube.com/embed/rWLoUjz-w-8?start=24'),
 (28, 'STONKS', 'STONKS.mp3', '', 'https://www.youtube.com/embed/SMRg9mKcyhM'),
-(29, 'To be continued', 'to-be-continued.mp3', '', 'https://www.youtube.com/embed/cPCLFtxpadE'),
+(29, 'To be continued', 'to-be-continued.mp3', '', 'https://www.youtube.com/embed/cPCLFtxpadE?start=41'),
 (30, 'I am the one', 'ultimate-respect-button_MdJiOOn.mp3', '', 'https://www.youtube.com/embed/VR24Pfw7Ykw?start=12'),
 (31, 'WOW (wink)', 'Waw meme.mp3', '', 'https://www.youtube.com/embed/ZXCb6Ihqx68?start=2'),
 (32, 'FT - How about a little more', 'how about a little more.mp3', 'Flex Tape', 'https://www.youtube.com/embed/7zpxgyG7eGk?start=13'),
@@ -887,7 +915,7 @@ INSERT INTO `soundw` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (93, 'Yatangaki', 'Yatangaki.mp3', 'Risitas, ISSOU', 'https://www.youtube.com/embed/09zjNV0cclY'),
 (94, 'La Chancla', 'Risitas La Chancla.mp3', 'Risitas, ISSOU', 'https://www.youtube.com/embed/oEwkEFH78bg'),
 (95, 'It\'s time to stop', 'its time to stop.mp3', '', 'https://www.youtube.com/embed/2k0SmqbBIpQ'),
-(96, 'Another One', 'DJ Khaled another one.mp3', '', 'https://www.youtube.com/embed/5xntOpWCIfo'),
+(96, 'Another One Infinite', 'DJ Khaled another one.mp3', '', 'https://www.youtube.com/embed/5xntOpWCIfo'),
 (97, 'Right in her pussy', 'Fuck her right in the pussy original.mp3', '', 'https://www.youtube.com/embed/CdIT74L8hGI?start=5'),
 (98, 'Hello there !', 'Hello there.mp3', '', 'https://www.youtube.com/embed/rEq1Z0bjdwc?start=8'),
 (99, 'Hello there general kenobi', 'Hello there general kenobi.mp3', '', 'https://www.youtube.com/embed/rEq1Z0bjdwc?start=8'),
@@ -898,7 +926,18 @@ INSERT INTO `soundw` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (104, 'JOJO Goldenwind', 'JOJO Goldenwind.mp3', '', 'https://www.youtube.com/embed/U0TXIXTzJEY?start=222'),
 (105, 'Kirby runnin\'', 'kirby running.mp3', '', 'https://www.youtube.com/embed/QN7ME5tqBsk'),
 (106, 'Yoshi.mp4', 'Yoshimp4.mp3', '', 'https://www.youtube.com/embed/q5-cZIpldFk'),
-(107, 'Yoshi Flower Garden', 'Yoshi Flower garden.mp3', '', 'https://www.youtube.com/embed/oL5fbozc3kU');
+(107, 'Yoshi Flower Garden', 'Yoshi Flower garden.mp3', '', 'https://www.youtube.com/embed/oL5fbozc3kU'),
+(108, 'Be Gone THOT', 'Be Gone Thot Original Meme.mp3', '', 'https://www.youtube.com/embed/Kbx7m2qVVA0?start=2'),
+(109, 'Elevator music', 'elevator music.mp3', '', 'https://www.youtube.com/embed/xy_NKN75Jhw'),
+(110, 'Everybody is here', 'Everybody is here.mp3', '', 'https://www.youtube.com/embed/zeKE0NHUtUw?start=2'),
+(111, 'Another One', 'Another one.mp3', '', 'https://www.youtube.com/embed/5xntOpWCIfo'),
+(112, 'FBI Open Up', 'FBI OPEN UP.mp3', '', 'https://www.youtube.com/embed/4wX2xBOuzRg'),
+(113, 'Stop it, get some help', 'stop it get some help.mp3', '', 'https://www.youtube.com/embed/rb8z2BMrd60?start=48'),
+(114, 'We\'ll be right back', 'We ll be right back.mp3', '', '\"https://www.youtube.com/embed/uleM9ZNTE34'),
+(115, 'And they don\'t stop coming', 'and they dont stop coming.mp3', 'All star, Shrek, Smash Mouth', 'https://www.youtube.com/embed/eT3BFzSD6YY?start=22'),
+(116, 'Somebody once told me', 'Somebody once told me.mp3', 'All star, Shrek, Smash Mouth', 'https://www.youtube.com/embed/L_jWHffIx5E?start=37'),
+(117, 'Omae wa mou shindeiru', 'Omae wa mou shindeiru.mp3', 'Omae wa mou shindeiru, Nani', 'https://www.youtube.com/embed/dNQs_Bef_V8?start=4'),
+(118, 'NANI ?!', 'NANI.mp3', 'Omae wa mou shindeiru, Nani', 'https://www.youtube.com/embed/dNQs_Bef_V8?start=5');
 
 -- --------------------------------------------------------
 
@@ -1185,7 +1224,28 @@ INSERT INTO `wtc` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (268, 'Parce que le Japon !', 'Parce que le japon ! japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
 (269, 'Bad case of diarrhea', 'i have a bad case of diahrea japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
 (270, 'Bad case of diarrhea song', 'i have a bad case of diahrea song japon 2.mp3', 'WHAT THE CUT - SPÉCIAL JAPON 2, WTC JAPON 2', 'https://www.youtube.com/embed/1cG1UigenvI'),
-(271, 'Dans les hautes herbes', '33 Jaime me masturber ds les hautes herbes.mp3', 'WHAT THE CUT #33, WTC', 'https://www.youtube.com/embed/CjsPSeupj2w');
+(271, 'Dans les hautes herbes', '33 Jaime me masturber ds les hautes herbes.mp3', 'WHAT THE CUT #33, WTC 33', 'https://www.youtube.com/embed/CjsPSeupj2w'),
+(272, 'Aucune idée de ce que je fais ici', '30 - Aucune idee de ce que je fais ici.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(273, 'À du fromage de chèvre ?!', 'a du fromage de chevre.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(274, 'Can you quack ? Full', 'can you quack full.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(275, 'Can you quack ?', 'can you quack.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(276, 'Chier sur le torse pour porter chance', 'chier sur le torse pour porter chance.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(277, 'Chier sur le torse ? Sérieux ?!', 'Chier sur le torse serieux.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(278, 'Faire coin coin quand tu suces', 'Coin coin quand tu suces.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(279, 'Des ballons !', 'des ballons.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(280, 'Le gagnant du loto', 'gagnant du loto.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(281, 'Infinite LOLELOL', 'Infinite LOL.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(282, 'J\'abandonne', 'jabandonne.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(283, 'Je contrôle la situation', 'Je controle la situation.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(284, 'La chevauchée émeuvante', 'la chevauchée emeuvante.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(285, 'La crise émeustantielle', 'la crise emeustantielle.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(286, 'Le théorème d\'Intesthalès', 'Le theoreme dintesthales.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(287, 'L\'émeu interrogatif ', 'Lemeu interrogatif.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(288, 'L’indécision', 'Lindecision.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(289, 'Dire merde pour porter chance', 'merde pour porter chance.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(290, 'Oh une boule !', 'oh une boule.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(291, 'Palper pour apprécier', 'Palper pour apprecier.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI'),
+(292, 'YOLO émeu', 'yolo emeu.mp3', 'WHAT THE CUT #30, WTC', 'https://www.youtube.com/embed/5sZtTk0Y5QI');
 
 --
 -- Index pour les tables déchargées
@@ -1267,7 +1327,7 @@ ALTER TABLE `wtc`
 -- AUTO_INCREMENT pour la table `inconnus`
 --
 ALTER TABLE `inconnus`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=97;
 
 --
 -- AUTO_INCREMENT pour la table `jday`
@@ -1279,7 +1339,7 @@ ALTER TABLE `jday`
 -- AUTO_INCREMENT pour la table `keywrds`
 --
 ALTER TABLE `keywrds`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=174;
 
 --
 -- AUTO_INCREMENT pour la table `mv`
@@ -1291,19 +1351,19 @@ ALTER TABLE `mv`
 -- AUTO_INCREMENT pour la table `soundfr`
 --
 ALTER TABLE `soundfr`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=373;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=385;
 
 --
 -- AUTO_INCREMENT pour la table `soundw`
 --
 ALTER TABLE `soundw`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=119;
 
 --
 -- AUTO_INCREMENT pour la table `wtc`
 --
 ALTER TABLE `wtc`
-  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=272;
+  MODIFY `ID` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=293;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
