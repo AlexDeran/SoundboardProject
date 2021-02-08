@@ -64,7 +64,7 @@ $n = 1;
 
  else {  ?>
 <header class="pgtitle">	
-		<h1 class="sndtitle wtc"><img src="../img/wtc.jpg" height="100" width="165"></h1>
+		<h1 class="sndtitle wtc"><img src="../img/wtc.png" height="100" width="165"></h1>
 	</header>
 	<nav class="container-fluid">
 		<div id="navbox" class="row">
@@ -124,7 +124,7 @@ $n = 1;
 								<source src="../gestsnd/SBP/WTC/<?= $sons['Son']?>" type="audio/mpeg">
 								Your browser does not support the audio element.
 							</audio>
-							<div class="imgsnd"><img src="../img/WTC.png" height="75" width="120" onmousedown="play('../gestsnd/SBP/WTC/<?= $sons['Son']?>')"></div>
+							<div class="imgsnd"><img src="../img/WTC.jpg" height="75" width="120" onmousedown="play('../gestsnd/SBP/WTC/<?= $sons['Son']?>')"></div>
 							<div class="col" id="sndnamewtc">
 							<?php if ($sons['source'] != ""){ ?>
 								<a class="srcvidwtc" href="#lienvid<?=$n?>" data-toggle="modal">
