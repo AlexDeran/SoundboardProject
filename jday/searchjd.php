@@ -74,6 +74,12 @@ else {
 					</div>
 				</header>
 				<nav class="container-fluid">
+					<div class="alert alert-info alert-dismissible fade show container" role="alert">
+						Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
 					<div id="navbox" class="row">
 						<div class= "col-md-3 col-sm-10">
 							<div>
@@ -128,12 +134,6 @@ else {
 					<article>
 						<div class="container-fluid">
 							<div class="row">
-							<div class="alert alert-info alert-dismissible fade show container-fluid" role="alert">
-						Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
 								<div class="col search">
 									<?php foreach ($resultsjday as $r):?>
 									<div class=" sndboxjday">

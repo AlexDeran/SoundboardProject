@@ -55,7 +55,6 @@ else {
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="stylesheet" href="../css/world.css">
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
@@ -70,11 +69,17 @@ else {
 					<h1 class="sndtitle world"><img src="../img/earth-min.png" height="75" width="75" > Sons relatifs à <?php echo $searchw ?> <img src="../img/earth-min.png" height="75" width="75" > </h1>
 				</header>
 				<nav class="container-fluid">
+					<div class="alert alert-info alert-dismissible fade show container" role="alert">
+							Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 					<div id="navbox" class="row">
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
-									<a href="../index.php">
+									<a href="../index.html">
 										<li class="btnmain acc">
 											<span></span><span></span><span></span><span></span>
 											<i class="fas fa-home"></i>
@@ -87,8 +92,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="soundworld.php">
 										<li class="btnmain a-z">
@@ -102,8 +107,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="idw.php">
 										<li class="btnmain suppr">
@@ -139,8 +144,8 @@ else {
 											</a>
 											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 												<div class="modal-dialog modal-dialog-centered">
-													<div class="modal-content">
-														<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													<div class="modal-content embed-responsive embed-responsive-16by9">
+														<iframe class="vidsrc embed-resposive-item" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 													</div>
 												</div>
 											</div>
@@ -154,17 +159,17 @@ else {
 					</article>
 				</section>
 				<nav aria-label="Page navigation example">
-				<ul class="pagination pagination-lg justify-content-center">
+				<ul class="pagination justify-content-center">
 					<?php if($pagew > 1){
 						$prevw = $pagew -1;
 						echo'
-					<li class="page-item ">
+					<li class="page-item prev">
 						<a class="page-link ad" href="?page='.$prevw.'" tabindex="-1" aria-disabled="true">Précédent</a>
           </li>';} 
           if($pagesw > 1){?>
           <li class="page-item <?php if($pagew === 1){echo 'active';} ?>"><a class="page-link ad" href="?pagew=1">1<a></li> 
           <?php } ?>
-					<?php for($i = max(2, $pagew - 3); $i <= min($pagew + 3, $pagesw - 1); $i++):?>
+					<?php for($i = max(2, $pagew - 2); $i <= min($pagew + 2, $pagesw - 1); $i++):?>
 					<li class="page-item <?php if($pagew === $i){echo 'active';} ?>"><a class="page-link ad" href="?pagew=<?=$i; ?>"><?=$i ?></a></li>
           <?php endfor;
           	if($pagesw > 1){?>
@@ -173,7 +178,7 @@ else {
 					<?php if($pagew != $pagesw){
 						$nextw = $pagew + 1;
 						echo'
-					<li class="page-item">
+					<li class="page-item next">
 						<a class="page-link ad" href="?pagew='.$nextw.'">Suivant</a>
 					</li>'
 					;}?>

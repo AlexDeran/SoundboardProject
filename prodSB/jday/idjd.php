@@ -46,7 +46,6 @@ $n = 1;
 			crossorigin="anonymous"
 		/>
 		<link rel="stylesheet" href="../css/style.css" />
-		<link rel="stylesheet" href="../css/buttons.css" />
 				<link rel="stylesheet" href="../css/jday.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
@@ -68,11 +67,17 @@ $n = 1;
 		<h1 class="sndtitle jday"><img src="../img/jday.png" height="100" width="100"></h1>
 	</header>
 	<nav class="container-fluid">
+		<div class="alert alert-info alert-dismissible fade show container" role="alert">
+				Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
 		<div id="navbox" class="row">
-			<div class= "col-3">
-				<div class="container-fluid">
+			<div class= "col-md-3 col-sm-10">
+				<div>
 					<ul class="btns">
-						<a href="../index.php">
+						<a href="../index.html">
 							<li class="btnmain acc">
 								<span></span><span></span><span></span><span></span>
 								<i class="fas fa-home"></i>
@@ -85,8 +90,8 @@ $n = 1;
 					</ul>
 				</div>
 			</div>
-			<div class= "col-3">
-				<div class="container-fluid">
+			<div class= "col-md-3 col-sm-10">
+				<div>
 					<ul class="btns">
 						<a href="JDay.php">
 							<li class="btnmain a-z">
@@ -127,8 +132,8 @@ $n = 1;
 								</a>
 								<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 									<div class="modal-dialog modal-dialog-centered">
-										<div class="modal-content">
-											<iframe class="vidsrc" width="560" height="315" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+										<div class="modal-content embed-responsive embed-responsive-16by9">
+											<iframe class="vidsrc embed-resposive-item" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 										</div>
 									</div>
 								</div>
@@ -145,18 +150,18 @@ $n = 1;
 				<!-- ########################################## PAGINATION ########################################## -->
 
 	<nav aria-label="Page navigation example">
-		<ul class="pagination pagination-lg justify-content-center">
+		<ul class="pagination justify-content-center">
 				<?php if($page > 1){
 				$prev = $page -1;
 				echo'
-			<li class="page-item ">
+			<li class="page-item prev">
 				<a class="page-link" href="?page='.$prev.'" tabindex="-1" aria-disabled="true">Précédent</a>
 			</li>';} 
 			if($pages > 1){
 			?>
 			<li class="page-item <?php if($page === 1){echo 'active';} ?>"><a class="page-link" href="?page=1">1<a></li> 
 			<?php ;}
-			 for($i = max(2, $page - 3); $i <= min($page + 3, $pages - 1); $i++):?>
+			 for($i = max(2, $page - 2); $i <= min($page + 2, $pages - 1); $i++):?>
 			<li class="page-item <?php if($page === $i){echo 'active';} ?>"><a class="page-link" href="?page=<?=$i; ?>"><?=$i ?></a></li>
 			<?php endfor;
 				if($pages > 1){
@@ -168,7 +173,7 @@ $n = 1;
 				 if($page != $pages){
 				$next = $page + 1;
 				echo'
-			<li class="page-item">
+			<li class="page-item next">
 				<a class="page-link" href="?page='.$next.'">Suivant</a>
 			</li>'
 			 ;}?>

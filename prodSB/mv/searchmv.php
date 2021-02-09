@@ -36,15 +36,15 @@ $searchmv = htmlspecialchars($_SESSION['searchmv']);
 	$pagesmv = ceil($total / $perPagemv);
 
 $n=1;
-  }
+	}
 
  if($pagemv <1 || $pagemv > $pagesmv){
 		header('Location:../404.html');
 } 
 
 else {
-  ?>
-  <!DOCTYPE html>
+	?>
+	<!DOCTYPE html>
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
@@ -55,9 +55,8 @@ else {
 			integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
 			crossorigin="anonymous"
 		/>
-    <link rel="stylesheet" href="../css/style.css" />
+		<link rel="stylesheet" href="../css/style.css" />
 			<link rel="stylesheet" href="../css/mv.css" />
-		<link rel="stylesheet" href="../css/buttons.css" />
 			<link rel="shortcut icon" href="../img/favicon_SB/favicon.ico" type="image/x-icon">
 		<script src="https://kit.fontawesome.com/95e6614a3f.js" crossorigin="anonymous"></script>
 
@@ -75,11 +74,17 @@ else {
 					</div>
 				</header>
 				<nav class="container-fluid">
+					<div class="alert alert-info alert-dismissible fade show container" role="alert">
+							Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 					<div id="navbox" class="row">
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
-									<a href="../index.php">
+									<a href="../index.html">
 										<li class="btnmain acc">
 											<span></span><span></span><span></span><span></span>
 											<i class="fas fa-home"></i>
@@ -92,8 +97,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="mv.php">
 										<li class="btnmain a-z">
@@ -107,8 +112,8 @@ else {
 								</ul>
 							</div>
 						</div>
-						<div class= "col-3">
-							<div class="container-fluid">
+						<div class= "col-md-3 col-sm-10">
+							<div>
 								<ul class="btns">
 									<a href="idmv.php">
 										<li class="btnmain suppr">
@@ -131,7 +136,7 @@ else {
 							<div class="row">
 								<div class="col search">
 									<?php foreach ($resultsmv as $r):?>
-									<div class=" sndboxmv">
+									<div class="sndboxmv">
 										<audio id="myAudio">
 											<source src="../gestsnd/SBP/MV/<?= $r['Son']?>" type="audio/mpeg">
 											Your browser does not support the audio element.
@@ -144,14 +149,14 @@ else {
 											</a>
 											<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
 												<div class="modal-dialog modal-dialog-centered">
-													<div class="modal-content">
-														<iframe class="vidsrc" width="560" height="315" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+													<div class="modal-content embed-responsive embed-responsive-16by9">
+														<iframe class="vidsrc embed-resposive-item" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 													</div>
 												</div>
 											</div>
 											<?php $n++; } else echo($r['Nom']); ?>
+											</div>
 										</div>
-									</div>
 								<?php endforeach;?>
 								</div>
 							</div>
@@ -159,49 +164,49 @@ else {
 					</article>
 				</section>
 				<nav aria-label="Page navigation example">
-		      <ul class="pagination pagination-lg justify-content-center">
+					<ul class="pagination justify-content-center">
 						<?php if($pagemv > 1){
 						$prevmv = $pagemv -1;
 						echo'
-					<li class="page-item ">
+					<li class="page-item prev">
 						<a class="page-link ad" href="?pagemv='.$prevmv.'" tabindex="-1" aria-disabled="true">Précédent</a>
-          </li>';} 
-          if($pagesmv > 1){?>
-          <li class="page-item <?php if($pagemv === 1){echo 'active';} ?>"><a class="page-link ad" href="?pagemv=1">1<a></li> 
-          <?php } ?>
-					<?php for($i = max(2, $pagemv - 3); $i <= min($pagemv + 3, $pagesmv - 1); $i++):?>
+					</li>';} 
+					if($pagesmv > 1){?>
+					<li class="page-item <?php if($pagemv === 1){echo 'active';} ?>"><a class="page-link ad" href="?pagemv=1">1<a></li> 
+					<?php } ?>
+					<?php for($i = max(2, $pagemv - 2); $i <= min($pagemv + 2, $pagesmv - 1); $i++):?>
 					<li class="page-item <?php if($pagemv === $i){echo 'active';} ?>"><a class="page-link ad" href="?pagemv=<?=$i; ?>"><?=$i ?></a></li>
-          <?php endfor;
-          	if($pagesmv > 1){?>
-          <li class="page-item <?php if($pagemv == $pagesmv){echo 'active';} ?>"><a class="page-link ad" href="?pagemv=<?=$pagesmv?>"><?=$pagesmv?><a></li> 
-            <?php } ?>
+					<?php endfor;
+						if($pagesmv > 1){?>
+					<li class="page-item <?php if($pagemv == $pagesmv){echo 'active';} ?>"><a class="page-link ad" href="?pagemv=<?=$pagesmv?>"><?=$pagesmv?><a></li> 
+						<?php } ?>
 					<?php if($pagemv != $pagesmv){
 						$nextmv = $pagemv + 1;
 						echo'
-					<li class="page-item">
+					<li class="page-item next">
 						<a class="page-link ad" href="?pagemv='.$nextmv.'">Suivant</a>
 					</li>'
 					;}?>
-				  </ul>
-			  </nav>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
+					</ul>
+				</nav>
+		<script
+			src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+			integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+			integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+			crossorigin="anonymous"
+		></script>
 		<script src="../js/app.js"></script>
 	</body>
 </html>
 <?php
-  }
+	}
 ?>

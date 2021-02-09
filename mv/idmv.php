@@ -68,6 +68,12 @@ $n = 1;
 		<h1 class="sndtitle mv"><img src="../img/mistermv.png" height="100" width="100"></h1>
 	</header>
 	<nav class="container-fluid">
+		<div class="alert alert-info alert-dismissible fade show container" role="alert">
+			Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true">&times;</span>
+			</button>
+		</div>
 		<div id="navbox" class="row">
 			<div class= "col-md-3 col-sm-10">
 				<div>
@@ -111,12 +117,6 @@ $n = 1;
 	<section>
 		<article class="soundswtc">
 			<div class="container-fluid">
-			<div class="alert alert-info alert-dismissible fade show container-fluid" role="alert">
-						Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
-						<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
 				<div class="row">
 					<div class="col">
 					<?php foreach($nommistermv as $sons) : ?>
@@ -132,7 +132,7 @@ $n = 1;
 								<?php echo($sons['Nom']);?>
 								</a>
 								<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered">
+									<div class="modal-dialog modal-dialog-centered">
 										<div class="modal-content embed-responsive embed-responsive-16by9">
 											<iframe class="vidsrc embed-resposive-item" src="<?=$r['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 										</div>

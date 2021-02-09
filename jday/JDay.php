@@ -67,85 +67,85 @@ $n = 1;
 		<h1 class="sndtitle jday"><img src="../img/jday.png" height="100" width="100"></h1>
 	</header>
 	<nav class="container-fluid">
-		<div id="navbox" class="row">
-			<div class= "col-md-3 col-sm-10">
-				<div>
-					<ul class="btns">
-						<a href="../index.html">
-							<li class="btnmain acc">
-								<span></span><span></span><span></span><span></span>
-								<i class="fas fa-home"></i>
-								&nbsp;
-								<i class="fas fa-caret-left"></i>
-									Retour à l'accueil
-								<span></span><span></span><span></span><span></span>
-							</li>
-						</a>
-					</ul>
-				</div>
+		<div class="alert alert-info alert-dismissible fade show container" role="alert">
+				Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 			</div>
-			<div class= "col-md-3 col-sm-10">
-				<div>
-					<ul class="btns">
-						<a href="idjd.php">
-							<li class="btnmain suppr">
-								<span></span><span></span><span></span><span></span>
-								<i class="fab fa-hotjar"></i> 
-								&nbsp;
-									Nouveaux sons
-								<span></span><span></span><span></span><span></span>
-							</li>
-						</a>
-					</ul>
-				</div>
-			</div>
-			<span id="stopsnd" class="whyt"></span>
-			<form id="searchbox2" action="searchjd.php" class="form-inline my-2 my-lg-0" method="GET">
-				<input id="searchbox" class="form-control mr-sm-2" type="search"
-					name="searchjday" placeholder="Rechercher un son" aria-label="Search" required>
-				<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
-			</form>
-		</div>
-	</nav>
-	<section>
-		<article class="soundswtc">
-			<div class="container-fluid">
-				<div class="alert alert-info alert-dismissible fade show container-fluid" role="alert">
-					Hey ! N'hésite pas à cliquer sur le nom d'un son lorsque c'est possible pour avoir sa source !
-					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
-						<span aria-hidden="true">&times;</span>
-					</button>
-				</div>
-				<div class="row">
-					<div class="col">
-					<?php foreach($nomjday as $sons) : ?>
-						<div class="sndboxjday">
-							<audio id="myAudio">
-								<source src="../gestsnd/SBP/JDay/<?= $sons['Son']?>" type="audio/mpeg">
-								Your browser does not support the audio element.
-							</audio>
-							<div class="imgsnd"><img src="../img/jday.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/JDay/<?= $sons['Son']?>')"></div>
-							<div class="col" id="sndnamejd">
-							<?php if ($sons['source'] != ""){ ?>
-								<a class="srcvidjday" href="#lienvid<?=$n?>" data-toggle="modal">
-								<?php echo($sons['Nom']);?>
-								</a>
-								<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-									<div class="modal-dialog modal-dialog-centered">
-										<div class="modal-content embed-responsive embed-responsive-16by9">
-											<iframe class="vidsrc embed-resposive-item" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-										</div>
-									</div>
-								</div>
-								<?php $n++; } else echo($sons['Nom']); ?>
-							</div>
-						</div>
-						<?php endforeach ?>
+			<div id="navbox" class="row">
+				<div class= "col-md-3 col-sm-10">
+					<div>
+						<ul class="btns">
+							<a href="../index.html">
+								<li class="btnmain acc">
+									<span></span><span></span><span></span><span></span>
+									<i class="fas fa-home"></i>
+									&nbsp;
+									<i class="fas fa-caret-left"></i>
+										Retour à l'accueil
+									<span></span><span></span><span></span><span></span>
+								</li>
+							</a>
+						</ul>
 					</div>
 				</div>
+				<div class= "col-md-3 col-sm-10">
+					<div>
+						<ul class="btns">
+							<a href="idjd.php">
+								<li class="btnmain suppr">
+									<span></span><span></span><span></span><span></span>
+									<i class="fab fa-hotjar"></i> 
+									&nbsp;
+										Nouveaux sons
+									<span></span><span></span><span></span><span></span>
+								</li>
+							</a>
+						</ul>
+					</div>
+				</div>
+				<span id="stopsnd" class="whyt"></span>
+				<form id="searchbox2" action="searchjd.php" class="form-inline my-2 my-lg-0" method="GET">
+					<input id="searchbox" class="form-control mr-sm-2" type="search"
+						name="searchjday" placeholder="Rechercher un son" aria-label="Search" required>
+					<button class="btn btn-success my-2 my-sm-0" value="search" type="submit"><i class="fas fa-search"></i></button>
+				</form>
 			</div>
-		</article>
-	</section>
+		</nav>
+		<section>
+			<article class="soundswtc">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="col">
+						<?php foreach($nomjday as $sons) : ?>
+							<div class="sndboxjday">
+								<audio id="myAudio">
+									<source src="../gestsnd/SBP/JDay/<?= $sons['Son']?>" type="audio/mpeg">
+									Your browser does not support the audio element.
+								</audio>
+								<div class="imgsnd"><img src="../img/jday.png" height="75" width="75" onmousedown="play('../gestsnd/SBP/JDay/<?= $sons['Son']?>')"></div>
+								<div class="col" id="sndnamejd">
+								<?php if ($sons['source'] != ""){ ?>
+									<a class="srcvidjday" href="#lienvid<?=$n?>" data-toggle="modal">
+									<?php echo($sons['Nom']);?>
+									</a>
+									<div id="lienvid<?=$n?>" class="vid modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+										<div class="modal-dialog modal-dialog-centered">
+											<div class="modal-content embed-responsive embed-responsive-16by9">
+												<iframe class="vidsrc embed-resposive-item" src="<?=$sons['source']?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+											</div>
+										</div>
+									</div>
+									<?php $n++; } else echo($sons['Nom']); ?>
+								</div>
+							</div>
+							<?php endforeach ?>
+						</div>
+					</div>
+				</div>
+			</article>
+		</section>
 
 				<!-- ########################################## PAGINATION ########################################## -->
 
