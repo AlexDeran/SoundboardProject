@@ -3,7 +3,6 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 14 fév. 2021 à 13:22
 -- Version du serveur :  10.3.16-MariaDB
 -- Version de PHP : 7.3.23
 
