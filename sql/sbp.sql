@@ -757,7 +757,7 @@ INSERT INTO `soundfr` (`ID`, `Nom`, `Son`, `keywords`, `source`) VALUES
 (374, 'Oh ptn ça fait du bien', 'oh ptn ça fait du bien.mp3', '', 'https://www.youtube.com/embed/WXb2C4fHwvo'),
 (375, 'Capitaine, Capitaine !', 'Bref - Capitaine capitaine.mp3', 'Bref', 'https://www.youtube.com/embed/ryxGEUexfCc?start=2'),
 (376, 'Buona Sera', 'buena sera norman.mp3', 'Norman Genius', ''),
-(377, 'C\'est bien Eléonore', 'Cest bien Eleonore on est content.mp3', '', 'https://www.youtube.com/embed/L9e8tGd11vQ?start=7'),
+(377, 'C\'est bien Eléonore', 'Cest bien Eleonore on est content.mp3', 'Le maillon faible', 'https://www.youtube.com/embed/L9e8tGd11vQ?start=7'),
 (378, 'C\'est reparti comme en 46 !', 'comme en 46.mp3', '', 'https://www.youtube.com/embed/nR_agiSh1nw?start=5'),
 (379, 'Continuez Jackson', 'Continuez Jackson.mp3', '', 'https://www.youtube.com/embed/mYo9OUy3gDI?start=1'),
 (380, 'La citrouille démoniaque', 'la citrouille.mp3', 'Norman Genius', ''),
