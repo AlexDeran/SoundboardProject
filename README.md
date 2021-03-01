@@ -4,5 +4,6 @@ A soundboard project just to have fun with friends including mostly french sound
 Adding & deleting sounds functionalities are only available for me for now.
 You can check them out in the prodSB folder.
 
+Thanks for reading !
 Have a nice day !
 
