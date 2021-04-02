@@ -159,33 +159,6 @@ p.noresultstext {
 	color: white;
 }
 
-.wtc404 {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/wtc.png);
-	background-color: black;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	height: 4.5em;
-	border: 0.3em solid black;
-}
-
-.wtc404:hover {
-	color: black;
-	background-color: black;
-	border: 0.3em solid black;
-}
-
-.wtc404 h1 {
-	display: none;
-}
-
-.wtc404:hover h1 {
-	display: block;
-	font-size: calc(2px + 2vw);
-	color: black;
-}
 
 .mv404 {
 	--c: white;
@@ -430,25 +403,6 @@ h1::after {
 		font-size: 1.3rem;
 	}
 
-	.wtc404 {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 3em;
-		/* margin-left: 1em; */
-		border: 0.3em solid black;
-	}
-
-	.wtc404:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
 
 	.mv404 {
 		--c: white;
@@ -621,26 +575,6 @@ h1::after {
 		font-size: 1.3rem;
 	}
 
-	.wtc404 {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 3em;
-		/* margin-left: 1em; */
-		border: 0.3em solid black;
-	}
-
-	.wtc404:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mv404 {
 		--c: white;
 		color: var(--c);
@@ -695,15 +629,6 @@ h1::after {
 		background-size: cover;
 	}
 
-	.wtc404 h1 {
-		display: none;
-	}
-
-	.wtc404:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
-	}
 
 	.mv404 h1 {
 		display: none;
@@ -812,26 +737,6 @@ h1::after {
 		font-size: 1.3rem;
 	}
 
-	.wtc404 {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 3em;
-		/* margin-left: 1em; */
-		border: 0.3em solid black;
-	}
-
-	.wtc404:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mv404 {
 		--c: white;
 		color: var(--c);
@@ -884,16 +789,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtc404 h1 {
-		display: none;
-	}
-
-	.wtc404:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mv404 h1 {
@@ -1002,25 +897,6 @@ h1::after {
 		font-size: 1.3rem;
 	}
 
-	.wtc404 {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 3em;
-		/* margin-left: 1em; */
-		border: 0.3em solid black;
-	}
-
-	.wtc404:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
 
 	.mv404 {
 		--c: white;
@@ -1074,16 +950,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtc404 h1 {
-		display: none;
-	}
-
-	.wtc404:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mv404 h1 {
