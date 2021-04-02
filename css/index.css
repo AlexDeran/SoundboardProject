@@ -114,25 +114,6 @@ h1::after {
 	color: white;
 }
 
-.wtcindex {
-	--c: white;
-	color: var(--c);
-	background-image: url(../img/wtc.png);
-	background-color: black;
-	background-size: contain;
-	background-repeat: no-repeat;
-	background-position: center;
-	height: 10em;
-	line-height: 10;
-	border: 0.3em solid black;
-}
-
-.wtcindex:hover {
-	color: black;
-	background-color: black;
-	border: 0.3em solid black;
-}
-
 .mvindex {
 	--c: white;
 	color: var(--c);
@@ -185,16 +166,6 @@ h1::after {
 	color: seashell;
 	background-image: url(../img/inconnusshort.png);
 	background-size: cover;
-}
-
-.wtcindex h1 {
-	display: none;
-}
-
-.wtcindex:hover h1 {
-	display: block;
-	font-size: calc(2px + 2vw);
-	color: black;
 }
 
 .mvindex h1 {
@@ -317,25 +288,6 @@ h1::after {
 		font-size: 3rem;
 	}
 
-	.wtcindex {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 8em;
-		border: 0.3em solid black;
-	}
-
-	.wtcindex:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mvindex {
 		--c: white;
 		color: var(--c);
@@ -391,16 +343,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtcindex h1 {
-		display: none;
-	}
-
-	.wtcindex:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mvindex h1 {
@@ -528,26 +470,6 @@ h1::after {
 		font-size: 4rem;
 	}
 
-	.wtcindex {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 8em;
-		/* margin-left: 1em; */
-		border: 0.3em solid black;
-	}
-
-	.wtcindex:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mvindex {
 		--c: white;
 		color: var(--c);
@@ -603,16 +525,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtcindex h1 {
-		display: none;
-	}
-
-	.wtcindex:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mvindex h1 {
@@ -724,26 +636,6 @@ h1::after {
 		letter-spacing: 1rem;
 	}
 
-	.wtcindex {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 8em;
-		width: 500%;
-		border: 0.3em solid black;
-	}
-
-	.wtcindex:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mvindex {
 		--c: white;
 		color: var(--c);
@@ -802,16 +694,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtcindex h1 {
-		display: none;
-	}
-
-	.wtcindex:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mvindex h1 {
@@ -917,25 +799,6 @@ h1::after {
 		font-size: 3rem;
 	}
 
-	.wtcindex {
-		--c: white;
-		color: var(--c);
-		background-image: url(../img/wtc.png);
-		background-color: black;
-		background-size: contain;
-		background-repeat: no-repeat;
-		background-position: center;
-		line-height: 10;
-		height: 9em;
-		border: 0.3em solid black;
-	}
-
-	.wtcindex:hover {
-		color: black;
-		background-color: black;
-		border: 0.3em solid black;
-	}
-
 	.mvindex {
 		--c: white;
 		color: var(--c);
@@ -993,16 +856,6 @@ h1::after {
 		color: white;
 		background-image: url(../img/inconnusshort.png);
 		background-size: cover;
-	}
-
-	.wtcindex h1 {
-		display: none;
-	}
-
-	.wtcindex:hover h1 {
-		display: block;
-		font-size: calc(2px + 2vw);
-		color: black;
 	}
 
 	.mvindex h1 {
